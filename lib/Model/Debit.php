@@ -244,9 +244,6 @@ class Debit implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['currency'] === null) {
-            $invalidProperties[] = "'currency' can't be null";
-        }
         if ($this->container['to_type'] === null) {
             $invalidProperties[] = "'to_type' can't be null";
         }
@@ -281,7 +278,7 @@ class Debit implements ModelInterface, ArrayAccess
     /**
      * Sets amount
      *
-     * @param double|null $amount The amount to be debited from your account.  The “amount” parameter is optional - - if included, it must equal the amount required to fund the transaction. - if omitted, it will default to the amount required to fund the transaction.
+     * @param double|null $amount The amount to be debited from your account.  The \"amount\" parameter is optional - - if included, it must equal the amount required to fund the transaction. - if omitted, it will default to the amount required to fund the transaction.
      *
      * @return $this
      */
@@ -295,7 +292,7 @@ class Debit implements ModelInterface, ArrayAccess
     /**
      * Gets currency
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -305,7 +302,7 @@ class Debit implements ModelInterface, ArrayAccess
     /**
      * Sets currency
      *
-     * @param string $currency The currency of the amount in 3-character alpha ISO 4217 currency format
+     * @param string|null $currency The currency of the amount in 3-character alpha ISO 4217 currency format.  The \"currency\" parameter is optional - if omitted, it will default to the payin currency of the transaction. - it can be added in as an additional check to ensure that the expected currency is used. (an error will be given back if it does not match up with the payin currency of the transaction)
      *
      * @return $this
      */

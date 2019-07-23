@@ -64,6 +64,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'metadata' => 'object',
         'created_at' => '\DateTime',
         'editable' => 'bool',
+        'retriable' => 'bool',
         'input_usd_amount' => 'float',
         'may_cancel' => 'bool',
         'state_reason' => 'string',
@@ -92,6 +93,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'metadata' => null,
         'created_at' => 'date-time',
         'editable' => null,
+        'retriable' => null,
         'input_usd_amount' => null,
         'may_cancel' => null,
         'state_reason' => null,
@@ -141,6 +143,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'metadata' => 'metadata',
         'created_at' => 'created_at',
         'editable' => 'editable',
+        'retriable' => 'retriable',
         'input_usd_amount' => 'input_usd_amount',
         'may_cancel' => 'may_cancel',
         'state_reason' => 'state_reason',
@@ -169,6 +172,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'metadata' => 'setMetadata',
         'created_at' => 'setCreatedAt',
         'editable' => 'setEditable',
+        'retriable' => 'setRetriable',
         'input_usd_amount' => 'setInputUsdAmount',
         'may_cancel' => 'setMayCancel',
         'state_reason' => 'setStateReason',
@@ -197,6 +201,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'metadata' => 'getMetadata',
         'created_at' => 'getCreatedAt',
         'editable' => 'getEditable',
+        'retriable' => 'getRetriable',
         'input_usd_amount' => 'getInputUsdAmount',
         'may_cancel' => 'getMayCancel',
         'state_reason' => 'getStateReason',
@@ -279,6 +284,7 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
         $this->container['editable'] = isset($data['editable']) ? $data['editable'] : null;
+        $this->container['retriable'] = isset($data['retriable']) ? $data['retriable'] : null;
         $this->container['input_usd_amount'] = isset($data['input_usd_amount']) ? $data['input_usd_amount'] : null;
         $this->container['may_cancel'] = isset($data['may_cancel']) ? $data['may_cancel'] : null;
         $this->container['state_reason'] = isset($data['state_reason']) ? $data['state_reason'] : null;
@@ -468,6 +474,30 @@ class Recipient implements ModelInterface, ArrayAccess
     public function setEditable($editable)
     {
         $this->container['editable'] = $editable;
+
+        return $this;
+    }
+
+    /**
+     * Gets retriable
+     *
+     * @return bool|null
+     */
+    public function getRetriable()
+    {
+        return $this->container['retriable'];
+    }
+
+    /**
+     * Sets retriable
+     *
+     * @param bool|null $retriable Shows whether the transaction made to the recipient can be retried or not
+     *
+     * @return $this
+     */
+    public function setRetriable($retriable)
+    {
+        $this->container['retriable'] = $retriable;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorStatus
+ * CurrencyExchangeAllOf
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * ErrorStatus Class Doc Comment
+ * CurrencyExchangeAllOf Class Doc Comment
  *
  * @category Class
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ErrorStatus implements ModelInterface, ArrayAccess
+class CurrencyExchangeAllOf implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ErrorStatus';
+    protected static $openAPIModelName = 'CurrencyExchange_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'int',
-        'error' => 'string'
+        'opposites' => '\TransferZero\Model\CurrencyOpposite[]'
     ];
 
     /**
@@ -67,8 +66,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'error' => null
+        'opposites' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'error' => 'error'
+        'opposites' => 'opposites'
     ];
 
     /**
@@ -108,8 +105,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'error' => 'setError'
+        'opposites' => 'setOpposites'
     ];
 
     /**
@@ -118,8 +114,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'error' => 'getError'
+        'opposites' => 'getOpposites'
     ];
 
     /**
@@ -182,8 +177,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
+        $this->container['opposites'] = isset($data['opposites']) ? $data['opposites'] : null;
     }
 
     /**
@@ -211,49 +205,25 @@ class ErrorStatus implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets status
+     * Gets opposites
      *
-     * @return int|null
+     * @return \TransferZero\Model\CurrencyOpposite[]|null
      */
-    public function getStatus()
+    public function getOpposites()
     {
-        return $this->container['status'];
+        return $this->container['opposites'];
     }
 
     /**
-     * Sets status
+     * Sets opposites
      *
-     * @param int|null $status status
+     * @param \TransferZero\Model\CurrencyOpposite[]|null $opposites Lists the currencies where you can exchange from this one
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setOpposites($opposites)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     *
-     * @return string|null
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     *
-     * @param string|null $error error
-     *
-     * @return $this
-     */
-    public function setError($error)
-    {
-        $this->container['error'] = $error;
+        $this->container['opposites'] = $opposites;
 
         return $this;
     }

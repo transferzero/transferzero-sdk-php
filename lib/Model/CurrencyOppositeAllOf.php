@@ -1,6 +1,6 @@
 <?php
 /**
- * ErrorStatus
+ * CurrencyOppositeAllOf
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * ErrorStatus Class Doc Comment
+ * CurrencyOppositeAllOf Class Doc Comment
  *
  * @category Class
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ErrorStatus implements ModelInterface, ArrayAccess
+class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ErrorStatus';
+    protected static $openAPIModelName = 'CurrencyOpposite_allOf';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'int',
-        'error' => 'string'
+        'rate' => 'float'
     ];
 
     /**
@@ -67,8 +66,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'error' => null
+        'rate' => null
     ];
 
     /**
@@ -98,8 +96,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'error' => 'error'
+        'rate' => 'rate'
     ];
 
     /**
@@ -108,8 +105,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'error' => 'setError'
+        'rate' => 'setRate'
     ];
 
     /**
@@ -118,8 +114,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'error' => 'getError'
+        'rate' => 'getRate'
     ];
 
     /**
@@ -182,8 +177,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
-        $this->container['error'] = isset($data['error']) ? $data['error'] : null;
+        $this->container['rate'] = isset($data['rate']) ? $data['rate'] : null;
     }
 
     /**
@@ -211,49 +205,25 @@ class ErrorStatus implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets status
+     * Gets rate
      *
-     * @return int|null
+     * @return float|null
      */
-    public function getStatus()
+    public function getRate()
     {
-        return $this->container['status'];
+        return $this->container['rate'];
     }
 
     /**
-     * Sets status
+     * Sets rate
      *
-     * @param int|null $status status
+     * @param float|null $rate The rate of this particular currency with the base one
      *
      * @return $this
      */
-    public function setStatus($status)
+    public function setRate($rate)
     {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets error
-     *
-     * @return string|null
-     */
-    public function getError()
-    {
-        return $this->container['error'];
-    }
-
-    /**
-     * Sets error
-     *
-     * @param string|null $error error
-     *
-     * @return $this
-     */
-    public function setError($error)
-    {
-        $this->container['error'] = $error;
+        $this->container['rate'] = $rate;
 
         return $this;
     }

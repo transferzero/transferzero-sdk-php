@@ -79,7 +79,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_name' => null,
         'metadata' => null,
         'upload_content_type' => null,
-        'upload_file_size' => 'int32',
+        'upload_file_size' => null,
         'category' => null,
         'side' => null,
         'issuing_country' => null,
