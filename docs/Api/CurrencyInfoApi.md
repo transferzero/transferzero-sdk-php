@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **infoCurrenciesIn**
-> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesIn()
+> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesIn($sender_id)
 
 Getting a list of possible input currencies
 
@@ -86,9 +86,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\CurrencyInfoApi();
+$sender_id = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/in?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
 
 try {
-    $result = $apiInstance->infoCurrenciesIn();
+    $result = $apiInstance->infoCurrenciesIn($sender_id);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -104,7 +105,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sender_id** | [**string**](../Model/.md)| Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional]
 
 ### Return type
 
@@ -122,7 +126,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **infoCurrenciesOut**
-> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesOut()
+> \TransferZero\Model\CurrencyExchangeListResponse infoCurrenciesOut($sender_id)
 
 Getting a list of possible output currencies
 
@@ -142,9 +146,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\CurrencyInfoApi();
+$sender_id = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/out?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
 
 try {
-    $result = $apiInstance->infoCurrenciesOut();
+    $result = $apiInstance->infoCurrenciesOut($sender_id);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -160,7 +165,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sender_id** | [**string**](../Model/.md)| Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional]
 
 ### Return type
 

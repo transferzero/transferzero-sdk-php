@@ -395,14 +395,15 @@ class CurrencyInfoApi
      *
      * Getting a list of possible input currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \TransferZero\Model\CurrencyExchangeListResponse
      */
-    public function infoCurrenciesIn()
+    public function infoCurrenciesIn($sender_id = null)
     {
-        list($response) = $this->infoCurrenciesInWithHttpInfo();
+        list($response) = $this->infoCurrenciesInWithHttpInfo($sender_id);
         return $response;
     }
 
@@ -411,15 +412,16 @@ class CurrencyInfoApi
      *
      * Getting a list of possible input currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \TransferZero\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function infoCurrenciesInWithHttpInfo()
+    public function infoCurrenciesInWithHttpInfo($sender_id = null)
     {
         $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
-        $request = $this->infoCurrenciesInRequest();
+        $request = $this->infoCurrenciesInRequest($sender_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -497,13 +499,14 @@ class CurrencyInfoApi
      *
      * Getting a list of possible input currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infoCurrenciesInAsync()
+    public function infoCurrenciesInAsync($sender_id = null)
     {
-        return $this->infoCurrenciesInAsyncWithHttpInfo()
+        return $this->infoCurrenciesInAsyncWithHttpInfo($sender_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -516,14 +519,15 @@ class CurrencyInfoApi
      *
      * Getting a list of possible input currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infoCurrenciesInAsyncWithHttpInfo()
+    public function infoCurrenciesInAsyncWithHttpInfo($sender_id = null)
     {
         $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
-        $request = $this->infoCurrenciesInRequest();
+        $request = $this->infoCurrenciesInRequest($sender_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -565,11 +569,12 @@ class CurrencyInfoApi
     /**
      * Create request for operation 'infoCurrenciesIn'
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/in?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function infoCurrenciesInRequest()
+    protected function infoCurrenciesInRequest($sender_id = null)
     {
 
         $resourcePath = '/info/currencies/in';
@@ -579,6 +584,10 @@ class CurrencyInfoApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
+        }
 
 
         // body params
@@ -665,14 +674,15 @@ class CurrencyInfoApi
      *
      * Getting a list of possible output currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \TransferZero\Model\CurrencyExchangeListResponse
      */
-    public function infoCurrenciesOut()
+    public function infoCurrenciesOut($sender_id = null)
     {
-        list($response) = $this->infoCurrenciesOutWithHttpInfo();
+        list($response) = $this->infoCurrenciesOutWithHttpInfo($sender_id);
         return $response;
     }
 
@@ -681,15 +691,16 @@ class CurrencyInfoApi
      *
      * Getting a list of possible output currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \TransferZero\Model\CurrencyExchangeListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function infoCurrenciesOutWithHttpInfo()
+    public function infoCurrenciesOutWithHttpInfo($sender_id = null)
     {
         $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
-        $request = $this->infoCurrenciesOutRequest();
+        $request = $this->infoCurrenciesOutRequest($sender_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -767,13 +778,14 @@ class CurrencyInfoApi
      *
      * Getting a list of possible output currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infoCurrenciesOutAsync()
+    public function infoCurrenciesOutAsync($sender_id = null)
     {
-        return $this->infoCurrenciesOutAsyncWithHttpInfo()
+        return $this->infoCurrenciesOutAsyncWithHttpInfo($sender_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -786,14 +798,15 @@ class CurrencyInfoApi
      *
      * Getting a list of possible output currencies
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function infoCurrenciesOutAsyncWithHttpInfo()
+    public function infoCurrenciesOutAsyncWithHttpInfo($sender_id = null)
     {
         $returnType = '\TransferZero\Model\CurrencyExchangeListResponse';
-        $request = $this->infoCurrenciesOutRequest();
+        $request = $this->infoCurrenciesOutRequest($sender_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -835,11 +848,12 @@ class CurrencyInfoApi
     /**
      * Create request for operation 'infoCurrenciesOut'
      *
+     * @param  string $sender_id Allows the scoping of the results by &#x60;sender_id&#x60; (optional).  Example: &#x60;/v1/info/currencies/out?sender_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function infoCurrenciesOutRequest()
+    protected function infoCurrenciesOutRequest($sender_id = null)
     {
 
         $resourcePath = '/info/currencies/out';
@@ -849,6 +863,10 @@ class CurrencyInfoApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
+        }
 
 
         // body params

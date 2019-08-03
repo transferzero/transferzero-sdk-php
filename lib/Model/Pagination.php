@@ -70,11 +70,11 @@ class Pagination implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'current_page' => null,
-        'next_page' => null,
-        'prev_page' => null,
-        'total_pages' => null,
-        'total_count' => null
+        'current_page' => 'int32',
+        'next_page' => 'int32',
+        'prev_page' => 'int32',
+        'total_pages' => 'int32',
+        'total_count' => 'int32'
     ];
 
     /**
