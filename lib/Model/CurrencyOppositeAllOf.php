@@ -57,7 +57,8 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'rate' => 'float'
+        'rate' => 'float',
+        'mtm_rate' => 'float'
     ];
 
     /**
@@ -66,7 +67,8 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'rate' => null
+        'rate' => null,
+        'mtm_rate' => null
     ];
 
     /**
@@ -96,7 +98,8 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'rate' => 'rate'
+        'rate' => 'rate',
+        'mtm_rate' => 'mtm_rate'
     ];
 
     /**
@@ -105,7 +108,8 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'rate' => 'setRate'
+        'rate' => 'setRate',
+        'mtm_rate' => 'setMtmRate'
     ];
 
     /**
@@ -114,7 +118,8 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'rate' => 'getRate'
+        'rate' => 'getRate',
+        'mtm_rate' => 'getMtmRate'
     ];
 
     /**
@@ -178,6 +183,7 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['rate'] = isset($data['rate']) ? $data['rate'] : null;
+        $this->container['mtm_rate'] = isset($data['mtm_rate']) ? $data['mtm_rate'] : null;
     }
 
     /**
@@ -224,6 +230,30 @@ class CurrencyOppositeAllOf implements ModelInterface, ArrayAccess
     public function setRate($rate)
     {
         $this->container['rate'] = $rate;
+
+        return $this;
+    }
+
+    /**
+     * Gets mtm_rate
+     *
+     * @return float|null
+     */
+    public function getMtmRate()
+    {
+        return $this->container['mtm_rate'];
+    }
+
+    /**
+     * Sets mtm_rate
+     *
+     * @param float|null $mtm_rate Mark to market rate of this particular currency against the base one with the margin factored in
+     *
+     * @return $this
+     */
+    public function setMtmRate($mtm_rate)
+    {
+        $this->container['mtm_rate'] = $mtm_rate;
 
         return $this;
     }

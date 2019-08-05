@@ -80,7 +80,7 @@ class WebhookLogMetadata implements ModelInterface, ArrayAccess
         'instance_id' => null,
         'instance_type' => null,
         'attempt_id' => null,
-        'tries' => 'int32',
+        'tries' => null,
         'request' => null,
         'response' => null,
         'app_id' => null,
