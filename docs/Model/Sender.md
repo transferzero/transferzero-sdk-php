@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 **postal_code** | **string** | Zip code of sender | 
 **birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of sender | [optional] 
 **ip** | **string** | IP of sender | 
+**identification_number** | **string** | Identification number of document used | [optional] 
+**identification_type** | **string** | Document to be identified. The identification type can be one of the following:  - &#x60;DL&#x60;: Driving License - &#x60;PP&#x60;: International Passport - &#x60;ID&#x60;: National ID - &#x60;OT&#x60;: Other | [optional] 
 **documents** | [**\TransferZero\Model\Document[]**](Document.md) | Needed for KYC checks. Required to approve the sender unless KYC is waived for your account. Please send us an empty list of documents: &#x60;\&quot;documents\&quot;: [ ]&#x60; in the request if KYC has been waived.  If the documents already exist, please send the Document ID eg. &#x60;&#x60;&#x60;JSON \&quot;documents\&quot;: [   {     \&quot;id\&quot;: \&quot;b6648ba3-1c7b-4f59-8580-684899c84a07\&quot;   } ] &#x60;&#x60;&#x60; | 
 **metadata** | [**object**](.md) | Metadata of sender. You can store any detail specific to your integration here (for example the local ID of the sender on your end). When requesting sender details you will receive the sent metadata back. Also when sending sender related webhooks you will receive the details stored here as well. | [optional] 
 **state** | [**\TransferZero\Model\SenderState**](SenderState.md) |  | [optional] 

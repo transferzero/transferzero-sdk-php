@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * Sender Class Doc Comment
  *
  * @category Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -78,6 +78,8 @@ class Sender implements ModelInterface, ArrayAccess
         'postal_code' => 'string',
         'birth_date' => '\DateTime',
         'ip' => 'string',
+        'identification_number' => 'string',
+        'identification_type' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
         'metadata' => 'object',
         'state' => '\TransferZero\Model\SenderState',
@@ -112,6 +114,8 @@ class Sender implements ModelInterface, ArrayAccess
         'postal_code' => null,
         'birth_date' => 'date',
         'ip' => 'ipv4',
+        'identification_number' => null,
+        'identification_type' => null,
         'documents' => null,
         'metadata' => null,
         'state' => null,
@@ -167,6 +171,8 @@ class Sender implements ModelInterface, ArrayAccess
         'postal_code' => 'postal_code',
         'birth_date' => 'birth_date',
         'ip' => 'ip',
+        'identification_number' => 'identification_number',
+        'identification_type' => 'identification_type',
         'documents' => 'documents',
         'metadata' => 'metadata',
         'state' => 'state',
@@ -201,6 +207,8 @@ class Sender implements ModelInterface, ArrayAccess
         'postal_code' => 'setPostalCode',
         'birth_date' => 'setBirthDate',
         'ip' => 'setIp',
+        'identification_number' => 'setIdentificationNumber',
+        'identification_type' => 'setIdentificationType',
         'documents' => 'setDocuments',
         'metadata' => 'setMetadata',
         'state' => 'setState',
@@ -235,6 +243,8 @@ class Sender implements ModelInterface, ArrayAccess
         'postal_code' => 'getPostalCode',
         'birth_date' => 'getBirthDate',
         'ip' => 'getIp',
+        'identification_number' => 'getIdentificationNumber',
+        'identification_type' => 'getIdentificationType',
         'documents' => 'getDocuments',
         'metadata' => 'getMetadata',
         'state' => 'getState',
@@ -286,6 +296,10 @@ class Sender implements ModelInterface, ArrayAccess
 
     const TYPE_PERSON = 'person';
     const TYPE_BUSINESS = 'business';
+    const IDENTIFICATION_TYPE_DL = 'DL';
+    const IDENTIFICATION_TYPE_PP = 'PP';
+    const IDENTIFICATION_TYPE_ID = 'ID';
+    const IDENTIFICATION_TYPE_OT = 'OT';
     
 
     
@@ -299,6 +313,21 @@ class Sender implements ModelInterface, ArrayAccess
         return [
             self::TYPE_PERSON,
             self::TYPE_BUSINESS,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getIdentificationTypeAllowableValues()
+    {
+        return [
+            self::IDENTIFICATION_TYPE_DL,
+            self::IDENTIFICATION_TYPE_PP,
+            self::IDENTIFICATION_TYPE_ID,
+            self::IDENTIFICATION_TYPE_OT,
         ];
     }
     
@@ -338,6 +367,8 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
+        $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
@@ -384,6 +415,14 @@ class Sender implements ModelInterface, ArrayAccess
         if ($this->container['ip'] === null) {
             $invalidProperties[] = "'ip' can't be null";
         }
+        $allowedValues = $this->getIdentificationTypeAllowableValues();
+        if (!is_null($this->container['identification_type']) && !in_array($this->container['identification_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'identification_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['documents'] === null) {
             $invalidProperties[] = "'documents' can't be null";
         }
@@ -887,6 +926,63 @@ class Sender implements ModelInterface, ArrayAccess
     public function setIp($ip)
     {
         $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets identification_number
+     *
+     * @return string|null
+     */
+    public function getIdentificationNumber()
+    {
+        return $this->container['identification_number'];
+    }
+
+    /**
+     * Sets identification_number
+     *
+     * @param string|null $identification_number Identification number of document used
+     *
+     * @return $this
+     */
+    public function setIdentificationNumber($identification_number)
+    {
+        $this->container['identification_number'] = $identification_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets identification_type
+     *
+     * @return string|null
+     */
+    public function getIdentificationType()
+    {
+        return $this->container['identification_type'];
+    }
+
+    /**
+     * Sets identification_type
+     *
+     * @param string|null $identification_type Document to be identified. The identification type can be one of the following:  - `DL`: Driving License - `PP`: International Passport - `ID`: National ID - `OT`: Other
+     *
+     * @return $this
+     */
+    public function setIdentificationType($identification_type)
+    {
+        $allowedValues = $this->getIdentificationTypeAllowableValues();
+        if (!is_null($identification_type) && !in_array($identification_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'identification_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['identification_type'] = $identification_type;
 
         return $this;
     }
