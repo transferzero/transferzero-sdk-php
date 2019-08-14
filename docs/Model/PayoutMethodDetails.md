@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **bank_name** | **string** |  | 
+**bank_country** | **string** |  | 
 **iban** | **string** |  | 
 **bic** | **string** |  | [optional] 
 **sender_identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
