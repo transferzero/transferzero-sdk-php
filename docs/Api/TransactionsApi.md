@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getTransactions**
-> \TransferZero\Model\TransactionListResponse getTransactions($page, $per, $external_id)
+> \TransferZero\Model\TransactionListResponse getTransactions($page, $per, $external_id, $sender_id)
 
 Get a list of transactions
 
@@ -157,9 +157,10 @@ $apiInstance = new TransferZero\Api\TransactionsApi();
 $page = 1; // int | The page number to request (defaults to 1)
 $per = 10; // int | The number of results to load per page (defaults to 10)
 $external_id = 'external_id_example'; // string | Allows filtering results by `external_id`.  Example: `/v1/senders?external_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
+$sender_id = 'sender_id_example'; // string | Allows filtering results by `sender_id`.  Example: `/v1/transactions?sender_id=b41d3cb7-6c54-4245-85fc-8e30690eb0f7`
 
 try {
-    $result = $apiInstance->getTransactions($page, $per, $external_id);
+    $result = $apiInstance->getTransactions($page, $per, $external_id, $sender_id);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -181,6 +182,7 @@ Name | Type | Description  | Notes
  **page** | **int**| The page number to request (defaults to 1) | [optional]
  **per** | **int**| The number of results to load per page (defaults to 10) | [optional]
  **external_id** | **string**| Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; | [optional]
+ **sender_id** | **string**| Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; | [optional]
 
 ### Return type
 

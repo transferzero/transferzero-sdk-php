@@ -717,14 +717,15 @@ class TransactionsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \TransferZero\Model\TransactionListResponse
      */
-    public function getTransactions($page = null, $per = null, $external_id = null)
+    public function getTransactions($page = null, $per = null, $external_id = null, $sender_id = null)
     {
-        list($response) = $this->getTransactionsWithHttpInfo($page, $per, $external_id);
+        list($response) = $this->getTransactionsWithHttpInfo($page, $per, $external_id, $sender_id);
         return $response;
     }
 
@@ -736,15 +737,16 @@ class TransactionsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \TransferZero\Model\TransactionListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getTransactionsWithHttpInfo($page = null, $per = null, $external_id = null)
+    public function getTransactionsWithHttpInfo($page = null, $per = null, $external_id = null, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\TransactionListResponse';
-        $request = $this->getTransactionsRequest($page, $per, $external_id);
+        $request = $this->getTransactionsRequest($page, $per, $external_id, $sender_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -833,13 +835,14 @@ class TransactionsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsAsync($page = null, $per = null, $external_id = null)
+    public function getTransactionsAsync($page = null, $per = null, $external_id = null, $sender_id = null)
     {
-        return $this->getTransactionsAsyncWithHttpInfo($page, $per, $external_id)
+        return $this->getTransactionsAsyncWithHttpInfo($page, $per, $external_id, $sender_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -855,14 +858,15 @@ class TransactionsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getTransactionsAsyncWithHttpInfo($page = null, $per = null, $external_id = null)
+    public function getTransactionsAsyncWithHttpInfo($page = null, $per = null, $external_id = null, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\TransactionListResponse';
-        $request = $this->getTransactionsRequest($page, $per, $external_id);
+        $request = $this->getTransactionsRequest($page, $per, $external_id, $sender_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -907,11 +911,12 @@ class TransactionsApi
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTransactionsRequest($page = null, $per = null, $external_id = null)
+    protected function getTransactionsRequest($page = null, $per = null, $external_id = null, $sender_id = null)
     {
 
         $resourcePath = '/transactions';
@@ -932,6 +937,10 @@ class TransactionsApi
         // query params
         if ($external_id !== null) {
             $queryParams['external_id'] = ObjectSerializer::toQueryValue($external_id);
+        }
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
         }
 
 

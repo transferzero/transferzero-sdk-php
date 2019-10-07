@@ -315,9 +315,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
-        if ($this->container['bank_account_type'] === null) {
-            $invalidProperties[] = "'bank_account_type' can't be null";
-        }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
@@ -462,7 +459,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
      */
     public function getBankAccountType()
     {
@@ -472,7 +469,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
      *
      * @return $this
      */
