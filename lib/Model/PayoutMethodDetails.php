@@ -64,9 +64,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
-        'iban' => 'string',
         'bic' => 'string',
         'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'sender_identity_card_id' => 'string',
@@ -92,9 +92,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => null,
         'phone_number' => null,
         'mobile_provider' => null,
+        'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
-        'iban' => null,
         'bic' => null,
         'sender_identity_card_type' => null,
         'sender_identity_card_id' => null,
@@ -141,9 +141,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'bank_account_type',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
+        'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
-        'iban' => 'iban',
         'bic' => 'bic',
         'sender_identity_card_type' => 'sender_identity_card_type',
         'sender_identity_card_id' => 'sender_identity_card_id',
@@ -169,9 +169,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'setBankAccountType',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
+        'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
-        'iban' => 'setIban',
         'bic' => 'setBic',
         'sender_identity_card_type' => 'setSenderIdentityCardType',
         'sender_identity_card_id' => 'setSenderIdentityCardId',
@@ -197,9 +197,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'getBankAccountType',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
+        'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
-        'iban' => 'getIban',
         'bic' => 'getBic',
         'sender_identity_card_type' => 'getSenderIdentityCardType',
         'sender_identity_card_id' => 'getSenderIdentityCardId',
@@ -279,9 +279,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
-        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['sender_identity_card_type'] = isset($data['sender_identity_card_type']) ? $data['sender_identity_card_type'] : null;
         $this->container['sender_identity_card_id'] = isset($data['sender_identity_card_id']) ? $data['sender_identity_card_id'] : null;
@@ -321,14 +321,14 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['mobile_provider'] === null) {
             $invalidProperties[] = "'mobile_provider' can't be null";
         }
+        if ($this->container['iban'] === null) {
+            $invalidProperties[] = "'iban' can't be null";
+        }
         if ($this->container['bank_name'] === null) {
             $invalidProperties[] = "'bank_name' can't be null";
         }
         if ($this->container['bank_country'] === null) {
             $invalidProperties[] = "'bank_country' can't be null";
-        }
-        if ($this->container['iban'] === null) {
-            $invalidProperties[] = "'iban' can't be null";
         }
         if ($this->container['sender_identity_card_type'] === null) {
             $invalidProperties[] = "'sender_identity_card_type' can't be null";
@@ -529,6 +529,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets iban
+     *
+     * @return string
+     */
+    public function getIban()
+    {
+        return $this->container['iban'];
+    }
+
+    /**
+     * Sets iban
+     *
+     * @param string $iban iban
+     *
+     * @return $this
+     */
+    public function setIban($iban)
+    {
+        $this->container['iban'] = $iban;
+
+        return $this;
+    }
+
+    /**
      * Gets bank_name
      *
      * @return string
@@ -572,30 +596,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setBankCountry($bank_country)
     {
         $this->container['bank_country'] = $bank_country;
-
-        return $this;
-    }
-
-    /**
-     * Gets iban
-     *
-     * @return string
-     */
-    public function getIban()
-    {
-        return $this->container['iban'];
-    }
-
-    /**
-     * Sets iban
-     *
-     * @param string $iban iban
-     *
-     * @return $this
-     */
-    public function setIban($iban)
-    {
-        $this->container['iban'] = $iban;
 
         return $this;
     }

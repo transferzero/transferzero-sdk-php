@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_account\&quot;: \&quot;0987654321\&quot;,   \&quot;bank_name\&quot;: \&quot;BRM\&quot;,   \&quot;bank_country\&quot;: \&quot;SN\&quot; # ISO country code for Senegal } &#x60;&#x60;&#x60; *** Currently in Beta phase ***
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;SN08SN0000000000000000000000\&quot;,   \&quot;bank_name\&quot;: \&quot;BRM\&quot;,   \&quot;bank_country\&quot;: \&quot;SN\&quot; # ISO country code for Senegal } &#x60;&#x60;&#x60; *** Currently in Beta phase ***
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,7 +60,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'bank_account' => 'string',
+        'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string'
     ];
@@ -73,7 +73,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'bank_account' => null,
+        'iban' => null,
         'bank_name' => null,
         'bank_country' => null
     ];
@@ -107,7 +107,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'bank_account' => 'bank_account',
+        'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country'
     ];
@@ -120,7 +120,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'bank_account' => 'setBankAccount',
+        'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry'
     ];
@@ -133,7 +133,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'bank_account' => 'getBankAccount',
+        'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry'
     ];
@@ -200,7 +200,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
     }
@@ -220,8 +220,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
-        if ($this->container['bank_account'] === null) {
-            $invalidProperties[] = "'bank_account' can't be null";
+        if ($this->container['iban'] === null) {
+            $invalidProperties[] = "'iban' can't be null";
         }
         if ($this->container['bank_name'] === null) {
             $invalidProperties[] = "'bank_name' can't be null";
@@ -293,25 +293,25 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_account
+     * Gets iban
      *
      * @return string
      */
-    public function getBankAccount()
+    public function getIban()
     {
-        return $this->container['bank_account'];
+        return $this->container['iban'];
     }
 
     /**
-     * Sets bank_account
+     * Sets iban
      *
-     * @param string $bank_account bank_account
+     * @param string $iban iban
      *
      * @return $this
      */
-    public function setBankAccount($bank_account)
+    public function setIban($iban)
     {
-        $this->container['bank_account'] = $bank_account;
+        $this->container['iban'] = $iban;
 
         return $this;
     }
