@@ -30,10 +30,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\AccountDebitsApi();
-$account_debit_id = 'account_debit_id_example'; // string | ID of the account debit to get.  Example: `/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d`
+$associate_array['account_debit_id'] = 'account_debit_id_example'; // string | ID of the account debit to get.  Example: `/v1/accounts/debits/9170c890-1a45-46bd-9b79-3deeb8b4ff3d`
 
 try {
-    $result = $apiInstance->getAccountsDebit($account_debit_id);
+    $result = $apiInstance->getAccountsDebit($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -49,6 +49,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,11 +92,11 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\AccountDebitsApi();
-$page = 1; // int | The page number to request (defaults to 1)
-$per = 10; // int | The number of results to load per page (defaults to 10)
+$associate_array['page'] = 1; // int | The page number to request (defaults to 1)
+$associate_array['per'] = 10; // int | The number of results to load per page (defaults to 10)
 
 try {
-    $result = $apiInstance->getAccountsDebits($page, $per);
+    $result = $apiInstance->getAccountsDebits($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -110,6 +112,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

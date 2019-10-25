@@ -92,10 +92,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\PayoutMethodsApi();
-$payout_method_id = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
+$associate_array['payout_method_id'] = 'payout_method_id_example'; // string | ID of the payout method to get.  Example: `/v1/payout_methods/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
-    $result = $apiInstance->getPayoutMethod($payout_method_id);
+    $result = $apiInstance->getPayoutMethod($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -111,6 +111,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -152,16 +154,16 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\PayoutMethodsApi();
-$state = array('state_example'); // string[] | Allows filtering results by `state` of the payout method.  Example: `/v1/payout_methods?state[]=enabled`
-$type = array('type_example'); // string[] | Allows filtering results by the specified type.  Example: `/v1/payout_methods?type[]=NGN::Bank`
-$sender_id = 'sender_id_example'; // string | Allows filtering results by the specified sender id.  Example: `/v1/payout_methods?sender_id=bf9ff782-e182-45ac-abea-5bce83ad6670`
-$page = 1; // int | The page number to request (defaults to 1)
-$per = 10; // int | The number of results to load per page (defaults to 10)
-$created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
-$created_at_to = 'created_at_to_example'; // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
+$associate_array['state'] = array('state_example'); // string[] | Allows filtering results by `state` of the payout method.  Example: `/v1/payout_methods?state[]=enabled`
+$associate_array['type'] = array('type_example'); // string[] | Allows filtering results by the specified type.  Example: `/v1/payout_methods?type[]=NGN::Bank`
+$associate_array['sender_id'] = 'sender_id_example'; // string | Allows filtering results by the specified sender id.  Example: `/v1/payout_methods?sender_id=bf9ff782-e182-45ac-abea-5bce83ad6670`
+$associate_array['page'] = 1; // int | The page number to request (defaults to 1)
+$associate_array['per'] = 10; // int | The number of results to load per page (defaults to 10)
+$associate_array['created_at_from'] = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
+$associate_array['created_at_to'] = 'created_at_to_example'; // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
 
 try {
-    $result = $apiInstance->getPayoutMethods($state, $type, $sender_id, $page, $per, $created_at_from, $created_at_to);
+    $result = $apiInstance->getPayoutMethods($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -177,6 +179,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

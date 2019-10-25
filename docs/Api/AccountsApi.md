@@ -29,10 +29,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\AccountsApi();
-$currency = 'currency_example'; // string | Currency code of account balance to fetch  Example: `/v1/accounts/USD`
+$associate_array['currency'] = 'currency_example'; // string | Currency code of account balance to fetch  Example: `/v1/accounts/USD`
 
 try {
-    $result = $apiInstance->getAccount($currency);
+    $result = $apiInstance->getAccount($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -48,6 +48,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -91,7 +93,7 @@ TransferZero\Configuration::getDefaultConfiguration()
 $apiInstance = new TransferZero\Api\AccountsApi();
 
 try {
-    $result = $apiInstance->getAccounts();
+    $result = $apiInstance->getAccounts($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -107,6 +109,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 This endpoint does not need any parameter.
 
 ### Return type

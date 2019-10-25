@@ -29,10 +29,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\APILogsApi();
-$api_log_id = 'api_log_id_example'; // string | ID of the API log to retrieve  Example: `/v1/api_logs/00485ce9-532b-45e7-8518-7e5582242407`
+$associate_array['api_log_id'] = 'api_log_id_example'; // string | ID of the API log to retrieve  Example: `/v1/api_logs/00485ce9-532b-45e7-8518-7e5582242407`
 
 try {
-    $result = $apiInstance->getApiLog($api_log_id);
+    $result = $apiInstance->getApiLog($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -48,6 +48,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -89,13 +91,13 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\APILogsApi();
-$page = 1; // int | The page number to request (defaults to 1)
-$per = 10; // int | The number of results to load per page (defaults to 10)
-$created_at_from = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
-$created_at_to = 'created_at_to_example'; // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
+$associate_array['page'] = 1; // int | The page number to request (defaults to 1)
+$associate_array['per'] = 10; // int | The number of results to load per page (defaults to 10)
+$associate_array['created_at_from'] = 'created_at_from_example'; // string | Start date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
+$associate_array['created_at_to'] = 'created_at_to_example'; // string | End date to filter recipients by created_at range Allows filtering results by the specified `created_at` timeframe.  Example: `/v1/recipients?created_at_from=2018-06-06&created_at_to=2018-06-08`
 
 try {
-    $result = $apiInstance->getApiLogs($page, $per, $created_at_from, $created_at_to);
+    $result = $apiInstance->getApiLogs($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -111,6 +113,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

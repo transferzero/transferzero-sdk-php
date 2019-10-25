@@ -32,7 +32,7 @@ TransferZero\Configuration::getDefaultConfiguration()
 $apiInstance = new TransferZero\Api\CurrencyInfoApi();
 
 try {
-    $result = $apiInstance->infoCurrencies();
+    $result = $apiInstance->infoCurrencies($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -48,6 +48,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -86,10 +88,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\CurrencyInfoApi();
-$sender_id = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/in?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
+$associate_array['sender_id'] = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/in?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
 
 try {
-    $result = $apiInstance->infoCurrenciesIn($sender_id);
+    $result = $apiInstance->infoCurrenciesIn($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -105,6 +107,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -146,10 +150,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\CurrencyInfoApi();
-$sender_id = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/out?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
+$associate_array['sender_id'] = 'sender_id_example'; // string | Allows the scoping of the results by `sender_id` (optional).  Example: `/v1/info/currencies/out?sender_id=26ec8517-2f0d-48c0-b74f-0bccb9ab3a87`
 
 try {
-    $result = $apiInstance->infoCurrenciesOut($sender_id);
+    $result = $apiInstance->infoCurrenciesOut($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -165,6 +169,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -30,10 +30,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\DocumentsApi();
-$document_id = 'document_id_example'; // string | ID of the document to get.  Example: `/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670`
+$associate_array['document_id'] = 'document_id_example'; // string | ID of the document to get.  Example: `/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670`
 
 try {
-    $result = $apiInstance->getDocument($document_id);
+    $result = $apiInstance->getDocument($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -49,6 +49,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,11 +92,11 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\DocumentsApi();
-$page = 1; // int | The page number to request (defaults to 1)
-$per = 10; // int | The number of results to load per page (defaults to 10)
+$associate_array['page'] = 1; // int | The page number to request (defaults to 1)
+$associate_array['per'] = 10; // int | The number of results to load per page (defaults to 10)
 
 try {
-    $result = $apiInstance->getDocuments($page, $per);
+    $result = $apiInstance->getDocuments($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -110,6 +112,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

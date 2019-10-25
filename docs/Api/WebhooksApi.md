@@ -92,10 +92,10 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\WebhooksApi();
-$webhook_id = 'webhook_id_example'; // string | The ID of the Webhook to look up  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
+$associate_array['webhook_id'] = 'webhook_id_example'; // string | The ID of the Webhook to look up  Example: `/v1/webhooks/9d4d7b73-a94c-4979-ab57-09074fd55d33`
 
 try {
-    $result = $apiInstance->getWebhook($webhook_id);
+    $result = $apiInstance->getWebhook($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -111,6 +111,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -154,7 +156,7 @@ TransferZero\Configuration::getDefaultConfiguration()
 $apiInstance = new TransferZero\Api\WebhooksApi();
 
 try {
-    $result = $apiInstance->getWebhookEvents();
+    $result = $apiInstance->getWebhookEvents($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -170,6 +172,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -208,11 +212,11 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\WebhooksApi();
-$page = 1; // int | The page number to request (defaults to 1)
-$per = 10; // int | The number of results to load per page (defaults to 10)
+$associate_array['page'] = 1; // int | The page number to request (defaults to 1)
+$associate_array['per'] = 10; // int | The number of results to load per page (defaults to 10)
 
 try {
-    $result = $apiInstance->getWebhooks($page, $per);
+    $result = $apiInstance->getWebhooks($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -228,6 +232,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

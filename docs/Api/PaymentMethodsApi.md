@@ -31,7 +31,7 @@ TransferZero\Configuration::getDefaultConfiguration()
 $apiInstance = new TransferZero\Api\PaymentMethodsApi();
 
 try {
-    $result = $apiInstance->paymentMethodsIn();
+    $result = $apiInstance->paymentMethodsIn($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -47,6 +47,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -87,7 +89,7 @@ TransferZero\Configuration::getDefaultConfiguration()
 $apiInstance = new TransferZero\Api\PaymentMethodsApi();
 
 try {
-    $result = $apiInstance->paymentMethodsOut();
+    $result = $apiInstance->paymentMethodsOut($associate_array);
     print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
@@ -103,6 +105,8 @@ try {
 ```
 
 ### Parameters
+Note: the input parameter is an associative array with the keys listed as the parameter name below.
+
 This endpoint does not need any parameter.
 
 ### Return type
