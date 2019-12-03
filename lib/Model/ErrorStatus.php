@@ -67,7 +67,7 @@ class ErrorStatus implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'status' => 'int32',
+        'status' => null,
         'error' => null
     ];
 

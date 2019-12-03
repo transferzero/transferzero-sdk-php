@@ -629,7 +629,7 @@ class Transaction implements ModelInterface, ArrayAccess
     /**
      * Sets external_id
      *
-     * @param string|null $external_id Optional ID that is supplied by partner linking it to the partner's own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
+     * @param string|null $external_id Optional ID that is supplied by partner linking it to the partner's own Transaction ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not.
      *
      * @return $this
      */

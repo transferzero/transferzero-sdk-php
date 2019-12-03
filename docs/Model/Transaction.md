@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **due_amount** | **float** | The amount needed to be paid in for the transaction to get funded | [optional] 
 **created_at** | [**\DateTime**](\DateTime.md) | The time the transaction was created | [optional] 
 **expires_at** | [**\DateTime**](\DateTime.md) | The latest time when the transaction has to be funded, otherwise it will be cancelled | [optional] 
-**external_id** | **string** | Optional ID that is supplied by partner linking it to the partner&#39;s own Sender ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not. | [optional] 
+**external_id** | **string** | Optional ID that is supplied by partner linking it to the partner&#39;s own Transaction ID. Note: if present we will validate whether the sent ID is a duplicate in our system or not. | [optional] 
 **id** | **string** |  | [optional] 
 **errors** | [**map[string,\TransferZero\Model\ValidationErrorDescription[]]**](array.md) | The fields that have some problems and don&#39;t pass validation | [optional] 
 

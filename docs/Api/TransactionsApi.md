@@ -5,6 +5,7 @@ All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**calculateTransactions**](TransactionsApi.md#calculateTransactions) | **POST** /transactions/calculate | Calculates transaction amounts for a transaction payload
+[**createAndFundTransaction**](TransactionsApi.md#createAndFundTransaction) | **POST** /transactions/create_and_fund | Creates a new transaction and funds it from account balance
 [**getTransaction**](TransactionsApi.md#getTransaction) | **GET** /transactions/{Transaction ID} | Fetch a single transaction
 [**getTransactions**](TransactionsApi.md#getTransactions) | **GET** /transactions | Get a list of transactions
 [**payinTransaction**](TransactionsApi.md#payinTransaction) | **POST** /transactions/{Transaction ID}/payin | Creates a fake payin for transaction
@@ -46,6 +47,66 @@ try {
         print_r($response);
     } else {
         echo "An exception occurred when calling TransactionsApi#calculateTransactions";
+        echo $e->getMessage();
+    }
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **transaction_request** | [**\TransferZero\Model\TransactionRequest**](../Model/TransactionRequest.md)|  |
+
+### Return type
+
+[**\TransferZero\Model\TransactionResponse**](../Model/TransactionResponse.md)
+
+### Authorization
+
+[AuthorizationKey](../../README.md#AuthorizationKey), [AuthorizationNonce](../../README.md#AuthorizationNonce), [AuthorizationSecret](../../README.md#AuthorizationSecret), [AuthorizationSignature](../../README.md#AuthorizationSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **createAndFundTransaction**
+> \TransferZero\Model\TransactionResponse createAndFundTransaction($transaction_request)
+
+Creates a new transaction and funds it from account balance
+
+This endpoint creates a transaction and funds it from an account balance. You must ensure that you have established an account with us in the pay-in currency of the transactions you wish to create, and that this account is sufficently funded, before calling this endpoint.  Note that the <pre>external_id</pre> field is required for requests to this endpoint.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+```
+
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
+
+$apiInstance = new TransferZero\Api\TransactionsApi();
+$transaction_request = new \TransferZero\Model\TransactionRequest(); // \TransferZero\Model\TransactionRequest | 
+
+try {
+    $result = $apiInstance->createAndFundTransaction($transaction_request);
+    print_r($result);
+} catch (Exception $e) {
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling TransactionsApi#createAndFundTransaction";
         echo $e->getMessage();
     }
 }
