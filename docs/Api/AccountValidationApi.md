@@ -4,15 +4,15 @@ All URIs are relative to *https://api-sandbox.transferzero.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**postAccountValidations**](AccountValidationApi.md#postAccountValidations) | **POST** /account_validations | Validates the existence of a bank account
+[**postAccountValidations**](AccountValidationApi.md#postAccountValidations) | **POST** /account_validations | Validates the existence of a bank account or a mobile phone number
 
 
 # **postAccountValidations**
 > \TransferZero\Model\AccountValidationResponse postAccountValidations($account_validation_request)
 
-Validates the existence of a bank account
+Validates the existence of a bank account or a mobile phone number
 
-Validates the existence of a bank account and returns the associated customer name
+Validates the existence of a bank account or mobile phone number and returns the associated customer name
 
 ### Example
 ```php
@@ -28,7 +28,7 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\AccountValidationApi();
-$account_validation_request = new \TransferZero\Model\AccountValidationRequest(); // \TransferZero\Model\AccountValidationRequest | 
+$account_validation_request = {"bank_account":"12345678","bank_code":"050","country":"NG","currency":"NGN","method":"bank"}; // \TransferZero\Model\AccountValidationRequest | 
 
 try {
     $result = $apiInstance->postAccountValidations($account_validation_request);

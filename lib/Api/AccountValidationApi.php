@@ -123,7 +123,7 @@ class AccountValidationApi
     /**
      * Operation postAccountValidations
      *
-     * Validates the existence of a bank account
+     * Validates the existence of a bank account or a mobile phone number
      *
      * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request account_validation_request (required)
      *
@@ -140,7 +140,7 @@ class AccountValidationApi
     /**
      * Operation postAccountValidationsWithHttpInfo
      *
-     * Validates the existence of a bank account
+     * Validates the existence of a bank account or a mobile phone number
      *
      * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
@@ -235,7 +235,7 @@ class AccountValidationApi
     /**
      * Operation postAccountValidationsAsync
      *
-     * Validates the existence of a bank account
+     * Validates the existence of a bank account or a mobile phone number
      *
      * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *
@@ -255,7 +255,7 @@ class AccountValidationApi
     /**
      * Operation postAccountValidationsAsyncWithHttpInfo
      *
-     * Validates the existence of a bank account
+     * Validates the existence of a bank account or a mobile phone number
      *
      * @param  \TransferZero\Model\AccountValidationRequest $account_validation_request (required)
      *

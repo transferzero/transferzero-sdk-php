@@ -59,6 +59,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'bank_account' => 'string',
         'bank_code' => 'string',
+        'phone_number' => 'string',
         'country' => 'string',
         'currency' => 'string',
         'method' => 'string'
@@ -72,6 +73,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'bank_account' => null,
         'bank_code' => null,
+        'phone_number' => null,
         'country' => null,
         'currency' => null,
         'method' => null
@@ -106,6 +108,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'bank_account' => 'bank_account',
         'bank_code' => 'bank_code',
+        'phone_number' => 'phone_number',
         'country' => 'country',
         'currency' => 'currency',
         'method' => 'method'
@@ -119,6 +122,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'bank_account' => 'setBankAccount',
         'bank_code' => 'setBankCode',
+        'phone_number' => 'setPhoneNumber',
         'country' => 'setCountry',
         'currency' => 'setCurrency',
         'method' => 'setMethod'
@@ -132,6 +136,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'bank_account' => 'getBankAccount',
         'bank_code' => 'getBankCode',
+        'phone_number' => 'getPhoneNumber',
         'country' => 'getCountry',
         'currency' => 'getCurrency',
         'method' => 'getMethod'
@@ -183,6 +188,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     const CURRENCY_NGN = 'NGN';
     const CURRENCY_GHS = 'GHS';
     const METHOD_BANK = 'bank';
+    const METHOD_MOBILE = 'mobile';
     
 
     
@@ -221,6 +227,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     {
         return [
             self::METHOD_BANK,
+            self::METHOD_MOBILE,
         ];
     }
     
@@ -242,6 +249,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     {
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
@@ -256,12 +264,6 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['bank_account'] === null) {
-            $invalidProperties[] = "'bank_account' can't be null";
-        }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
-        }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
@@ -313,7 +315,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account
      *
-     * @return string
+     * @return string|null
      */
     public function getBankAccount()
     {
@@ -323,7 +325,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account
      *
-     * @param string $bank_account Account Number to query
+     * @param string|null $bank_account Account Number to query
      *
      * @return $this
      */
@@ -337,7 +339,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Gets bank_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBankCode()
     {
@@ -347,13 +349,37 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets bank_code
      *
-     * @param string $bank_code Bank Code to query - same codes are used as for creating the transactions
+     * @param string|null $bank_code Bank Code to query - same codes are used as for creating the transactions
      *
      * @return $this
      */
     public function setBankCode($bank_code)
     {
         $this->container['bank_code'] = $bank_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number
+     *
+     * @return string|null
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phone_number'];
+    }
+
+    /**
+     * Sets phone_number
+     *
+     * @param string|null $phone_number Phone number to query
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
@@ -371,7 +397,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country Country of account in 2-character alpha ISO 3166-2 country format (only NG is currently supported)
+     * @param string $country Country of account in 2-character alpha ISO 3166-2 country format
      *
      * @return $this
      */
@@ -437,7 +463,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets method
      *
-     * @param string $method The method of the payment. Currently only bank is supported
+     * @param string $method The method of the payment. Currently bank and mobile are supported
      *
      * @return $this
      */

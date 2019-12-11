@@ -156,7 +156,7 @@ TransferZero\Configuration::getDefaultConfiguration()
   ->setApiSecret("<secret>");
 
 $apiInstance = new TransferZero\Api\AccountDebitsApi();
-$debit_request_wrapper = new \TransferZero\Model\DebitRequestWrapper(); // \TransferZero\Model\DebitRequestWrapper | 
+$debit_request_wrapper = {"debit":{"currency":"NGN","amount":"2000.0","to_id":"5f44026b-7904-4c30-87d6-f8972d790ded","to_type":"Transaction"}}; // \TransferZero\Model\DebitRequestWrapper | 
 
 try {
     $result = $apiInstance->postAccountsDebits($debit_request_wrapper);
