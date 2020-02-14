@@ -57,6 +57,7 @@ class Document implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'sender_id' => 'string',
         'upload' => 'string',
         'upload_file_name' => 'string',
         'metadata' => 'object',
@@ -64,6 +65,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_size' => 'int',
         'category' => 'string',
         'side' => 'string',
+        'document_type' => 'string',
         'issuing_country' => 'string',
         'id' => 'string',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
@@ -75,6 +77,7 @@ class Document implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'sender_id' => 'uuid',
         'upload' => null,
         'upload_file_name' => null,
         'metadata' => null,
@@ -82,6 +85,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_size' => null,
         'category' => null,
         'side' => null,
+        'document_type' => null,
         'issuing_country' => null,
         'id' => 'uuid',
         'errors' => null
@@ -114,6 +118,7 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'sender_id' => 'sender_id',
         'upload' => 'upload',
         'upload_file_name' => 'upload_file_name',
         'metadata' => 'metadata',
@@ -121,6 +126,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_size' => 'upload_file_size',
         'category' => 'category',
         'side' => 'side',
+        'document_type' => 'document_type',
         'issuing_country' => 'issuing_country',
         'id' => 'id',
         'errors' => 'errors'
@@ -132,6 +138,7 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'sender_id' => 'setSenderId',
         'upload' => 'setUpload',
         'upload_file_name' => 'setUploadFileName',
         'metadata' => 'setMetadata',
@@ -139,6 +146,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_size' => 'setUploadFileSize',
         'category' => 'setCategory',
         'side' => 'setSide',
+        'document_type' => 'setDocumentType',
         'issuing_country' => 'setIssuingCountry',
         'id' => 'setId',
         'errors' => 'setErrors'
@@ -150,6 +158,7 @@ class Document implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'sender_id' => 'getSenderId',
         'upload' => 'getUpload',
         'upload_file_name' => 'getUploadFileName',
         'metadata' => 'getMetadata',
@@ -157,6 +166,7 @@ class Document implements ModelInterface, ArrayAccess
         'upload_file_size' => 'getUploadFileSize',
         'category' => 'getCategory',
         'side' => 'getSide',
+        'document_type' => 'getDocumentType',
         'issuing_country' => 'getIssuingCountry',
         'id' => 'getId',
         'errors' => 'getErrors'
@@ -237,6 +247,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['sender_id'] = isset($data['sender_id']) ? $data['sender_id'] : null;
         $this->container['upload'] = isset($data['upload']) ? $data['upload'] : null;
         $this->container['upload_file_name'] = isset($data['upload_file_name']) ? $data['upload_file_name'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
@@ -244,6 +255,7 @@ class Document implements ModelInterface, ArrayAccess
         $this->container['upload_file_size'] = isset($data['upload_file_size']) ? $data['upload_file_size'] : null;
         $this->container['category'] = isset($data['category']) ? $data['category'] : null;
         $this->container['side'] = isset($data['side']) ? $data['side'] : null;
+        $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['issuing_country'] = isset($data['issuing_country']) ? $data['issuing_country'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
@@ -286,6 +298,30 @@ class Document implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets sender_id
+     *
+     * @return string|null
+     */
+    public function getSenderId()
+    {
+        return $this->container['sender_id'];
+    }
+
+    /**
+     * Sets sender_id
+     *
+     * @param string|null $sender_id sender_id
+     *
+     * @return $this
+     */
+    public function setSenderId($sender_id)
+    {
+        $this->container['sender_id'] = $sender_id;
+
+        return $this;
+    }
 
     /**
      * Gets upload
@@ -460,6 +496,30 @@ class Document implements ModelInterface, ArrayAccess
             );
         }
         $this->container['side'] = $side;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_type
+     *
+     * @return string|null
+     */
+    public function getDocumentType()
+    {
+        return $this->container['document_type'];
+    }
+
+    /**
+     * Sets document_type
+     *
+     * @param string|null $document_type This is a brief description of the document type
+     *
+     * @return $this
+     */
+    public function setDocumentType($document_type)
+    {
+        $this->container['document_type'] = $document_type;
 
         return $this;
     }

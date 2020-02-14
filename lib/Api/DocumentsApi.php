@@ -121,19 +121,326 @@ class DocumentsApi
     }
 
     /**
-     * Operation getDocument
+     * Operation deleteDocument
      *
-     * Fetching a document
+     * Deleting a document
      *
-     * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $document_id ID of the document to delete.  Example: &#x60;/v1/document/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \TransferZero\Model\DocumentResponse
      */
-    public function getDocument($document_id)
+    public function deleteDocument($document_id, $sender_id = null)
     {
-        list($response) = $this->getDocumentWithHttpInfo($document_id);
+        list($response) = $this->deleteDocumentWithHttpInfo($document_id, $sender_id);
+        return $response;
+    }
+
+    /**
+     * Operation deleteDocumentWithHttpInfo
+     *
+     * Deleting a document
+     *
+     * @param  string $document_id ID of the document to delete.  Example: &#x60;/v1/document/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     *
+     * @throws \TransferZero\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \TransferZero\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function deleteDocumentWithHttpInfo($document_id, $sender_id = null)
+    {
+        $returnType = '\TransferZero\Model\DocumentResponse';
+        $request = $this->deleteDocumentRequest($document_id, $sender_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode == 422) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody(),
+                    true
+                );
+            } elseif ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody()->getContents(),
+                        '\TransferZero\Model\DocumentResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody()->getContents(),
+                        '\TransferZero\Model\DocumentResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation deleteDocumentAsync
+     *
+     * Deleting a document
+     *
+     * @param  string $document_id ID of the document to delete.  Example: &#x60;/v1/document/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteDocumentAsync($document_id, $sender_id = null)
+    {
+        return $this->deleteDocumentAsyncWithHttpInfo($document_id, $sender_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation deleteDocumentAsyncWithHttpInfo
+     *
+     * Deleting a document
+     *
+     * @param  string $document_id ID of the document to delete.  Example: &#x60;/v1/document/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function deleteDocumentAsyncWithHttpInfo($document_id, $sender_id = null)
+    {
+        $returnType = '\TransferZero\Model\DocumentResponse';
+        $request = $this->deleteDocumentRequest($document_id, $sender_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'deleteDocument'
+     *
+     * @param  string $document_id ID of the document to delete.  Example: &#x60;/v1/document/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function deleteDocumentRequest($document_id, $sender_id = null)
+    {
+        // verify the required parameter 'document_id' is set
+        if ($document_id === null || (is_array($document_id) && count($document_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $document_id when calling deleteDocument'
+            );
+        }
+
+        $resourcePath = '/documents/{Document ID}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
+        }
+
+        // path params
+        if ($document_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'Document ID' . '}',
+                ObjectSerializer::toPathValue($document_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+
+        $httpMethod = 'DELETE';
+        $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
+
+        $requestNonce = $this->guidv4Nonce();
+        $requestSignature = $this->signRequest([
+            $requestNonce,
+            strtoupper($httpMethod),
+            $urlWithParams,
+            $this->digestHash($httpBody)
+        ]);
+
+        $headers['Authorization-Nonce'] = $requestNonce;
+        $headers['Authorization-Signature'] = $requestSignature;
+        $headers['Authorization-Key'] = $this->config->getApiKey();
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        return new Request(
+            'DELETE',
+            $urlWithParams,
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getDocument
+     *
+     * Fetching a document
+     *
+     * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     *
+     * @throws \TransferZero\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \TransferZero\Model\DocumentResponse
+     */
+    public function getDocument($document_id, $sender_id = null)
+    {
+        list($response) = $this->getDocumentWithHttpInfo($document_id, $sender_id);
         return $response;
     }
 
@@ -143,15 +450,16 @@ class DocumentsApi
      * Fetching a document
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \TransferZero\Model\DocumentResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentWithHttpInfo($document_id)
+    public function getDocumentWithHttpInfo($document_id, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\DocumentResponse';
-        $request = $this->getDocumentRequest($document_id);
+        $request = $this->getDocumentRequest($document_id, $sender_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -230,13 +538,14 @@ class DocumentsApi
      * Fetching a document
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsync($document_id)
+    public function getDocumentAsync($document_id, $sender_id = null)
     {
-        return $this->getDocumentAsyncWithHttpInfo($document_id)
+        return $this->getDocumentAsyncWithHttpInfo($document_id, $sender_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -250,14 +559,15 @@ class DocumentsApi
      * Fetching a document
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentAsyncWithHttpInfo($document_id)
+    public function getDocumentAsyncWithHttpInfo($document_id, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\DocumentResponse';
-        $request = $this->getDocumentRequest($document_id);
+        $request = $this->getDocumentRequest($document_id, $sender_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -300,11 +610,12 @@ class DocumentsApi
      * Create request for operation 'getDocument'
      *
      * @param  string $document_id ID of the document to get.  Example: &#x60;/v1/documents/bf9ff782-e182-45ac-abea-5bce83ad6670&#x60; (required)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDocumentRequest($document_id)
+    protected function getDocumentRequest($document_id, $sender_id = null)
     {
         // verify the required parameter 'document_id' is set
         if ($document_id === null || (is_array($document_id) && count($document_id) === 0)) {
@@ -320,6 +631,10 @@ class DocumentsApi
         $httpBody = '';
         $multipart = false;
 
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
+        }
 
         // path params
         if ($document_id !== null) {
@@ -416,14 +731,15 @@ class DocumentsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \TransferZero\Model\DocumentListResponse
      */
-    public function getDocuments($page = null, $per = null)
+    public function getDocuments($page = null, $per = null, $sender_id = null)
     {
-        list($response) = $this->getDocumentsWithHttpInfo($page, $per);
+        list($response) = $this->getDocumentsWithHttpInfo($page, $per, $sender_id);
         return $response;
     }
 
@@ -434,15 +750,16 @@ class DocumentsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \TransferZero\Model\DocumentListResponse, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getDocumentsWithHttpInfo($page = null, $per = null)
+    public function getDocumentsWithHttpInfo($page = null, $per = null, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\DocumentListResponse';
-        $request = $this->getDocumentsRequest($page, $per);
+        $request = $this->getDocumentsRequest($page, $per, $sender_id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -522,13 +839,14 @@ class DocumentsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentsAsync($page = null, $per = null)
+    public function getDocumentsAsync($page = null, $per = null, $sender_id = null)
     {
-        return $this->getDocumentsAsyncWithHttpInfo($page, $per)
+        return $this->getDocumentsAsyncWithHttpInfo($page, $per, $sender_id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -543,14 +861,15 @@ class DocumentsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getDocumentsAsyncWithHttpInfo($page = null, $per = null)
+    public function getDocumentsAsyncWithHttpInfo($page = null, $per = null, $sender_id = null)
     {
         $returnType = '\TransferZero\Model\DocumentListResponse';
-        $request = $this->getDocumentsRequest($page, $per);
+        $request = $this->getDocumentsRequest($page, $per, $sender_id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -594,11 +913,12 @@ class DocumentsApi
      *
      * @param  int $page The page number to request (defaults to 1) (optional)
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
+     * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getDocumentsRequest($page = null, $per = null)
+    protected function getDocumentsRequest($page = null, $per = null, $sender_id = null)
     {
 
         $resourcePath = '/documents';
@@ -615,6 +935,10 @@ class DocumentsApi
         // query params
         if ($per !== null) {
             $queryParams['per'] = ObjectSerializer::toQueryValue($per);
+        }
+        // query params
+        if ($sender_id !== null) {
+            $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
         }
 
 
