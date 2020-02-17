@@ -242,7 +242,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Describes how the payment should be requested from the user.  Possible values: - `NGN::Bank`: NGN card collection requests - `GHS::Mobile`: GHS mobile collections - `TZS::Mobile`: TZS mobile collections - `UGX::Mobile`: UGX mobile collections
+     * @param string|null $type Describes how the payment should be requested from the user.  Possible values: - `NGN::Bank`: NGN bank and card collection requests - `NGN::Mobile`: NGN mobile collections - `GHS::Mobile`: GHS mobile collections - `TZS::Mobile`: TZS mobile collections - `UGX::Mobile`: UGX mobile collections
      *
      * @return $this
      */
@@ -290,7 +290,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets out_details
      *
-     * @param object|null $out_details This will contain the description on where to pay the funds. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
+     * @param object|null $out_details This will contain the description on where to pay the funds. Please see the [Collections Details](https://docs.transferzero.com/docs/collection-details) in the API documentation on what to expect here.
      *
      * @return $this
      */
@@ -314,7 +314,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets instructions
      *
-     * @param object|null $instructions This will contain the instructions on how to pay the funds. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on what to expect here.
+     * @param object|null $instructions This will contain the instructions on how to pay the funds. Please see the [Collections Details](https://docs.transferzero.com/docs/collection-details) in the API documentation on what to expect here.
      *
      * @return $this
      */
@@ -338,7 +338,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets provider
      *
-     * @param string|null $provider Describes which provider to use for collection. Please see the [Collections from Senders](https://github.com/transferzero/api-documentation/blob/master/additional-features.md#collections-from-senders) in the API documentation on the valid values
+     * @param string|null $provider Describes which provider to use for collection. Please see the [Collections Details](https://docs.transferzero.com/docs/collection-details) in the API documentation on the valid values
      *
      * @return $this
      */

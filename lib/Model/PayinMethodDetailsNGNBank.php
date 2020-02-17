@@ -58,6 +58,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'payment_method' => 'string',
         'redirect_url' => 'string'
     ];
 
@@ -67,6 +68,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'payment_method' => null,
         'redirect_url' => null
     ];
 
@@ -97,6 +99,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'payment_method' => 'payment_method',
         'redirect_url' => 'redirect_url'
     ];
 
@@ -106,6 +109,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'payment_method' => 'setPaymentMethod',
         'redirect_url' => 'setRedirectUrl'
     ];
 
@@ -115,6 +119,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'payment_method' => 'getPaymentMethod',
         'redirect_url' => 'getRedirectUrl'
     ];
 
@@ -178,6 +183,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
     }
 
@@ -190,9 +196,6 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['redirect_url'] === null) {
-            $invalidProperties[] = "'redirect_url' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -209,9 +212,33 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets payment_method
+     *
+     * @return string|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string|null $payment_method The payment method which the user will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
+     *
+     * @return $this
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
      * Gets redirect_url
      *
-     * @return string
+     * @return string|null
      */
     public function getRedirectUrl()
     {
@@ -221,7 +248,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     /**
      * Sets redirect_url
      *
-     * @param string $redirect_url This is where the user should be redirected back when the payment has been finished
+     * @param string|null $redirect_url This is where the user should be redirected back when the payment has been finished
      *
      * @return $this
      */

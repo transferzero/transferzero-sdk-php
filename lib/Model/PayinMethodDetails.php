@@ -58,6 +58,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'payment_method' => 'string',
         'redirect_url' => 'string',
         'phone_number' => 'string',
         'send_instructions' => 'bool'
@@ -69,6 +70,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'payment_method' => null,
         'redirect_url' => null,
         'phone_number' => null,
         'send_instructions' => null
@@ -101,6 +103,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'payment_method' => 'payment_method',
         'redirect_url' => 'redirect_url',
         'phone_number' => 'phone_number',
         'send_instructions' => 'send_instructions'
@@ -112,6 +115,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'payment_method' => 'setPaymentMethod',
         'redirect_url' => 'setRedirectUrl',
         'phone_number' => 'setPhoneNumber',
         'send_instructions' => 'setSendInstructions'
@@ -123,6 +127,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'payment_method' => 'getPaymentMethod',
         'redirect_url' => 'getRedirectUrl',
         'phone_number' => 'getPhoneNumber',
         'send_instructions' => 'getSendInstructions'
@@ -188,6 +193,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['send_instructions'] = isset($data['send_instructions']) ? $data['send_instructions'] : null;
@@ -202,9 +208,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['redirect_url'] === null) {
-            $invalidProperties[] = "'redirect_url' can't be null";
-        }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
@@ -224,9 +227,33 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
 
 
     /**
+     * Gets payment_method
+     *
+     * @return string|null
+     */
+    public function getPaymentMethod()
+    {
+        return $this->container['payment_method'];
+    }
+
+    /**
+     * Sets payment_method
+     *
+     * @param string|null $payment_method The payment method which the user will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
+     *
+     * @return $this
+     */
+    public function setPaymentMethod($payment_method)
+    {
+        $this->container['payment_method'] = $payment_method;
+
+        return $this;
+    }
+
+    /**
      * Gets redirect_url
      *
-     * @return string
+     * @return string|null
      */
     public function getRedirectUrl()
     {
@@ -236,7 +263,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets redirect_url
      *
-     * @param string $redirect_url This is where the user should be redirected back when the payment has been finished
+     * @param string|null $redirect_url This is where the user should be redirected back when the payment has been finished
      *
      * @return $this
      */

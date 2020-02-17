@@ -50,6 +50,7 @@ class SenderState
     const BANNED = 'banned';
     const REJECTED = 'rejected';
     const DISABLED = 'disabled';
+    const INCOMPLETE = 'incomplete';
     
     /**
      * Gets allowable values of the enum
@@ -64,6 +65,7 @@ class SenderState
             self::BANNED,
             self::REJECTED,
             self::DISABLED,
+            self::INCOMPLETE,
         ];
     }
 }
