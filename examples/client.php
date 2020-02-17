@@ -13,7 +13,7 @@ class Application {
 
     public function run() {
         /*
-        Please see our documentation at https://github.com/transferzero/api-documentation
+        Please see our documentation at https://docs.transferzero.com
         and the API specification at http://api.transferzero.com/documentation/
         for more information.
         */
@@ -49,7 +49,7 @@ class Application {
 
     public function accountValidationExample() {
         /*
-        See https://github.com/transferzero/api-documentation/blob/master/additional-features.md#bank-account-name-enquiry
+        See https://docs.transferzero.com/docs/additional-features/#bank-account-name-enquiry
         for more information on how this feature can be used
         */
         $request = new AccountValidationRequest();
@@ -82,17 +82,17 @@ class Application {
         $transaction = new Transaction();
 
         /*
-        Please check our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md
+        Please check our documentation at https://docs.transferzero.com/docs/transaction-flow/
         for details on how transactions work.
         */
         $sender = new Sender();
         /*
         When adding a sender to transaction, please use either an id or external_id. Providing both will result in a validation error.
-        Please see our documentation at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+        Please see our documentation at https://docs.transferzero.com/docs/transaction-flow/#sender
         */
         $sender->setId('6F15F581-889F-4AE1-9591-CB283ADD661F');
 
-        // You can find the various payout options at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#payout-details
+        // You can find the various payout options at https://docs.transferzero.com/docs/transaction-flow/#payout-details
         $ngnBankDetails = new PayoutMethodDetails();
         $ngnBankDetails->setBankAccount('123456789');
         $ngnBankDetails->setBankAccountType(PayoutMethodBankAccountTypeEnum::_20);
@@ -105,7 +105,7 @@ class Application {
         $payoutMethod->setDetails($ngnBankDetails);
 
         /*
-        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+        Please see https://docs.transferzero.com/docs/transaction-flow/#requested-amount-and-currency
         on what the request amount and currencies do
         */
         $recipient = new Recipient();
@@ -114,10 +114,10 @@ class Application {
         $recipient->setPayoutMethod($payoutMethod);
 
         /*
-        Similarly you can check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#requested-amount-and-currency
+        Similarly you can check https://docs.transferzero.com/docs/transaction-flow/#requested-amount-and-currency
         on details about the input currency parameter
 
-        Find more details on external IDs at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        Find more details on external IDs at https://docs.transferzero.com/docs/transaction-flow/#external-id
         */
         $transaction->setExternalId('TRANSACTION-1f834adf'); // Optional field for customer's ID
         $transaction->setInputCurrency('GBP');
@@ -145,7 +145,7 @@ class Application {
 
     public function getTransactionByExternalIdExample() {
         /*
-        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        Please see https://docs.transferzero.com/docs/transaction-flow/#external-id
         for more details on external IDs
         */
         $transactionsApi = new TransactionsApi();
@@ -173,7 +173,7 @@ class Application {
 
         if (!empty($transactionId)) {
             /*
-            Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#funding-transactions
+            Please see https://docs.transferzero.com/docs/transaction-flow/#funding-transactions
             on details about funding transactions
             */
             $debit = new Debit();
@@ -204,7 +204,7 @@ class Application {
     }
 
     public function createSenderExample() {
-        // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+        // For more details on senders please check https://docs.transferzero.com/docs/transaction-flow/#sender
         $sender = new Sender();
         $sender->setCountry('UG');
         $sender->setPhoneCountry('UG');
@@ -243,7 +243,7 @@ class Application {
     }
 
     public function getSenderByExternalIdExample() {
-        // Find more details on external IDs at https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#external-id
+        // Find more details on external IDs at https://docs.transferzero.com/docs/transaction-flow/#external-id
         $sendersApi = new SendersApi();
         $externalId = 'SENDER-2b59deff';
         try {
@@ -265,7 +265,7 @@ class Application {
     }
 
     public function updateSenderExample() {
-        // For more details on senders please check https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#sender
+        // For more details on senders please check https://docs.transferzero.com/docs/transaction-flow/#sender
 
         $senderId = $this->createSenderExample();
 
@@ -297,7 +297,7 @@ class Application {
 
     public function getTransactionErrorMessageExample() {
         /*
-        Please see https://github.com/transferzero/api-documentation/blob/master/transaction-flow.md#receiving-error-messages
+        Please see https://docs.transferzero.com/docs/transaction-flow/#receiving-error-messages
         on details about error messages
         */
         $transactionId = 'D110B4B3-BC4A-4BAD-9F3B-2F5564949359';
@@ -309,7 +309,7 @@ class Application {
 
     public function webhookParseExample() {
         /*
-        Please see https://github.com/transferzero/api-documentation#webhooks
+        Please see https://docs.transferzero.com#webhooks
         for more details about how webhooks / callbacks work from our system
         */
         $webhook_headers = [

@@ -242,7 +242,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Describes how the payment should be requested from the user.  Possible values: - `NGN::Bank`: NGN bank and card collection requests - `NGN::Mobile`: NGN mobile collections - `GHS::Mobile`: GHS mobile collections - `TZS::Mobile`: TZS mobile collections - `UGX::Mobile`: UGX mobile collections
+     * @param string|null $type Describes how the payment should be requested from the user.  Possible values: - `NGN::Bank`: NGN bank and card collection requests - `NGN::Mobile`: NGN mobile collections - `GHS::Mobile`: GHS mobile collections - `TZS::Mobile`: TZS mobile collections - `UGX::Mobile`: UGX mobile collections - `EUR::Bank`: EUR IBAN collections - `GBP::Bank`: GBP IBAN collections
      *
      * @return $this
      */
