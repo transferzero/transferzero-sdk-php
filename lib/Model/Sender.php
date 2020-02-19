@@ -81,6 +81,7 @@ class Sender implements ModelInterface, ArrayAccess
         'identification_number' => 'string',
         'identification_type' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
+        'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
         'metadata' => 'object',
         'state' => '\TransferZero\Model\SenderState',
         'id' => 'string',
@@ -117,6 +118,7 @@ class Sender implements ModelInterface, ArrayAccess
         'identification_number' => null,
         'identification_type' => null,
         'documents' => null,
+        'politically_exposed_people' => null,
         'metadata' => null,
         'state' => null,
         'id' => 'uuid',
@@ -174,6 +176,7 @@ class Sender implements ModelInterface, ArrayAccess
         'identification_number' => 'identification_number',
         'identification_type' => 'identification_type',
         'documents' => 'documents',
+        'politically_exposed_people' => 'politically_exposed_people',
         'metadata' => 'metadata',
         'state' => 'state',
         'id' => 'id',
@@ -210,6 +213,7 @@ class Sender implements ModelInterface, ArrayAccess
         'identification_number' => 'setIdentificationNumber',
         'identification_type' => 'setIdentificationType',
         'documents' => 'setDocuments',
+        'politically_exposed_people' => 'setPoliticallyExposedPeople',
         'metadata' => 'setMetadata',
         'state' => 'setState',
         'id' => 'setId',
@@ -246,6 +250,7 @@ class Sender implements ModelInterface, ArrayAccess
         'identification_number' => 'getIdentificationNumber',
         'identification_type' => 'getIdentificationType',
         'documents' => 'getDocuments',
+        'politically_exposed_people' => 'getPoliticallyExposedPeople',
         'metadata' => 'getMetadata',
         'state' => 'getState',
         'id' => 'getId',
@@ -370,6 +375,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
         $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
+        $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
@@ -1007,6 +1013,30 @@ class Sender implements ModelInterface, ArrayAccess
     public function setDocuments($documents)
     {
         $this->container['documents'] = $documents;
+
+        return $this;
+    }
+
+    /**
+     * Gets politically_exposed_people
+     *
+     * @return \TransferZero\Model\PoliticallyExposedPerson[]|null
+     */
+    public function getPoliticallyExposedPeople()
+    {
+        return $this->container['politically_exposed_people'];
+    }
+
+    /**
+     * Sets politically_exposed_people
+     *
+     * @param \TransferZero\Model\PoliticallyExposedPerson[]|null $politically_exposed_people A list of politically exposed people, individuals who are or have been entrusted with prominent public functions by a country, for example heads of state or heads of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials.  There is a limit of three (3) politically exposed people per Sender.  Politically exposed person example: ```json   {     \"name\": \"Ronald Reagan\",     \"position\": \"President of the United States\",     \"started_date\": \"1981-01-20T00:00:00.000Z\",     \"ended_date\": \"1989-01-20T00:00:00.000Z\"   } ```
+     *
+     * @return $this
+     */
+    public function setPoliticallyExposedPeople($politically_exposed_people)
+    {
+        $this->container['politically_exposed_people'] = $politically_exposed_people;
 
         return $this;
     }

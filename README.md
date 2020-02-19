@@ -239,6 +239,7 @@ Class | Method | HTTP request | Description
  - [PayoutMethodRequest](docs/Model/PayoutMethodRequest.md)
  - [PayoutMethodResponse](docs/Model/PayoutMethodResponse.md)
  - [PayoutMethodWebhook](docs/Model/PayoutMethodWebhook.md)
+ - [PoliticallyExposedPerson](docs/Model/PoliticallyExposedPerson.md)
  - [Recipient](docs/Model/Recipient.md)
  - [RecipientListResponse](docs/Model/RecipientListResponse.md)
  - [RecipientRequest](docs/Model/RecipientRequest.md)
