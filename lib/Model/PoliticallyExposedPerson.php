@@ -74,7 +74,7 @@ class PoliticallyExposedPerson implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'id' => 'int32',
+        'id' => null,
         'name' => null,
         'position' => null,
         'started_date' => 'date-time',
