@@ -58,35 +58,47 @@ class Sender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
         'type' => 'string',
+        'state' => '\TransferZero\Model\SenderState',
         'country' => 'string',
+        'street' => 'string',
+        'postal_code' => 'string',
+        'city' => 'string',
         'phone_country' => 'string',
         'phone_number' => 'string',
         'email' => 'string',
+        'ip' => 'string',
+        'address_description' => 'string',
+        'identification_number' => 'string',
+        'identification_type' => 'string',
+        'name' => 'string',
         'first_name' => 'string',
         'middle_name' => 'string',
         'last_name' => 'string',
+        'birth_date' => '\DateTime',
         'occupation' => 'string',
         'nationality' => 'string',
-        'onboarding_status' => 'string',
-        'address' => 'string',
-        'description' => 'string',
-        'name' => 'string',
-        'city' => 'string',
-        'street' => 'string',
-        'address_description' => 'string',
-        'postal_code' => 'string',
-        'birth_date' => '\DateTime',
-        'ip' => 'string',
-        'identification_number' => 'string',
-        'identification_type' => 'string',
+        'legal_entity_type' => 'string',
+        'registration_date' => 'string',
+        'registration_number' => 'string',
+        'nature_of_business' => 'string',
+        'source_of_funds' => 'string',
+        'core_business_activities' => 'string',
+        'purpose_of_opening_account' => 'string',
+        'office_phone' => 'string',
+        'vat_registration_number' => 'string',
+        'financial_regulator' => 'string',
+        'regulatory_licence_number' => 'string',
+        'contact_person_email' => 'string',
+        'trading_country' => 'string',
+        'trading_address' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
-        'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
         'metadata' => 'object',
-        'state' => '\TransferZero\Model\SenderState',
-        'id' => 'string',
-        'external_id' => 'string',
-        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
+        'onboarding_status' => 'string',
+        'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
+        'external_id' => 'string'
     ];
 
     /**
@@ -95,35 +107,47 @@ class Sender implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
+        'id' => 'uuid',
         'type' => null,
+        'state' => null,
         'country' => null,
+        'street' => null,
+        'postal_code' => null,
+        'city' => null,
         'phone_country' => null,
         'phone_number' => null,
         'email' => 'email',
+        'ip' => 'ipv4',
+        'address_description' => null,
+        'identification_number' => null,
+        'identification_type' => null,
+        'name' => null,
         'first_name' => null,
         'middle_name' => null,
         'last_name' => null,
+        'birth_date' => 'date',
         'occupation' => null,
         'nationality' => null,
-        'onboarding_status' => null,
-        'address' => null,
-        'description' => null,
-        'name' => null,
-        'city' => null,
-        'street' => null,
-        'address_description' => null,
-        'postal_code' => null,
-        'birth_date' => 'date',
-        'ip' => 'ipv4',
-        'identification_number' => null,
-        'identification_type' => null,
+        'legal_entity_type' => null,
+        'registration_date' => null,
+        'registration_number' => null,
+        'nature_of_business' => null,
+        'source_of_funds' => null,
+        'core_business_activities' => null,
+        'purpose_of_opening_account' => null,
+        'office_phone' => null,
+        'vat_registration_number' => null,
+        'financial_regulator' => null,
+        'regulatory_licence_number' => null,
+        'contact_person_email' => null,
+        'trading_country' => null,
+        'trading_address' => null,
         'documents' => null,
-        'politically_exposed_people' => null,
         'metadata' => null,
-        'state' => null,
-        'id' => 'uuid',
-        'external_id' => null,
-        'errors' => null
+        'errors' => null,
+        'onboarding_status' => null,
+        'politically_exposed_people' => null,
+        'external_id' => null
     ];
 
     /**
@@ -153,35 +177,47 @@ class Sender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'type' => 'type',
+        'state' => 'state',
         'country' => 'country',
+        'street' => 'street',
+        'postal_code' => 'postal_code',
+        'city' => 'city',
         'phone_country' => 'phone_country',
         'phone_number' => 'phone_number',
         'email' => 'email',
+        'ip' => 'ip',
+        'address_description' => 'address_description',
+        'identification_number' => 'identification_number',
+        'identification_type' => 'identification_type',
+        'name' => 'name',
         'first_name' => 'first_name',
         'middle_name' => 'middle_name',
         'last_name' => 'last_name',
+        'birth_date' => 'birth_date',
         'occupation' => 'occupation',
         'nationality' => 'nationality',
-        'onboarding_status' => 'onboarding_status',
-        'address' => 'address',
-        'description' => 'description',
-        'name' => 'name',
-        'city' => 'city',
-        'street' => 'street',
-        'address_description' => 'address_description',
-        'postal_code' => 'postal_code',
-        'birth_date' => 'birth_date',
-        'ip' => 'ip',
-        'identification_number' => 'identification_number',
-        'identification_type' => 'identification_type',
+        'legal_entity_type' => 'legal_entity_type',
+        'registration_date' => 'registration_date',
+        'registration_number' => 'registration_number',
+        'nature_of_business' => 'nature_of_business',
+        'source_of_funds' => 'source_of_funds',
+        'core_business_activities' => 'core_business_activities',
+        'purpose_of_opening_account' => 'purpose_of_opening_account',
+        'office_phone' => 'office_phone',
+        'vat_registration_number' => 'vat_registration_number',
+        'financial_regulator' => 'financial_regulator',
+        'regulatory_licence_number' => 'regulatory_licence_number',
+        'contact_person_email' => 'contact_person_email',
+        'trading_country' => 'trading_country',
+        'trading_address' => 'trading_address',
         'documents' => 'documents',
-        'politically_exposed_people' => 'politically_exposed_people',
         'metadata' => 'metadata',
-        'state' => 'state',
-        'id' => 'id',
-        'external_id' => 'external_id',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'onboarding_status' => 'onboarding_status',
+        'politically_exposed_people' => 'politically_exposed_people',
+        'external_id' => 'external_id'
     ];
 
     /**
@@ -190,35 +226,47 @@ class Sender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'type' => 'setType',
+        'state' => 'setState',
         'country' => 'setCountry',
+        'street' => 'setStreet',
+        'postal_code' => 'setPostalCode',
+        'city' => 'setCity',
         'phone_country' => 'setPhoneCountry',
         'phone_number' => 'setPhoneNumber',
         'email' => 'setEmail',
+        'ip' => 'setIp',
+        'address_description' => 'setAddressDescription',
+        'identification_number' => 'setIdentificationNumber',
+        'identification_type' => 'setIdentificationType',
+        'name' => 'setName',
         'first_name' => 'setFirstName',
         'middle_name' => 'setMiddleName',
         'last_name' => 'setLastName',
+        'birth_date' => 'setBirthDate',
         'occupation' => 'setOccupation',
         'nationality' => 'setNationality',
-        'onboarding_status' => 'setOnboardingStatus',
-        'address' => 'setAddress',
-        'description' => 'setDescription',
-        'name' => 'setName',
-        'city' => 'setCity',
-        'street' => 'setStreet',
-        'address_description' => 'setAddressDescription',
-        'postal_code' => 'setPostalCode',
-        'birth_date' => 'setBirthDate',
-        'ip' => 'setIp',
-        'identification_number' => 'setIdentificationNumber',
-        'identification_type' => 'setIdentificationType',
+        'legal_entity_type' => 'setLegalEntityType',
+        'registration_date' => 'setRegistrationDate',
+        'registration_number' => 'setRegistrationNumber',
+        'nature_of_business' => 'setNatureOfBusiness',
+        'source_of_funds' => 'setSourceOfFunds',
+        'core_business_activities' => 'setCoreBusinessActivities',
+        'purpose_of_opening_account' => 'setPurposeOfOpeningAccount',
+        'office_phone' => 'setOfficePhone',
+        'vat_registration_number' => 'setVatRegistrationNumber',
+        'financial_regulator' => 'setFinancialRegulator',
+        'regulatory_licence_number' => 'setRegulatoryLicenceNumber',
+        'contact_person_email' => 'setContactPersonEmail',
+        'trading_country' => 'setTradingCountry',
+        'trading_address' => 'setTradingAddress',
         'documents' => 'setDocuments',
-        'politically_exposed_people' => 'setPoliticallyExposedPeople',
         'metadata' => 'setMetadata',
-        'state' => 'setState',
-        'id' => 'setId',
-        'external_id' => 'setExternalId',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'onboarding_status' => 'setOnboardingStatus',
+        'politically_exposed_people' => 'setPoliticallyExposedPeople',
+        'external_id' => 'setExternalId'
     ];
 
     /**
@@ -227,35 +275,47 @@ class Sender implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'type' => 'getType',
+        'state' => 'getState',
         'country' => 'getCountry',
+        'street' => 'getStreet',
+        'postal_code' => 'getPostalCode',
+        'city' => 'getCity',
         'phone_country' => 'getPhoneCountry',
         'phone_number' => 'getPhoneNumber',
         'email' => 'getEmail',
+        'ip' => 'getIp',
+        'address_description' => 'getAddressDescription',
+        'identification_number' => 'getIdentificationNumber',
+        'identification_type' => 'getIdentificationType',
+        'name' => 'getName',
         'first_name' => 'getFirstName',
         'middle_name' => 'getMiddleName',
         'last_name' => 'getLastName',
+        'birth_date' => 'getBirthDate',
         'occupation' => 'getOccupation',
         'nationality' => 'getNationality',
-        'onboarding_status' => 'getOnboardingStatus',
-        'address' => 'getAddress',
-        'description' => 'getDescription',
-        'name' => 'getName',
-        'city' => 'getCity',
-        'street' => 'getStreet',
-        'address_description' => 'getAddressDescription',
-        'postal_code' => 'getPostalCode',
-        'birth_date' => 'getBirthDate',
-        'ip' => 'getIp',
-        'identification_number' => 'getIdentificationNumber',
-        'identification_type' => 'getIdentificationType',
+        'legal_entity_type' => 'getLegalEntityType',
+        'registration_date' => 'getRegistrationDate',
+        'registration_number' => 'getRegistrationNumber',
+        'nature_of_business' => 'getNatureOfBusiness',
+        'source_of_funds' => 'getSourceOfFunds',
+        'core_business_activities' => 'getCoreBusinessActivities',
+        'purpose_of_opening_account' => 'getPurposeOfOpeningAccount',
+        'office_phone' => 'getOfficePhone',
+        'vat_registration_number' => 'getVatRegistrationNumber',
+        'financial_regulator' => 'getFinancialRegulator',
+        'regulatory_licence_number' => 'getRegulatoryLicenceNumber',
+        'contact_person_email' => 'getContactPersonEmail',
+        'trading_country' => 'getTradingCountry',
+        'trading_address' => 'getTradingAddress',
         'documents' => 'getDocuments',
-        'politically_exposed_people' => 'getPoliticallyExposedPeople',
         'metadata' => 'getMetadata',
-        'state' => 'getState',
-        'id' => 'getId',
-        'external_id' => 'getExternalId',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'onboarding_status' => 'getOnboardingStatus',
+        'politically_exposed_people' => 'getPoliticallyExposedPeople',
+        'external_id' => 'getExternalId'
     ];
 
     /**
@@ -305,6 +365,17 @@ class Sender implements ModelInterface, ArrayAccess
     const IDENTIFICATION_TYPE_PP = 'PP';
     const IDENTIFICATION_TYPE_ID = 'ID';
     const IDENTIFICATION_TYPE_OT = 'OT';
+    const LEGAL_ENTITY_TYPE_SOLE_PROPRIETORSHIP = 'sole_proprietorship';
+    const LEGAL_ENTITY_TYPE_PARTNERSHIP = 'partnership';
+    const LEGAL_ENTITY_TYPE_PRIVATELY_OWNED_COMPANY = 'privately_owned_company';
+    const LEGAL_ENTITY_TYPE_PUBLICLY_OWNED_COMPANY = 'publicly_owned_company';
+    const LEGAL_ENTITY_TYPE_GOVERNMENT_OWNED_ENTITY = 'government_owned_entity';
+    const LEGAL_ENTITY_TYPE_TRUST = 'trust';
+    const LEGAL_ENTITY_TYPE_NGO = 'ngo';
+    const LEGAL_ENTITY_TYPE_CLUB_AND_SOCIETY = 'club_and_society';
+    const LEGAL_ENTITY_TYPE_GO = 'go';
+    const LEGAL_ENTITY_TYPE_OTHER = 'other';
+    const LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION = 'financial_institution';
     
 
     
@@ -336,6 +407,28 @@ class Sender implements ModelInterface, ArrayAccess
         ];
     }
     
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getLegalEntityTypeAllowableValues()
+    {
+        return [
+            self::LEGAL_ENTITY_TYPE_SOLE_PROPRIETORSHIP,
+            self::LEGAL_ENTITY_TYPE_PARTNERSHIP,
+            self::LEGAL_ENTITY_TYPE_PRIVATELY_OWNED_COMPANY,
+            self::LEGAL_ENTITY_TYPE_PUBLICLY_OWNED_COMPANY,
+            self::LEGAL_ENTITY_TYPE_GOVERNMENT_OWNED_ENTITY,
+            self::LEGAL_ENTITY_TYPE_TRUST,
+            self::LEGAL_ENTITY_TYPE_NGO,
+            self::LEGAL_ENTITY_TYPE_CLUB_AND_SOCIETY,
+            self::LEGAL_ENTITY_TYPE_GO,
+            self::LEGAL_ENTITY_TYPE_OTHER,
+            self::LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION,
+        ];
+    }
+    
 
     /**
      * Associative array for storing property values
@@ -352,35 +445,47 @@ class Sender implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['phone_country'] = isset($data['phone_country']) ? $data['phone_country'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['address_description'] = isset($data['address_description']) ? $data['address_description'] : null;
+        $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
+        $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
         $this->container['occupation'] = isset($data['occupation']) ? $data['occupation'] : null;
         $this->container['nationality'] = isset($data['nationality']) ? $data['nationality'] : null;
-        $this->container['onboarding_status'] = isset($data['onboarding_status']) ? $data['onboarding_status'] : null;
-        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
-        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
-        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
-        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
-        $this->container['address_description'] = isset($data['address_description']) ? $data['address_description'] : null;
-        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
-        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
-        $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
-        $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
-        $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
+        $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
+        $this->container['registration_date'] = isset($data['registration_date']) ? $data['registration_date'] : null;
+        $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
+        $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
+        $this->container['source_of_funds'] = isset($data['source_of_funds']) ? $data['source_of_funds'] : null;
+        $this->container['core_business_activities'] = isset($data['core_business_activities']) ? $data['core_business_activities'] : null;
+        $this->container['purpose_of_opening_account'] = isset($data['purpose_of_opening_account']) ? $data['purpose_of_opening_account'] : null;
+        $this->container['office_phone'] = isset($data['office_phone']) ? $data['office_phone'] : null;
+        $this->container['vat_registration_number'] = isset($data['vat_registration_number']) ? $data['vat_registration_number'] : null;
+        $this->container['financial_regulator'] = isset($data['financial_regulator']) ? $data['financial_regulator'] : null;
+        $this->container['regulatory_licence_number'] = isset($data['regulatory_licence_number']) ? $data['regulatory_licence_number'] : null;
+        $this->container['contact_person_email'] = isset($data['contact_person_email']) ? $data['contact_person_email'] : null;
+        $this->container['trading_country'] = isset($data['trading_country']) ? $data['trading_country'] : null;
+        $this->container['trading_address'] = isset($data['trading_address']) ? $data['trading_address'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
-        $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['onboarding_status'] = isset($data['onboarding_status']) ? $data['onboarding_status'] : null;
+        $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
+        $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
     }
 
     /**
@@ -403,20 +508,20 @@ class Sender implements ModelInterface, ArrayAccess
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
         }
-        if ($this->container['phone_country'] === null) {
-            $invalidProperties[] = "'phone_country' can't be null";
-        }
-        if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
-        }
-        if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
-        }
         if ($this->container['street'] === null) {
             $invalidProperties[] = "'street' can't be null";
         }
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
+        }
+        if ($this->container['city'] === null) {
+            $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['phone_country'] === null) {
+            $invalidProperties[] = "'phone_country' can't be null";
+        }
+        if ($this->container['email'] === null) {
+            $invalidProperties[] = "'email' can't be null";
         }
         if ($this->container['ip'] === null) {
             $invalidProperties[] = "'ip' can't be null";
@@ -425,6 +530,14 @@ class Sender implements ModelInterface, ArrayAccess
         if (!is_null($this->container['identification_type']) && !in_array($this->container['identification_type'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
                 "invalid value for 'identification_type', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getLegalEntityTypeAllowableValues();
+        if (!is_null($this->container['legal_entity_type']) && !in_array($this->container['legal_entity_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'legal_entity_type', must be one of '%s'",
                 implode("', '", $allowedValues)
             );
         }
@@ -446,6 +559,30 @@ class Sender implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
 
     /**
      * Gets type
@@ -481,6 +618,30 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets state
+     *
+     * @return \TransferZero\Model\SenderState|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param \TransferZero\Model\SenderState|null $state state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
      * Gets country
      *
      * @return string
@@ -500,6 +661,78 @@ class Sender implements ModelInterface, ArrayAccess
     public function setCountry($country)
     {
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string $street Sender's street
+     *
+     * @return $this
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string $postal_code Zip code of sender
+     *
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city Sender's city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
 
         return $this;
     }
@@ -577,6 +810,135 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets ip
+     *
+     * @return string
+     */
+    public function getIp()
+    {
+        return $this->container['ip'];
+    }
+
+    /**
+     * Sets ip
+     *
+     * @param string $ip IP of sender
+     *
+     * @return $this
+     */
+    public function setIp($ip)
+    {
+        $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets address_description
+     *
+     * @return string|null
+     */
+    public function getAddressDescription()
+    {
+        return $this->container['address_description'];
+    }
+
+    /**
+     * Sets address_description
+     *
+     * @param string|null $address_description Description of address
+     *
+     * @return $this
+     */
+    public function setAddressDescription($address_description)
+    {
+        $this->container['address_description'] = $address_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets identification_number
+     *
+     * @return string|null
+     */
+    public function getIdentificationNumber()
+    {
+        return $this->container['identification_number'];
+    }
+
+    /**
+     * Sets identification_number
+     *
+     * @param string|null $identification_number Identification number of document used
+     *
+     * @return $this
+     */
+    public function setIdentificationNumber($identification_number)
+    {
+        $this->container['identification_number'] = $identification_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets identification_type
+     *
+     * @return string|null
+     */
+    public function getIdentificationType()
+    {
+        return $this->container['identification_type'];
+    }
+
+    /**
+     * Sets identification_type
+     *
+     * @param string|null $identification_type Document to be identified. The identification type can be one of the following:  - `DL`: Driving License - `PP`: International Passport - `ID`: National ID - `OT`: Other
+     *
+     * @return $this
+     */
+    public function setIdentificationType($identification_type)
+    {
+        $allowedValues = $this->getIdentificationTypeAllowableValues();
+        if (!is_null($identification_type) && !in_array($identification_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'identification_type', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['identification_type'] = $identification_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name Name of sender (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
      * Gets first_name
      *
      * @return string|null
@@ -649,6 +1011,30 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of sender (used only with a Personal sender)
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
+
+        return $this;
+    }
+
+    /**
      * Gets occupation
      *
      * @return string|null
@@ -697,298 +1083,346 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets onboarding_status
+     * Gets legal_entity_type
      *
      * @return string|null
      */
-    public function getOnboardingStatus()
+    public function getLegalEntityType()
     {
-        return $this->container['onboarding_status'];
+        return $this->container['legal_entity_type'];
     }
 
     /**
-     * Sets onboarding_status
+     * Sets legal_entity_type
      *
-     * @param string|null $onboarding_status The onboarding status of the sender
+     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)
      *
      * @return $this
      */
-    public function setOnboardingStatus($onboarding_status)
+    public function setLegalEntityType($legal_entity_type)
     {
-        $this->container['onboarding_status'] = $onboarding_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets address
-     *
-     * @return string|null
-     */
-    public function getAddress()
-    {
-        return $this->container['address'];
-    }
-
-    /**
-     * Sets address
-     *
-     * @param string|null $address The address of the sender
-     *
-     * @return $this
-     */
-    public function setAddress($address)
-    {
-        $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets description
-     *
-     * @return string|null
-     */
-    public function getDescription()
-    {
-        return $this->container['description'];
-    }
-
-    /**
-     * Sets description
-     *
-     * @param string|null $description Description of the sender
-     *
-     * @return $this
-     */
-    public function setDescription($description)
-    {
-        $this->container['description'] = $description;
-
-        return $this;
-    }
-
-    /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Name of sender (used only with a Business sender)
-     *
-     * @return $this
-     */
-    public function setName($name)
-    {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets city
-     *
-     * @return string
-     */
-    public function getCity()
-    {
-        return $this->container['city'];
-    }
-
-    /**
-     * Sets city
-     *
-     * @param string $city Sender's city
-     *
-     * @return $this
-     */
-    public function setCity($city)
-    {
-        $this->container['city'] = $city;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string $street Sender's street
-     *
-     * @return $this
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
-
-        return $this;
-    }
-
-    /**
-     * Gets address_description
-     *
-     * @return string|null
-     */
-    public function getAddressDescription()
-    {
-        return $this->container['address_description'];
-    }
-
-    /**
-     * Sets address_description
-     *
-     * @param string|null $address_description Description of address
-     *
-     * @return $this
-     */
-    public function setAddressDescription($address_description)
-    {
-        $this->container['address_description'] = $address_description;
-
-        return $this;
-    }
-
-    /**
-     * Gets postal_code
-     *
-     * @return string
-     */
-    public function getPostalCode()
-    {
-        return $this->container['postal_code'];
-    }
-
-    /**
-     * Sets postal_code
-     *
-     * @param string $postal_code Zip code of sender
-     *
-     * @return $this
-     */
-    public function setPostalCode($postal_code)
-    {
-        $this->container['postal_code'] = $postal_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_date
-     *
-     * @return \DateTime|null
-     */
-    public function getBirthDate()
-    {
-        return $this->container['birth_date'];
-    }
-
-    /**
-     * Sets birth_date
-     *
-     * @param \DateTime|null $birth_date Date of birth of sender
-     *
-     * @return $this
-     */
-    public function setBirthDate($birth_date)
-    {
-        $this->container['birth_date'] = $birth_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets ip
-     *
-     * @return string
-     */
-    public function getIp()
-    {
-        return $this->container['ip'];
-    }
-
-    /**
-     * Sets ip
-     *
-     * @param string $ip IP of sender
-     *
-     * @return $this
-     */
-    public function setIp($ip)
-    {
-        $this->container['ip'] = $ip;
-
-        return $this;
-    }
-
-    /**
-     * Gets identification_number
-     *
-     * @return string|null
-     */
-    public function getIdentificationNumber()
-    {
-        return $this->container['identification_number'];
-    }
-
-    /**
-     * Sets identification_number
-     *
-     * @param string|null $identification_number Identification number of document used
-     *
-     * @return $this
-     */
-    public function setIdentificationNumber($identification_number)
-    {
-        $this->container['identification_number'] = $identification_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets identification_type
-     *
-     * @return string|null
-     */
-    public function getIdentificationType()
-    {
-        return $this->container['identification_type'];
-    }
-
-    /**
-     * Sets identification_type
-     *
-     * @param string|null $identification_type Document to be identified. The identification type can be one of the following:  - `DL`: Driving License - `PP`: International Passport - `ID`: National ID - `OT`: Other
-     *
-     * @return $this
-     */
-    public function setIdentificationType($identification_type)
-    {
-        $allowedValues = $this->getIdentificationTypeAllowableValues();
-        if (!is_null($identification_type) && !in_array($identification_type, $allowedValues, true)) {
+        $allowedValues = $this->getLegalEntityTypeAllowableValues();
+        if (!is_null($legal_entity_type) && !in_array($legal_entity_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
-                    "Invalid value for 'identification_type', must be one of '%s'",
+                    "Invalid value for 'legal_entity_type', must be one of '%s'",
                     implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['identification_type'] = $identification_type;
+        $this->container['legal_entity_type'] = $legal_entity_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets registration_date
+     *
+     * @return string|null
+     */
+    public function getRegistrationDate()
+    {
+        return $this->container['registration_date'];
+    }
+
+    /**
+     * Sets registration_date
+     *
+     * @param string|null $registration_date The registration date (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setRegistrationDate($registration_date)
+    {
+        $this->container['registration_date'] = $registration_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets registration_number
+     *
+     * @return string|null
+     */
+    public function getRegistrationNumber()
+    {
+        return $this->container['registration_number'];
+    }
+
+    /**
+     * Sets registration_number
+     *
+     * @param string|null $registration_number The registration number (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setRegistrationNumber($registration_number)
+    {
+        $this->container['registration_number'] = $registration_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets nature_of_business
+     *
+     * @return string|null
+     */
+    public function getNatureOfBusiness()
+    {
+        return $this->container['nature_of_business'];
+    }
+
+    /**
+     * Sets nature_of_business
+     *
+     * @param string|null $nature_of_business Nature of business options (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setNatureOfBusiness($nature_of_business)
+    {
+        $this->container['nature_of_business'] = $nature_of_business;
+
+        return $this;
+    }
+
+    /**
+     * Gets source_of_funds
+     *
+     * @return string|null
+     */
+    public function getSourceOfFunds()
+    {
+        return $this->container['source_of_funds'];
+    }
+
+    /**
+     * Sets source_of_funds
+     *
+     * @param string|null $source_of_funds The source of funds
+     *
+     * @return $this
+     */
+    public function setSourceOfFunds($source_of_funds)
+    {
+        $this->container['source_of_funds'] = $source_of_funds;
+
+        return $this;
+    }
+
+    /**
+     * Gets core_business_activities
+     *
+     * @return string|null
+     */
+    public function getCoreBusinessActivities()
+    {
+        return $this->container['core_business_activities'];
+    }
+
+    /**
+     * Sets core_business_activities
+     *
+     * @param string|null $core_business_activities The core activities (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setCoreBusinessActivities($core_business_activities)
+    {
+        $this->container['core_business_activities'] = $core_business_activities;
+
+        return $this;
+    }
+
+    /**
+     * Gets purpose_of_opening_account
+     *
+     * @return string|null
+     */
+    public function getPurposeOfOpeningAccount()
+    {
+        return $this->container['purpose_of_opening_account'];
+    }
+
+    /**
+     * Sets purpose_of_opening_account
+     *
+     * @param string|null $purpose_of_opening_account The purpose for opening their account (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setPurposeOfOpeningAccount($purpose_of_opening_account)
+    {
+        $this->container['purpose_of_opening_account'] = $purpose_of_opening_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets office_phone
+     *
+     * @return string|null
+     */
+    public function getOfficePhone()
+    {
+        return $this->container['office_phone'];
+    }
+
+    /**
+     * Sets office_phone
+     *
+     * @param string|null $office_phone The official phone number (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setOfficePhone($office_phone)
+    {
+        $this->container['office_phone'] = $office_phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets vat_registration_number
+     *
+     * @return string|null
+     */
+    public function getVatRegistrationNumber()
+    {
+        return $this->container['vat_registration_number'];
+    }
+
+    /**
+     * Sets vat_registration_number
+     *
+     * @param string|null $vat_registration_number The VAT registration number (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setVatRegistrationNumber($vat_registration_number)
+    {
+        $this->container['vat_registration_number'] = $vat_registration_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets financial_regulator
+     *
+     * @return string|null
+     */
+    public function getFinancialRegulator()
+    {
+        return $this->container['financial_regulator'];
+    }
+
+    /**
+     * Sets financial_regulator
+     *
+     * @param string|null $financial_regulator The Financial Regulator (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setFinancialRegulator($financial_regulator)
+    {
+        $this->container['financial_regulator'] = $financial_regulator;
+
+        return $this;
+    }
+
+    /**
+     * Gets regulatory_licence_number
+     *
+     * @return string|null
+     */
+    public function getRegulatoryLicenceNumber()
+    {
+        return $this->container['regulatory_licence_number'];
+    }
+
+    /**
+     * Sets regulatory_licence_number
+     *
+     * @param string|null $regulatory_licence_number The Regulatory Licence Number (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setRegulatoryLicenceNumber($regulatory_licence_number)
+    {
+        $this->container['regulatory_licence_number'] = $regulatory_licence_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_person_email
+     *
+     * @return string|null
+     */
+    public function getContactPersonEmail()
+    {
+        return $this->container['contact_person_email'];
+    }
+
+    /**
+     * Sets contact_person_email
+     *
+     * @param string|null $contact_person_email The contact's email address (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setContactPersonEmail($contact_person_email)
+    {
+        $this->container['contact_person_email'] = $contact_person_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets trading_country
+     *
+     * @return string|null
+     */
+    public function getTradingCountry()
+    {
+        return $this->container['trading_country'];
+    }
+
+    /**
+     * Sets trading_country
+     *
+     * @param string|null $trading_country The Business trading country (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setTradingCountry($trading_country)
+    {
+        $this->container['trading_country'] = $trading_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets trading_address
+     *
+     * @return string|null
+     */
+    public function getTradingAddress()
+    {
+        return $this->container['trading_address'];
+    }
+
+    /**
+     * Sets trading_address
+     *
+     * @param string|null $trading_address The Business trading address (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setTradingAddress($trading_address)
+    {
+        $this->container['trading_address'] = $trading_address;
 
         return $this;
     }
@@ -1018,30 +1452,6 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets politically_exposed_people
-     *
-     * @return \TransferZero\Model\PoliticallyExposedPerson[]|null
-     */
-    public function getPoliticallyExposedPeople()
-    {
-        return $this->container['politically_exposed_people'];
-    }
-
-    /**
-     * Sets politically_exposed_people
-     *
-     * @param \TransferZero\Model\PoliticallyExposedPerson[]|null $politically_exposed_people A list of politically exposed people, individuals who are or have been entrusted with prominent public functions by a country, for example heads of state or heads of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials.  There is a limit of three (3) politically exposed people per Sender.  Politically exposed person example: ```json   {     \"name\": \"Ronald Reagan\",     \"position\": \"President of the United States\",     \"started_date\": \"1981-01-20T00:00:00.000Z\",     \"ended_date\": \"1989-01-20T00:00:00.000Z\"   } ```
-     *
-     * @return $this
-     */
-    public function setPoliticallyExposedPeople($politically_exposed_people)
-    {
-        $this->container['politically_exposed_people'] = $politically_exposed_people;
-
-        return $this;
-    }
-
-    /**
      * Gets metadata
      *
      * @return object|null
@@ -1066,49 +1476,73 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets state
+     * Gets errors
      *
-     * @return \TransferZero\Model\SenderState|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
-    public function getState()
+    public function getErrors()
     {
-        return $this->container['state'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets state
+     * Sets errors
      *
-     * @param \TransferZero\Model\SenderState|null $state state
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */
-    public function setState($state)
+    public function setErrors($errors)
     {
-        $this->container['state'] = $state;
+        $this->container['errors'] = $errors;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets onboarding_status
      *
      * @return string|null
      */
-    public function getId()
+    public function getOnboardingStatus()
     {
-        return $this->container['id'];
+        return $this->container['onboarding_status'];
     }
 
     /**
-     * Sets id
+     * Sets onboarding_status
      *
-     * @param string|null $id id
+     * @param string|null $onboarding_status The onboarding status of the sender
      *
      * @return $this
      */
-    public function setId($id)
+    public function setOnboardingStatus($onboarding_status)
     {
-        $this->container['id'] = $id;
+        $this->container['onboarding_status'] = $onboarding_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets politically_exposed_people
+     *
+     * @return \TransferZero\Model\PoliticallyExposedPerson[]|null
+     */
+    public function getPoliticallyExposedPeople()
+    {
+        return $this->container['politically_exposed_people'];
+    }
+
+    /**
+     * Sets politically_exposed_people
+     *
+     * @param \TransferZero\Model\PoliticallyExposedPerson[]|null $politically_exposed_people A list of politically exposed people, individuals who are or have been entrusted with prominent public functions by a country, for example heads of state or heads of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials.  There is a limit of three (3) politically exposed people per Sender.  Politically exposed person example: ```json   {     \"name\": \"Ronald Reagan\",     \"position\": \"President of the United States\",     \"started_date\": \"1981-01-20T00:00:00.000Z\",     \"ended_date\": \"1989-01-20T00:00:00.000Z\"   } ```
+     *
+     * @return $this
+     */
+    public function setPoliticallyExposedPeople($politically_exposed_people)
+    {
+        $this->container['politically_exposed_people'] = $politically_exposed_people;
 
         return $this;
     }
@@ -1133,30 +1567,6 @@ class Sender implements ModelInterface, ArrayAccess
     public function setExternalId($external_id)
     {
         $this->container['external_id'] = $external_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors
-     *
-     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
-     */
-    public function getErrors()
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors
-     *
-     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
-     *
-     * @return $this
-     */
-    public function setErrors($errors)
-    {
-        $this->container['errors'] = $errors;
 
         return $this;
     }
