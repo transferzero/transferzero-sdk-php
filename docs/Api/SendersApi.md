@@ -308,6 +308,15 @@ $sender_request = {
         }
       }
     ],
+    "politically_exposed_people": [
+      {
+        "name": "Ronald Reagan",
+        "position": "President of the United States",
+        "started_date": "1981-01-20T00:00:00.000Z",
+        "ended_date": "1989-01-20T00:00:00.000Z",
+        "sender_id": "344fb668-196d-43db-9d94-b34b7e6c7e0b"
+      }
+    ],
     "ip": "127.0.0.1",
     "external_id": "806ec63a-a5a7-43cc-9d75-1ee74fbcc026",
     "metadata": {

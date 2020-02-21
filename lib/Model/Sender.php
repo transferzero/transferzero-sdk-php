@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * Sender Class Doc Comment
  *
  * @category Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -94,10 +94,10 @@ class Sender implements ModelInterface, ArrayAccess
         'trading_country' => 'string',
         'trading_address' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
+        'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
         'metadata' => 'object',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
         'onboarding_status' => 'string',
-        'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
         'external_id' => 'string'
     ];
 
@@ -143,10 +143,10 @@ class Sender implements ModelInterface, ArrayAccess
         'trading_country' => null,
         'trading_address' => null,
         'documents' => null,
+        'politically_exposed_people' => null,
         'metadata' => null,
         'errors' => null,
         'onboarding_status' => null,
-        'politically_exposed_people' => null,
         'external_id' => null
     ];
 
@@ -213,10 +213,10 @@ class Sender implements ModelInterface, ArrayAccess
         'trading_country' => 'trading_country',
         'trading_address' => 'trading_address',
         'documents' => 'documents',
+        'politically_exposed_people' => 'politically_exposed_people',
         'metadata' => 'metadata',
         'errors' => 'errors',
         'onboarding_status' => 'onboarding_status',
-        'politically_exposed_people' => 'politically_exposed_people',
         'external_id' => 'external_id'
     ];
 
@@ -262,10 +262,10 @@ class Sender implements ModelInterface, ArrayAccess
         'trading_country' => 'setTradingCountry',
         'trading_address' => 'setTradingAddress',
         'documents' => 'setDocuments',
+        'politically_exposed_people' => 'setPoliticallyExposedPeople',
         'metadata' => 'setMetadata',
         'errors' => 'setErrors',
         'onboarding_status' => 'setOnboardingStatus',
-        'politically_exposed_people' => 'setPoliticallyExposedPeople',
         'external_id' => 'setExternalId'
     ];
 
@@ -311,10 +311,10 @@ class Sender implements ModelInterface, ArrayAccess
         'trading_country' => 'getTradingCountry',
         'trading_address' => 'getTradingAddress',
         'documents' => 'getDocuments',
+        'politically_exposed_people' => 'getPoliticallyExposedPeople',
         'metadata' => 'getMetadata',
         'errors' => 'getErrors',
         'onboarding_status' => 'getOnboardingStatus',
-        'politically_exposed_people' => 'getPoliticallyExposedPeople',
         'external_id' => 'getExternalId'
     ];
 
@@ -481,10 +481,10 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['trading_country'] = isset($data['trading_country']) ? $data['trading_country'] : null;
         $this->container['trading_address'] = isset($data['trading_address']) ? $data['trading_address'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
+        $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
         $this->container['onboarding_status'] = isset($data['onboarding_status']) ? $data['onboarding_status'] : null;
-        $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
         $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
     }
 
@@ -1452,6 +1452,30 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets politically_exposed_people
+     *
+     * @return \TransferZero\Model\PoliticallyExposedPerson[]|null
+     */
+    public function getPoliticallyExposedPeople()
+    {
+        return $this->container['politically_exposed_people'];
+    }
+
+    /**
+     * Sets politically_exposed_people
+     *
+     * @param \TransferZero\Model\PoliticallyExposedPerson[]|null $politically_exposed_people A list of politically exposed people, individuals who are or have been entrusted with prominent public functions by a country, for example heads of state or heads of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials.  There is a limit of three (3) politically exposed people per Sender.  Politically exposed person example: ```json   {     \"name\": \"Ronald Reagan\",     \"position\": \"President of the United States\",     \"started_date\": \"1981-01-20T00:00:00.000Z\",     \"ended_date\": \"1989-01-20T00:00:00.000Z\"   } ```
+     *
+     * @return $this
+     */
+    public function setPoliticallyExposedPeople($politically_exposed_people)
+    {
+        $this->container['politically_exposed_people'] = $politically_exposed_people;
+
+        return $this;
+    }
+
+    /**
      * Gets metadata
      *
      * @return object|null
@@ -1519,30 +1543,6 @@ class Sender implements ModelInterface, ArrayAccess
     public function setOnboardingStatus($onboarding_status)
     {
         $this->container['onboarding_status'] = $onboarding_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets politically_exposed_people
-     *
-     * @return \TransferZero\Model\PoliticallyExposedPerson[]|null
-     */
-    public function getPoliticallyExposedPeople()
-    {
-        return $this->container['politically_exposed_people'];
-    }
-
-    /**
-     * Sets politically_exposed_people
-     *
-     * @param \TransferZero\Model\PoliticallyExposedPerson[]|null $politically_exposed_people A list of politically exposed people, individuals who are or have been entrusted with prominent public functions by a country, for example heads of state or heads of government, senior politicians, senior government, judicial or military officials, senior executives of state owned corporations, important political party officials.  There is a limit of three (3) politically exposed people per Sender.  Politically exposed person example: ```json   {     \"name\": \"Ronald Reagan\",     \"position\": \"President of the United States\",     \"started_date\": \"1981-01-20T00:00:00.000Z\",     \"ended_date\": \"1989-01-20T00:00:00.000Z\"   } ```
-     *
-     * @return $this
-     */
-    public function setPoliticallyExposedPeople($politically_exposed_people)
-    {
-        $this->container['politically_exposed_people'] = $politically_exposed_people;
 
         return $this;
     }
