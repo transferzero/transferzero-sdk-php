@@ -240,6 +240,13 @@ class SenderTest extends TestCase
     }
 
     /**
+     * Test attribute "politically_exposed_people"
+     */
+    public function testPropertyPoliticallyExposedPeople()
+    {
+    }
+
+    /**
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()

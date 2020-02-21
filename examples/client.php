@@ -151,7 +151,7 @@ class Application {
         $transactionsApi = new TransactionsApi();
         $externalId = 'TRANSACTION-1f834adf';
         try {
-            $transactionResponse = $transactionsApi->getTransactions(null, null, $externalId);
+            $transactionResponse = $transactionsApi->getTransactions([ "external_id" => $externalId]);
             $transaction = reset($transactionResponse->getObject());
             echo "Transaction found! External ID: {$transaction->getExternalID()}", PHP_EOL;
             return $transaction;
@@ -247,7 +247,7 @@ class Application {
         $sendersApi = new SendersApi();
         $externalId = 'SENDER-2b59deff';
         try {
-            $senderResponse = $sendersApi->getSenders(null, null, null, null, $externalId);
+            $senderResponse = $sendersApi->getSenders(["external_id" => $externalId]);
             $sender = reset($senderResponse->getObject());
             echo "Sender found! External ID: {$sender->getExternalID()}", PHP_EOL;
             return $sender;
