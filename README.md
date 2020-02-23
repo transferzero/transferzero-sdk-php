@@ -142,7 +142,6 @@ Class | Method | HTTP request | Description
 *CurrencyInfoApi* | [**infoCurrencies**](docs/Api/CurrencyInfoApi.md#infocurrencies) | **GET** /info/currencies | Getting a list of possible requested currencies
 *CurrencyInfoApi* | [**infoCurrenciesIn**](docs/Api/CurrencyInfoApi.md#infocurrenciesin) | **GET** /info/currencies/in | Getting a list of possible input currencies
 *CurrencyInfoApi* | [**infoCurrenciesOut**](docs/Api/CurrencyInfoApi.md#infocurrenciesout) | **GET** /info/currencies/out | Getting a list of possible output currencies
-*DocumentsApi* | [**deleteDocument**](docs/Api/DocumentsApi.md#deletedocument) | **DELETE** /documents/{Document ID} | Deleting a document
 *DocumentsApi* | [**getDocument**](docs/Api/DocumentsApi.md#getdocument) | **GET** /documents/{Document ID} | Fetching a document
 *DocumentsApi* | [**getDocuments**](docs/Api/DocumentsApi.md#getdocuments) | **GET** /documents | Getting a list of documents
 *DocumentsApi* | [**postDocuments**](docs/Api/DocumentsApi.md#postdocuments) | **POST** /documents | Creating a document
