@@ -93,6 +93,8 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'string',
         'trading_country' => 'string',
         'trading_address' => 'string',
+        'number_monthly_transactions' => 'string',
+        'amount_monthly_transactions' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
         'metadata' => 'object',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
@@ -142,6 +144,8 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => null,
         'trading_country' => null,
         'trading_address' => null,
+        'number_monthly_transactions' => null,
+        'amount_monthly_transactions' => null,
         'documents' => null,
         'metadata' => null,
         'errors' => null,
@@ -212,6 +216,8 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'contact_person_email',
         'trading_country' => 'trading_country',
         'trading_address' => 'trading_address',
+        'number_monthly_transactions' => 'number_monthly_transactions',
+        'amount_monthly_transactions' => 'amount_monthly_transactions',
         'documents' => 'documents',
         'metadata' => 'metadata',
         'errors' => 'errors',
@@ -261,6 +267,8 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'setContactPersonEmail',
         'trading_country' => 'setTradingCountry',
         'trading_address' => 'setTradingAddress',
+        'number_monthly_transactions' => 'setNumberMonthlyTransactions',
+        'amount_monthly_transactions' => 'setAmountMonthlyTransactions',
         'documents' => 'setDocuments',
         'metadata' => 'setMetadata',
         'errors' => 'setErrors',
@@ -310,6 +318,8 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'getContactPersonEmail',
         'trading_country' => 'getTradingCountry',
         'trading_address' => 'getTradingAddress',
+        'number_monthly_transactions' => 'getNumberMonthlyTransactions',
+        'amount_monthly_transactions' => 'getAmountMonthlyTransactions',
         'documents' => 'getDocuments',
         'metadata' => 'getMetadata',
         'errors' => 'getErrors',
@@ -480,6 +490,8 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['contact_person_email'] = isset($data['contact_person_email']) ? $data['contact_person_email'] : null;
         $this->container['trading_country'] = isset($data['trading_country']) ? $data['trading_country'] : null;
         $this->container['trading_address'] = isset($data['trading_address']) ? $data['trading_address'] : null;
+        $this->container['number_monthly_transactions'] = isset($data['number_monthly_transactions']) ? $data['number_monthly_transactions'] : null;
+        $this->container['amount_monthly_transactions'] = isset($data['amount_monthly_transactions']) ? $data['amount_monthly_transactions'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
@@ -1423,6 +1435,54 @@ class Sender implements ModelInterface, ArrayAccess
     public function setTradingAddress($trading_address)
     {
         $this->container['trading_address'] = $trading_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_monthly_transactions
+     *
+     * @return string|null
+     */
+    public function getNumberMonthlyTransactions()
+    {
+        return $this->container['number_monthly_transactions'];
+    }
+
+    /**
+     * Sets number_monthly_transactions
+     *
+     * @param string|null $number_monthly_transactions The estimated number of monthly transactions (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setNumberMonthlyTransactions($number_monthly_transactions)
+    {
+        $this->container['number_monthly_transactions'] = $number_monthly_transactions;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_monthly_transactions
+     *
+     * @return string|null
+     */
+    public function getAmountMonthlyTransactions()
+    {
+        return $this->container['amount_monthly_transactions'];
+    }
+
+    /**
+     * Sets amount_monthly_transactions
+     *
+     * @param string|null $amount_monthly_transactions The estimated amount for all transactions each month in USD (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setAmountMonthlyTransactions($amount_monthly_transactions)
+    {
+        $this->container['amount_monthly_transactions'] = $amount_monthly_transactions;
 
         return $this;
     }

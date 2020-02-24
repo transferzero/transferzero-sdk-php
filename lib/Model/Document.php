@@ -67,7 +67,6 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'string',
         'issuing_country' => 'string',
         'id' => 'string',
-        'state' => 'string',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
@@ -87,7 +86,6 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => null,
         'issuing_country' => null,
         'id' => 'uuid',
-        'state' => null,
         'errors' => null
     ];
 
@@ -128,7 +126,6 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'document_type',
         'issuing_country' => 'issuing_country',
         'id' => 'id',
-        'state' => 'state',
         'errors' => 'errors'
     ];
 
@@ -148,7 +145,6 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'setDocumentType',
         'issuing_country' => 'setIssuingCountry',
         'id' => 'setId',
-        'state' => 'setState',
         'errors' => 'setErrors'
     ];
 
@@ -168,7 +164,6 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'getDocumentType',
         'issuing_country' => 'getIssuingCountry',
         'id' => 'getId',
-        'state' => 'getState',
         'errors' => 'getErrors'
     ];
 
@@ -257,7 +252,6 @@ class Document implements ModelInterface, ArrayAccess
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['issuing_country'] = isset($data['issuing_country']) ? $data['issuing_country'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -544,30 +538,6 @@ class Document implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets state
-     *
-     * @return string|null
-     */
-    public function getState()
-    {
-        return $this->container['state'];
-    }
-
-    /**
-     * Sets state
-     *
-     * @param string|null $state The state of the document. Can be one of the following:  - `initial`: When a document is created and has not been through any checks (the default state) - `verified`: A document has passed compliance checks - `rejected`: The document has failed compliance checks
-     *
-     * @return $this
-     */
-    public function setState($state)
-    {
-        $this->container['state'] = $state;
 
         return $this;
     }
