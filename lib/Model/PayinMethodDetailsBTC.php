@@ -1,6 +1,6 @@
 <?php
 /**
- * PayinMethodDetails
+ * PayinMethodDetailsBTC
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayinMethodDetails Class Doc Comment
+ * PayinMethodDetailsBTC Class Doc Comment
  *
  * @category Class
- * @description Fields needed by the payment processor. Depends on the chose payin type.  See the appropriate model details for more info:  - &#x60;NGN::Bank&#x60;: see [&#x60;PayinMethodDetailsNGNBank&#x60;](#model-PayinMethodDetailsNGNBank) - &#x60;GHS::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile) - &#x60;UGX::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile) - &#x60;TZS::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile)  Note that some payin processors don&#39;t require additional input, these include &#x60;paga&#x60; through &#x60;NGN::Mobile&#x60;, &#x60;lhv&#x60; through &#x60;EUR::Bank&#x60; and &#x60;GBP::Bank&#x60;. Some providers like &#x60;providus&#x60; also have all of their fields set as optional, so you might not want to set any values. To use these providers please set this value to &#x60;{}&#x60; (an empty hash)
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;refund_address\&quot;: \&quot;n4VQ5YdHf7hLQ2gWQYYrcxoE5B7nWuDFNF\&quot;   } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayinMethodDetails implements ModelInterface, ArrayAccess
+class PayinMethodDetailsBTC implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayinMethodDetails';
+    protected static $openAPIModelName = 'PayinMethodDetailsBTC';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,10 +58,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_method' => 'string',
-        'redirect_url' => 'string',
-        'phone_number' => 'string',
-        'send_instructions' => 'bool',
         'refund_address' => 'string'
     ];
 
@@ -71,10 +67,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'payment_method' => null,
-        'redirect_url' => null,
-        'phone_number' => null,
-        'send_instructions' => null,
         'refund_address' => null
     ];
 
@@ -105,10 +97,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_method' => 'payment_method',
-        'redirect_url' => 'redirect_url',
-        'phone_number' => 'phone_number',
-        'send_instructions' => 'send_instructions',
         'refund_address' => 'refund_address'
     ];
 
@@ -118,10 +106,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payment_method' => 'setPaymentMethod',
-        'redirect_url' => 'setRedirectUrl',
-        'phone_number' => 'setPhoneNumber',
-        'send_instructions' => 'setSendInstructions',
         'refund_address' => 'setRefundAddress'
     ];
 
@@ -131,10 +115,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payment_method' => 'getPaymentMethod',
-        'redirect_url' => 'getRedirectUrl',
-        'phone_number' => 'getPhoneNumber',
-        'send_instructions' => 'getSendInstructions',
         'refund_address' => 'getRefundAddress'
     ];
 
@@ -198,10 +178,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
-        $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['send_instructions'] = isset($data['send_instructions']) ? $data['send_instructions'] : null;
         $this->container['refund_address'] = isset($data['refund_address']) ? $data['refund_address'] : null;
     }
 
@@ -214,9 +190,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
-        if ($this->container['phone_number'] === null) {
-            $invalidProperties[] = "'phone_number' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -231,102 +204,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets payment_method
-     *
-     * @return string|null
-     */
-    public function getPaymentMethod()
-    {
-        return $this->container['payment_method'];
-    }
-
-    /**
-     * Sets payment_method
-     *
-     * @param string|null $payment_method The payment method which the user will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
-     *
-     * @return $this
-     */
-    public function setPaymentMethod($payment_method)
-    {
-        $this->container['payment_method'] = $payment_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect_url
-     *
-     * @return string|null
-     */
-    public function getRedirectUrl()
-    {
-        return $this->container['redirect_url'];
-    }
-
-    /**
-     * Sets redirect_url
-     *
-     * @param string|null $redirect_url This is where the user should be redirected back when the payment has been finished
-     *
-     * @return $this
-     */
-    public function setRedirectUrl($redirect_url)
-    {
-        $this->container['redirect_url'] = $redirect_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets phone_number
-     *
-     * @return string
-     */
-    public function getPhoneNumber()
-    {
-        return $this->container['phone_number'];
-    }
-
-    /**
-     * Sets phone_number
-     *
-     * @param string $phone_number The phone number where the funds should be collected from
-     *
-     * @return $this
-     */
-    public function setPhoneNumber($phone_number)
-    {
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets send_instructions
-     *
-     * @return bool|null
-     */
-    public function getSendInstructions()
-    {
-        return $this->container['send_instructions'];
-    }
-
-    /**
-     * Sets send_instructions
-     *
-     * @param bool|null $send_instructions States whether to send out the instructions to the phone number on how to pay the funds or not. This shuold always be set to true, otherwise the sender might not receive a prompt for payment.
-     *
-     * @return $this
-     */
-    public function setSendInstructions($send_instructions)
-    {
-        $this->container['send_instructions'] = $send_instructions;
-
-        return $this;
-    }
 
     /**
      * Gets refund_address

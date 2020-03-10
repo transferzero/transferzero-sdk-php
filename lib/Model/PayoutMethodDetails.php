@@ -76,7 +76,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reason' => 'string',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string',
-        'reference' => 'string'
+        'reference' => 'string',
+        'name' => 'string',
+        'address' => 'string'
     ];
 
     /**
@@ -104,7 +106,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reason' => null,
         'identity_card_type' => null,
         'identity_card_id' => null,
-        'reference' => null
+        'reference' => null,
+        'name' => null,
+        'address' => null
     ];
 
     /**
@@ -153,7 +157,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reason' => 'reason',
         'identity_card_type' => 'identity_card_type',
         'identity_card_id' => 'identity_card_id',
-        'reference' => 'reference'
+        'reference' => 'reference',
+        'name' => 'name',
+        'address' => 'address'
     ];
 
     /**
@@ -181,7 +187,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reason' => 'setReason',
         'identity_card_type' => 'setIdentityCardType',
         'identity_card_id' => 'setIdentityCardId',
-        'reference' => 'setReference'
+        'reference' => 'setReference',
+        'name' => 'setName',
+        'address' => 'setAddress'
     ];
 
     /**
@@ -209,7 +217,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reason' => 'getReason',
         'identity_card_type' => 'getIdentityCardType',
         'identity_card_id' => 'getIdentityCardId',
-        'reference' => 'getReference'
+        'reference' => 'getReference',
+        'name' => 'getName',
+        'address' => 'getAddress'
     ];
 
     /**
@@ -292,6 +302,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['address'] = isset($data['address']) ? $data['address'] : null;
     }
 
     /**
@@ -344,6 +356,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['sender_gender'] === null) {
             $invalidProperties[] = "'sender_gender' can't be null";
+        }
+        if ($this->container['name'] === null) {
+            $invalidProperties[] = "'name' can't be null";
+        }
+        if ($this->container['address'] === null) {
+            $invalidProperties[] = "'address' can't be null";
         }
         return $invalidProperties;
     }
@@ -836,6 +854,54 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setReference($reference)
     {
         $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->container['address'];
+    }
+
+    /**
+     * Sets address
+     *
+     * @param string $address address
+     *
+     * @return $this
+     */
+    public function setAddress($address)
+    {
+        $this->container['address'] = $address;
 
         return $this;
     }

@@ -24,6 +24,8 @@ Name | Type | Description | Notes
 **identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
 **identity_card_id** | **string** |  | [optional] 
 **reference** | **string** |  | [optional] 
+**name** | **string** |  | 
+**address** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
