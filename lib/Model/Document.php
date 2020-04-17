@@ -58,6 +58,7 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'upload' => 'string',
+        'url' => 'string',
         'upload_file_name' => 'string',
         'metadata' => 'object',
         'upload_content_type' => 'string',
@@ -77,6 +78,7 @@ class Document implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'upload' => null,
+        'url' => null,
         'upload_file_name' => null,
         'metadata' => null,
         'upload_content_type' => null,
@@ -117,6 +119,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'upload' => 'upload',
+        'url' => 'url',
         'upload_file_name' => 'upload_file_name',
         'metadata' => 'metadata',
         'upload_content_type' => 'upload_content_type',
@@ -136,6 +139,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'upload' => 'setUpload',
+        'url' => 'setUrl',
         'upload_file_name' => 'setUploadFileName',
         'metadata' => 'setMetadata',
         'upload_content_type' => 'setUploadContentType',
@@ -155,6 +159,7 @@ class Document implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'upload' => 'getUpload',
+        'url' => 'getUrl',
         'upload_file_name' => 'getUploadFileName',
         'metadata' => 'getMetadata',
         'upload_content_type' => 'getUploadContentType',
@@ -243,6 +248,7 @@ class Document implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['upload'] = isset($data['upload']) ? $data['upload'] : null;
+        $this->container['url'] = isset($data['url']) ? $data['url'] : null;
         $this->container['upload_file_name'] = isset($data['upload_file_name']) ? $data['upload_file_name'] : null;
         $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
         $this->container['upload_content_type'] = isset($data['upload_content_type']) ? $data['upload_content_type'] : null;
@@ -313,6 +319,30 @@ class Document implements ModelInterface, ArrayAccess
     public function setUpload($upload)
     {
         $this->container['upload'] = $upload;
+
+        return $this;
+    }
+
+    /**
+     * Gets url
+     *
+     * @return string|null
+     */
+    public function getUrl()
+    {
+        return $this->container['url'];
+    }
+
+    /**
+     * Sets url
+     *
+     * @param string|null $url URL of the document location
+     *
+     * @return $this
+     */
+    public function setUrl($url)
+    {
+        $this->container['url'] = $url;
 
         return $this;
     }

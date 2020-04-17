@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **upload** | **string** | Base64 encoded data uri of an image/pdf file or a fully qualified url | 
+**url** | **string** | URL of the document location | [optional] 
 **upload_file_name** | **string** | Name of the upload | 
 **metadata** | [**object**](.md) | Metadata of document | [optional] 
 **upload_content_type** | **string** |  | [optional] 
