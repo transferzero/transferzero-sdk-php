@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Cancelling a recipient
 
-Cancels the payment to the recipient specified in the URL path.  Please note only recipients where the `may_cancel` attribute is true can be cancelled.
+Cancels the payment to the recipient specified in the URL path.  Please note recipients where the `may_cancel` attribute is true will be cancelled immediately. If the `may_cancel` attribute is false you can still try to cancel the recipient, however it will only gets cancelled if we will receive a confirmation from our partner that the payment has failed
 
 ### Example
 ```php
