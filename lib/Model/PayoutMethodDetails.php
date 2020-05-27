@@ -67,6 +67,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
+        'sort_code' => 'string',
         'bic' => 'string',
         'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'sender_identity_card_id' => 'string',
@@ -97,6 +98,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
+        'sort_code' => null,
         'bic' => null,
         'sender_identity_card_type' => null,
         'sender_identity_card_id' => null,
@@ -148,6 +150,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
+        'sort_code' => 'sort_code',
         'bic' => 'bic',
         'sender_identity_card_type' => 'sender_identity_card_type',
         'sender_identity_card_id' => 'sender_identity_card_id',
@@ -178,6 +181,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
+        'sort_code' => 'setSortCode',
         'bic' => 'setBic',
         'sender_identity_card_type' => 'setSenderIdentityCardType',
         'sender_identity_card_id' => 'setSenderIdentityCardId',
@@ -208,6 +212,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
+        'sort_code' => 'getSortCode',
         'bic' => 'getBic',
         'sender_identity_card_type' => 'getSenderIdentityCardType',
         'sender_identity_card_id' => 'getSenderIdentityCardId',
@@ -292,6 +297,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
+        $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['sender_identity_card_type'] = isset($data['sender_identity_card_type']) ? $data['sender_identity_card_type'] : null;
         $this->container['sender_identity_card_id'] = isset($data['sender_identity_card_id']) ? $data['sender_identity_card_id'] : null;
@@ -614,6 +620,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setBankCountry($bank_country)
     {
         $this->container['bank_country'] = $bank_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_code
+     *
+     * @return string|null
+     */
+    public function getSortCode()
+    {
+        return $this->container['sort_code'];
+    }
+
+    /**
+     * Sets sort_code
+     *
+     * @param string|null $sort_code sort_code
+     *
+     * @return $this
+     */
+    public function setSortCode($sort_code)
+    {
+        $this->container['sort_code'] = $sort_code;
 
         return $this;
     }

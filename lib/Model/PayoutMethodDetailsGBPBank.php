@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodDetailsIBAN
+ * PayoutMethodDetailsGBPBank
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodDetailsIBAN Class Doc Comment
+ * PayoutMethodDetailsGBPBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_name\&quot;: \&quot;Deutsche Bank\&quot;,   \&quot;iban\&quot;: \&quot;DE89370400440532013000\&quot;,   \&quot;bic\&quot;: \&quot;DEUTDEBBXXX\&quot; // Optional } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_name\&quot;: \&quot;Deutsche Bank\&quot;,   \&quot;bank_account\&quot;: \&quot;12345678\&quot;, // Required if IBAN is not present   \&quot;sort_code\&quot;: \&quot;123456\&quot;, // Required if bank_account is present   \&quot;iban\&quot;: \&quot;DE89370400440532013000\&quot;, // Required if no bank_account &amp; sort_code   \&quot;bic\&quot;: \&quot;DEUTDEBBXXX\&quot; // Optional } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethodDetailsIBAN';
+    protected static $openAPIModelName = 'PayoutMethodDetailsGBPBank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,6 +61,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'bank_name' => 'string',
+        'bank_account' => 'string',
+        'sort_code' => 'string',
         'iban' => 'string',
         'bic' => 'string'
     ];
@@ -74,6 +76,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'bank_name' => null,
+        'bank_account' => null,
+        'sort_code' => null,
         'iban' => null,
         'bic' => null
     ];
@@ -108,6 +112,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'bank_name' => 'bank_name',
+        'bank_account' => 'bank_account',
+        'sort_code' => 'sort_code',
         'iban' => 'iban',
         'bic' => 'bic'
     ];
@@ -121,6 +127,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'bank_name' => 'setBankName',
+        'bank_account' => 'setBankAccount',
+        'sort_code' => 'setSortCode',
         'iban' => 'setIban',
         'bic' => 'setBic'
     ];
@@ -134,6 +142,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'bank_name' => 'getBankName',
+        'bank_account' => 'getBankAccount',
+        'sort_code' => 'getSortCode',
         'iban' => 'getIban',
         'bic' => 'getBic'
     ];
@@ -201,6 +211,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
     }
@@ -219,9 +231,6 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         }
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
-        }
-        if ($this->container['iban'] === null) {
-            $invalidProperties[] = "'iban' can't be null";
         }
         return $invalidProperties;
     }
@@ -311,9 +320,57 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets bank_account
+     *
+     * @return string|null
+     */
+    public function getBankAccount()
+    {
+        return $this->container['bank_account'];
+    }
+
+    /**
+     * Sets bank_account
+     *
+     * @param string|null $bank_account bank_account
+     *
+     * @return $this
+     */
+    public function setBankAccount($bank_account)
+    {
+        $this->container['bank_account'] = $bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets sort_code
+     *
+     * @return string|null
+     */
+    public function getSortCode()
+    {
+        return $this->container['sort_code'];
+    }
+
+    /**
+     * Sets sort_code
+     *
+     * @param string|null $sort_code sort_code
+     *
+     * @return $this
+     */
+    public function setSortCode($sort_code)
+    {
+        $this->container['sort_code'] = $sort_code;
+
+        return $this;
+    }
+
+    /**
      * Gets iban
      *
-     * @return string
+     * @return string|null
      */
     public function getIban()
     {
@@ -323,7 +380,7 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     /**
      * Sets iban
      *
-     * @param string $iban iban
+     * @param string|null $iban iban
      *
      * @return $this
      */
