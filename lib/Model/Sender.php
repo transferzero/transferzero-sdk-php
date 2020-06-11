@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * Sender Class Doc Comment
  *
  * @category Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;created_at\&quot;: \&quot;2018-06-09 15:13:40 UTC\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;city_of_birth\&quot;: \&quot;London\&quot;,   \&quot;country_of_birth\&quot;: \&quot;GB\&quot;,   \&quot;gender\&quot;: \&quot;M\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;created_at\&quot;: \&quot;2018-06-09 15:13:40 UTC\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -101,6 +101,9 @@ class Sender implements ModelInterface, ArrayAccess
         'onboarding_status' => 'string',
         'politically_exposed_people' => '\TransferZero\Model\PoliticallyExposedPerson[]',
         'external_id' => 'string',
+        'city_of_birth' => 'string',
+        'country_of_birth' => 'string',
+        'gender' => 'string',
         'created_at' => 'string'
     ];
 
@@ -153,6 +156,9 @@ class Sender implements ModelInterface, ArrayAccess
         'onboarding_status' => null,
         'politically_exposed_people' => null,
         'external_id' => null,
+        'city_of_birth' => null,
+        'country_of_birth' => null,
+        'gender' => null,
         'created_at' => null
     ];
 
@@ -226,6 +232,9 @@ class Sender implements ModelInterface, ArrayAccess
         'onboarding_status' => 'onboarding_status',
         'politically_exposed_people' => 'politically_exposed_people',
         'external_id' => 'external_id',
+        'city_of_birth' => 'city_of_birth',
+        'country_of_birth' => 'country_of_birth',
+        'gender' => 'gender',
         'created_at' => 'created_at'
     ];
 
@@ -278,6 +287,9 @@ class Sender implements ModelInterface, ArrayAccess
         'onboarding_status' => 'setOnboardingStatus',
         'politically_exposed_people' => 'setPoliticallyExposedPeople',
         'external_id' => 'setExternalId',
+        'city_of_birth' => 'setCityOfBirth',
+        'country_of_birth' => 'setCountryOfBirth',
+        'gender' => 'setGender',
         'created_at' => 'setCreatedAt'
     ];
 
@@ -330,6 +342,9 @@ class Sender implements ModelInterface, ArrayAccess
         'onboarding_status' => 'getOnboardingStatus',
         'politically_exposed_people' => 'getPoliticallyExposedPeople',
         'external_id' => 'getExternalId',
+        'city_of_birth' => 'getCityOfBirth',
+        'country_of_birth' => 'getCountryOfBirth',
+        'gender' => 'getGender',
         'created_at' => 'getCreatedAt'
     ];
 
@@ -391,6 +406,9 @@ class Sender implements ModelInterface, ArrayAccess
     const LEGAL_ENTITY_TYPE_GO = 'go';
     const LEGAL_ENTITY_TYPE_OTHER = 'other';
     const LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION = 'financial_institution';
+    const GENDER_M = 'M';
+    const GENDER_F = 'F';
+    const GENDER_O = 'O';
     
 
     
@@ -441,6 +459,20 @@ class Sender implements ModelInterface, ArrayAccess
             self::LEGAL_ENTITY_TYPE_GO,
             self::LEGAL_ENTITY_TYPE_OTHER,
             self::LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getGenderAllowableValues()
+    {
+        return [
+            self::GENDER_M,
+            self::GENDER_F,
+            self::GENDER_O,
         ];
     }
     
@@ -503,6 +535,9 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['onboarding_status'] = isset($data['onboarding_status']) ? $data['onboarding_status'] : null;
         $this->container['politically_exposed_people'] = isset($data['politically_exposed_people']) ? $data['politically_exposed_people'] : null;
         $this->container['external_id'] = isset($data['external_id']) ? $data['external_id'] : null;
+        $this->container['city_of_birth'] = isset($data['city_of_birth']) ? $data['city_of_birth'] : null;
+        $this->container['country_of_birth'] = isset($data['country_of_birth']) ? $data['country_of_birth'] : null;
+        $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
     }
 
@@ -563,6 +598,14 @@ class Sender implements ModelInterface, ArrayAccess
         if ($this->container['documents'] === null) {
             $invalidProperties[] = "'documents' can't be null";
         }
+        $allowedValues = $this->getGenderAllowableValues();
+        if (!is_null($this->container['gender']) && !in_array($this->container['gender'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'gender', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -1633,6 +1676,87 @@ class Sender implements ModelInterface, ArrayAccess
     public function setExternalId($external_id)
     {
         $this->container['external_id'] = $external_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets city_of_birth
+     *
+     * @return string|null
+     */
+    public function getCityOfBirth()
+    {
+        return $this->container['city_of_birth'];
+    }
+
+    /**
+     * Sets city_of_birth
+     *
+     * @param string|null $city_of_birth City of birth of sender
+     *
+     * @return $this
+     */
+    public function setCityOfBirth($city_of_birth)
+    {
+        $this->container['city_of_birth'] = $city_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets country_of_birth
+     *
+     * @return string|null
+     */
+    public function getCountryOfBirth()
+    {
+        return $this->container['country_of_birth'];
+    }
+
+    /**
+     * Sets country_of_birth
+     *
+     * @param string|null $country_of_birth Country of birth of sender in 2-character alpha ISO 3166-2 country format
+     *
+     * @return $this
+     */
+    public function setCountryOfBirth($country_of_birth)
+    {
+        $this->container['country_of_birth'] = $country_of_birth;
+
+        return $this;
+    }
+
+    /**
+     * Gets gender
+     *
+     * @return string|null
+     */
+    public function getGender()
+    {
+        return $this->container['gender'];
+    }
+
+    /**
+     * Sets gender
+     *
+     * @param string|null $gender The gender of the sender:  - `M`: Male - `F`: Female - `O`: Other
+     *
+     * @return $this
+     */
+    public function setGender($gender)
+    {
+        $allowedValues = $this->getGenderAllowableValues();
+        if (!is_null($gender) && !in_array($gender, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'gender', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['gender'] = $gender;
 
         return $this;
     }
