@@ -84,6 +84,7 @@ class Sender implements ModelInterface, ArrayAccess
         'registration_number' => 'string',
         'nature_of_business' => 'string',
         'source_of_funds' => 'string',
+        'custom_source_of_funds' => 'string',
         'core_business_activities' => 'string',
         'purpose_of_opening_account' => 'string',
         'office_phone' => 'string',
@@ -139,6 +140,7 @@ class Sender implements ModelInterface, ArrayAccess
         'registration_number' => null,
         'nature_of_business' => null,
         'source_of_funds' => null,
+        'custom_source_of_funds' => null,
         'core_business_activities' => null,
         'purpose_of_opening_account' => null,
         'office_phone' => null,
@@ -215,6 +217,7 @@ class Sender implements ModelInterface, ArrayAccess
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
         'source_of_funds' => 'source_of_funds',
+        'custom_source_of_funds' => 'custom_source_of_funds',
         'core_business_activities' => 'core_business_activities',
         'purpose_of_opening_account' => 'purpose_of_opening_account',
         'office_phone' => 'office_phone',
@@ -270,6 +273,7 @@ class Sender implements ModelInterface, ArrayAccess
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
         'source_of_funds' => 'setSourceOfFunds',
+        'custom_source_of_funds' => 'setCustomSourceOfFunds',
         'core_business_activities' => 'setCoreBusinessActivities',
         'purpose_of_opening_account' => 'setPurposeOfOpeningAccount',
         'office_phone' => 'setOfficePhone',
@@ -325,6 +329,7 @@ class Sender implements ModelInterface, ArrayAccess
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
         'source_of_funds' => 'getSourceOfFunds',
+        'custom_source_of_funds' => 'getCustomSourceOfFunds',
         'core_business_activities' => 'getCoreBusinessActivities',
         'purpose_of_opening_account' => 'getPurposeOfOpeningAccount',
         'office_phone' => 'getOfficePhone',
@@ -518,6 +523,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['source_of_funds'] = isset($data['source_of_funds']) ? $data['source_of_funds'] : null;
+        $this->container['custom_source_of_funds'] = isset($data['custom_source_of_funds']) ? $data['custom_source_of_funds'] : null;
         $this->container['core_business_activities'] = isset($data['core_business_activities']) ? $data['core_business_activities'] : null;
         $this->container['purpose_of_opening_account'] = isset($data['purpose_of_opening_account']) ? $data['purpose_of_opening_account'] : null;
         $this->container['office_phone'] = isset($data['office_phone']) ? $data['office_phone'] : null;
@@ -1268,6 +1274,30 @@ class Sender implements ModelInterface, ArrayAccess
     public function setSourceOfFunds($source_of_funds)
     {
         $this->container['source_of_funds'] = $source_of_funds;
+
+        return $this;
+    }
+
+    /**
+     * Gets custom_source_of_funds
+     *
+     * @return string|null
+     */
+    public function getCustomSourceOfFunds()
+    {
+        return $this->container['custom_source_of_funds'];
+    }
+
+    /**
+     * Sets custom_source_of_funds
+     *
+     * @param string|null $custom_source_of_funds Custom source of funds
+     *
+     * @return $this
+     */
+    public function setCustomSourceOfFunds($custom_source_of_funds)
+    {
+        $this->container['custom_source_of_funds'] = $custom_source_of_funds;
 
         return $this;
     }
