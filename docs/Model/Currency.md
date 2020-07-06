@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **primary** | **bool** | Is this a primary currency? | [optional] 
 **min** | **string** | The minimum amount allowed in a transaction | [optional] 
 **max** | **string** | The maximum amount allowed in a transaction | [optional] 
-**margin** | **string** | The margin set for transactions in this currency | [optional] 
 **usd_equivalent** | **string** | The equivalent of the currency to 1 USD | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
