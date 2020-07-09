@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **nature_of_business** | **string** | Nature of business options (used only with a Business sender) | [optional] 
 **source_of_funds** | **string** | The source of funds | [optional] 
 **custom_source_of_funds** | **string** | Custom source of funds | [optional] 
-**core_business_activities** | **string** | The core activities (used only with a Business sender) | [optional] 
+**core_business_activity** | **string** | The core activity (used only with a Business sender) | [optional] 
 **purpose_of_opening_account** | **string** | The purpose for opening their account (used only with a Business sender) | [optional] 
 **office_phone** | **string** | The official phone number (used only with a Business sender) | [optional] 
 **vat_registration_number** | **string** | The VAT registration number (used only with a Business sender) | [optional] 

@@ -85,7 +85,7 @@ class Sender implements ModelInterface, ArrayAccess
         'nature_of_business' => 'string',
         'source_of_funds' => 'string',
         'custom_source_of_funds' => 'string',
-        'core_business_activities' => 'string',
+        'core_business_activity' => 'string',
         'purpose_of_opening_account' => 'string',
         'office_phone' => 'string',
         'vat_registration_number' => 'string',
@@ -141,7 +141,7 @@ class Sender implements ModelInterface, ArrayAccess
         'nature_of_business' => null,
         'source_of_funds' => null,
         'custom_source_of_funds' => null,
-        'core_business_activities' => null,
+        'core_business_activity' => null,
         'purpose_of_opening_account' => null,
         'office_phone' => null,
         'vat_registration_number' => null,
@@ -218,7 +218,7 @@ class Sender implements ModelInterface, ArrayAccess
         'nature_of_business' => 'nature_of_business',
         'source_of_funds' => 'source_of_funds',
         'custom_source_of_funds' => 'custom_source_of_funds',
-        'core_business_activities' => 'core_business_activities',
+        'core_business_activity' => 'core_business_activity',
         'purpose_of_opening_account' => 'purpose_of_opening_account',
         'office_phone' => 'office_phone',
         'vat_registration_number' => 'vat_registration_number',
@@ -274,7 +274,7 @@ class Sender implements ModelInterface, ArrayAccess
         'nature_of_business' => 'setNatureOfBusiness',
         'source_of_funds' => 'setSourceOfFunds',
         'custom_source_of_funds' => 'setCustomSourceOfFunds',
-        'core_business_activities' => 'setCoreBusinessActivities',
+        'core_business_activity' => 'setCoreBusinessActivity',
         'purpose_of_opening_account' => 'setPurposeOfOpeningAccount',
         'office_phone' => 'setOfficePhone',
         'vat_registration_number' => 'setVatRegistrationNumber',
@@ -330,7 +330,7 @@ class Sender implements ModelInterface, ArrayAccess
         'nature_of_business' => 'getNatureOfBusiness',
         'source_of_funds' => 'getSourceOfFunds',
         'custom_source_of_funds' => 'getCustomSourceOfFunds',
-        'core_business_activities' => 'getCoreBusinessActivities',
+        'core_business_activity' => 'getCoreBusinessActivity',
         'purpose_of_opening_account' => 'getPurposeOfOpeningAccount',
         'office_phone' => 'getOfficePhone',
         'vat_registration_number' => 'getVatRegistrationNumber',
@@ -524,7 +524,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['source_of_funds'] = isset($data['source_of_funds']) ? $data['source_of_funds'] : null;
         $this->container['custom_source_of_funds'] = isset($data['custom_source_of_funds']) ? $data['custom_source_of_funds'] : null;
-        $this->container['core_business_activities'] = isset($data['core_business_activities']) ? $data['core_business_activities'] : null;
+        $this->container['core_business_activity'] = isset($data['core_business_activity']) ? $data['core_business_activity'] : null;
         $this->container['purpose_of_opening_account'] = isset($data['purpose_of_opening_account']) ? $data['purpose_of_opening_account'] : null;
         $this->container['office_phone'] = isset($data['office_phone']) ? $data['office_phone'] : null;
         $this->container['vat_registration_number'] = isset($data['vat_registration_number']) ? $data['vat_registration_number'] : null;
@@ -1303,25 +1303,25 @@ class Sender implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets core_business_activities
+     * Gets core_business_activity
      *
      * @return string|null
      */
-    public function getCoreBusinessActivities()
+    public function getCoreBusinessActivity()
     {
-        return $this->container['core_business_activities'];
+        return $this->container['core_business_activity'];
     }
 
     /**
-     * Sets core_business_activities
+     * Sets core_business_activity
      *
-     * @param string|null $core_business_activities The core activities (used only with a Business sender)
+     * @param string|null $core_business_activity The core activity (used only with a Business sender)
      *
      * @return $this
      */
-    public function setCoreBusinessActivities($core_business_activities)
+    public function setCoreBusinessActivity($core_business_activity)
     {
-        $this->container['core_business_activities'] = $core_business_activities;
+        $this->container['core_business_activity'] = $core_business_activity;
 
         return $this;
     }
