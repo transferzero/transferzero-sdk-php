@@ -65,6 +65,7 @@ class Currency implements ModelInterface, ArrayAccess
         'primary' => 'bool',
         'min' => 'string',
         'max' => 'string',
+        'margin' => 'string',
         'usd_equivalent' => 'string'
     ];
 
@@ -82,6 +83,7 @@ class Currency implements ModelInterface, ArrayAccess
         'primary' => null,
         'min' => null,
         'max' => null,
+        'margin' => null,
         'usd_equivalent' => null
     ];
 
@@ -120,6 +122,7 @@ class Currency implements ModelInterface, ArrayAccess
         'primary' => 'primary',
         'min' => 'min',
         'max' => 'max',
+        'margin' => 'margin',
         'usd_equivalent' => 'usd_equivalent'
     ];
 
@@ -137,6 +140,7 @@ class Currency implements ModelInterface, ArrayAccess
         'primary' => 'setPrimary',
         'min' => 'setMin',
         'max' => 'setMax',
+        'margin' => 'setMargin',
         'usd_equivalent' => 'setUsdEquivalent'
     ];
 
@@ -154,6 +158,7 @@ class Currency implements ModelInterface, ArrayAccess
         'primary' => 'getPrimary',
         'min' => 'getMin',
         'max' => 'getMax',
+        'margin' => 'getMargin',
         'usd_equivalent' => 'getUsdEquivalent'
     ];
 
@@ -225,6 +230,7 @@ class Currency implements ModelInterface, ArrayAccess
         $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
         $this->container['min'] = isset($data['min']) ? $data['min'] : null;
         $this->container['max'] = isset($data['max']) ? $data['max'] : null;
+        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
         $this->container['usd_equivalent'] = isset($data['usd_equivalent']) ? $data['usd_equivalent'] : null;
     }
 
@@ -440,6 +446,30 @@ class Currency implements ModelInterface, ArrayAccess
     public function setMax($max)
     {
         $this->container['max'] = $max;
+
+        return $this;
+    }
+
+    /**
+     * Gets margin
+     *
+     * @return string|null
+     */
+    public function getMargin()
+    {
+        return $this->container['margin'];
+    }
+
+    /**
+     * Sets margin
+     *
+     * @param string|null $margin The margin set for transactions in this currency
+     *
+     * @return $this
+     */
+    public function setMargin($margin)
+    {
+        $this->container['margin'] = $margin;
 
         return $this;
     }
