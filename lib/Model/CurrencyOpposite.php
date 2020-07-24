@@ -65,10 +65,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         'primary' => 'bool',
         'min' => 'string',
         'max' => 'string',
+        'margin' => 'string',
         'usd_equivalent' => 'string',
         'rate' => 'float',
-        'mtm_rate' => 'float',
-        'margin' => 'string'
+        'mtm_rate' => 'float'
     ];
 
     /**
@@ -85,10 +85,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         'primary' => null,
         'min' => null,
         'max' => null,
+        'margin' => null,
         'usd_equivalent' => null,
         'rate' => null,
-        'mtm_rate' => null,
-        'margin' => null
+        'mtm_rate' => null
     ];
 
     /**
@@ -126,10 +126,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         'primary' => 'primary',
         'min' => 'min',
         'max' => 'max',
+        'margin' => 'margin',
         'usd_equivalent' => 'usd_equivalent',
         'rate' => 'rate',
-        'mtm_rate' => 'mtm_rate',
-        'margin' => 'margin'
+        'mtm_rate' => 'mtm_rate'
     ];
 
     /**
@@ -146,10 +146,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         'primary' => 'setPrimary',
         'min' => 'setMin',
         'max' => 'setMax',
+        'margin' => 'setMargin',
         'usd_equivalent' => 'setUsdEquivalent',
         'rate' => 'setRate',
-        'mtm_rate' => 'setMtmRate',
-        'margin' => 'setMargin'
+        'mtm_rate' => 'setMtmRate'
     ];
 
     /**
@@ -166,10 +166,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         'primary' => 'getPrimary',
         'min' => 'getMin',
         'max' => 'getMax',
+        'margin' => 'getMargin',
         'usd_equivalent' => 'getUsdEquivalent',
         'rate' => 'getRate',
-        'mtm_rate' => 'getMtmRate',
-        'margin' => 'getMargin'
+        'mtm_rate' => 'getMtmRate'
     ];
 
     /**
@@ -240,10 +240,10 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
         $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
         $this->container['min'] = isset($data['min']) ? $data['min'] : null;
         $this->container['max'] = isset($data['max']) ? $data['max'] : null;
+        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
         $this->container['usd_equivalent'] = isset($data['usd_equivalent']) ? $data['usd_equivalent'] : null;
         $this->container['rate'] = isset($data['rate']) ? $data['rate'] : null;
         $this->container['mtm_rate'] = isset($data['mtm_rate']) ? $data['mtm_rate'] : null;
-        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
     }
 
     /**
@@ -463,6 +463,30 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets margin
+     *
+     * @return string|null
+     */
+    public function getMargin()
+    {
+        return $this->container['margin'];
+    }
+
+    /**
+     * Sets margin
+     *
+     * @param string|null $margin The margin set for transactions in this currency
+     *
+     * @return $this
+     */
+    public function setMargin($margin)
+    {
+        $this->container['margin'] = $margin;
+
+        return $this;
+    }
+
+    /**
      * Gets usd_equivalent
      *
      * @return string|null
@@ -530,30 +554,6 @@ class CurrencyOpposite implements ModelInterface, ArrayAccess
     public function setMtmRate($mtm_rate)
     {
         $this->container['mtm_rate'] = $mtm_rate;
-
-        return $this;
-    }
-
-    /**
-     * Gets margin
-     *
-     * @return string|null
-     */
-    public function getMargin()
-    {
-        return $this->container['margin'];
-    }
-
-    /**
-     * Sets margin
-     *
-     * @param string|null $margin The margin set for transactions of this particular currency with the base one
-     *
-     * @return $this
-     */
-    public function setMargin($margin)
-    {
-        $this->container['margin'] = $margin;
 
         return $this;
     }
