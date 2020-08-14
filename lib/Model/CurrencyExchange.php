@@ -65,7 +65,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'primary' => 'bool',
         'min' => 'string',
         'max' => 'string',
-        'margin' => 'string',
         'usd_equivalent' => 'string',
         'opposites' => '\TransferZero\Model\CurrencyOpposite[]'
     ];
@@ -84,7 +83,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'primary' => null,
         'min' => null,
         'max' => null,
-        'margin' => null,
         'usd_equivalent' => null,
         'opposites' => null
     ];
@@ -124,7 +122,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'primary' => 'primary',
         'min' => 'min',
         'max' => 'max',
-        'margin' => 'margin',
         'usd_equivalent' => 'usd_equivalent',
         'opposites' => 'opposites'
     ];
@@ -143,7 +140,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'primary' => 'setPrimary',
         'min' => 'setMin',
         'max' => 'setMax',
-        'margin' => 'setMargin',
         'usd_equivalent' => 'setUsdEquivalent',
         'opposites' => 'setOpposites'
     ];
@@ -162,7 +158,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         'primary' => 'getPrimary',
         'min' => 'getMin',
         'max' => 'getMax',
-        'margin' => 'getMargin',
         'usd_equivalent' => 'getUsdEquivalent',
         'opposites' => 'getOpposites'
     ];
@@ -235,7 +230,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
         $this->container['primary'] = isset($data['primary']) ? $data['primary'] : null;
         $this->container['min'] = isset($data['min']) ? $data['min'] : null;
         $this->container['max'] = isset($data['max']) ? $data['max'] : null;
-        $this->container['margin'] = isset($data['margin']) ? $data['margin'] : null;
         $this->container['usd_equivalent'] = isset($data['usd_equivalent']) ? $data['usd_equivalent'] : null;
         $this->container['opposites'] = isset($data['opposites']) ? $data['opposites'] : null;
     }
@@ -452,30 +446,6 @@ class CurrencyExchange implements ModelInterface, ArrayAccess
     public function setMax($max)
     {
         $this->container['max'] = $max;
-
-        return $this;
-    }
-
-    /**
-     * Gets margin
-     *
-     * @return string|null
-     */
-    public function getMargin()
-    {
-        return $this->container['margin'];
-    }
-
-    /**
-     * Sets margin
-     *
-     * @param string|null $margin The margin set for transactions in this currency
-     *
-     * @return $this
-     */
-    public function setMargin($margin)
-    {
-        $this->container['margin'] = $margin;
 
         return $this;
     }
