@@ -27,6 +27,10 @@ Name | Type | Description | Notes
 **reference** | **string** |  | [optional] 
 **name** | **string** |  | 
 **address** | **string** |  | 
+**street** | **string** |  | 
+**postal_code** | **string** |  | 
+**city** | **string** |  | 
+**transfer_reason_code** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

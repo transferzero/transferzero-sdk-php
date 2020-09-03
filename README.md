@@ -234,6 +234,7 @@ Class | Method | HTTP request | Description
  - [PayoutMethodDetailsNGNBank](docs/Model/PayoutMethodDetailsNGNBank.md)
  - [PayoutMethodDetailsXOFBank](docs/Model/PayoutMethodDetailsXOFBank.md)
  - [PayoutMethodDetailsXOFMobile](docs/Model/PayoutMethodDetailsXOFMobile.md)
+ - [PayoutMethodDetailsZARBank](docs/Model/PayoutMethodDetailsZARBank.md)
  - [PayoutMethodGenderEnum](docs/Model/PayoutMethodGenderEnum.md)
  - [PayoutMethodIdentityCardTypeEnum](docs/Model/PayoutMethodIdentityCardTypeEnum.md)
  - [PayoutMethodListResponse](docs/Model/PayoutMethodListResponse.md)

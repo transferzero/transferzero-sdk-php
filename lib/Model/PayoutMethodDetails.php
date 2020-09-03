@@ -79,7 +79,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'identity_card_id' => 'string',
         'reference' => 'string',
         'name' => 'string',
-        'address' => 'string'
+        'address' => 'string',
+        'street' => 'string',
+        'postal_code' => 'string',
+        'city' => 'string',
+        'transfer_reason_code' => 'string'
     ];
 
     /**
@@ -110,7 +114,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'identity_card_id' => null,
         'reference' => null,
         'name' => null,
-        'address' => null
+        'address' => null,
+        'street' => null,
+        'postal_code' => null,
+        'city' => null,
+        'transfer_reason_code' => null
     ];
 
     /**
@@ -162,7 +170,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'identity_card_id' => 'identity_card_id',
         'reference' => 'reference',
         'name' => 'name',
-        'address' => 'address'
+        'address' => 'address',
+        'street' => 'street',
+        'postal_code' => 'postal_code',
+        'city' => 'city',
+        'transfer_reason_code' => 'transfer_reason_code'
     ];
 
     /**
@@ -193,7 +205,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'identity_card_id' => 'setIdentityCardId',
         'reference' => 'setReference',
         'name' => 'setName',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'street' => 'setStreet',
+        'postal_code' => 'setPostalCode',
+        'city' => 'setCity',
+        'transfer_reason_code' => 'setTransferReasonCode'
     ];
 
     /**
@@ -224,7 +240,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'identity_card_id' => 'getIdentityCardId',
         'reference' => 'getReference',
         'name' => 'getName',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'street' => 'getStreet',
+        'postal_code' => 'getPostalCode',
+        'city' => 'getCity',
+        'transfer_reason_code' => 'getTransferReasonCode'
     ];
 
     /**
@@ -310,6 +330,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
     }
 
     /**
@@ -368,6 +392,15 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['address'] === null) {
             $invalidProperties[] = "'address' can't be null";
+        }
+        if ($this->container['street'] === null) {
+            $invalidProperties[] = "'street' can't be null";
+        }
+        if ($this->container['postal_code'] === null) {
+            $invalidProperties[] = "'postal_code' can't be null";
+        }
+        if ($this->container['city'] === null) {
+            $invalidProperties[] = "'city' can't be null";
         }
         return $invalidProperties;
     }
@@ -932,6 +965,102 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string $street street
+     *
+     * @return $this
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets postal_code
+     *
+     * @return string
+     */
+    public function getPostalCode()
+    {
+        return $this->container['postal_code'];
+    }
+
+    /**
+     * Sets postal_code
+     *
+     * @param string $postal_code postal_code
+     *
+     * @return $this
+     */
+    public function setPostalCode($postal_code)
+    {
+        $this->container['postal_code'] = $postal_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets transfer_reason_code
+     *
+     * @return string|null
+     */
+    public function getTransferReasonCode()
+    {
+        return $this->container['transfer_reason_code'];
+    }
+
+    /**
+     * Sets transfer_reason_code
+     *
+     * @param string|null $transfer_reason_code transfer_reason_code
+     *
+     * @return $this
+     */
+    public function setTransferReasonCode($transfer_reason_code)
+    {
+        $this->container['transfer_reason_code'] = $transfer_reason_code;
 
         return $this;
     }
