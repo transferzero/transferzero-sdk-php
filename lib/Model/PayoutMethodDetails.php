@@ -83,6 +83,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'street' => 'string',
         'postal_code' => 'string',
         'city' => 'string',
+        'email' => 'string',
         'transfer_reason_code' => 'string'
     ];
 
@@ -118,6 +119,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'street' => null,
         'postal_code' => null,
         'city' => null,
+        'email' => null,
         'transfer_reason_code' => null
     ];
 
@@ -174,6 +176,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'street' => 'street',
         'postal_code' => 'postal_code',
         'city' => 'city',
+        'email' => 'email',
         'transfer_reason_code' => 'transfer_reason_code'
     ];
 
@@ -209,6 +212,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'street' => 'setStreet',
         'postal_code' => 'setPostalCode',
         'city' => 'setCity',
+        'email' => 'setEmail',
         'transfer_reason_code' => 'setTransferReasonCode'
     ];
 
@@ -244,6 +248,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'street' => 'getStreet',
         'postal_code' => 'getPostalCode',
         'city' => 'getCity',
+        'email' => 'getEmail',
         'transfer_reason_code' => 'getTransferReasonCode'
     ];
 
@@ -333,6 +338,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
     }
 
@@ -1037,6 +1043,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setCity($city)
     {
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }

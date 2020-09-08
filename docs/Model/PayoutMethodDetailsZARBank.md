@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **street** | **string** |  | 
 **postal_code** | **string** |  | 
 **city** | **string** |  | 
+**email** | **string** |  | [optional] 
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
 **phone_number** | **string** |  | 

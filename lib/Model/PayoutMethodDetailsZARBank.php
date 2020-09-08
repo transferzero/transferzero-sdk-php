@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsZARBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;postal_code\&quot;: \&quot;AB0001\&quot;,     \&quot;city\&quot;: \&quot;Cape Town\&quot;,     \&quot;bank_code\&quot;: \&quot;334810\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;phone_number\&quot;: \&quot;+27119785313\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;   } &#x60;&#x60;&#x60;  See [ZAR Bank](https://docs.transferzero.com/docs/payout-details/#zarbank) documentation for the bank_code and transfer_reason_code lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;postal_code\&quot;: \&quot;AB0001\&quot;,     \&quot;city\&quot;: \&quot;Cape Town\&quot;,     \&quot;email\&quot;: \&quot;recipient@email.com\&quot;,     \&quot;bank_code\&quot;: \&quot;334810\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;phone_number\&quot;: \&quot;+27119785313\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;   } &#x60;&#x60;&#x60;  See [ZAR Bank](https://docs.transferzero.com/docs/payout-details/#zarbank) documentation for the bank_code and transfer_reason_code lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,6 +63,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'street' => 'string',
         'postal_code' => 'string',
         'city' => 'string',
+        'email' => 'string',
         'bank_code' => 'string',
         'bank_account' => 'string',
         'phone_number' => 'string',
@@ -80,6 +81,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'street' => null,
         'postal_code' => null,
         'city' => null,
+        'email' => null,
         'bank_code' => null,
         'bank_account' => null,
         'phone_number' => null,
@@ -118,6 +120,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'street' => 'street',
         'postal_code' => 'postal_code',
         'city' => 'city',
+        'email' => 'email',
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
         'phone_number' => 'phone_number',
@@ -135,6 +138,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'street' => 'setStreet',
         'postal_code' => 'setPostalCode',
         'city' => 'setCity',
+        'email' => 'setEmail',
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
         'phone_number' => 'setPhoneNumber',
@@ -152,6 +156,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'street' => 'getStreet',
         'postal_code' => 'getPostalCode',
         'city' => 'getCity',
+        'email' => 'getEmail',
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
         'phone_number' => 'getPhoneNumber',
@@ -223,6 +228,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
@@ -393,6 +399,30 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
     public function setCity($city)
     {
         $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
 
         return $this;
     }
