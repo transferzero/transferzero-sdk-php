@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * Sender Class Doc Comment
  *
  * @category Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;city_of_birth\&quot;: \&quot;London\&quot;,   \&quot;country_of_birth\&quot;: \&quot;GB\&quot;,   \&quot;gender\&quot;: \&quot;M\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;created_at\&quot;: \&quot;2018-06-09 15:13:40 UTC\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;politically_exposed_people\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   // name   \&quot;first_name\&quot;: \&quot;Jane\&quot;,   \&quot;last_name\&quot;: \&quot;Doe\&quot;,    // address   \&quot;country\&quot;: \&quot;US\&quot;,   \&quot;city\&quot;: \&quot;New York\&quot;,   \&quot;street\&quot;: \&quot;20 W 34th St\&quot;,   \&quot;postal_code\&quot;: \&quot;10001\&quot;,   \&quot;address_description\&quot;: \&quot;\&quot;,    // DOB   \&quot;birth_date\&quot;: \&quot;1974-12-24\&quot;,    // Contact Details; You can usually use your company&#39;s contact details here   \&quot;phone_country\&quot;: \&quot;US\&quot;,   \&quot;phone_number\&quot;: \&quot;5555551234\&quot;,   \&quot;email\&quot;: \&quot;info@transferzero.com\&quot;,    // ID of the sender in your system   \&quot;external_id\&quot;: \&quot;Sender:US:234523\&quot;,    // these fields are mandatory, but you can usually leave them with the following default values:   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: {} } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;name\&quot;: \&quot;Company name\&quot;,    // Country of Incorporation   \&quot;country\&quot;: \&quot;US\&quot;,    // Trading address of the company   \&quot;trading_country\&quot;: \&quot;US\&quot;,   \&quot;city\&quot;: \&quot;New York\&quot;,   \&quot;street\&quot;: \&quot;20 W 34th St\&quot;,   \&quot;postal_code\&quot;: \&quot;10001\&quot;,   \&quot;address_description\&quot;: \&quot;\&quot;,    // Company Details   \&quot;legal_entity_type\&quot;: \&quot;privately_owned_company\&quot;,   \&quot;registration_date\&quot;: \&quot;2012-01-25\&quot;,   \&quot;registration_number\&quot;: \&quot;VAT1234567\&quot;,   \&quot;nature_of_business\&quot;: \&quot;retail_trade\&quot;,    // Contact Details   \&quot;phone_country\&quot;: \&quot;US\&quot;,   \&quot;phone_number\&quot;: \&quot;5555551234\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,    // ID of the sender in your system   \&quot;external_id\&quot;: \&quot;Sender:Business:US:234523\&quot;,    // these fields are mandatory, but you can usually leave them with the following default values:   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: {} } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -80,7 +80,7 @@ class Sender implements ModelInterface, ArrayAccess
         'occupation' => 'string',
         'nationality' => 'string',
         'legal_entity_type' => 'string',
-        'registration_date' => 'string',
+        'registration_date' => '\DateTime',
         'registration_number' => 'string',
         'nature_of_business' => 'string',
         'source_of_funds' => 'string',
@@ -136,7 +136,7 @@ class Sender implements ModelInterface, ArrayAccess
         'occupation' => null,
         'nationality' => null,
         'legal_entity_type' => null,
-        'registration_date' => null,
+        'registration_date' => 'date',
         'registration_number' => null,
         'nature_of_business' => null,
         'source_of_funds' => null,
@@ -411,6 +411,42 @@ class Sender implements ModelInterface, ArrayAccess
     const LEGAL_ENTITY_TYPE_GO = 'go';
     const LEGAL_ENTITY_TYPE_OTHER = 'other';
     const LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION = 'financial_institution';
+    const NATURE_OF_BUSINESS_PERSONAL = 'personal';
+    const NATURE_OF_BUSINESS_AGRICULTURE_AND_HUNTING = 'agriculture_and_hunting';
+    const NATURE_OF_BUSINESS_FORESTRY = 'forestry';
+    const NATURE_OF_BUSINESS_FISHING = 'fishing';
+    const NATURE_OF_BUSINESS_AGRICULTURAL_BY_PRODUCTS = 'agricultural_by_products';
+    const NATURE_OF_BUSINESS_COAL_MINING = 'coal_mining';
+    const NATURE_OF_BUSINESS_OIL_MINING = 'oil_mining';
+    const NATURE_OF_BUSINESS_IRON_ORE_MINING = 'iron_ore_mining';
+    const NATURE_OF_BUSINESS_OTHER_METAL_AND_DIAMOND_MINING = 'other_metal_and_diamond_mining';
+    const NATURE_OF_BUSINESS_OTHER_MINERAL_MINING = 'other_mineral_mining';
+    const NATURE_OF_BUSINESS_MANUFACTURING_OF_FOOD_DRINK_TOBACCO = 'manufacturing_of_food_drink_tobacco';
+    const NATURE_OF_BUSINESS_MANUFACTURING_OF_TEXTILES_LEATHER_FUR_FURNITURE = 'manufacturing_of_textiles_leather_fur_furniture';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_WOODEN_PRODUCTS_FURNITURE = 'manufacture_of_wooden_products_furniture';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_PAPER_PULP_ALLIED_PRODUCTS = 'manufacture_of_paper_pulp_allied_products';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_CHEMICALS_MEDICAL_PETROLEUM_RUBBER_PLASTIC_PRODUCTS = 'manufacture_of_chemicals_medical_petroleum_rubber_plastic_products';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_POTTERY_CHINA_GLASS_STONE = 'manufacture_of_pottery_china_glass_stone';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_IRON_STEEL_NON_FERROUS_METALS_BASIC_INDUSTRIES = 'manufacture_of_iron_steel_non_ferrous_metals_basic_industries';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_METAL_PRODUCTS_ELECTRICAL_AND_SCIENTIFIC_ENGINEERING = 'manufacture_of_metal_products_electrical_and_scientific_engineering';
+    const NATURE_OF_BUSINESS_MANUFACTURE_OF_JEWELRY_MUSICAL_INSTRUMENTS_TOYS = 'manufacture_of_jewelry_musical_instruments_toys';
+    const NATURE_OF_BUSINESS_ELECTRICITY_GAS_AND_WATER = 'electricity_gas_and_water';
+    const NATURE_OF_BUSINESS_CONSTRUCTION = 'construction';
+    const NATURE_OF_BUSINESS_WHOLESALE_TRADE = 'wholesale_trade';
+    const NATURE_OF_BUSINESS_RETAIL_TRADE = 'retail_trade';
+    const NATURE_OF_BUSINESS_CATERING_INCL_HOTELS = 'catering_incl_hotels';
+    const NATURE_OF_BUSINESS_TRANSPORT_STORAGE = 'transport_storage';
+    const NATURE_OF_BUSINESS_COMMUNICATIONS = 'communications';
+    const NATURE_OF_BUSINESS_FINANCE_AND_HOLDING_COMPANIES = 'finance_and_holding_companies';
+    const NATURE_OF_BUSINESS_INSURANCE = 'insurance';
+    const NATURE_OF_BUSINESS_BUSINESS_SERVICES = 'business_services';
+    const NATURE_OF_BUSINESS_REAL_ESTATE_DEVELOPMENT_INVESTMENT = 'real_estate_development_investment';
+    const NATURE_OF_BUSINESS_CENTRAL_STATE_GOVERNMENTS = 'central_state_governments';
+    const NATURE_OF_BUSINESS_COMMUNITY_SERVICES_DEFENCE_POLICE_PRISONS_ETC = 'community_services_defence_police_prisons_etc';
+    const NATURE_OF_BUSINESS_SOCIAL_SERVICES_EDUCATION_HEALTH_CARE = 'social_services_education_health_care';
+    const NATURE_OF_BUSINESS_PERSONAL_SERVICES_LEISURE_SERVICES = 'personal_services_leisure_services';
+    const NATURE_OF_BUSINESS_PERSONAL_SERVICES_DOMESTIC_LAUNDRY_REPAIRS = 'personal_services_domestic_laundry_repairs';
+    const NATURE_OF_BUSINESS_PERSONAL_SERVICES_EMBASSIES_INTERNATIONAL_ORGANISATIONS = 'personal_services_embassies_international_organisations';
     const GENDER_M = 'M';
     const GENDER_F = 'F';
     const GENDER_O = 'O';
@@ -464,6 +500,53 @@ class Sender implements ModelInterface, ArrayAccess
             self::LEGAL_ENTITY_TYPE_GO,
             self::LEGAL_ENTITY_TYPE_OTHER,
             self::LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getNatureOfBusinessAllowableValues()
+    {
+        return [
+            self::NATURE_OF_BUSINESS_PERSONAL,
+            self::NATURE_OF_BUSINESS_AGRICULTURE_AND_HUNTING,
+            self::NATURE_OF_BUSINESS_FORESTRY,
+            self::NATURE_OF_BUSINESS_FISHING,
+            self::NATURE_OF_BUSINESS_AGRICULTURAL_BY_PRODUCTS,
+            self::NATURE_OF_BUSINESS_COAL_MINING,
+            self::NATURE_OF_BUSINESS_OIL_MINING,
+            self::NATURE_OF_BUSINESS_IRON_ORE_MINING,
+            self::NATURE_OF_BUSINESS_OTHER_METAL_AND_DIAMOND_MINING,
+            self::NATURE_OF_BUSINESS_OTHER_MINERAL_MINING,
+            self::NATURE_OF_BUSINESS_MANUFACTURING_OF_FOOD_DRINK_TOBACCO,
+            self::NATURE_OF_BUSINESS_MANUFACTURING_OF_TEXTILES_LEATHER_FUR_FURNITURE,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_WOODEN_PRODUCTS_FURNITURE,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_PAPER_PULP_ALLIED_PRODUCTS,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_CHEMICALS_MEDICAL_PETROLEUM_RUBBER_PLASTIC_PRODUCTS,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_POTTERY_CHINA_GLASS_STONE,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_IRON_STEEL_NON_FERROUS_METALS_BASIC_INDUSTRIES,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_METAL_PRODUCTS_ELECTRICAL_AND_SCIENTIFIC_ENGINEERING,
+            self::NATURE_OF_BUSINESS_MANUFACTURE_OF_JEWELRY_MUSICAL_INSTRUMENTS_TOYS,
+            self::NATURE_OF_BUSINESS_ELECTRICITY_GAS_AND_WATER,
+            self::NATURE_OF_BUSINESS_CONSTRUCTION,
+            self::NATURE_OF_BUSINESS_WHOLESALE_TRADE,
+            self::NATURE_OF_BUSINESS_RETAIL_TRADE,
+            self::NATURE_OF_BUSINESS_CATERING_INCL_HOTELS,
+            self::NATURE_OF_BUSINESS_TRANSPORT_STORAGE,
+            self::NATURE_OF_BUSINESS_COMMUNICATIONS,
+            self::NATURE_OF_BUSINESS_FINANCE_AND_HOLDING_COMPANIES,
+            self::NATURE_OF_BUSINESS_INSURANCE,
+            self::NATURE_OF_BUSINESS_BUSINESS_SERVICES,
+            self::NATURE_OF_BUSINESS_REAL_ESTATE_DEVELOPMENT_INVESTMENT,
+            self::NATURE_OF_BUSINESS_CENTRAL_STATE_GOVERNMENTS,
+            self::NATURE_OF_BUSINESS_COMMUNITY_SERVICES_DEFENCE_POLICE_PRISONS_ETC,
+            self::NATURE_OF_BUSINESS_SOCIAL_SERVICES_EDUCATION_HEALTH_CARE,
+            self::NATURE_OF_BUSINESS_PERSONAL_SERVICES_LEISURE_SERVICES,
+            self::NATURE_OF_BUSINESS_PERSONAL_SERVICES_DOMESTIC_LAUNDRY_REPAIRS,
+            self::NATURE_OF_BUSINESS_PERSONAL_SERVICES_EMBASSIES_INTERNATIONAL_ORGANISATIONS,
         ];
     }
     
@@ -601,6 +684,14 @@ class Sender implements ModelInterface, ArrayAccess
             );
         }
 
+        $allowedValues = $this->getNatureOfBusinessAllowableValues();
+        if (!is_null($this->container['nature_of_business']) && !in_array($this->container['nature_of_business'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'nature_of_business', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         if ($this->container['documents'] === null) {
             $invalidProperties[] = "'documents' can't be null";
         }
@@ -721,7 +812,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param string $country Country of sender in 2-character alpha ISO 3166-2 country format
+     * @param string $country Country of sender in 2-character alpha ISO 3166-2 country format. This is the residential country for personal senders and the country of incorporation for business senders.
      *
      * @return $this
      */
@@ -1162,7 +1253,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets legal_entity_type
      *
-     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)
+     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.
      *
      * @return $this
      */
@@ -1185,7 +1276,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Gets registration_date
      *
-     * @return string|null
+     * @return \DateTime|null
      */
     public function getRegistrationDate()
     {
@@ -1195,7 +1286,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets registration_date
      *
-     * @param string|null $registration_date The registration date (used only with a Business sender)
+     * @param \DateTime|null $registration_date The registration date (used only with a Business sender)
      *
      * @return $this
      */
@@ -1243,12 +1334,21 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets nature_of_business
      *
-     * @param string|null $nature_of_business Nature of business options (used only with a Business sender)
+     * @param string|null $nature_of_business Nature of business options (used only with a Business sender)  Available values:   - personal: Personal   - agriculture_and_hunting: Agriculture and Hunting   - forestry: Forestry   - fishing: Fishing   - agricultural_by_products: Agricultural By-Products   - coal_mining: Coal Mining   - oil_mining: Oil Mining   - iron_ore_mining: Iron Ore Mining   - other_metal_and_diamond_mining: Other Metal and Diamond Mining   - other_mineral_mining: Other Mineral Mining   - manufacturing_of_food_drink_tobacco: Manufacture of Food/Drink/Tobacco   - manufacturing_of_textiles_leather_fur_furniture: Manufacture of Textiles/Leather/Fur/Furniture   - manufacture_of_wooden_products_furniture: Manufacture of Wooden Products/Furniture   - manufacture_of_paper_pulp_allied_products: Manufacture of Paper/Pulp/Allied Products   - manufacture_of_chemicals_medical_petroleum_rubber_plastic_products: Manufacture Of Chemicals Medical Petroleum Rubber Plastic Products   - manufacture_of_pottery_china_glass_stone: Manufacture Of Pottery China Glass Stone   - manufacture_of_iron_steel_non_ferrous_metals_basic_industries: Manufacture Of Iron Steel Non-Ferrous Metals Basic Industries   - manufacture_of_metal_products_electrical_and_scientific_engineering: Manufacture Of Metal Products Electrical And Scientific Engineering   - manufacture_of_jewelry_musical_instruments_toys: Manufacture Of Jewelry Musical Instruments Toys   - electricity_gas_and_water: Electricity, Gas And Water   - construction: Construction   - wholesale_trade: Wholesale Trade   - retail_trade: Retail Trade   - catering_incl_hotels: Catering Incl. Hotels   - transport_storage: Transport Storage   - communications: Communications   - finance_and_holding_companies: Finance And Holding Companies   - insurance: Insurance   - business_services: Business Services   - real_estate_development_investment: Real Estate Development Investment   - central_state_governments: Central State Governments   - community_services_defence_police_prisons_etc: Community Services Defence Police Prisons Etc   - social_services_education_health_care: Social Services Education Health Care   - personal_services_leisure_services: Personal Services - Leisure Services   - personal_services_domestic_laundry_repairs: Personal Services - Domestic Laundry Repairs   - personal_services_embassies_international_organisations: Personal Services - Embassies
      *
      * @return $this
      */
     public function setNatureOfBusiness($nature_of_business)
     {
+        $allowedValues = $this->getNatureOfBusinessAllowableValues();
+        if (!is_null($nature_of_business) && !in_array($nature_of_business, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'nature_of_business', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['nature_of_business'] = $nature_of_business;
 
         return $this;
