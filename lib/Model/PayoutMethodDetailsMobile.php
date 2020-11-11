@@ -60,7 +60,8 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'phone_number' => 'string'
+        'phone_number' => 'string',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
     ];
 
     /**
@@ -71,7 +72,8 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'phone_number' => null
+        'phone_number' => null,
+        'mobile_provider' => null
     ];
 
     /**
@@ -103,7 +105,8 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'phone_number' => 'phone_number'
+        'phone_number' => 'phone_number',
+        'mobile_provider' => 'mobile_provider'
     ];
 
     /**
@@ -114,7 +117,8 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'mobile_provider' => 'setMobileProvider'
     ];
 
     /**
@@ -125,7 +129,8 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'mobile_provider' => 'getMobileProvider'
     ];
 
     /**
@@ -191,6 +196,7 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
     }
 
     /**
@@ -294,6 +300,30 @@ class PayoutMethodDetailsMobile implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_provider
+     *
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
+     */
+    public function getMobileProvider()
+    {
+        return $this->container['mobile_provider'];
+    }
+
+    /**
+     * Sets mobile_provider
+     *
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
+     *
+     * @return $this
+     */
+    public function setMobileProvider($mobile_provider)
+    {
+        $this->container['mobile_provider'] = $mobile_provider;
 
         return $this;
     }

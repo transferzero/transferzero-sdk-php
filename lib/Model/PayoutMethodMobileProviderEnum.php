@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodMobileProviderEnum Class Doc Comment
  *
  * @category Class
- * @description The movile provider of the recipient:  - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo
+ * @description The movile provider of the recipient:  For XOF valid options are: - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo  For GHS valid options are: - &#x60;mtn&#x60;: MTN - &#x60;airtel&#x60;: Airtel - &#x60;tigo&#x60;: Tigo - &#x60;vodafone&#x60;: Vodafone
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -46,6 +46,9 @@ class PayoutMethodMobileProviderEnum
      */
     const ORANGE = 'orange';
     const TIGO = 'tigo';
+    const MTN = 'mtn';
+    const AIRTEL = 'airtel';
+    const VODAFONE = 'vodafone';
     
     /**
      * Gets allowable values of the enum
@@ -56,6 +59,9 @@ class PayoutMethodMobileProviderEnum
         return [
             self::ORANGE,
             self::TIGO,
+            self::MTN,
+            self::AIRTEL,
+            self::VODAFONE,
         ];
     }
 }
