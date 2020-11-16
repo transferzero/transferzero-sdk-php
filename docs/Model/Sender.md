@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **address_description** | **string** | Description of address | [optional] 
 **identification_number** | **string** | Identification number of document used | [optional] 
 **identification_type** | **string** | Document to be identified. The identification type can be one of the following:  - &#x60;DL&#x60;: Driving License - &#x60;PP&#x60;: International Passport - &#x60;ID&#x60;: National ID - &#x60;OT&#x60;: Other | [optional] 
+**lang** | **string** | Determines language of the served content. Defaults to English | [optional] 
 **name** | **string** | Name of sender (used only with a Business sender) | [optional] 
 **first_name** | **string** | First name of sender (used only with a Personal sender) | [optional] 
 **middle_name** | **string** | Middle name of sender (used only with a Personal sender) | [optional] 

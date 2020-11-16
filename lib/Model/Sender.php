@@ -72,6 +72,7 @@ class Sender implements ModelInterface, ArrayAccess
         'address_description' => 'string',
         'identification_number' => 'string',
         'identification_type' => 'string',
+        'lang' => 'string',
         'name' => 'string',
         'first_name' => 'string',
         'middle_name' => 'string',
@@ -128,6 +129,7 @@ class Sender implements ModelInterface, ArrayAccess
         'address_description' => null,
         'identification_number' => null,
         'identification_type' => null,
+        'lang' => null,
         'name' => null,
         'first_name' => null,
         'middle_name' => null,
@@ -205,6 +207,7 @@ class Sender implements ModelInterface, ArrayAccess
         'address_description' => 'address_description',
         'identification_number' => 'identification_number',
         'identification_type' => 'identification_type',
+        'lang' => 'lang',
         'name' => 'name',
         'first_name' => 'first_name',
         'middle_name' => 'middle_name',
@@ -261,6 +264,7 @@ class Sender implements ModelInterface, ArrayAccess
         'address_description' => 'setAddressDescription',
         'identification_number' => 'setIdentificationNumber',
         'identification_type' => 'setIdentificationType',
+        'lang' => 'setLang',
         'name' => 'setName',
         'first_name' => 'setFirstName',
         'middle_name' => 'setMiddleName',
@@ -317,6 +321,7 @@ class Sender implements ModelInterface, ArrayAccess
         'address_description' => 'getAddressDescription',
         'identification_number' => 'getIdentificationNumber',
         'identification_type' => 'getIdentificationType',
+        'lang' => 'getLang',
         'name' => 'getName',
         'first_name' => 'getFirstName',
         'middle_name' => 'getMiddleName',
@@ -594,6 +599,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['address_description'] = isset($data['address_description']) ? $data['address_description'] : null;
         $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
         $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
+        $this->container['lang'] = isset($data['lang']) ? $data['lang'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
@@ -1068,6 +1074,30 @@ class Sender implements ModelInterface, ArrayAccess
             );
         }
         $this->container['identification_type'] = $identification_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets lang
+     *
+     * @return string|null
+     */
+    public function getLang()
+    {
+        return $this->container['lang'];
+    }
+
+    /**
+     * Sets lang
+     *
+     * @param string|null $lang Determines language of the served content. Defaults to English
+     *
+     * @return $this
+     */
+    public function setLang($lang)
+    {
+        $this->container['lang'] = $lang;
 
         return $this;
     }
