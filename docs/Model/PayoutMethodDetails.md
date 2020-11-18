@@ -14,6 +14,9 @@ Name | Type | Description | Notes
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
 **bank_country** | **string** |  | 
+**identity_card_id** | **string** |  | [optional] 
+**identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
+**cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | [optional] 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 
 **sender_identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
@@ -22,8 +25,6 @@ Name | Type | Description | Notes
 **sender_country_of_birth** | **string** |  | 
 **sender_gender** | [**\TransferZero\Model\PayoutMethodGenderEnum**](PayoutMethodGenderEnum.md) |  | 
 **reason** | **string** |  | [optional] 
-**identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
-**identity_card_id** | **string** |  | [optional] 
 **reference** | **string** |  | [optional] 
 **name** | **string** |  | 
 **address** | **string** |  | 

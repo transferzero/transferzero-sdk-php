@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodDetailsXOFBank
+ * PayoutMethodDetailsXOFCash
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodDetailsXOFBank Class Doc Comment
+ * PayoutMethodDetailsXOFCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;SN08SN0000000000000000000000\&quot;,   \&quot;bank_name\&quot;: \&quot;BRM\&quot;,   \&quot;bank_country\&quot;: \&quot;SN\&quot; # ISO country code for Senegal } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, # local or international Senegalese format   \&quot;identity_card_id\&quot;: \&quot;2231324232\&quot;, # optional   \&quot;identity_card_type\&quot;: \&quot;PP\&quot;, # optional   \&quot;cash_provider\&quot;: \&quot;wizall\&quot; # optional } &#x60;&#x60;&#x60;  Please note when sending XOF::Cash payments you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethodDetailsXOFBank';
+    protected static $openAPIModelName = 'PayoutMethodDetailsXOFCash';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'iban' => 'string',
-        'bank_name' => 'string',
-        'bank_country' => 'string'
+        'identity_card_id' => 'string',
+        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
+        'phone_number' => 'string',
+        'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum'
     ];
 
     /**
@@ -73,9 +74,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'iban' => null,
-        'bank_name' => null,
-        'bank_country' => null
+        'identity_card_id' => null,
+        'identity_card_type' => null,
+        'phone_number' => null,
+        'cash_provider' => null
     ];
 
     /**
@@ -107,9 +109,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'iban' => 'iban',
-        'bank_name' => 'bank_name',
-        'bank_country' => 'bank_country'
+        'identity_card_id' => 'identity_card_id',
+        'identity_card_type' => 'identity_card_type',
+        'phone_number' => 'phone_number',
+        'cash_provider' => 'cash_provider'
     ];
 
     /**
@@ -120,9 +123,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'iban' => 'setIban',
-        'bank_name' => 'setBankName',
-        'bank_country' => 'setBankCountry'
+        'identity_card_id' => 'setIdentityCardId',
+        'identity_card_type' => 'setIdentityCardType',
+        'phone_number' => 'setPhoneNumber',
+        'cash_provider' => 'setCashProvider'
     ];
 
     /**
@@ -133,9 +137,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'iban' => 'getIban',
-        'bank_name' => 'getBankName',
-        'bank_country' => 'getBankCountry'
+        'identity_card_id' => 'getIdentityCardId',
+        'identity_card_type' => 'getIdentityCardType',
+        'phone_number' => 'getPhoneNumber',
+        'cash_provider' => 'getCashProvider'
     ];
 
     /**
@@ -200,9 +205,10 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
-        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
-        $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
+        $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
+        $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
     }
 
     /**
@@ -220,14 +226,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
-        if ($this->container['iban'] === null) {
-            $invalidProperties[] = "'iban' can't be null";
-        }
-        if ($this->container['bank_name'] === null) {
-            $invalidProperties[] = "'bank_name' can't be null";
-        }
-        if ($this->container['bank_country'] === null) {
-            $invalidProperties[] = "'bank_country' can't be null";
+        if ($this->container['phone_number'] === null) {
+            $invalidProperties[] = "'phone_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -293,73 +293,97 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets iban
+     * Gets identity_card_id
      *
-     * @return string
+     * @return string|null
      */
-    public function getIban()
+    public function getIdentityCardId()
     {
-        return $this->container['iban'];
+        return $this->container['identity_card_id'];
     }
 
     /**
-     * Sets iban
+     * Sets identity_card_id
      *
-     * @param string $iban iban
+     * @param string|null $identity_card_id identity_card_id
      *
      * @return $this
      */
-    public function setIban($iban)
+    public function setIdentityCardId($identity_card_id)
     {
-        $this->container['iban'] = $iban;
+        $this->container['identity_card_id'] = $identity_card_id;
 
         return $this;
     }
 
     /**
-     * Gets bank_name
+     * Gets identity_card_type
      *
-     * @return string
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
      */
-    public function getBankName()
+    public function getIdentityCardType()
     {
-        return $this->container['bank_name'];
+        return $this->container['identity_card_type'];
     }
 
     /**
-     * Sets bank_name
+     * Sets identity_card_type
      *
-     * @param string $bank_name bank_name
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
      *
      * @return $this
      */
-    public function setBankName($bank_name)
+    public function setIdentityCardType($identity_card_type)
     {
-        $this->container['bank_name'] = $bank_name;
+        $this->container['identity_card_type'] = $identity_card_type;
 
         return $this;
     }
 
     /**
-     * Gets bank_country
+     * Gets phone_number
      *
      * @return string
      */
-    public function getBankCountry()
+    public function getPhoneNumber()
     {
-        return $this->container['bank_country'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets bank_country
+     * Sets phone_number
      *
-     * @param string $bank_country bank_country
+     * @param string $phone_number phone_number
      *
      * @return $this
      */
-    public function setBankCountry($bank_country)
+    public function setPhoneNumber($phone_number)
     {
-        $this->container['bank_country'] = $bank_country;
+        $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets cash_provider
+     *
+     * @return \TransferZero\Model\PayoutMethodCashProviderEnum|null
+     */
+    public function getCashProvider()
+    {
+        return $this->container['cash_provider'];
+    }
+
+    /**
+     * Sets cash_provider
+     *
+     * @param \TransferZero\Model\PayoutMethodCashProviderEnum|null $cash_provider cash_provider
+     *
+     * @return $this
+     */
+    public function setCashProvider($cash_provider)
+    {
+        $this->container['cash_provider'] = $cash_provider;
 
         return $this;
     }

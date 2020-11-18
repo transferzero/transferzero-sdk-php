@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodIdentityCardTypeEnum
+ * PayoutMethodCashProviderEnum
  *
  * PHP version 5
  *
@@ -31,22 +31,21 @@ namespace TransferZero\Model;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodIdentityCardTypeEnum Class Doc Comment
+ * PayoutMethodCashProviderEnum Class Doc Comment
  *
  * @category Class
- * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;NI&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card  For XOF valid options are: - &#x60;NI&#x60;: National ID - &#x60;PP&#x60;: Passport
+ * @description The cash provider for the pickup:  For XOF valid options are: - &#x60;wari&#x60;: Wari - &#x60;wizall&#x60;: Wizall
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodIdentityCardTypeEnum
+class PayoutMethodCashProviderEnum
 {
     /**
      * Possible values of this enum
      */
-    const O = 'O';
-    const PP = 'PP';
-    const NI = 'NI';
+    const WARI = 'wari';
+    const WIZALL = 'wizall';
     
     /**
      * Gets allowable values of the enum
@@ -55,9 +54,8 @@ class PayoutMethodIdentityCardTypeEnum
     public static function getAllowableEnumValues()
     {
         return [
-            self::O,
-            self::PP,
-            self::NI,
+            self::WARI,
+            self::WIZALL,
         ];
     }
 }
