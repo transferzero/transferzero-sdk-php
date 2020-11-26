@@ -67,9 +67,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
-        'identity_card_id' => 'string',
-        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
-        'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
         'sort_code' => 'string',
         'bic' => 'string',
         'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
@@ -78,6 +75,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'sender_country_of_birth' => 'string',
         'sender_gender' => '\TransferZero\Model\PayoutMethodGenderEnum',
         'reason' => 'string',
+        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
+        'identity_card_id' => 'string',
         'reference' => 'string',
         'name' => 'string',
         'address' => 'string',
@@ -104,9 +103,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
-        'identity_card_id' => null,
-        'identity_card_type' => null,
-        'cash_provider' => null,
         'sort_code' => null,
         'bic' => null,
         'sender_identity_card_type' => null,
@@ -115,6 +111,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'sender_country_of_birth' => null,
         'sender_gender' => null,
         'reason' => null,
+        'identity_card_type' => null,
+        'identity_card_id' => null,
         'reference' => null,
         'name' => null,
         'address' => null,
@@ -162,9 +160,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
-        'identity_card_id' => 'identity_card_id',
-        'identity_card_type' => 'identity_card_type',
-        'cash_provider' => 'cash_provider',
         'sort_code' => 'sort_code',
         'bic' => 'bic',
         'sender_identity_card_type' => 'sender_identity_card_type',
@@ -173,6 +168,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'sender_country_of_birth' => 'sender_country_of_birth',
         'sender_gender' => 'sender_gender',
         'reason' => 'reason',
+        'identity_card_type' => 'identity_card_type',
+        'identity_card_id' => 'identity_card_id',
         'reference' => 'reference',
         'name' => 'name',
         'address' => 'address',
@@ -199,9 +196,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
-        'identity_card_id' => 'setIdentityCardId',
-        'identity_card_type' => 'setIdentityCardType',
-        'cash_provider' => 'setCashProvider',
         'sort_code' => 'setSortCode',
         'bic' => 'setBic',
         'sender_identity_card_type' => 'setSenderIdentityCardType',
@@ -210,6 +204,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'sender_country_of_birth' => 'setSenderCountryOfBirth',
         'sender_gender' => 'setSenderGender',
         'reason' => 'setReason',
+        'identity_card_type' => 'setIdentityCardType',
+        'identity_card_id' => 'setIdentityCardId',
         'reference' => 'setReference',
         'name' => 'setName',
         'address' => 'setAddress',
@@ -236,9 +232,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
-        'identity_card_id' => 'getIdentityCardId',
-        'identity_card_type' => 'getIdentityCardType',
-        'cash_provider' => 'getCashProvider',
         'sort_code' => 'getSortCode',
         'bic' => 'getBic',
         'sender_identity_card_type' => 'getSenderIdentityCardType',
@@ -247,6 +240,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'sender_country_of_birth' => 'getSenderCountryOfBirth',
         'sender_gender' => 'getSenderGender',
         'reason' => 'getReason',
+        'identity_card_type' => 'getIdentityCardType',
+        'identity_card_id' => 'getIdentityCardId',
         'reference' => 'getReference',
         'name' => 'getName',
         'address' => 'getAddress',
@@ -327,9 +322,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
-        $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
-        $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
-        $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
         $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['sender_identity_card_type'] = isset($data['sender_identity_card_type']) ? $data['sender_identity_card_type'] : null;
@@ -338,6 +330,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['sender_country_of_birth'] = isset($data['sender_country_of_birth']) ? $data['sender_country_of_birth'] : null;
         $this->container['sender_gender'] = isset($data['sender_gender']) ? $data['sender_gender'] : null;
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
+        $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
+        $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
@@ -670,78 +664,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets identity_card_id
-     *
-     * @return string|null
-     */
-    public function getIdentityCardId()
-    {
-        return $this->container['identity_card_id'];
-    }
-
-    /**
-     * Sets identity_card_id
-     *
-     * @param string|null $identity_card_id identity_card_id
-     *
-     * @return $this
-     */
-    public function setIdentityCardId($identity_card_id)
-    {
-        $this->container['identity_card_id'] = $identity_card_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identity_card_type
-     *
-     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
-     */
-    public function getIdentityCardType()
-    {
-        return $this->container['identity_card_type'];
-    }
-
-    /**
-     * Sets identity_card_type
-     *
-     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
-     *
-     * @return $this
-     */
-    public function setIdentityCardType($identity_card_type)
-    {
-        $this->container['identity_card_type'] = $identity_card_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets cash_provider
-     *
-     * @return \TransferZero\Model\PayoutMethodCashProviderEnum|null
-     */
-    public function getCashProvider()
-    {
-        return $this->container['cash_provider'];
-    }
-
-    /**
-     * Sets cash_provider
-     *
-     * @param \TransferZero\Model\PayoutMethodCashProviderEnum|null $cash_provider cash_provider
-     *
-     * @return $this
-     */
-    public function setCashProvider($cash_provider)
-    {
-        $this->container['cash_provider'] = $cash_provider;
-
-        return $this;
-    }
-
-    /**
      * Gets sort_code
      *
      * @return string|null
@@ -929,6 +851,54 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setReason($reason)
     {
         $this->container['reason'] = $reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets identity_card_type
+     *
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
+     */
+    public function getIdentityCardType()
+    {
+        return $this->container['identity_card_type'];
+    }
+
+    /**
+     * Sets identity_card_type
+     *
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
+     *
+     * @return $this
+     */
+    public function setIdentityCardType($identity_card_type)
+    {
+        $this->container['identity_card_type'] = $identity_card_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets identity_card_id
+     *
+     * @return string|null
+     */
+    public function getIdentityCardId()
+    {
+        return $this->container['identity_card_id'];
+    }
+
+    /**
+     * Sets identity_card_id
+     *
+     * @param string|null $identity_card_id identity_card_id
+     *
+     * @return $this
+     */
+    public function setIdentityCardId($identity_card_id)
+    {
+        $this->container['identity_card_id'] = $identity_card_id;
 
         return $this;
     }
