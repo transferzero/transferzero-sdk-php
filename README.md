@@ -157,6 +157,7 @@ Class | Method | HTTP request | Description
 *RecipientsApi* | [**deleteRecipient**](docs/Api/RecipientsApi.md#deleterecipient) | **DELETE** /recipients/{Recipient ID} | Cancelling a recipient
 *RecipientsApi* | [**getRecipients**](docs/Api/RecipientsApi.md#getrecipients) | **GET** /recipients | Getting a list of recipients with filtering
 *RecipientsApi* | [**patchRecipient**](docs/Api/RecipientsApi.md#patchrecipient) | **PATCH** /recipients/{Recipient ID} | Updating a recipient
+*RecipientsApi* | [**proofOfPayments**](docs/Api/RecipientsApi.md#proofofpayments) | **GET** /recipients/{Recipient ID}/proof_of_payments | Returns list of proof of payments
 *SendersApi* | [**deleteSender**](docs/Api/SendersApi.md#deletesender) | **DELETE** /senders/{Sender ID} | Deleting a sender
 *SendersApi* | [**getSender**](docs/Api/SendersApi.md#getsender) | **GET** /senders/{Sender ID} | Fetching a sender
 *SendersApi* | [**getSenders**](docs/Api/SendersApi.md#getsenders) | **GET** /senders | Listing senders
@@ -243,6 +244,8 @@ Class | Method | HTTP request | Description
  - [PayoutMethodResponse](docs/Model/PayoutMethodResponse.md)
  - [PayoutMethodWebhook](docs/Model/PayoutMethodWebhook.md)
  - [PoliticallyExposedPerson](docs/Model/PoliticallyExposedPerson.md)
+ - [ProofOfPayment](docs/Model/ProofOfPayment.md)
+ - [ProofOfPaymentListResponse](docs/Model/ProofOfPaymentListResponse.md)
  - [Recipient](docs/Model/Recipient.md)
  - [RecipientListResponse](docs/Model/RecipientListResponse.md)
  - [RecipientRequest](docs/Model/RecipientRequest.md)

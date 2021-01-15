@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**deleteRecipient**](RecipientsApi.md#deleteRecipient) | **DELETE** /recipients/{Recipient ID} | Cancelling a recipient
 [**getRecipients**](RecipientsApi.md#getRecipients) | **GET** /recipients | Getting a list of recipients with filtering
 [**patchRecipient**](RecipientsApi.md#patchRecipient) | **PATCH** /recipients/{Recipient ID} | Updating a recipient
+[**proofOfPayments**](RecipientsApi.md#proofOfPayments) | **GET** /recipients/{Recipient ID}/proof_of_payments | Returns list of proof of payments
 
 
 # **deleteRecipient**
@@ -203,6 +204,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **proofOfPayments**
+> \TransferZero\Model\ProofOfPaymentListResponse proofOfPayments($recipient_id)
+
+Returns list of proof of payments
+
+Returns a list of uploaded proof of payment files for a transaction recipient
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+```
+
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
+
+$apiInstance = new TransferZero\Api\RecipientsApi();
+$recipient_id = 'recipient_id_example'; // string | ID of the recipient for whom the proof of payments will be returned.  Example: `/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33/proof_of_payments`
+
+try {
+    $result = $apiInstance->proofOfPayments($recipient_id);
+    print_r($result);
+} catch (Exception $e) {
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling RecipientsApi#proofOfPayments";
+        echo $e->getMessage();
+    }
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **recipient_id** | [**string**](../Model/.md)| ID of the recipient for whom the proof of payments will be returned.  Example: &#x60;/v1/recipients/9d4d7b73-a94c-4979-ab57-09074fd55d33/proof_of_payments&#x60; |
+
+### Return type
+
+[**\TransferZero\Model\ProofOfPaymentListResponse**](../Model/ProofOfPaymentListResponse.md)
+
+### Authorization
+
+[AuthorizationKey](../../README.md#AuthorizationKey), [AuthorizationNonce](../../README.md#AuthorizationNonce), [AuthorizationSecret](../../README.md#AuthorizationSecret), [AuthorizationSignature](../../README.md#AuthorizationSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
