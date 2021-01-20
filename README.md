@@ -253,6 +253,7 @@ Class | Method | HTTP request | Description
  - [RecipientRequest](docs/Model/RecipientRequest.md)
  - [RecipientResponse](docs/Model/RecipientResponse.md)
  - [RecipientState](docs/Model/RecipientState.md)
+ - [RecipientStateReasonDetails](docs/Model/RecipientStateReasonDetails.md)
  - [RecipientWebhook](docs/Model/RecipientWebhook.md)
  - [Sender](docs/Model/Sender.md)
  - [SenderListResponse](docs/Model/SenderListResponse.md)

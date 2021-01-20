@@ -68,6 +68,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'input_usd_amount' => 'float',
         'may_cancel' => 'bool',
         'state_reason' => 'string',
+        'state_reason_details' => '\TransferZero\Model\RecipientStateReasonDetails',
         'state' => '\TransferZero\Model\RecipientState',
         'transaction_id' => 'string',
         'transaction_state' => '\TransferZero\Model\TransactionState',
@@ -97,6 +98,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'input_usd_amount' => null,
         'may_cancel' => null,
         'state_reason' => null,
+        'state_reason_details' => null,
         'state' => null,
         'transaction_id' => null,
         'transaction_state' => null,
@@ -147,6 +149,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'input_usd_amount' => 'input_usd_amount',
         'may_cancel' => 'may_cancel',
         'state_reason' => 'state_reason',
+        'state_reason_details' => 'state_reason_details',
         'state' => 'state',
         'transaction_id' => 'transaction_id',
         'transaction_state' => 'transaction_state',
@@ -176,6 +179,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'input_usd_amount' => 'setInputUsdAmount',
         'may_cancel' => 'setMayCancel',
         'state_reason' => 'setStateReason',
+        'state_reason_details' => 'setStateReasonDetails',
         'state' => 'setState',
         'transaction_id' => 'setTransactionId',
         'transaction_state' => 'setTransactionState',
@@ -205,6 +209,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'input_usd_amount' => 'getInputUsdAmount',
         'may_cancel' => 'getMayCancel',
         'state_reason' => 'getStateReason',
+        'state_reason_details' => 'getStateReasonDetails',
         'state' => 'getState',
         'transaction_id' => 'getTransactionId',
         'transaction_state' => 'getTransactionState',
@@ -288,6 +293,7 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['input_usd_amount'] = isset($data['input_usd_amount']) ? $data['input_usd_amount'] : null;
         $this->container['may_cancel'] = isset($data['may_cancel']) ? $data['may_cancel'] : null;
         $this->container['state_reason'] = isset($data['state_reason']) ? $data['state_reason'] : null;
+        $this->container['state_reason_details'] = isset($data['state_reason_details']) ? $data['state_reason_details'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
         $this->container['transaction_state'] = isset($data['transaction_state']) ? $data['transaction_state'] : null;
@@ -570,6 +576,30 @@ class Recipient implements ModelInterface, ArrayAccess
     public function setStateReason($state_reason)
     {
         $this->container['state_reason'] = $state_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets state_reason_details
+     *
+     * @return \TransferZero\Model\RecipientStateReasonDetails|null
+     */
+    public function getStateReasonDetails()
+    {
+        return $this->container['state_reason_details'];
+    }
+
+    /**
+     * Sets state_reason_details
+     *
+     * @param \TransferZero\Model\RecipientStateReasonDetails|null $state_reason_details state_reason_details
+     *
+     * @return $this
+     */
+    public function setStateReasonDetails($state_reason_details)
+    {
+        $this->container['state_reason_details'] = $state_reason_details;
 
         return $this;
     }
