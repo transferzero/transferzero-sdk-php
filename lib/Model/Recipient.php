@@ -71,6 +71,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'state_reason_details' => '\TransferZero\Model\RecipientStateReasonDetails',
         'state' => '\TransferZero\Model\RecipientState',
         'transaction_id' => 'string',
+        'transaction_external_id' => 'string',
         'transaction_state' => '\TransferZero\Model\TransactionState',
         'exchange_rate' => 'float',
         'fee_fractional' => 'float',
@@ -101,6 +102,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'state_reason_details' => null,
         'state' => null,
         'transaction_id' => null,
+        'transaction_external_id' => null,
         'transaction_state' => null,
         'exchange_rate' => null,
         'fee_fractional' => null,
@@ -152,6 +154,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'state_reason_details' => 'state_reason_details',
         'state' => 'state',
         'transaction_id' => 'transaction_id',
+        'transaction_external_id' => 'transaction_external_id',
         'transaction_state' => 'transaction_state',
         'exchange_rate' => 'exchange_rate',
         'fee_fractional' => 'fee_fractional',
@@ -182,6 +185,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'state_reason_details' => 'setStateReasonDetails',
         'state' => 'setState',
         'transaction_id' => 'setTransactionId',
+        'transaction_external_id' => 'setTransactionExternalId',
         'transaction_state' => 'setTransactionState',
         'exchange_rate' => 'setExchangeRate',
         'fee_fractional' => 'setFeeFractional',
@@ -212,6 +216,7 @@ class Recipient implements ModelInterface, ArrayAccess
         'state_reason_details' => 'getStateReasonDetails',
         'state' => 'getState',
         'transaction_id' => 'getTransactionId',
+        'transaction_external_id' => 'getTransactionExternalId',
         'transaction_state' => 'getTransactionState',
         'exchange_rate' => 'getExchangeRate',
         'fee_fractional' => 'getFeeFractional',
@@ -296,6 +301,7 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['state_reason_details'] = isset($data['state_reason_details']) ? $data['state_reason_details'] : null;
         $this->container['state'] = isset($data['state']) ? $data['state'] : null;
         $this->container['transaction_id'] = isset($data['transaction_id']) ? $data['transaction_id'] : null;
+        $this->container['transaction_external_id'] = isset($data['transaction_external_id']) ? $data['transaction_external_id'] : null;
         $this->container['transaction_state'] = isset($data['transaction_state']) ? $data['transaction_state'] : null;
         $this->container['exchange_rate'] = isset($data['exchange_rate']) ? $data['exchange_rate'] : null;
         $this->container['fee_fractional'] = isset($data['fee_fractional']) ? $data['fee_fractional'] : null;
@@ -648,6 +654,30 @@ class Recipient implements ModelInterface, ArrayAccess
     public function setTransactionId($transaction_id)
     {
         $this->container['transaction_id'] = $transaction_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_external_id
+     *
+     * @return string|null
+     */
+    public function getTransactionExternalId()
+    {
+        return $this->container['transaction_external_id'];
+    }
+
+    /**
+     * Sets transaction_external_id
+     *
+     * @param string|null $transaction_external_id Optional ID that is supplied by partner linking it to the partner's own Transaction ID.
+     *
+     * @return $this
+     */
+    public function setTransactionExternalId($transaction_external_id)
+    {
+        $this->container['transaction_external_id'] = $transaction_external_id;
 
         return $this;
     }

@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **state_reason_details** | [**\TransferZero\Model\RecipientStateReasonDetails**](RecipientStateReasonDetails.md) |  | [optional] 
 **state** | [**\TransferZero\Model\RecipientState**](RecipientState.md) |  | [optional] 
 **transaction_id** | **string** | The ID of the transaction that is related to this recipient | [optional] 
+**transaction_external_id** | **string** | Optional ID that is supplied by partner linking it to the partner&#39;s own Transaction ID. | [optional] 
 **transaction_state** | [**\TransferZero\Model\TransactionState**](TransactionState.md) |  | [optional] 
 **exchange_rate** | **float** | The exchange rate used in this payment | [optional] 
 **fee_fractional** | **float** | The fee for this payment in fractional units (for example cents for USD transactions) | [optional] 
