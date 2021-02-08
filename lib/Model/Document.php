@@ -68,6 +68,8 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'string',
         'issuing_country' => 'string',
         'id' => 'string',
+        'document_id' => 'string',
+        'expiry_date' => '\DateTime',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
@@ -88,6 +90,8 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => null,
         'issuing_country' => null,
         'id' => 'uuid',
+        'document_id' => null,
+        'expiry_date' => 'date',
         'errors' => null
     ];
 
@@ -129,6 +133,8 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'document_type',
         'issuing_country' => 'issuing_country',
         'id' => 'id',
+        'document_id' => 'document_id',
+        'expiry_date' => 'expiry_date',
         'errors' => 'errors'
     ];
 
@@ -149,6 +155,8 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'setDocumentType',
         'issuing_country' => 'setIssuingCountry',
         'id' => 'setId',
+        'document_id' => 'setDocumentId',
+        'expiry_date' => 'setExpiryDate',
         'errors' => 'setErrors'
     ];
 
@@ -169,6 +177,8 @@ class Document implements ModelInterface, ArrayAccess
         'document_type' => 'getDocumentType',
         'issuing_country' => 'getIssuingCountry',
         'id' => 'getId',
+        'document_id' => 'getDocumentId',
+        'expiry_date' => 'getExpiryDate',
         'errors' => 'getErrors'
     ];
 
@@ -258,6 +268,8 @@ class Document implements ModelInterface, ArrayAccess
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['issuing_country'] = isset($data['issuing_country']) ? $data['issuing_country'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;
+        $this->container['expiry_date'] = isset($data['expiry_date']) ? $data['expiry_date'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -568,6 +580,54 @@ class Document implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets document_id
+     *
+     * @return string|null
+     */
+    public function getDocumentId()
+    {
+        return $this->container['document_id'];
+    }
+
+    /**
+     * Sets document_id
+     *
+     * @param string|null $document_id Document ID issued by government
+     *
+     * @return $this
+     */
+    public function setDocumentId($document_id)
+    {
+        $this->container['document_id'] = $document_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets expiry_date
+     *
+     * @return \DateTime|null
+     */
+    public function getExpiryDate()
+    {
+        return $this->container['expiry_date'];
+    }
+
+    /**
+     * Sets expiry_date
+     *
+     * @param \DateTime|null $expiry_date Document expiry date issued by government
+     *
+     * @return $this
+     */
+    public function setExpiryDate($expiry_date)
+    {
+        $this->container['expiry_date'] = $expiry_date;
 
         return $this;
     }
