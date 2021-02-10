@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, // local or international Senegalese format   \&quot;identity_card_id\&quot;: \&quot;2231324232\&quot;, // Required if cash_provider value is \&quot;wizall\&quot;   \&quot;identity_card_type\&quot;: \&quot;PP\&quot;, // Required if cash_provider value is \&quot;wizall\&quot;   \&quot;cash_provider\&quot;: \&quot;wizall\&quot; // Optional; Values: \&quot;wari\&quot; or \&quot;wizall; Default value is \&quot;wari\&quot; } &#x60;&#x60;&#x60;  Please note when sending Wari cash pickup requests you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, // local or international Senegalese format   \&quot;cash_provider\&quot;: \&quot;wizall\&quot; // Optional; Values: \&quot;wari\&quot; or \&quot;wizall; Default value is \&quot;wari\&quot; } &#x60;&#x60;&#x60;  Please note when sending Wari cash pickup requests you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  Please note all senders trying to create Wizall cash pickup requests must have &#x60;identity_type&#x60; and &#x60;\&quot;identity_number&#x60; present. The fields above are generally considered optional for senders for other payment corridors. If you wish to use an existing sender who has some of these fields missing you can provide them alongside the &#x60;id&#x60; or &#x60;external_id&#x60; field in the sender details. For example -  &#x60;&#x60;&#x60;JSON {   \&quot;transaction\&quot;: {       \&quot;sender\&quot;: {         \&quot;external_id\&quot;: \&quot;&lt;id of sender&gt;\&quot;,         \&quot;identity_type\&quot;: \&quot;ID\&quot;,         \&quot;identity_number\&quot;: \&quot;AB12345678\&quot;,         (...)       },       (...)     } } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,8 +60,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'identity_card_id' => 'string',
-        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'phone_number' => 'string',
         'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum'
     ];
@@ -74,8 +72,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'identity_card_id' => null,
-        'identity_card_type' => null,
         'phone_number' => null,
         'cash_provider' => null
     ];
@@ -109,8 +105,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'identity_card_id' => 'identity_card_id',
-        'identity_card_type' => 'identity_card_type',
         'phone_number' => 'phone_number',
         'cash_provider' => 'cash_provider'
     ];
@@ -123,8 +117,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'identity_card_id' => 'setIdentityCardId',
-        'identity_card_type' => 'setIdentityCardType',
         'phone_number' => 'setPhoneNumber',
         'cash_provider' => 'setCashProvider'
     ];
@@ -137,8 +129,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'identity_card_id' => 'getIdentityCardId',
-        'identity_card_type' => 'getIdentityCardType',
         'phone_number' => 'getPhoneNumber',
         'cash_provider' => 'getCashProvider'
     ];
@@ -205,8 +195,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
-        $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
     }
@@ -288,54 +276,6 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     public function setLastName($last_name)
     {
         $this->container['last_name'] = $last_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets identity_card_id
-     *
-     * @return string|null
-     */
-    public function getIdentityCardId()
-    {
-        return $this->container['identity_card_id'];
-    }
-
-    /**
-     * Sets identity_card_id
-     *
-     * @param string|null $identity_card_id identity_card_id
-     *
-     * @return $this
-     */
-    public function setIdentityCardId($identity_card_id)
-    {
-        $this->container['identity_card_id'] = $identity_card_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets identity_card_type
-     *
-     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
-     */
-    public function getIdentityCardType()
-    {
-        return $this->container['identity_card_type'];
-    }
-
-    /**
-     * Sets identity_card_type
-     *
-     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
-     *
-     * @return $this
-     */
-    public function setIdentityCardType($identity_card_type)
-    {
-        $this->container['identity_card_type'] = $identity_card_type;
 
         return $this;
     }

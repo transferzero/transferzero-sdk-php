@@ -1058,7 +1058,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets identification_type
      *
-     * @param string|null $identification_type Document to be identified. The identification type can be one of the following:  - `DL`: Driving License - `PP`: International Passport - `ID`: National ID - `OT`: Other
+     * @param string|null $identification_type Document to be identified. The identification type can be one of the following:  - `DL`: Driving License - `PP`: International Passport - `ID`: National ID - `OT`: Other  Please note for Wizall `XOF::Cash` transactions the valid options are: - `ID`: National ID - `PP`: Passport
      *
      * @return $this
      */
