@@ -60,6 +60,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         'bank_account' => 'string',
         'bank_code' => 'string',
         'phone_number' => 'string',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => 'string',
         'currency' => 'string',
         'method' => 'string'
@@ -74,6 +75,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         'bank_account' => null,
         'bank_code' => null,
         'phone_number' => null,
+        'mobile_provider' => null,
         'country' => null,
         'currency' => null,
         'method' => null
@@ -109,6 +111,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         'bank_account' => 'bank_account',
         'bank_code' => 'bank_code',
         'phone_number' => 'phone_number',
+        'mobile_provider' => 'mobile_provider',
         'country' => 'country',
         'currency' => 'currency',
         'method' => 'method'
@@ -123,6 +126,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         'bank_account' => 'setBankAccount',
         'bank_code' => 'setBankCode',
         'phone_number' => 'setPhoneNumber',
+        'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
         'currency' => 'setCurrency',
         'method' => 'setMethod'
@@ -137,6 +141,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         'bank_account' => 'getBankAccount',
         'bank_code' => 'getBankCode',
         'phone_number' => 'getPhoneNumber',
+        'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
         'currency' => 'getCurrency',
         'method' => 'getMethod'
@@ -250,6 +255,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
         $this->container['method'] = isset($data['method']) ? $data['method'] : null;
@@ -380,6 +386,30 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_provider
+     *
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
+     */
+    public function getMobileProvider()
+    {
+        return $this->container['mobile_provider'];
+    }
+
+    /**
+     * Sets mobile_provider
+     *
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
+     *
+     * @return $this
+     */
+    public function setMobileProvider($mobile_provider)
+    {
+        $this->container['mobile_provider'] = $mobile_provider;
 
         return $this;
     }
