@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, // local or international Senegalese format   \&quot;cash_provider\&quot;: \&quot;wizall\&quot; // Optional; Values: \&quot;wari\&quot; or \&quot;wizall\&quot;; Default value is \&quot;wari\&quot;; } &#x60;&#x60;&#x60;  Please note when sending Wari cash pickup requests you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  Please note all senders trying to create Wizall cash pickup requests must have &#x60;identity_type&#x60; and &#x60;identity_number&#x60; present. The fields above are generally considered optional for senders for other payment corridors. If you wish to use an existing sender who has some of these fields missing you can provide them alongside the &#x60;id&#x60; or &#x60;external_id&#x60; field in the sender details. For example -  &#x60;&#x60;&#x60;JSON {   \&quot;transaction\&quot;: {       \&quot;sender\&quot;: {         \&quot;external_id\&quot;: \&quot;&lt;id of sender&gt;\&quot;,         \&quot;identity_type\&quot;: \&quot;ID\&quot;,         \&quot;identity_number\&quot;: \&quot;AB12345678\&quot;,         (...)       },       (...)     } } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;221774044436\&quot;, // local or international format   \&quot;cash_provider\&quot;: \&quot;wizall\&quot; // Optional; Values: \&quot;wari\&quot; or \&quot;wizall\&quot;; Default value is \&quot;wari\&quot;;   \&quot;country\&quot;: \&quot;SN\&quot; // Optional; Values: \&quot;CI\&quot;, \&quot;ML\&quot; or \&quot;SN\&quot;; Default value is \&quot;SN\&quot;; } &#x60;&#x60;&#x60;  Please note when sending Wari cash pickup requests you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  Please note all senders trying to create Wizall cash pickup requests must have &#x60;identity_type&#x60; and &#x60;identity_number&#x60; present. The fields above are generally considered optional for senders for other payment corridors. If you wish to use an existing sender who has some of these fields missing you can provide them alongside the &#x60;id&#x60; or &#x60;external_id&#x60; field in the sender details. For example -  &#x60;&#x60;&#x60;JSON {   \&quot;transaction\&quot;: {       \&quot;sender\&quot;: {         \&quot;external_id\&quot;: \&quot;&lt;id of sender&gt;\&quot;,         \&quot;identity_type\&quot;: \&quot;ID\&quot;,         \&quot;identity_number\&quot;: \&quot;AB12345678\&quot;,         (...)       },       (...)     } } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,7 +61,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum'
+        'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'phone_number' => null,
-        'cash_provider' => null
+        'cash_provider' => null,
+        'country' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
-        'cash_provider' => 'cash_provider'
+        'cash_provider' => 'cash_provider',
+        'country' => 'country'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
-        'cash_provider' => 'setCashProvider'
+        'cash_provider' => 'setCashProvider',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
-        'cash_provider' => 'getCashProvider'
+        'cash_provider' => 'getCashProvider',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -324,6 +330,30 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     public function setCashProvider($cash_provider)
     {
         $this->container['cash_provider'] = $cash_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }

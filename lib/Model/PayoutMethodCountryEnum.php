@@ -47,6 +47,17 @@ class PayoutMethodCountryEnum
     const CI = 'CI';
     const ML = 'ML';
     const SN = 'SN';
+    const NG = 'NG';
+    const MA = 'MA';
+    const TZ = 'TZ';
+    const GH = 'GH';
+    const UG = 'UG';
+    const KE = 'KE';
+    const NJ = 'NJ';
+    const EU = 'EU';
+    const GB = 'GB';
+    const ZA = 'ZA';
+    const EG = 'EG';
     
     /**
      * Gets allowable values of the enum
@@ -58,6 +69,17 @@ class PayoutMethodCountryEnum
             self::CI,
             self::ML,
             self::SN,
+            self::NG,
+            self::MA,
+            self::TZ,
+            self::GH,
+            self::UG,
+            self::KE,
+            self::NJ,
+            self::EU,
+            self::GB,
+            self::ZA,
+            self::EG,
         ];
     }
 }
