@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFMobile Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;     # local or international Senegalese format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, # \&quot;orange\&quot; or \&quot;tigo\&quot; } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;,     # local or international Senegalese or Ivory Coast format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, # \&quot;orange\&quot; or \&quot;tigo\&quot; for Senegal; \&quot;orange\&quot;, \&quot;mtn\&quot; or \&quot;moov\&quot; for Ivory Coast   \&quot;country\&quot; # Optional; Values: \&quot;SN\&quot; for Senegal or \&quot;CI\&quot; for Ivory Coast; Default value is \&quot;SN\&quot; } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,7 +61,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'phone_number' => null,
-        'mobile_provider' => null
+        'mobile_provider' => null,
+        'country' => null
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
-        'mobile_provider' => 'mobile_provider'
+        'mobile_provider' => 'mobile_provider',
+        'country' => 'country'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
-        'mobile_provider' => 'setMobileProvider'
+        'mobile_provider' => 'setMobileProvider',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
-        'mobile_provider' => 'getMobileProvider'
+        'mobile_provider' => 'getMobileProvider',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -327,6 +333,30 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }

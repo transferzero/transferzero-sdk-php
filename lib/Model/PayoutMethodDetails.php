@@ -64,11 +64,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
         'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
-        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'sort_code' => 'string',
         'bic' => 'string',
         'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
@@ -102,11 +102,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => null,
         'phone_number' => null,
         'mobile_provider' => null,
+        'country' => null,
         'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
         'cash_provider' => null,
-        'country' => null,
         'sort_code' => null,
         'bic' => null,
         'sender_identity_card_type' => null,
@@ -161,11 +161,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'bank_account_type',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
+        'country' => 'country',
         'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
         'cash_provider' => 'cash_provider',
-        'country' => 'country',
         'sort_code' => 'sort_code',
         'bic' => 'bic',
         'sender_identity_card_type' => 'sender_identity_card_type',
@@ -199,11 +199,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'setBankAccountType',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
+        'country' => 'setCountry',
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
         'cash_provider' => 'setCashProvider',
-        'country' => 'setCountry',
         'sort_code' => 'setSortCode',
         'bic' => 'setBic',
         'sender_identity_card_type' => 'setSenderIdentityCardType',
@@ -237,11 +237,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => 'getBankAccountType',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
+        'country' => 'getCountry',
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
         'cash_provider' => 'getCashProvider',
-        'country' => 'getCountry',
         'sort_code' => 'getSortCode',
         'bic' => 'getBic',
         'sender_identity_card_type' => 'getSenderIdentityCardType',
@@ -329,11 +329,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['sender_identity_card_type'] = isset($data['sender_identity_card_type']) ? $data['sender_identity_card_type'] : null;
@@ -604,6 +604,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets country
+     *
+     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
      * Gets iban
      *
      * @return string
@@ -695,30 +719,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setCashProvider($cash_provider)
     {
         $this->container['cash_provider'] = $cash_provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
-     *
-     * @return $this
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
 
         return $this;
     }

@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodCountryEnum Class Doc Comment
  *
  * @category Class
- * @description The country for the pickup: For XOF valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;ML&#x60;: Mali - &#x60;SN&#x60;: Senegal
+ * @description The country for the pickup or mobile payout.  For XOF cash pickup, valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;ML&#x60;: Mali - &#x60;SN&#x60;: Senegal  For XOF mobile payout, valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;SN&#x60;: Senegal
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
