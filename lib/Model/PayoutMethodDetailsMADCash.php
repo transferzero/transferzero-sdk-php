@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsMADCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;212537718685\&quot;     # Mandatory; International format preferred   \&quot;sender_identity_card_type\&quot; &#x3D;&gt; \&quot;O\&quot;,     # Mandatory; Values: \&quot;O\&quot;: Other, \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID   \&quot;sender_identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;,     # Mandatory   \&quot;sender_city_of_birth\&quot; &#x3D;&gt; \&quot;London\&quot;,     # Mandatory   \&quot;sender_country_of_birth\&quot; &#x3D;&gt; \&quot;GB\&quot;,     # Mandatory; ISO 2-letter format   \&quot;sender_gender\&quot; &#x3D;&gt; \&quot;M\&quot;,     # Mandatory; Values: \&quot;M\&quot;: Male, \&quot;F\&quot;: Female   \&quot;reason\&quot; &#x3D;&gt; \&quot;Remittance payment\&quot;,     # Optional; Default value is &#39;Remittance payment&#39;   \&quot;identity_card_type\&quot; &#x3D;&gt; \&quot;ID\&quot;,     # Optional; Values: \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID   \&quot;identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;     # Optional } &#x60;&#x60;&#x60;  Please note when sending MAD::Cash payments you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  The reference can also be provided optionally for MAD::Cash, but if you want to use this functionality please contact us for more details.
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;212537718685\&quot;     # Mandatory; International format preferred   \&quot;sender_identity_card_type\&quot; &#x3D;&gt; \&quot;O\&quot;,     # Mandatory; Values: \&quot;O\&quot;: Other, \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID   \&quot;sender_identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;,     # Mandatory   \&quot;sender_city_of_birth\&quot; &#x3D;&gt; \&quot;London\&quot;,     # Optional   \&quot;sender_country_of_birth\&quot; &#x3D;&gt; \&quot;GB\&quot;,     # Optional; ISO 2-letter format   \&quot;sender_gender\&quot; &#x3D;&gt; \&quot;M\&quot;,     # Mandatory; Values: \&quot;M\&quot;: Male, \&quot;F\&quot;: Female   \&quot;reason\&quot; &#x3D;&gt; \&quot;Remittance payment\&quot;,     # Optional; Default value is &#39;Remittance payment&#39;   \&quot;identity_card_type\&quot; &#x3D;&gt; \&quot;ID\&quot;,     # Optional; Values: \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID   \&quot;identity_card_id\&quot; &#x3D;&gt; &#39;AB12345678&#39;     # Optional } &#x60;&#x60;&#x60;  Please note when sending MAD::Cash payments you should subscribe to the recipient.pending webhook, as that will broadcast the payment reference ID the customer need to use to obtain the funds. Example webhook response excerpt -  &#x60;&#x60;&#x60;JSON {   (...)   \&quot;state\&quot;:\&quot;pending\&quot;,   \&quot;metadata\&quot;: {     \&quot;payment_reference\&quot;:\&quot;9M5GJRJUBCY\&quot;   },   (...) } &#x60;&#x60;&#x60;  The reference can also be provided optionally for MAD::Cash, but if you want to use this functionality please contact us for more details.
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -265,12 +265,6 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         if ($this->container['sender_identity_card_id'] === null) {
             $invalidProperties[] = "'sender_identity_card_id' can't be null";
         }
-        if ($this->container['sender_city_of_birth'] === null) {
-            $invalidProperties[] = "'sender_city_of_birth' can't be null";
-        }
-        if ($this->container['sender_country_of_birth'] === null) {
-            $invalidProperties[] = "'sender_country_of_birth' can't be null";
-        }
         if ($this->container['sender_gender'] === null) {
             $invalidProperties[] = "'sender_gender' can't be null";
         }
@@ -412,7 +406,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Gets sender_city_of_birth
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderCityOfBirth()
     {
@@ -422,7 +416,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Sets sender_city_of_birth
      *
-     * @param string $sender_city_of_birth sender_city_of_birth
+     * @param string|null $sender_city_of_birth sender_city_of_birth
      *
      * @return $this
      */
@@ -436,7 +430,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Gets sender_country_of_birth
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderCountryOfBirth()
     {
@@ -446,7 +440,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     /**
      * Sets sender_country_of_birth
      *
-     * @param string $sender_country_of_birth sender_country_of_birth
+     * @param string|null $sender_country_of_birth sender_country_of_birth
      *
      * @return $this
      */

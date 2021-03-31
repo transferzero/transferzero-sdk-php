@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **bic** | **string** |  | [optional] 
 **sender_identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
 **sender_identity_card_id** | **string** |  | 
-**sender_city_of_birth** | **string** |  | 
-**sender_country_of_birth** | **string** |  | 
+**sender_city_of_birth** | **string** |  | [optional] 
+**sender_country_of_birth** | **string** |  | [optional] 
 **sender_gender** | [**\TransferZero\Model\PayoutMethodGenderEnum**](PayoutMethodGenderEnum.md) |  | 
 **reason** | **string** |  | [optional] 
 **identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 

@@ -396,12 +396,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['sender_identity_card_id'] === null) {
             $invalidProperties[] = "'sender_identity_card_id' can't be null";
         }
-        if ($this->container['sender_city_of_birth'] === null) {
-            $invalidProperties[] = "'sender_city_of_birth' can't be null";
-        }
-        if ($this->container['sender_country_of_birth'] === null) {
-            $invalidProperties[] = "'sender_country_of_birth' can't be null";
-        }
         if ($this->container['sender_gender'] === null) {
             $invalidProperties[] = "'sender_gender' can't be null";
         }
@@ -822,7 +816,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets sender_city_of_birth
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderCityOfBirth()
     {
@@ -832,7 +826,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets sender_city_of_birth
      *
-     * @param string $sender_city_of_birth sender_city_of_birth
+     * @param string|null $sender_city_of_birth sender_city_of_birth
      *
      * @return $this
      */
@@ -846,7 +840,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets sender_country_of_birth
      *
-     * @return string
+     * @return string|null
      */
     public function getSenderCountryOfBirth()
     {
@@ -856,7 +850,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets sender_country_of_birth
      *
-     * @param string $sender_country_of_birth sender_country_of_birth
+     * @param string|null $sender_country_of_birth sender_country_of_birth
      *
      * @return $this
      */
