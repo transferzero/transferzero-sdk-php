@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **sender_identity_card_id** | **string** |  | 
 **sender_city_of_birth** | **string** |  | [optional] 
 **sender_country_of_birth** | **string** |  | [optional] 
-**sender_gender** | [**\TransferZero\Model\PayoutMethodGenderEnum**](PayoutMethodGenderEnum.md) |  | 
+**sender_gender** | [**\TransferZero\Model\PayoutMethodGenderEnum**](PayoutMethodGenderEnum.md) |  | [optional] 
 **reason** | **string** |  | [optional] 
 **identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
 **identity_card_id** | **string** |  | [optional] 

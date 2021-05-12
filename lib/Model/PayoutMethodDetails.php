@@ -396,9 +396,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['sender_identity_card_id'] === null) {
             $invalidProperties[] = "'sender_identity_card_id' can't be null";
         }
-        if ($this->container['sender_gender'] === null) {
-            $invalidProperties[] = "'sender_gender' can't be null";
-        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -864,7 +861,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets sender_gender
      *
-     * @return \TransferZero\Model\PayoutMethodGenderEnum
+     * @return \TransferZero\Model\PayoutMethodGenderEnum|null
      */
     public function getSenderGender()
     {
@@ -874,7 +871,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets sender_gender
      *
-     * @param \TransferZero\Model\PayoutMethodGenderEnum $sender_gender sender_gender
+     * @param \TransferZero\Model\PayoutMethodGenderEnum|null $sender_gender sender_gender
      *
      * @return $this
      */
