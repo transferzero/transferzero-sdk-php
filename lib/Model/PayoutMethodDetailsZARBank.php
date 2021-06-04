@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsZARBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;postal_code\&quot;: \&quot;AB0001\&quot;,     \&quot;city\&quot;: \&quot;Cape Town\&quot;,     \&quot;email\&quot;: \&quot;recipient@email.com\&quot;,     \&quot;bank_code\&quot;: \&quot;334810\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;phone_number\&quot;: \&quot;+27119785313\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;   } &#x60;&#x60;&#x60;  See [ZAR Bank](https://docs.transferzero.com/docs/payout-details/#zarbank) documentation for the bank_code and transfer_reason_code lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;, //  Mandatory for personal payouts;     \&quot;last_name\&quot;: \&quot;Last\&quot;, //  Mandatory for personal payouts;     \&quot;name\&quot; \&quot;First Ltd\&quot;, // Mandatory for business payouts;     \&quot;contact_first_name\&quot; \&quot;Business\&quot;, // Mandatory for business payouts;     \&quot;contact_last_name\&quot; \&quot;Contact\&quot;, // Mandatory for business payouts;     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;postal_code\&quot;: \&quot;AB0001\&quot;,     \&quot;city\&quot;: \&quot;Cape Town\&quot;,     \&quot;email\&quot;: \&quot;recipient@email.com\&quot;,     \&quot;bank_code\&quot;: \&quot;334810\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;phone_number\&quot;: \&quot;+27119785313\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;,     \&quot;entity_type\&quot;: \&quot;sole_proprietorship\&quot;, // Optional; Default value is \&quot;person\&quot;; Mandatory for business payouts;     \&quot;nature_of_business\&quot;: \&quot;Mining\&quot;, // Mandatory for business payouts;     \&quot;registration_number\&quot;: \&quot;17364BGC\&quot; // Mandatory for business payouts;   } &#x60;&#x60;&#x60;  See [ZAR Bank](https://docs.transferzero.com/docs/payout-details/#zarbank) documentation for the bank_code and transfer_reason_code lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -67,7 +67,13 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'bank_code' => 'string',
         'bank_account' => 'string',
         'phone_number' => 'string',
-        'transfer_reason_code' => 'string'
+        'transfer_reason_code' => 'string',
+        'name' => 'string',
+        'contact_first_name' => 'string',
+        'contact_last_name' => 'string',
+        'registration_number' => 'string',
+        'nature_of_business' => 'string',
+        'entity_type' => '\TransferZero\Model\PayoutMethodEntityTypeEnum'
     ];
 
     /**
@@ -85,7 +91,13 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'bank_code' => null,
         'bank_account' => null,
         'phone_number' => null,
-        'transfer_reason_code' => null
+        'transfer_reason_code' => null,
+        'name' => null,
+        'contact_first_name' => null,
+        'contact_last_name' => null,
+        'registration_number' => null,
+        'nature_of_business' => null,
+        'entity_type' => null
     ];
 
     /**
@@ -124,7 +136,13 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
         'phone_number' => 'phone_number',
-        'transfer_reason_code' => 'transfer_reason_code'
+        'transfer_reason_code' => 'transfer_reason_code',
+        'name' => 'name',
+        'contact_first_name' => 'contact_first_name',
+        'contact_last_name' => 'contact_last_name',
+        'registration_number' => 'registration_number',
+        'nature_of_business' => 'nature_of_business',
+        'entity_type' => 'entity_type'
     ];
 
     /**
@@ -142,7 +160,13 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
         'phone_number' => 'setPhoneNumber',
-        'transfer_reason_code' => 'setTransferReasonCode'
+        'transfer_reason_code' => 'setTransferReasonCode',
+        'name' => 'setName',
+        'contact_first_name' => 'setContactFirstName',
+        'contact_last_name' => 'setContactLastName',
+        'registration_number' => 'setRegistrationNumber',
+        'nature_of_business' => 'setNatureOfBusiness',
+        'entity_type' => 'setEntityType'
     ];
 
     /**
@@ -160,7 +184,13 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
         'phone_number' => 'getPhoneNumber',
-        'transfer_reason_code' => 'getTransferReasonCode'
+        'transfer_reason_code' => 'getTransferReasonCode',
+        'name' => 'getName',
+        'contact_first_name' => 'getContactFirstName',
+        'contact_last_name' => 'getContactLastName',
+        'registration_number' => 'getRegistrationNumber',
+        'nature_of_business' => 'getNatureOfBusiness',
+        'entity_type' => 'getEntityType'
     ];
 
     /**
@@ -233,6 +263,12 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
+        $this->container['name'] = isset($data['name']) ? $data['name'] : null;
+        $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
+        $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
+        $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
+        $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
+        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
     }
 
     /**
@@ -519,6 +555,150 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
     public function setTransferReasonCode($transfer_reason_code)
     {
         $this->container['transfer_reason_code'] = $transfer_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name name
+     *
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_first_name
+     *
+     * @return string|null
+     */
+    public function getContactFirstName()
+    {
+        return $this->container['contact_first_name'];
+    }
+
+    /**
+     * Sets contact_first_name
+     *
+     * @param string|null $contact_first_name contact_first_name
+     *
+     * @return $this
+     */
+    public function setContactFirstName($contact_first_name)
+    {
+        $this->container['contact_first_name'] = $contact_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_last_name
+     *
+     * @return string|null
+     */
+    public function getContactLastName()
+    {
+        return $this->container['contact_last_name'];
+    }
+
+    /**
+     * Sets contact_last_name
+     *
+     * @param string|null $contact_last_name contact_last_name
+     *
+     * @return $this
+     */
+    public function setContactLastName($contact_last_name)
+    {
+        $this->container['contact_last_name'] = $contact_last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets registration_number
+     *
+     * @return string|null
+     */
+    public function getRegistrationNumber()
+    {
+        return $this->container['registration_number'];
+    }
+
+    /**
+     * Sets registration_number
+     *
+     * @param string|null $registration_number registration_number
+     *
+     * @return $this
+     */
+    public function setRegistrationNumber($registration_number)
+    {
+        $this->container['registration_number'] = $registration_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets nature_of_business
+     *
+     * @return string|null
+     */
+    public function getNatureOfBusiness()
+    {
+        return $this->container['nature_of_business'];
+    }
+
+    /**
+     * Sets nature_of_business
+     *
+     * @param string|null $nature_of_business nature_of_business
+     *
+     * @return $this
+     */
+    public function setNatureOfBusiness($nature_of_business)
+    {
+        $this->container['nature_of_business'] = $nature_of_business;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_type
+     *
+     * @return \TransferZero\Model\PayoutMethodEntityTypeEnum|null
+     */
+    public function getEntityType()
+    {
+        return $this->container['entity_type'];
+    }
+
+    /**
+     * Sets entity_type
+     *
+     * @param \TransferZero\Model\PayoutMethodEntityTypeEnum|null $entity_type entity_type
+     *
+     * @return $this
+     */
+    public function setEntityType($entity_type)
+    {
+        $this->container['entity_type'] = $entity_type;
 
         return $this;
     }

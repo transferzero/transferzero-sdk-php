@@ -14,6 +14,12 @@ Name | Type | Description | Notes
 **bank_account** | **string** |  | 
 **phone_number** | **string** |  | 
 **transfer_reason_code** | **string** |  | [optional] 
+**name** | **string** |  | [optional] 
+**contact_first_name** | **string** |  | [optional] 
+**contact_last_name** | **string** |  | [optional] 
+**registration_number** | **string** |  | [optional] 
+**nature_of_business** | **string** |  | [optional] 
+**entity_type** | [**\TransferZero\Model\PayoutMethodEntityTypeEnum**](PayoutMethodEntityTypeEnum.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

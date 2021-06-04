@@ -86,7 +86,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'string',
         'city' => 'string',
         'email' => 'string',
-        'transfer_reason_code' => 'string'
+        'transfer_reason_code' => 'string',
+        'contact_first_name' => 'string',
+        'contact_last_name' => 'string',
+        'registration_number' => 'string',
+        'nature_of_business' => 'string',
+        'entity_type' => '\TransferZero\Model\PayoutMethodEntityTypeEnum'
     ];
 
     /**
@@ -124,7 +129,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => null,
         'city' => null,
         'email' => null,
-        'transfer_reason_code' => null
+        'transfer_reason_code' => null,
+        'contact_first_name' => null,
+        'contact_last_name' => null,
+        'registration_number' => null,
+        'nature_of_business' => null,
+        'entity_type' => null
     ];
 
     /**
@@ -183,7 +193,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'postal_code',
         'city' => 'city',
         'email' => 'email',
-        'transfer_reason_code' => 'transfer_reason_code'
+        'transfer_reason_code' => 'transfer_reason_code',
+        'contact_first_name' => 'contact_first_name',
+        'contact_last_name' => 'contact_last_name',
+        'registration_number' => 'registration_number',
+        'nature_of_business' => 'nature_of_business',
+        'entity_type' => 'entity_type'
     ];
 
     /**
@@ -221,7 +236,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'setPostalCode',
         'city' => 'setCity',
         'email' => 'setEmail',
-        'transfer_reason_code' => 'setTransferReasonCode'
+        'transfer_reason_code' => 'setTransferReasonCode',
+        'contact_first_name' => 'setContactFirstName',
+        'contact_last_name' => 'setContactLastName',
+        'registration_number' => 'setRegistrationNumber',
+        'nature_of_business' => 'setNatureOfBusiness',
+        'entity_type' => 'setEntityType'
     ];
 
     /**
@@ -259,7 +279,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'getPostalCode',
         'city' => 'getCity',
         'email' => 'getEmail',
-        'transfer_reason_code' => 'getTransferReasonCode'
+        'transfer_reason_code' => 'getTransferReasonCode',
+        'contact_first_name' => 'getContactFirstName',
+        'contact_last_name' => 'getContactLastName',
+        'registration_number' => 'getRegistrationNumber',
+        'nature_of_business' => 'getNatureOfBusiness',
+        'entity_type' => 'getEntityType'
     ];
 
     /**
@@ -352,6 +377,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
+        $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
+        $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
+        $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
+        $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
+        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
     }
 
     /**
@@ -1142,6 +1172,126 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setTransferReasonCode($transfer_reason_code)
     {
         $this->container['transfer_reason_code'] = $transfer_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_first_name
+     *
+     * @return string|null
+     */
+    public function getContactFirstName()
+    {
+        return $this->container['contact_first_name'];
+    }
+
+    /**
+     * Sets contact_first_name
+     *
+     * @param string|null $contact_first_name contact_first_name
+     *
+     * @return $this
+     */
+    public function setContactFirstName($contact_first_name)
+    {
+        $this->container['contact_first_name'] = $contact_first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets contact_last_name
+     *
+     * @return string|null
+     */
+    public function getContactLastName()
+    {
+        return $this->container['contact_last_name'];
+    }
+
+    /**
+     * Sets contact_last_name
+     *
+     * @param string|null $contact_last_name contact_last_name
+     *
+     * @return $this
+     */
+    public function setContactLastName($contact_last_name)
+    {
+        $this->container['contact_last_name'] = $contact_last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets registration_number
+     *
+     * @return string|null
+     */
+    public function getRegistrationNumber()
+    {
+        return $this->container['registration_number'];
+    }
+
+    /**
+     * Sets registration_number
+     *
+     * @param string|null $registration_number registration_number
+     *
+     * @return $this
+     */
+    public function setRegistrationNumber($registration_number)
+    {
+        $this->container['registration_number'] = $registration_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets nature_of_business
+     *
+     * @return string|null
+     */
+    public function getNatureOfBusiness()
+    {
+        return $this->container['nature_of_business'];
+    }
+
+    /**
+     * Sets nature_of_business
+     *
+     * @param string|null $nature_of_business nature_of_business
+     *
+     * @return $this
+     */
+    public function setNatureOfBusiness($nature_of_business)
+    {
+        $this->container['nature_of_business'] = $nature_of_business;
+
+        return $this;
+    }
+
+    /**
+     * Gets entity_type
+     *
+     * @return \TransferZero\Model\PayoutMethodEntityTypeEnum|null
+     */
+    public function getEntityType()
+    {
+        return $this->container['entity_type'];
+    }
+
+    /**
+     * Sets entity_type
+     *
+     * @param \TransferZero\Model\PayoutMethodEntityTypeEnum|null $entity_type entity_type
+     *
+     * @return $this
+     */
+    public function setEntityType($entity_type)
+    {
+        $this->container['entity_type'] = $entity_type;
 
         return $this;
     }
