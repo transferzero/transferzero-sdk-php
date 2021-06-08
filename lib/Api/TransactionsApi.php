@@ -1033,6 +1033,7 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     * @param  string $transactions_type Allows filtering results by &#x60;transactions_type&#x60;.  Example: &#x60;/v1/transactions?transactions_type&#x3D;automated&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1055,6 +1056,7 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     * @param  string $transactions_type Allows filtering results by &#x60;transactions_type&#x60;.  Example: &#x60;/v1/transactions?transactions_type&#x3D;automated&#x60; (optional)
      *
      * @throws \TransferZero\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1155,6 +1157,7 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     * @param  string $transactions_type Allows filtering results by &#x60;transactions_type&#x60;.  Example: &#x60;/v1/transactions?transactions_type&#x3D;automated&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1180,6 +1183,7 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     * @param  string $transactions_type Allows filtering results by &#x60;transactions_type&#x60;.  Example: &#x60;/v1/transactions?transactions_type&#x3D;automated&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1235,6 +1239,7 @@ class TransactionsApi
      * @param  int $per The number of results to load per page (defaults to 10) (optional)
      * @param  string $external_id Allows filtering results by &#x60;external_id&#x60;.  Example: &#x60;/v1/senders?external_id&#x3D;26ec8517-2f0d-48c0-b74f-0bccb9ab3a87&#x60; (optional)
      * @param  string $sender_id Allows filtering results by &#x60;sender_id&#x60;.  Example: &#x60;/v1/transactions?sender_id&#x3D;b41d3cb7-6c54-4245-85fc-8e30690eb0f7&#x60; (optional)
+     * @param  string $transactions_type Allows filtering results by &#x60;transactions_type&#x60;.  Example: &#x60;/v1/transactions?transactions_type&#x3D;automated&#x60; (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1246,6 +1251,7 @@ class TransactionsApi
         $per = array_key_exists('per', $associative_array) ? $associative_array['per'] : null;
         $external_id = array_key_exists('external_id', $associative_array) ? $associative_array['external_id'] : null;
         $sender_id = array_key_exists('sender_id', $associative_array) ? $associative_array['sender_id'] : null;
+        $transactions_type = array_key_exists('transactions_type', $associative_array) ? $associative_array['transactions_type'] : null;
 
 
         $resourcePath = '/transactions';
@@ -1270,6 +1276,10 @@ class TransactionsApi
         // query params
         if ($sender_id !== null) {
             $queryParams['sender_id'] = ObjectSerializer::toQueryValue($sender_id);
+        }
+        // query params
+        if ($transactions_type !== null) {
+            $queryParams['transactions_type'] = ObjectSerializer::toQueryValue($transactions_type);
         }
 
 
