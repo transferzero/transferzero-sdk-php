@@ -90,8 +90,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_first_name' => 'string',
         'contact_last_name' => 'string',
         'registration_number' => 'string',
-        'nature_of_business' => 'string',
-        'entity_type' => '\TransferZero\Model\PayoutMethodEntityTypeEnum'
+        'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
+        'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum'
     ];
 
     /**
@@ -134,7 +134,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => null,
         'registration_number' => null,
         'nature_of_business' => null,
-        'entity_type' => null
+        'legal_entity_type' => null
     ];
 
     /**
@@ -198,7 +198,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'contact_last_name',
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
-        'entity_type' => 'entity_type'
+        'legal_entity_type' => 'legal_entity_type'
     ];
 
     /**
@@ -241,7 +241,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'setContactLastName',
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
-        'entity_type' => 'setEntityType'
+        'legal_entity_type' => 'setLegalEntityType'
     ];
 
     /**
@@ -284,7 +284,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'getContactLastName',
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
-        'entity_type' => 'getEntityType'
+        'legal_entity_type' => 'getLegalEntityType'
     ];
 
     /**
@@ -381,7 +381,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
-        $this->container['entity_type'] = isset($data['entity_type']) ? $data['entity_type'] : null;
+        $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
     }
 
     /**
@@ -1251,7 +1251,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets nature_of_business
      *
-     * @return string|null
+     * @return \TransferZero\Model\PayoutMethodNatureOfBusinessEnum|null
      */
     public function getNatureOfBusiness()
     {
@@ -1261,7 +1261,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets nature_of_business
      *
-     * @param string|null $nature_of_business nature_of_business
+     * @param \TransferZero\Model\PayoutMethodNatureOfBusinessEnum|null $nature_of_business nature_of_business
      *
      * @return $this
      */
@@ -1273,25 +1273,25 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets entity_type
+     * Gets legal_entity_type
      *
-     * @return \TransferZero\Model\PayoutMethodEntityTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodLegalEntityTypeEnum|null
      */
-    public function getEntityType()
+    public function getLegalEntityType()
     {
-        return $this->container['entity_type'];
+        return $this->container['legal_entity_type'];
     }
 
     /**
-     * Sets entity_type
+     * Sets legal_entity_type
      *
-     * @param \TransferZero\Model\PayoutMethodEntityTypeEnum|null $entity_type entity_type
+     * @param \TransferZero\Model\PayoutMethodLegalEntityTypeEnum|null $legal_entity_type legal_entity_type
      *
      * @return $this
      */
-    public function setEntityType($entity_type)
+    public function setLegalEntityType($legal_entity_type)
     {
-        $this->container['entity_type'] = $entity_type;
+        $this->container['legal_entity_type'] = $legal_entity_type;
 
         return $this;
     }
