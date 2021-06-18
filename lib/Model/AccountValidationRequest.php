@@ -190,8 +190,10 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
 
     const COUNTRY_NG = 'NG';
     const COUNTRY_GH = 'GH';
+    const COUNTRY_SN = 'SN';
     const CURRENCY_NGN = 'NGN';
     const CURRENCY_GHS = 'GHS';
+    const CURRENCY_XOF = 'XOF';
     const METHOD_BANK = 'bank';
     const METHOD_MOBILE = 'mobile';
     
@@ -207,6 +209,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         return [
             self::COUNTRY_NG,
             self::COUNTRY_GH,
+            self::COUNTRY_SN,
         ];
     }
     
@@ -220,6 +223,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         return [
             self::CURRENCY_NGN,
             self::CURRENCY_GHS,
+            self::CURRENCY_XOF,
         ];
     }
     
