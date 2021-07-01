@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethod
+ * PayoutMethodDetailsUSDBank
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethod Class Doc Comment
+ * PayoutMethodDetailsUSDBank Class Doc Comment
  *
  * @category Class
- * @description This describes the specific details on how the payment has to be routed to the recipient.
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;phone_number\&quot;: \&quot;+2341234567\&quot;,     \&quot;bank_code\&quot;: \&quot;057\&quot;,     \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,     \&quot;country\&quot;: \&quot;NG\&quot;   } &#x60;&#x60;&#x60; See [USD Bank](https://docs.transferzero.com/docs/payout-details/#usdbank) documentation for the bank_code list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethod implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethod implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethod';
+    protected static $openAPIModelName = 'PayoutMethodDetailsUSDBank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,12 +58,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'type' => 'string',
-        'details' => '\TransferZero\Model\PayoutMethodDetails',
-        'metadata' => 'object',
-        'id' => 'string',
-        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
-        'fields' => 'map[string,\TransferZero\Model\FieldDescription]'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'phone_number' => 'string',
+        'bank_code' => 'string',
+        'bank_account' => 'string',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnumUSDBank'
     ];
 
     /**
@@ -72,12 +72,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'type' => null,
-        'details' => null,
-        'metadata' => null,
-        'id' => 'uuid',
-        'errors' => null,
-        'fields' => null
+        'first_name' => null,
+        'last_name' => null,
+        'phone_number' => null,
+        'bank_code' => null,
+        'bank_account' => null,
+        'country' => null
     ];
 
     /**
@@ -107,12 +107,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'type' => 'type',
-        'details' => 'details',
-        'metadata' => 'metadata',
-        'id' => 'id',
-        'errors' => 'errors',
-        'fields' => 'fields'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'phone_number' => 'phone_number',
+        'bank_code' => 'bank_code',
+        'bank_account' => 'bank_account',
+        'country' => 'country'
     ];
 
     /**
@@ -121,12 +121,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'type' => 'setType',
-        'details' => 'setDetails',
-        'metadata' => 'setMetadata',
-        'id' => 'setId',
-        'errors' => 'setErrors',
-        'fields' => 'setFields'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'phone_number' => 'setPhoneNumber',
+        'bank_code' => 'setBankCode',
+        'bank_account' => 'setBankAccount',
+        'country' => 'setCountry'
     ];
 
     /**
@@ -135,12 +135,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'type' => 'getType',
-        'details' => 'getDetails',
-        'metadata' => 'getMetadata',
-        'id' => 'getId',
-        'errors' => 'getErrors',
-        'fields' => 'getFields'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'phone_number' => 'getPhoneNumber',
+        'bank_code' => 'getBankCode',
+        'bank_account' => 'getBankAccount',
+        'country' => 'getCountry'
     ];
 
     /**
@@ -203,12 +203,12 @@ class PayoutMethod implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
-        $this->container['details'] = isset($data['details']) ? $data['details'] : null;
-        $this->container['metadata'] = isset($data['metadata']) ? $data['metadata'] : null;
-        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
-        $this->container['fields'] = isset($data['fields']) ? $data['fields'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
+        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
     /**
@@ -220,6 +220,24 @@ class PayoutMethod implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['first_name'] === null) {
+            $invalidProperties[] = "'first_name' can't be null";
+        }
+        if ($this->container['last_name'] === null) {
+            $invalidProperties[] = "'last_name' can't be null";
+        }
+        if ($this->container['phone_number'] === null) {
+            $invalidProperties[] = "'phone_number' can't be null";
+        }
+        if ($this->container['bank_code'] === null) {
+            $invalidProperties[] = "'bank_code' can't be null";
+        }
+        if ($this->container['bank_account'] === null) {
+            $invalidProperties[] = "'bank_account' can't be null";
+        }
+        if ($this->container['country'] === null) {
+            $invalidProperties[] = "'country' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -236,145 +254,145 @@ class PayoutMethod implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets type
+     * Gets first_name
      *
-     * @return string|null
+     * @return string
      */
-    public function getType()
+    public function getFirstName()
     {
-        return $this->container['type'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets type
+     * Sets first_name
      *
-     * @param string|null $type Contains the currency to send the money to, and the type of the money movement  Commonly used payout types are:  - `NGN::Bank` - for Nigerian bank account payments. - `NGN::Mobile` - for Nigerian mobile money payments. - `GHS::Bank` - for Ghanaian bank account payments. - `GHS::Mobile` - for Ghanaian mobile money payments. - `GHS::Cash` - for Ghanaian cash remittance payments. - `UGX::Mobile` - for Ugandan mobile money payments. - `TZS::Mobile` - for Tanzanian mobile money payments. - `XOF::Mobile` - for mobile money payments to West-Africa. - `XOF::Bank` - for Senegalese bank account payments. - `XOF::Cash` - for Senegalese cash remittance payments. - `MAD::Cash` - for Moroccan cash remittance payments. - `EUR::Bank` - for IBAN bank transfers in EUR. - `GBP::Bank` - for IBAN bank and FP accounts transfers in GBP. - `ZAR::Bank` - for South Africa bank account payments. - `USD::Bank` - for USD account payments. *** Currently Nigeria only and in Beta phase ***  You can also send funds to the internal balance using `CCY::Balance`, where `CCY` is the appropriate currency. See [Collection from senders](https://docs.transferzero.com/docs/additional-features/#collections-from-senders) for more info on how to collect money into internal balance
+     * @param string $first_name first_name
      *
      * @return $this
      */
-    public function setType($type)
+    public function setFirstName($first_name)
     {
-        $this->container['type'] = $type;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets details
+     * Gets last_name
      *
-     * @return \TransferZero\Model\PayoutMethodDetails|null
+     * @return string
      */
-    public function getDetails()
+    public function getLastName()
     {
-        return $this->container['details'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets details
+     * Sets last_name
      *
-     * @param \TransferZero\Model\PayoutMethodDetails|null $details details
+     * @param string $last_name last_name
      *
      * @return $this
      */
-    public function setDetails($details)
+    public function setLastName($last_name)
     {
-        $this->container['details'] = $details;
+        $this->container['last_name'] = $last_name;
 
         return $this;
     }
 
     /**
-     * Gets metadata
+     * Gets phone_number
      *
-     * @return object|null
+     * @return string
      */
-    public function getMetadata()
+    public function getPhoneNumber()
     {
-        return $this->container['metadata'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets metadata
+     * Sets phone_number
      *
-     * @param object|null $metadata Metadata of payout method. You can store any kind of information in this field.
+     * @param string $phone_number phone_number
      *
      * @return $this
      */
-    public function setMetadata($metadata)
+    public function setPhoneNumber($phone_number)
     {
-        $this->container['metadata'] = $metadata;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
 
     /**
-     * Gets id
+     * Gets bank_code
      *
-     * @return string|null
+     * @return string
      */
-    public function getId()
+    public function getBankCode()
     {
-        return $this->container['id'];
+        return $this->container['bank_code'];
     }
 
     /**
-     * Sets id
+     * Sets bank_code
      *
-     * @param string|null $id id
+     * @param string $bank_code bank_code
      *
      * @return $this
      */
-    public function setId($id)
+    public function setBankCode($bank_code)
     {
-        $this->container['id'] = $id;
+        $this->container['bank_code'] = $bank_code;
 
         return $this;
     }
 
     /**
-     * Gets errors
+     * Gets bank_account
      *
-     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
+     * @return string
      */
-    public function getErrors()
+    public function getBankAccount()
     {
-        return $this->container['errors'];
+        return $this->container['bank_account'];
     }
 
     /**
-     * Sets errors
+     * Sets bank_account
      *
-     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
+     * @param string $bank_account bank_account
      *
      * @return $this
      */
-    public function setErrors($errors)
+    public function setBankAccount($bank_account)
     {
-        $this->container['errors'] = $errors;
+        $this->container['bank_account'] = $bank_account;
 
         return $this;
     }
 
     /**
-     * Gets fields
+     * Gets country
      *
-     * @return map[string,\TransferZero\Model\FieldDescription]|null
+     * @return \TransferZero\Model\PayoutMethodCountryEnumUSDBank
      */
-    public function getFields()
+    public function getCountry()
     {
-        return $this->container['fields'];
+        return $this->container['country'];
     }
 
     /**
-     * Sets fields
+     * Sets country
      *
-     * @param map[string,\TransferZero\Model\FieldDescription]|null $fields The fields needed for payments with this payment method with details on validation requirements
+     * @param \TransferZero\Model\PayoutMethodCountryEnumUSDBank $country country
      *
      * @return $this
      */
-    public function setFields($fields)
+    public function setCountry($country)
     {
-        $this->container['fields'] = $fields;
+        $this->container['country'] = $country;
 
         return $this;
     }
