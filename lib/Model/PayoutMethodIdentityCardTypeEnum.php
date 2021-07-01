@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodIdentityCardTypeEnum Class Doc Comment
  *
  * @category Class
- * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;NI&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card
+ * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;ID&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -46,7 +46,7 @@ class PayoutMethodIdentityCardTypeEnum
      */
     const O = 'O';
     const PP = 'PP';
-    const NI = 'NI';
+    const ID = 'ID';
     
     /**
      * Gets allowable values of the enum
@@ -57,7 +57,7 @@ class PayoutMethodIdentityCardTypeEnum
         return [
             self::O,
             self::PP,
-            self::NI,
+            self::ID,
         ];
     }
 }
