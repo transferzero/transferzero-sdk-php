@@ -67,7 +67,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'TransferZero-SDK/PHP/1.14.1';
+    protected $userAgent = 'TransferZero-SDK/PHP/1.15.0';
 
     /**
      * Debug switch (default set to false)
@@ -301,7 +301,7 @@ class Configuration
         $report .= '    OS: ' . php_uname() . PHP_EOL;
         $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1.0' . PHP_EOL;
-        $report .= '    SDK Package Version: 1.14.1' . PHP_EOL;
+        $report .= '    SDK Package Version: 1.15.0' . PHP_EOL;
         $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
 
         return $report;
