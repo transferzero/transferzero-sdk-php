@@ -91,7 +91,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'string',
         'registration_number' => 'string',
         'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
-        'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum'
+        'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
+        'branch_code' => 'string',
+        'swift_code' => 'string'
     ];
 
     /**
@@ -134,7 +136,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => null,
         'registration_number' => null,
         'nature_of_business' => null,
-        'legal_entity_type' => null
+        'legal_entity_type' => null,
+        'branch_code' => null,
+        'swift_code' => null
     ];
 
     /**
@@ -198,7 +202,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'contact_last_name',
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
-        'legal_entity_type' => 'legal_entity_type'
+        'legal_entity_type' => 'legal_entity_type',
+        'branch_code' => 'branch_code',
+        'swift_code' => 'swift_code'
     ];
 
     /**
@@ -241,7 +247,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'setContactLastName',
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
-        'legal_entity_type' => 'setLegalEntityType'
+        'legal_entity_type' => 'setLegalEntityType',
+        'branch_code' => 'setBranchCode',
+        'swift_code' => 'setSwiftCode'
     ];
 
     /**
@@ -284,7 +292,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'contact_last_name' => 'getContactLastName',
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
-        'legal_entity_type' => 'getLegalEntityType'
+        'legal_entity_type' => 'getLegalEntityType',
+        'branch_code' => 'getBranchCode',
+        'swift_code' => 'getSwiftCode'
     ];
 
     /**
@@ -382,6 +392,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
+        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
+        $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
     }
 
     /**
@@ -429,6 +441,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['sender_identity_card_id'] === null) {
             $invalidProperties[] = "'sender_identity_card_id' can't be null";
         }
+        if ($this->container['identity_card_type'] === null) {
+            $invalidProperties[] = "'identity_card_type' can't be null";
+        }
+        if ($this->container['identity_card_id'] === null) {
+            $invalidProperties[] = "'identity_card_id' can't be null";
+        }
         if ($this->container['name'] === null) {
             $invalidProperties[] = "'name' can't be null";
         }
@@ -443,6 +461,12 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['transfer_reason_code'] === null) {
+            $invalidProperties[] = "'transfer_reason_code' can't be null";
+        }
+        if ($this->container['swift_code'] === null) {
+            $invalidProperties[] = "'swift_code' can't be null";
         }
         return $invalidProperties;
     }
@@ -942,7 +966,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets identity_card_type
      *
-     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum
      */
     public function getIdentityCardType()
     {
@@ -952,7 +976,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets identity_card_type
      *
-     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum|null $identity_card_type identity_card_type
+     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum $identity_card_type identity_card_type
      *
      * @return $this
      */
@@ -966,7 +990,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets identity_card_id
      *
-     * @return string|null
+     * @return string
      */
     public function getIdentityCardId()
     {
@@ -976,7 +1000,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets identity_card_id
      *
-     * @param string|null $identity_card_id identity_card_id
+     * @param string $identity_card_id identity_card_id
      *
      * @return $this
      */
@@ -1158,7 +1182,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason_code
      *
-     * @return string|null
+     * @return string
      */
     public function getTransferReasonCode()
     {
@@ -1168,7 +1192,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason_code
      *
-     * @param string|null $transfer_reason_code transfer_reason_code
+     * @param string $transfer_reason_code transfer_reason_code
      *
      * @return $this
      */
@@ -1295,6 +1319,54 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setLegalEntityType($legal_entity_type)
     {
         $this->container['legal_entity_type'] = $legal_entity_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets branch_code
+     *
+     * @return string|null
+     */
+    public function getBranchCode()
+    {
+        return $this->container['branch_code'];
+    }
+
+    /**
+     * Sets branch_code
+     *
+     * @param string|null $branch_code branch_code
+     *
+     * @return $this
+     */
+    public function setBranchCode($branch_code)
+    {
+        $this->container['branch_code'] = $branch_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets swift_code
+     *
+     * @return string
+     */
+    public function getSwiftCode()
+    {
+        return $this->container['swift_code'];
+    }
+
+    /**
+     * Sets swift_code
+     *
+     * @param string $swift_code swift_code
+     *
+     * @return $this
+     */
+    public function setSwiftCode($swift_code)
+    {
+        $this->container['swift_code'] = $swift_code;
 
         return $this;
     }

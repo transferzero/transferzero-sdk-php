@@ -24,8 +24,8 @@ Name | Type | Description | Notes
 **sender_country_of_birth** | **string** |  | [optional] 
 **sender_gender** | [**\TransferZero\Model\PayoutMethodGenderEnum**](PayoutMethodGenderEnum.md) |  | [optional] 
 **reason** | **string** |  | [optional] 
-**identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
-**identity_card_id** | **string** |  | [optional] 
+**identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
+**identity_card_id** | **string** |  | 
 **reference** | **string** |  | [optional] 
 **name** | **string** |  | 
 **address** | **string** |  | 
@@ -33,12 +33,14 @@ Name | Type | Description | Notes
 **postal_code** | **string** |  | 
 **city** | **string** |  | 
 **email** | **string** |  | [optional] 
-**transfer_reason_code** | **string** |  | [optional] 
+**transfer_reason_code** | **string** |  | 
 **contact_first_name** | **string** |  | [optional] 
 **contact_last_name** | **string** |  | [optional] 
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
+**branch_code** | **string** |  | [optional] 
+**swift_code** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

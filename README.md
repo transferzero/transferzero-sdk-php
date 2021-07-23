@@ -234,6 +234,8 @@ Class | Method | HTTP request | Description
  - [PayoutMethodDetailsGHSBank](docs/Model/PayoutMethodDetailsGHSBank.md)
  - [PayoutMethodDetailsGHSCash](docs/Model/PayoutMethodDetailsGHSCash.md)
  - [PayoutMethodDetailsIBAN](docs/Model/PayoutMethodDetailsIBAN.md)
+ - [PayoutMethodDetailsKESBank](docs/Model/PayoutMethodDetailsKESBank.md)
+ - [PayoutMethodDetailsKESMobile](docs/Model/PayoutMethodDetailsKESMobile.md)
  - [PayoutMethodDetailsMADCash](docs/Model/PayoutMethodDetailsMADCash.md)
  - [PayoutMethodDetailsMobile](docs/Model/PayoutMethodDetailsMobile.md)
  - [PayoutMethodDetailsNGNBank](docs/Model/PayoutMethodDetailsNGNBank.md)
