@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnumUSDBank**](PayoutMethodCountryEnumUSDBank.md) |  | 
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
-**bank_country** | **string** |  | 
+**bank_country** | **string** |  | [optional] 
 **cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | [optional] 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 

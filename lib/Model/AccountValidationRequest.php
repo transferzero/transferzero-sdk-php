@@ -59,6 +59,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'bank_account' => 'string',
         'bank_code' => 'string',
+        'iban' => 'string',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => 'string',
@@ -74,6 +75,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'bank_account' => null,
         'bank_code' => null,
+        'iban' => null,
         'phone_number' => null,
         'mobile_provider' => null,
         'country' => null,
@@ -110,6 +112,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'bank_account' => 'bank_account',
         'bank_code' => 'bank_code',
+        'iban' => 'iban',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
@@ -125,6 +128,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $setters = [
         'bank_account' => 'setBankAccount',
         'bank_code' => 'setBankCode',
+        'iban' => 'setIban',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
@@ -140,6 +144,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     protected static $getters = [
         'bank_account' => 'getBankAccount',
         'bank_code' => 'getBankCode',
+        'iban' => 'getIban',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
@@ -191,6 +196,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     const COUNTRY_NG = 'NG';
     const COUNTRY_GH = 'GH';
     const COUNTRY_SN = 'SN';
+    const COUNTRY_CI = 'CI';
     const CURRENCY_NGN = 'NGN';
     const CURRENCY_GHS = 'GHS';
     const CURRENCY_XOF = 'XOF';
@@ -210,6 +216,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
             self::COUNTRY_NG,
             self::COUNTRY_GH,
             self::COUNTRY_SN,
+            self::COUNTRY_CI,
         ];
     }
     
@@ -258,6 +265,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     {
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -366,6 +374,30 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     public function setBankCode($bank_code)
     {
         $this->container['bank_code'] = $bank_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets iban
+     *
+     * @return string|null
+     */
+    public function getIban()
+    {
+        return $this->container['iban'];
+    }
+
+    /**
+     * Sets iban
+     *
+     * @param string|null $iban IBAN to query - BBAN format for XOF bank accounts
+     *
+     * @return $this
+     */
+    public function setIban($iban)
+    {
+        $this->container['iban'] = $iban;
 
         return $this;
     }

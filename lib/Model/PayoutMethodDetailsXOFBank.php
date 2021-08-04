@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;SN08SN0000000000000000000000\&quot;,   \&quot;bank_name\&quot;: \&quot;BRM\&quot;,   \&quot;bank_country\&quot;: \&quot;SN\&quot; # ISO country code for Senegal } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot; } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -62,7 +62,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'iban' => 'string',
         'bank_name' => 'string',
-        'bank_country' => 'string'
+        'bank_country' => 'string',
+        'bank_code' => 'string'
     ];
 
     /**
@@ -75,7 +76,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'last_name' => null,
         'iban' => null,
         'bank_name' => null,
-        'bank_country' => null
+        'bank_country' => null,
+        'bank_code' => null
     ];
 
     /**
@@ -109,7 +111,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'last_name' => 'last_name',
         'iban' => 'iban',
         'bank_name' => 'bank_name',
-        'bank_country' => 'bank_country'
+        'bank_country' => 'bank_country',
+        'bank_code' => 'bank_code'
     ];
 
     /**
@@ -122,7 +125,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
-        'bank_country' => 'setBankCountry'
+        'bank_country' => 'setBankCountry',
+        'bank_code' => 'setBankCode'
     ];
 
     /**
@@ -135,7 +139,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
-        'bank_country' => 'getBankCountry'
+        'bank_country' => 'getBankCountry',
+        'bank_code' => 'getBankCode'
     ];
 
     /**
@@ -203,6 +208,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
+        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
     }
 
     /**
@@ -222,12 +228,6 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['iban'] === null) {
             $invalidProperties[] = "'iban' can't be null";
-        }
-        if ($this->container['bank_name'] === null) {
-            $invalidProperties[] = "'bank_name' can't be null";
-        }
-        if ($this->container['bank_country'] === null) {
-            $invalidProperties[] = "'bank_country' can't be null";
         }
         return $invalidProperties;
     }
@@ -319,7 +319,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_name
      *
-     * @return string
+     * @return string|null
      */
     public function getBankName()
     {
@@ -329,7 +329,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_name
      *
-     * @param string $bank_name bank_name
+     * @param string|null $bank_name bank_name
      *
      * @return $this
      */
@@ -343,7 +343,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_country
      *
-     * @return string
+     * @return string|null
      */
     public function getBankCountry()
     {
@@ -353,13 +353,37 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_country
      *
-     * @param string $bank_country bank_country
+     * @param string|null $bank_country bank_country
      *
      * @return $this
      */
     public function setBankCountry($bank_country)
     {
         $this->container['bank_country'] = $bank_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_code
+     *
+     * @return string|null
+     */
+    public function getBankCode()
+    {
+        return $this->container['bank_code'];
+    }
+
+    /**
+     * Sets bank_code
+     *
+     * @param string|null $bank_code bank_code
+     *
+     * @return $this
+     */
+    public function setBankCode($bank_code)
+    {
+        $this->container['bank_code'] = $bank_code;
 
         return $this;
     }

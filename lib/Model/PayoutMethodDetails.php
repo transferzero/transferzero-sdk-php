@@ -432,9 +432,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_name'] === null) {
             $invalidProperties[] = "'bank_name' can't be null";
         }
-        if ($this->container['bank_country'] === null) {
-            $invalidProperties[] = "'bank_country' can't be null";
-        }
         if ($this->container['sender_identity_card_type'] === null) {
             $invalidProperties[] = "'sender_identity_card_type' can't be null";
         }
@@ -726,7 +723,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_country
      *
-     * @return string
+     * @return string|null
      */
     public function getBankCountry()
     {
@@ -736,7 +733,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_country
      *
-     * @param string $bank_country bank_country
+     * @param string|null $bank_country bank_country
      *
      * @return $this
      */
