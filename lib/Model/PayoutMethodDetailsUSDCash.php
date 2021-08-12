@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodDetailsUSDBank
+ * PayoutMethodDetailsUSDCash
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodDetailsUSDBank Class Doc Comment
+ * PayoutMethodDetailsUSDCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;phone_number\&quot;: \&quot;+2341234567\&quot;,     \&quot;bank_code\&quot;: \&quot;057\&quot;,     \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,     \&quot;country\&quot;: \&quot;NG\&quot;   } &#x60;&#x60;&#x60; See [USD Bank](https://docs.transferzero.com/docs/payout-details/#usdbank) documentation for the bank_code and country lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;phone_number\&quot;: \&quot;+2341234567\&quot;,     \&quot;country\&quot;: \&quot;NG\&quot;   } &#x60;&#x60;&#x60; See [USD Cash](https://docs.transferzero.com/docs/payout-details/#usdcash) documentation for the country list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethodDetailsUSDBank';
+    protected static $openAPIModelName = 'PayoutMethodDetailsUSDCash';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,8 +61,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'bank_code' => 'string',
-        'bank_account' => 'string',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
     ];
 
@@ -75,8 +73,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'phone_number' => null,
-        'bank_code' => null,
-        'bank_account' => null,
         'country' => null
     ];
 
@@ -110,8 +106,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
-        'bank_code' => 'bank_code',
-        'bank_account' => 'bank_account',
         'country' => 'country'
     ];
 
@@ -124,8 +118,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
-        'bank_code' => 'setBankCode',
-        'bank_account' => 'setBankAccount',
         'country' => 'setCountry'
     ];
 
@@ -138,8 +130,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
-        'bank_code' => 'getBankCode',
-        'bank_account' => 'getBankAccount',
         'country' => 'getCountry'
     ];
 
@@ -206,8 +196,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
@@ -228,12 +216,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
-        }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
-        }
-        if ($this->container['bank_account'] === null) {
-            $invalidProperties[] = "'bank_account' can't be null";
         }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
@@ -321,54 +303,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets bank_code
-     *
-     * @return string
-     */
-    public function getBankCode()
-    {
-        return $this->container['bank_code'];
-    }
-
-    /**
-     * Sets bank_code
-     *
-     * @param string $bank_code bank_code
-     *
-     * @return $this
-     */
-    public function setBankCode($bank_code)
-    {
-        $this->container['bank_code'] = $bank_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets bank_account
-     *
-     * @return string
-     */
-    public function getBankAccount()
-    {
-        return $this->container['bank_account'];
-    }
-
-    /**
-     * Sets bank_account
-     *
-     * @param string $bank_account bank_account
-     *
-     * @return $this
-     */
-    public function setBankAccount($bank_account)
-    {
-        $this->container['bank_account'] = $bank_account;
 
         return $this;
     }

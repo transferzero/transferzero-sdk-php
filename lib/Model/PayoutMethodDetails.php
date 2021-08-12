@@ -64,7 +64,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
-        'country' => '\TransferZero\Model\PayoutMethodCountryEnumUSDBank',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
@@ -651,7 +651,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets country
      *
-     * @return \TransferZero\Model\PayoutMethodCountryEnumUSDBank
+     * @return \TransferZero\Model\PayoutMethodCountryEnum
      */
     public function getCountry()
     {
@@ -661,7 +661,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets country
      *
-     * @param \TransferZero\Model\PayoutMethodCountryEnumUSDBank $country country
+     * @param \TransferZero\Model\PayoutMethodCountryEnum $country country
      *
      * @return $this
      */
