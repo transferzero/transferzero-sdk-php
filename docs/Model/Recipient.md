@@ -26,7 +26,6 @@ Name | Type | Description | Notes
 **output_amount** | **float** | The amount that will be paid to the recipient | [optional] 
 **output_currency** | **string** | The currency the payment will be delivered in | [optional] 
 **id** | **string** |  | [optional] 
-**type** | **string** | Type of recipient to create - either person or business (defaults to person) | [optional] 
 **errors** | [**map[string,\TransferZero\Model\ValidationErrorDescription[]]**](array.md) | The fields that have some problems and don&#39;t pass validation | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

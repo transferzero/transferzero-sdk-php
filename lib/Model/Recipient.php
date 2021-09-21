@@ -80,7 +80,6 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => 'float',
         'output_currency' => 'string',
         'id' => 'string',
-        'type' => 'string',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
@@ -112,7 +111,6 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => null,
         'output_currency' => null,
         'id' => 'uuid',
-        'type' => null,
         'errors' => null
     ];
 
@@ -165,7 +163,6 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => 'output_amount',
         'output_currency' => 'output_currency',
         'id' => 'id',
-        'type' => 'type',
         'errors' => 'errors'
     ];
 
@@ -197,7 +194,6 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => 'setOutputAmount',
         'output_currency' => 'setOutputCurrency',
         'id' => 'setId',
-        'type' => 'setType',
         'errors' => 'setErrors'
     ];
 
@@ -229,7 +225,6 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_amount' => 'getOutputAmount',
         'output_currency' => 'getOutputCurrency',
         'id' => 'getId',
-        'type' => 'getType',
         'errors' => 'getErrors'
     ];
 
@@ -274,23 +269,8 @@ class Recipient implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const TYPE_PERSON = 'person';
-    const TYPE_BUSINESS = 'business';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getTypeAllowableValues()
-    {
-        return [
-            self::TYPE_PERSON,
-            self::TYPE_BUSINESS,
-        ];
-    }
     
 
     /**
@@ -330,7 +310,6 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['output_amount'] = isset($data['output_amount']) ? $data['output_amount'] : null;
         $this->container['output_currency'] = isset($data['output_currency']) ? $data['output_currency'] : null;
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
-        $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -352,14 +331,6 @@ class Recipient implements ModelInterface, ArrayAccess
         if ($this->container['payout_method'] === null) {
             $invalidProperties[] = "'payout_method' can't be null";
         }
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($this->container['type']) && !in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'type', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
-
         return $invalidProperties;
     }
 
@@ -899,39 +870,6 @@ class Recipient implements ModelInterface, ArrayAccess
     public function setId($id)
     {
         $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string|null
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string|null $type Type of recipient to create - either person or business (defaults to person)
-     *
-     * @return $this
-     */
-    public function setType($type)
-    {
-        $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'type', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['type'] = $type;
 
         return $this;
     }
