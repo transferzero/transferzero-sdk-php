@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsKESBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;bank_code\&quot;: \&quot;68\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;bank_name\&quot;: \&quot;Equity Bank Ltd\&quot;,     \&quot;branch_code\&quot;: \&quot;404\&quot;,     \&quot;swift_code\&quot; \&quot;ABCLKENA\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  The valid bank_code values are:  - Habib Bank Limited: 08 - Trans-National Bank Limited: 26 - Housing Finance Co. Kenya: 61 - UBA Kenya Bank Ltd: 76 - Kenya Commercial Bank: 01000 - Standard Chartered Bank: 02000 - Barclays Bank of Kenya: 03000 - Bank of India: 05000 - Bank of Boroda: 06000 - NCBA Bank: 07000 - Prime Bank: 10000 - Co-operative Bank of Kenya: 11000 - National Bank of Kenya: 12000 - M-Oriental Commercial Bank Limited: 14000 - Citibank: 16000 - Habib Bank A.G. Zurich: 17000 - Middle East Bank: 18000 - Bank of Africa Kenya: 19000 - Consolidated Bank of Kenya: 23000 - Credit Bank Ltd: 25000 - Chase Bank: 30000 - Stanbic Bank Kenya: 31000 - African Banking Corporation: 35000 - Giro Bank Limited: 42000 - ECO Bank Kenya: 43000 - Spire Bank Limited: 49000 - Paramount Universal Bank Limited: 50000 - Jamii Bora Bank: 51000 - Guaranty Trust Bank Kenya: 53000 - Victoria Bank Limited: 54000 - Guardian Bank: 55000 - Investments and Mortgages Bank Limited: 57000 - Development Bank of Kenya: 59000 - Fidelity Commercial Bank: 46000 - Diamond Trust Bank: 63000 - Sidian Bank: 66000 - Equity Bank Limited: 68000 - Family Bank: 70000 - Gulf African Bank: 72000 - First Community Bank: 74000 - KWFT Bank: 78000  See [KES Bank](https://docs.transferzero.com/docs/payout-details/#kesbank) documentation for the transfer_reason_code list
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;bank_code\&quot;: \&quot;68\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;bank_name\&quot;: \&quot;Equity Bank Ltd\&quot;,     \&quot;branch_code\&quot;: \&quot;404\&quot;,     \&quot;swift_code\&quot; \&quot;ABCLKENA\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;, // New transfer reason field     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  The valid bank_code values are:  - Habib Bank Limited: 08 - Trans-National Bank Limited: 26 - Housing Finance Co. Kenya: 61 - UBA Kenya Bank Ltd: 76 - Kenya Commercial Bank: 01000 - Standard Chartered Bank: 02000 - Barclays Bank of Kenya: 03000 - Bank of India: 05000 - Bank of Boroda: 06000 - NCBA Bank: 07000 - Prime Bank: 10000 - Co-operative Bank of Kenya: 11000 - National Bank of Kenya: 12000 - M-Oriental Commercial Bank Limited: 14000 - Citibank: 16000 - Habib Bank A.G. Zurich: 17000 - Middle East Bank: 18000 - Bank of Africa Kenya: 19000 - Consolidated Bank of Kenya: 23000 - Credit Bank Ltd: 25000 - Chase Bank: 30000 - Stanbic Bank Kenya: 31000 - African Banking Corporation: 35000 - Giro Bank Limited: 42000 - ECO Bank Kenya: 43000 - Spire Bank Limited: 49000 - Paramount Universal Bank Limited: 50000 - Jamii Bora Bank: 51000 - Guaranty Trust Bank Kenya: 53000 - Victoria Bank Limited: 54000 - Guardian Bank: 55000 - Investments and Mortgages Bank Limited: 57000 - Development Bank of Kenya: 59000 - Fidelity Commercial Bank: 46000 - Diamond Trust Bank: 63000 - Sidian Bank: 66000 - Equity Bank Limited: 68000 - Family Bank: 70000 - Gulf African Bank: 72000 - First Community Bank: 74000 - KWFT Bank: 78000  See [KES Bank](https://docs.transferzero.com/docs/payout-details/#kesbank) documentation for the transfer_reason list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -67,6 +67,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         'branch_code' => 'string',
         'swift_code' => 'string',
         'transfer_reason_code' => 'string',
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string'
     ];
@@ -86,6 +87,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         'branch_code' => null,
         'swift_code' => null,
         'transfer_reason_code' => null,
+        'transfer_reason' => null,
         'identity_card_type' => null,
         'identity_card_id' => null
     ];
@@ -126,6 +128,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         'branch_code' => 'branch_code',
         'swift_code' => 'swift_code',
         'transfer_reason_code' => 'transfer_reason_code',
+        'transfer_reason' => 'transfer_reason',
         'identity_card_type' => 'identity_card_type',
         'identity_card_id' => 'identity_card_id'
     ];
@@ -145,6 +148,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         'branch_code' => 'setBranchCode',
         'swift_code' => 'setSwiftCode',
         'transfer_reason_code' => 'setTransferReasonCode',
+        'transfer_reason' => 'setTransferReason',
         'identity_card_type' => 'setIdentityCardType',
         'identity_card_id' => 'setIdentityCardId'
     ];
@@ -164,6 +168,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         'branch_code' => 'getBranchCode',
         'swift_code' => 'getSwiftCode',
         'transfer_reason_code' => 'getTransferReasonCode',
+        'transfer_reason' => 'getTransferReason',
         'identity_card_type' => 'getIdentityCardType',
         'identity_card_id' => 'getIdentityCardId'
     ];
@@ -237,6 +242,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
+        $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
     }
@@ -270,9 +276,6 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
-        }
-        if ($this->container['transfer_reason_code'] === null) {
-            $invalidProperties[] = "'transfer_reason_code' can't be null";
         }
         if ($this->container['identity_card_type'] === null) {
             $invalidProperties[] = "'identity_card_type' can't be null";
@@ -490,7 +493,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason_code
      *
-     * @return string
+     * @return string|null
      */
     public function getTransferReasonCode()
     {
@@ -500,13 +503,37 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason_code
      *
-     * @param string $transfer_reason_code transfer_reason_code
+     * @param string|null $transfer_reason_code transfer_reason_code
      *
      * @return $this
      */
     public function setTransferReasonCode($transfer_reason_code)
     {
         $this->container['transfer_reason_code'] = $transfer_reason_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets transfer_reason
+     *
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     */
+    public function getTransferReason()
+    {
+        return $this->container['transfer_reason'];
+    }
+
+    /**
+     * Sets transfer_reason
+     *
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     *
+     * @return $this
+     */
+    public function setTransferReason($transfer_reason)
+    {
+        $this->container['transfer_reason'] = $transfer_reason;
 
         return $this;
     }

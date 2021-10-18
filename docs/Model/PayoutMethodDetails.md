@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
 **bank_country** | **string** |  | [optional] 
+**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
 **cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | [optional] 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 
@@ -33,7 +34,7 @@ Name | Type | Description | Notes
 **postal_code** | **string** |  | 
 **city** | **string** |  | 
 **email** | **string** |  | [optional] 
-**transfer_reason_code** | **string** |  | 
+**transfer_reason_code** | **string** |  | [optional] 
 **contact_first_name** | **string** |  | [optional] 
 **contact_last_name** | **string** |  | [optional] 
 **registration_number** | **string** |  | [optional] 

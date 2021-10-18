@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **bank_name** | **string** |  | 
 **branch_code** | **string** |  | [optional] 
 **swift_code** | **string** |  | 
-**transfer_reason_code** | **string** |  | 
+**transfer_reason_code** | **string** |  | [optional] 
+**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
 **identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
 **identity_card_id** | **string** |  | 
 

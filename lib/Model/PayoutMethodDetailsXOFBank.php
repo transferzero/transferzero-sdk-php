@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot; } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code list
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code and transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
-        'bank_code' => 'string'
+        'bank_code' => 'string',
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
-        'bank_code' => null
+        'bank_code' => null,
+        'transfer_reason' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
-        'bank_code' => 'bank_code'
+        'bank_code' => 'bank_code',
+        'transfer_reason' => 'transfer_reason'
     ];
 
     /**
@@ -126,7 +129,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
-        'bank_code' => 'setBankCode'
+        'bank_code' => 'setBankCode',
+        'transfer_reason' => 'setTransferReason'
     ];
 
     /**
@@ -140,7 +144,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
-        'bank_code' => 'getBankCode'
+        'bank_code' => 'getBankCode',
+        'transfer_reason' => 'getTransferReason'
     ];
 
     /**
@@ -209,6 +214,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
+        $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
     }
 
     /**
@@ -384,6 +390,30 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     public function setBankCode($bank_code)
     {
         $this->container['bank_code'] = $bank_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets transfer_reason
+     *
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     */
+    public function getTransferReason()
+    {
+        return $this->container['transfer_reason'];
+    }
+
+    /**
+     * Sets transfer_reason
+     *
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     *
+     * @return $this
+     */
+    public function setTransferReason($transfer_reason)
+    {
+        $this->container['transfer_reason'] = $transfer_reason;
 
         return $this;
     }
