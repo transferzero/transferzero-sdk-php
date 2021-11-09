@@ -106,6 +106,7 @@ class Sender implements ModelInterface, ArrayAccess
         'city_of_birth' => 'string',
         'country_of_birth' => 'string',
         'gender' => 'string',
+        'sales_lead_id' => 'string',
         'created_at' => 'string'
     ];
 
@@ -163,6 +164,7 @@ class Sender implements ModelInterface, ArrayAccess
         'city_of_birth' => null,
         'country_of_birth' => null,
         'gender' => null,
+        'sales_lead_id' => null,
         'created_at' => null
     ];
 
@@ -241,6 +243,7 @@ class Sender implements ModelInterface, ArrayAccess
         'city_of_birth' => 'city_of_birth',
         'country_of_birth' => 'country_of_birth',
         'gender' => 'gender',
+        'sales_lead_id' => 'sales_lead_id',
         'created_at' => 'created_at'
     ];
 
@@ -298,6 +301,7 @@ class Sender implements ModelInterface, ArrayAccess
         'city_of_birth' => 'setCityOfBirth',
         'country_of_birth' => 'setCountryOfBirth',
         'gender' => 'setGender',
+        'sales_lead_id' => 'setSalesLeadId',
         'created_at' => 'setCreatedAt'
     ];
 
@@ -355,6 +359,7 @@ class Sender implements ModelInterface, ArrayAccess
         'city_of_birth' => 'getCityOfBirth',
         'country_of_birth' => 'getCountryOfBirth',
         'gender' => 'getGender',
+        'sales_lead_id' => 'getSalesLeadId',
         'created_at' => 'getCreatedAt'
     ];
 
@@ -633,6 +638,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['city_of_birth'] = isset($data['city_of_birth']) ? $data['city_of_birth'] : null;
         $this->container['country_of_birth'] = isset($data['country_of_birth']) ? $data['country_of_birth'] : null;
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
+        $this->container['sales_lead_id'] = isset($data['sales_lead_id']) ? $data['sales_lead_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
     }
 
@@ -1917,6 +1923,30 @@ class Sender implements ModelInterface, ArrayAccess
             );
         }
         $this->container['gender'] = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Gets sales_lead_id
+     *
+     * @return string|null
+     */
+    public function getSalesLeadId()
+    {
+        return $this->container['sales_lead_id'];
+    }
+
+    /**
+     * Sets sales_lead_id
+     *
+     * @param string|null $sales_lead_id Sales Lead ID for tracking (optional)
+     *
+     * @return $this
+     */
+    public function setSalesLeadId($sales_lead_id)
+    {
+        $this->container['sales_lead_id'] = $sales_lead_id;
 
         return $this;
     }
