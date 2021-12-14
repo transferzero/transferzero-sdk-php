@@ -65,10 +65,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
         'sort_code' => 'string',
         'bic' => 'string',
@@ -111,10 +111,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'mobile_provider' => null,
         'country' => null,
+        'transfer_reason' => null,
         'iban' => null,
         'bank_name' => null,
         'bank_country' => null,
-        'transfer_reason' => null,
         'cash_provider' => null,
         'sort_code' => null,
         'bic' => null,
@@ -178,10 +178,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
+        'transfer_reason' => 'transfer_reason',
         'iban' => 'iban',
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
-        'transfer_reason' => 'transfer_reason',
         'cash_provider' => 'cash_provider',
         'sort_code' => 'sort_code',
         'bic' => 'bic',
@@ -224,10 +224,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
+        'transfer_reason' => 'setTransferReason',
         'iban' => 'setIban',
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
-        'transfer_reason' => 'setTransferReason',
         'cash_provider' => 'setCashProvider',
         'sort_code' => 'setSortCode',
         'bic' => 'setBic',
@@ -270,10 +270,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
+        'transfer_reason' => 'getTransferReason',
         'iban' => 'getIban',
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
-        'transfer_reason' => 'getTransferReason',
         'cash_provider' => 'getCashProvider',
         'sort_code' => 'getSortCode',
         'bic' => 'getBic',
@@ -370,10 +370,10 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
-        $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
         $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
@@ -676,6 +676,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets transfer_reason
+     *
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     */
+    public function getTransferReason()
+    {
+        return $this->container['transfer_reason'];
+    }
+
+    /**
+     * Sets transfer_reason
+     *
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     *
+     * @return $this
+     */
+    public function setTransferReason($transfer_reason)
+    {
+        $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
      * Gets iban
      *
      * @return string
@@ -743,30 +767,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setBankCountry($bank_country)
     {
         $this->container['bank_country'] = $bank_country;
-
-        return $this;
-    }
-
-    /**
-     * Gets transfer_reason
-     *
-     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
-     */
-    public function getTransferReason()
-    {
-        return $this->container['transfer_reason'];
-    }
-
-    /**
-     * Sets transfer_reason
-     *
-     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
-     *
-     * @return $this
-     */
-    public function setTransferReason($transfer_reason)
-    {
-        $this->container['transfer_reason'] = $transfer_reason;
 
         return $this;
     }

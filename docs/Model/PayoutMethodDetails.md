@@ -12,10 +12,10 @@ Name | Type | Description | Notes
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
+**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
 **bank_country** | **string** |  | [optional] 
-**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
 **cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | [optional] 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 

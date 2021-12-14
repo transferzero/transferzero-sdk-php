@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodMobileProviderEnum Class Doc Comment
  *
  * @category Class
- * @description The mobile provider of the recipient:  For XOF (Senegal) valid options are: - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo  For XOF (Ivory Coast) valid options are: - &#x60;orange&#x60;: Orange - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: MTN  For GHS valid options are: - &#x60;mtn&#x60;: MTN - &#x60;airtel&#x60;: Airtel - &#x60;tigo&#x60;: Tigo - &#x60;vodafone&#x60;: Vodafone  For KES valid options are: - &#x60;mpesa&#x60;: MPESA  For UGX valid options are: - &#x60;africell&#x60;: Africell - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN - &#x60;telecom&#x60;: Telecom
+ * @description The mobile provider of the recipient:  For XOF (Senegal) valid options are: - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo  For XOF (Ivory Coast) valid options are: - &#x60;orange&#x60;: Orange - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: MTN  For XOF (Burkina Faso) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash  For XOF (Mali) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash  For GHS valid options are: - &#x60;mtn&#x60;: MTN - &#x60;airtel&#x60;: Airtel - &#x60;tigo&#x60;: Tigo - &#x60;vodafone&#x60;: Vodafone  For KES valid options are: - &#x60;mpesa&#x60;: MPESA  For UGX valid options are: - &#x60;africell&#x60;: Africell - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN - &#x60;telecom&#x60;: Telecom  For XAF (Cameroon) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mtn&#x60;: MTN  For GNF (Guinea) valid options are: - &#x60;mtn&#x60;: MTN
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -53,6 +53,7 @@ class PayoutMethodMobileProviderEnum
     const MPESA = 'mpesa';
     const AFRICELL = 'africell';
     const TELECOM = 'telecom';
+    const MOBICASH = 'mobicash';
     
     /**
      * Gets allowable values of the enum
@@ -70,6 +71,7 @@ class PayoutMethodMobileProviderEnum
             self::MPESA,
             self::AFRICELL,
             self::TELECOM,
+            self::MOBICASH,
         ];
     }
 }

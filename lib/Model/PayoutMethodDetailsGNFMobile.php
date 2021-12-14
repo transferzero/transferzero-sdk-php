@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodDetailsXOFMobile
+ * PayoutMethodDetailsGNFMobile
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodDetailsXOFMobile Class Doc Comment
+ * PayoutMethodDetailsGNFMobile Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, // local or international Senegalese or Ivory Coast format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, // \&quot;orange\&quot; or \&quot;tigo\&quot; for Senegal; \&quot;orange\&quot;, \&quot;mtn\&quot; or \&quot;moov\&quot; for Ivory Coast; \&quot;orange\&quot; or \&quot;mobicash\&quot; for Burkina Faso and Mali   \&quot;country\&quot; // Optional; Values: \&quot;SN\&quot; for Senegal; \&quot;CI\&quot; for Ivory Coast; \&quot;ML\&quot; for Mali; \&quot;BF\&quot; for Burkina Faso; Default value is \&quot;SN\&quot;   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; // mandatory for Mali payouts, optional otherwise } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;444044436\&quot;, // local or international Guinea format   \&quot;mobile_provider\&quot;: \&quot;mtn\&quot; } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsGNFMobile implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethodDetailsXOFMobile';
+    protected static $openAPIModelName = 'PayoutMethodDetailsGNFMobile';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -61,9 +61,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
-        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
     ];
 
     /**
@@ -75,9 +73,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'phone_number' => null,
-        'mobile_provider' => null,
-        'country' => null,
-        'transfer_reason' => null
+        'mobile_provider' => null
     ];
 
     /**
@@ -110,9 +106,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
-        'mobile_provider' => 'mobile_provider',
-        'country' => 'country',
-        'transfer_reason' => 'transfer_reason'
+        'mobile_provider' => 'mobile_provider'
     ];
 
     /**
@@ -124,9 +118,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
-        'mobile_provider' => 'setMobileProvider',
-        'country' => 'setCountry',
-        'transfer_reason' => 'setTransferReason'
+        'mobile_provider' => 'setMobileProvider'
     ];
 
     /**
@@ -138,9 +130,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
-        'mobile_provider' => 'getMobileProvider',
-        'country' => 'getCountry',
-        'transfer_reason' => 'getTransferReason'
+        'mobile_provider' => 'getMobileProvider'
     ];
 
     /**
@@ -207,8 +197,6 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
-        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
-        $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
     }
 
     /**
@@ -339,54 +327,6 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets country
-     *
-     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
-     */
-    public function getCountry()
-    {
-        return $this->container['country'];
-    }
-
-    /**
-     * Sets country
-     *
-     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
-     *
-     * @return $this
-     */
-    public function setCountry($country)
-    {
-        $this->container['country'] = $country;
-
-        return $this;
-    }
-
-    /**
-     * Gets transfer_reason
-     *
-     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
-     */
-    public function getTransferReason()
-    {
-        return $this->container['transfer_reason'];
-    }
-
-    /**
-     * Sets transfer_reason
-     *
-     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
-     *
-     * @return $this
-     */
-    public function setTransferReason($transfer_reason)
-    {
-        $this->container['transfer_reason'] = $transfer_reason;
 
         return $this;
     }
