@@ -95,6 +95,7 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'string',
         'trading_country' => 'string',
         'trading_address' => 'string',
+        'trading_name' => 'string',
         'number_monthly_transactions' => 'string',
         'amount_monthly_transactions' => 'string',
         'documents' => '\TransferZero\Model\Document[]',
@@ -153,6 +154,7 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => null,
         'trading_country' => null,
         'trading_address' => null,
+        'trading_name' => null,
         'number_monthly_transactions' => null,
         'amount_monthly_transactions' => null,
         'documents' => null,
@@ -232,6 +234,7 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'contact_person_email',
         'trading_country' => 'trading_country',
         'trading_address' => 'trading_address',
+        'trading_name' => 'trading_name',
         'number_monthly_transactions' => 'number_monthly_transactions',
         'amount_monthly_transactions' => 'amount_monthly_transactions',
         'documents' => 'documents',
@@ -290,6 +293,7 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'setContactPersonEmail',
         'trading_country' => 'setTradingCountry',
         'trading_address' => 'setTradingAddress',
+        'trading_name' => 'setTradingName',
         'number_monthly_transactions' => 'setNumberMonthlyTransactions',
         'amount_monthly_transactions' => 'setAmountMonthlyTransactions',
         'documents' => 'setDocuments',
@@ -348,6 +352,7 @@ class Sender implements ModelInterface, ArrayAccess
         'contact_person_email' => 'getContactPersonEmail',
         'trading_country' => 'getTradingCountry',
         'trading_address' => 'getTradingAddress',
+        'trading_name' => 'getTradingName',
         'number_monthly_transactions' => 'getNumberMonthlyTransactions',
         'amount_monthly_transactions' => 'getAmountMonthlyTransactions',
         'documents' => 'getDocuments',
@@ -627,6 +632,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['contact_person_email'] = isset($data['contact_person_email']) ? $data['contact_person_email'] : null;
         $this->container['trading_country'] = isset($data['trading_country']) ? $data['trading_country'] : null;
         $this->container['trading_address'] = isset($data['trading_address']) ? $data['trading_address'] : null;
+        $this->container['trading_name'] = isset($data['trading_name']) ? $data['trading_name'] : null;
         $this->container['number_monthly_transactions'] = isset($data['number_monthly_transactions']) ? $data['number_monthly_transactions'] : null;
         $this->container['amount_monthly_transactions'] = isset($data['amount_monthly_transactions']) ? $data['amount_monthly_transactions'] : null;
         $this->container['documents'] = isset($data['documents']) ? $data['documents'] : null;
@@ -1650,6 +1656,30 @@ class Sender implements ModelInterface, ArrayAccess
     public function setTradingAddress($trading_address)
     {
         $this->container['trading_address'] = $trading_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets trading_name
+     *
+     * @return string|null
+     */
+    public function getTradingName()
+    {
+        return $this->container['trading_name'];
+    }
+
+    /**
+     * Sets trading_name
+     *
+     * @param string|null $trading_name The Business trading name (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setTradingName($trading_name)
+    {
+        $this->container['trading_name'] = $trading_name;
 
         return $this;
     }
