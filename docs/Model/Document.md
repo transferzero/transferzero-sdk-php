@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional] 
 **document_id** | **string** | Document ID issued by government | [optional] 
 **expiry_date** | [**\DateTime**](\DateTime.md) | Document expiry date issued by government | [optional] 
+**source** | **string** | Determines the document&#39;s source. Default value \&quot;Manual\&quot; | [optional] 
 **errors** | [**map[string,\TransferZero\Model\ValidationErrorDescription[]]**](array.md) | The fields that have some problems and don&#39;t pass validation | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

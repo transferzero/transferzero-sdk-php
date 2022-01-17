@@ -70,6 +70,7 @@ class Document implements ModelInterface, ArrayAccess
         'id' => 'string',
         'document_id' => 'string',
         'expiry_date' => '\DateTime',
+        'source' => 'string',
         'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
@@ -92,6 +93,7 @@ class Document implements ModelInterface, ArrayAccess
         'id' => 'uuid',
         'document_id' => null,
         'expiry_date' => 'date',
+        'source' => null,
         'errors' => null
     ];
 
@@ -135,6 +137,7 @@ class Document implements ModelInterface, ArrayAccess
         'id' => 'id',
         'document_id' => 'document_id',
         'expiry_date' => 'expiry_date',
+        'source' => 'source',
         'errors' => 'errors'
     ];
 
@@ -157,6 +160,7 @@ class Document implements ModelInterface, ArrayAccess
         'id' => 'setId',
         'document_id' => 'setDocumentId',
         'expiry_date' => 'setExpiryDate',
+        'source' => 'setSource',
         'errors' => 'setErrors'
     ];
 
@@ -179,6 +183,7 @@ class Document implements ModelInterface, ArrayAccess
         'id' => 'getId',
         'document_id' => 'getDocumentId',
         'expiry_date' => 'getExpiryDate',
+        'source' => 'getSource',
         'errors' => 'getErrors'
     ];
 
@@ -270,6 +275,7 @@ class Document implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['document_id'] = isset($data['document_id']) ? $data['document_id'] : null;
         $this->container['expiry_date'] = isset($data['expiry_date']) ? $data['expiry_date'] : null;
+        $this->container['source'] = isset($data['source']) ? $data['source'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
@@ -628,6 +634,30 @@ class Document implements ModelInterface, ArrayAccess
     public function setExpiryDate($expiry_date)
     {
         $this->container['expiry_date'] = $expiry_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets source
+     *
+     * @return string|null
+     */
+    public function getSource()
+    {
+        return $this->container['source'];
+    }
+
+    /**
+     * Sets source
+     *
+     * @param string|null $source Determines the document's source. Default value \"Manual\"
+     *
+     * @return $this
+     */
+    public function setSource($source)
+    {
+        $this->container['source'] = $source;
 
         return $this;
     }
