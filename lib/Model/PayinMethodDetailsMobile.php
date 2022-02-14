@@ -59,6 +59,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'phone_number' => 'string',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'send_instructions' => 'bool'
     ];
 
@@ -69,6 +70,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'phone_number' => null,
+        'mobile_provider' => null,
         'send_instructions' => null
     ];
 
@@ -100,6 +102,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'phone_number' => 'phone_number',
+        'mobile_provider' => 'mobile_provider',
         'send_instructions' => 'send_instructions'
     ];
 
@@ -110,6 +113,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'phone_number' => 'setPhoneNumber',
+        'mobile_provider' => 'setMobileProvider',
         'send_instructions' => 'setSendInstructions'
     ];
 
@@ -120,6 +124,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'phone_number' => 'getPhoneNumber',
+        'mobile_provider' => 'getMobileProvider',
         'send_instructions' => 'getSendInstructions'
     ];
 
@@ -184,6 +189,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['send_instructions'] = isset($data['send_instructions']) ? $data['send_instructions'] : null;
     }
 
@@ -234,6 +240,30 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_provider
+     *
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
+     */
+    public function getMobileProvider()
+    {
+        return $this->container['mobile_provider'];
+    }
+
+    /**
+     * Sets mobile_provider
+     *
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
+     *
+     * @return $this
+     */
+    public function setMobileProvider($mobile_provider)
+    {
+        $this->container['mobile_provider'] = $mobile_provider;
 
         return $this;
     }

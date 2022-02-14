@@ -61,6 +61,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'payment_method' => 'string',
         'redirect_url' => 'string',
         'phone_number' => 'string',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'send_instructions' => 'bool',
         'refund_address' => 'string'
     ];
@@ -74,6 +75,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'payment_method' => null,
         'redirect_url' => null,
         'phone_number' => null,
+        'mobile_provider' => null,
         'send_instructions' => null,
         'refund_address' => null
     ];
@@ -108,6 +110,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'payment_method' => 'payment_method',
         'redirect_url' => 'redirect_url',
         'phone_number' => 'phone_number',
+        'mobile_provider' => 'mobile_provider',
         'send_instructions' => 'send_instructions',
         'refund_address' => 'refund_address'
     ];
@@ -121,6 +124,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'payment_method' => 'setPaymentMethod',
         'redirect_url' => 'setRedirectUrl',
         'phone_number' => 'setPhoneNumber',
+        'mobile_provider' => 'setMobileProvider',
         'send_instructions' => 'setSendInstructions',
         'refund_address' => 'setRefundAddress'
     ];
@@ -134,6 +138,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'payment_method' => 'getPaymentMethod',
         'redirect_url' => 'getRedirectUrl',
         'phone_number' => 'getPhoneNumber',
+        'mobile_provider' => 'getMobileProvider',
         'send_instructions' => 'getSendInstructions',
         'refund_address' => 'getRefundAddress'
     ];
@@ -201,6 +206,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['send_instructions'] = isset($data['send_instructions']) ? $data['send_instructions'] : null;
         $this->container['refund_address'] = isset($data['refund_address']) ? $data['refund_address'] : null;
     }
@@ -300,6 +306,30 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobile_provider
+     *
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
+     */
+    public function getMobileProvider()
+    {
+        return $this->container['mobile_provider'];
+    }
+
+    /**
+     * Sets mobile_provider
+     *
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
+     *
+     * @return $this
+     */
+    public function setMobileProvider($mobile_provider)
+    {
+        $this->container['mobile_provider'] = $mobile_provider;
 
         return $this;
     }
