@@ -438,6 +438,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_name'] === null) {
             $invalidProperties[] = "'bank_name' can't be null";
         }
+        if ($this->container['cash_provider'] === null) {
+            $invalidProperties[] = "'cash_provider' can't be null";
+        }
         if ($this->container['sender_identity_card_type'] === null) {
             $invalidProperties[] = "'sender_identity_card_type' can't be null";
         }
@@ -774,7 +777,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets cash_provider
      *
-     * @return \TransferZero\Model\PayoutMethodCashProviderEnum|null
+     * @return \TransferZero\Model\PayoutMethodCashProviderEnum
      */
     public function getCashProvider()
     {
@@ -784,7 +787,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets cash_provider
      *
-     * @param \TransferZero\Model\PayoutMethodCashProviderEnum|null $cash_provider cash_provider
+     * @param \TransferZero\Model\PayoutMethodCashProviderEnum $cash_provider cash_provider
      *
      * @return $this
      */

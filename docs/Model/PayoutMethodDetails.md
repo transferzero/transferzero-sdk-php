@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
 **bank_country** | **string** |  | [optional] 
-**cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | [optional] 
+**cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 
 **sender_identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
