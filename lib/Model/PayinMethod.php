@@ -59,10 +59,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'type' => 'string',
+        'ux_flow' => '\TransferZero\Model\PayinMethodUxFlow',
         'in_details' => '\TransferZero\Model\PayinMethodDetails',
+        'id' => 'string',
+        'state' => '\TransferZero\Model\PayinMethodState',
+        'state_reason_details' => '\TransferZero\Model\StateReasonDetails',
         'out_details' => 'object',
         'instructions' => 'object',
-        'provider' => 'string'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
     ];
 
     /**
@@ -72,10 +76,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'type' => null,
+        'ux_flow' => null,
         'in_details' => null,
+        'id' => 'uuid',
+        'state' => null,
+        'state_reason_details' => null,
         'out_details' => null,
         'instructions' => null,
-        'provider' => null
+        'errors' => null
     ];
 
     /**
@@ -106,10 +114,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'type' => 'type',
+        'ux_flow' => 'ux_flow',
         'in_details' => 'in_details',
+        'id' => 'id',
+        'state' => 'state',
+        'state_reason_details' => 'state_reason_details',
         'out_details' => 'out_details',
         'instructions' => 'instructions',
-        'provider' => 'provider'
+        'errors' => 'errors'
     ];
 
     /**
@@ -119,10 +131,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'type' => 'setType',
+        'ux_flow' => 'setUxFlow',
         'in_details' => 'setInDetails',
+        'id' => 'setId',
+        'state' => 'setState',
+        'state_reason_details' => 'setStateReasonDetails',
         'out_details' => 'setOutDetails',
         'instructions' => 'setInstructions',
-        'provider' => 'setProvider'
+        'errors' => 'setErrors'
     ];
 
     /**
@@ -132,10 +148,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'type' => 'getType',
+        'ux_flow' => 'getUxFlow',
         'in_details' => 'getInDetails',
+        'id' => 'getId',
+        'state' => 'getState',
+        'state_reason_details' => 'getStateReasonDetails',
         'out_details' => 'getOutDetails',
         'instructions' => 'getInstructions',
-        'provider' => 'getProvider'
+        'errors' => 'getErrors'
     ];
 
     /**
@@ -199,10 +219,14 @@ class PayinMethod implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
+        $this->container['ux_flow'] = isset($data['ux_flow']) ? $data['ux_flow'] : null;
         $this->container['in_details'] = isset($data['in_details']) ? $data['in_details'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
+        $this->container['state'] = isset($data['state']) ? $data['state'] : null;
+        $this->container['state_reason_details'] = isset($data['state_reason_details']) ? $data['state_reason_details'] : null;
         $this->container['out_details'] = isset($data['out_details']) ? $data['out_details'] : null;
         $this->container['instructions'] = isset($data['instructions']) ? $data['instructions'] : null;
-        $this->container['provider'] = isset($data['provider']) ? $data['provider'] : null;
+        $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
     }
 
     /**
@@ -242,13 +266,37 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Describes how the payment should be requested from the user.  Possible values: - `NGN::Bank`: NGN bank and card collection requests - `NGN::Mobile`: NGN mobile collections - `GHS::Mobile`: GHS mobile collections - `TZS::Mobile`: TZS mobile collections - `UGX::Mobile`: UGX mobile collections - `EUR::Bank`: EUR IBAN collections - `GBP::Bank`: GBP IBAN collections
+     * @param string|null $type Describes how the payment should be requested from the sender.  Possible values: - `GHS::Mobile`: GHS mobile collections - `UGX::Mobile`: UGX mobile collections - `EUR::Bank`: EUR IBAN collections - `GBP::Bank`: GBP IBAN collections
      *
      * @return $this
      */
     public function setType($type)
     {
         $this->container['type'] = $type;
+
+        return $this;
+    }
+
+    /**
+     * Gets ux_flow
+     *
+     * @return \TransferZero\Model\PayinMethodUxFlow|null
+     */
+    public function getUxFlow()
+    {
+        return $this->container['ux_flow'];
+    }
+
+    /**
+     * Sets ux_flow
+     *
+     * @param \TransferZero\Model\PayinMethodUxFlow|null $ux_flow ux_flow
+     *
+     * @return $this
+     */
+    public function setUxFlow($ux_flow)
+    {
+        $this->container['ux_flow'] = $ux_flow;
 
         return $this;
     }
@@ -273,6 +321,78 @@ class PayinMethod implements ModelInterface, ArrayAccess
     public function setInDetails($in_details)
     {
         $this->container['in_details'] = $in_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id id
+     *
+     * @return $this
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets state
+     *
+     * @return \TransferZero\Model\PayinMethodState|null
+     */
+    public function getState()
+    {
+        return $this->container['state'];
+    }
+
+    /**
+     * Sets state
+     *
+     * @param \TransferZero\Model\PayinMethodState|null $state state
+     *
+     * @return $this
+     */
+    public function setState($state)
+    {
+        $this->container['state'] = $state;
+
+        return $this;
+    }
+
+    /**
+     * Gets state_reason_details
+     *
+     * @return \TransferZero\Model\StateReasonDetails|null
+     */
+    public function getStateReasonDetails()
+    {
+        return $this->container['state_reason_details'];
+    }
+
+    /**
+     * Sets state_reason_details
+     *
+     * @param \TransferZero\Model\StateReasonDetails|null $state_reason_details state_reason_details
+     *
+     * @return $this
+     */
+    public function setStateReasonDetails($state_reason_details)
+    {
+        $this->container['state_reason_details'] = $state_reason_details;
 
         return $this;
     }
@@ -326,25 +446,25 @@ class PayinMethod implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets provider
+     * Gets errors
      *
-     * @return string|null
+     * @return map[string,\TransferZero\Model\ValidationErrorDescription[]]|null
      */
-    public function getProvider()
+    public function getErrors()
     {
-        return $this->container['provider'];
+        return $this->container['errors'];
     }
 
     /**
-     * Sets provider
+     * Sets errors
      *
-     * @param string|null $provider Describes which provider to use for collection. Please see the [Collections Details](https://docs.transferzero.com/docs/collection-details) in the API documentation on the valid values
+     * @param map[string,\TransferZero\Model\ValidationErrorDescription[]]|null $errors The fields that have some problems and don't pass validation
      *
      * @return $this
      */
-    public function setProvider($provider)
+    public function setErrors($errors)
     {
-        $this->container['provider'] = $provider;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

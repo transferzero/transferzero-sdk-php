@@ -235,7 +235,7 @@ class RecipientStateReasonDetails implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param string|null $code Status code of failed transaction
+     * @param string|null $code Status code of transaction
      *
      * @return $this
      */
@@ -259,7 +259,7 @@ class RecipientStateReasonDetails implements ModelInterface, ArrayAccess
     /**
      * Sets category
      *
-     * @param string|null $category Main category of error, it could be paid, unknown, pickupable, temporary_error, recipient_error, sender_error
+     * @param string|null $category Main category of status code, it could be paid, unknown, pickupable, temporary_error, recipient_error, sender_error, sender_action_required
      *
      * @return $this
      */

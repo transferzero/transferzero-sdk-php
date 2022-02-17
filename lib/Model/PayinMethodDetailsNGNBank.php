@@ -224,7 +224,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     /**
      * Sets payment_method
      *
-     * @param string|null $payment_method The payment method which the user will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
+     * @param string|null $payment_method The payment method which the sender will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
      *
      * @return $this
      */
@@ -248,7 +248,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     /**
      * Sets redirect_url
      *
-     * @param string|null $redirect_url This is where the user should be redirected back when the payment has been finished
+     * @param string|null $redirect_url This is where the sender should be redirected back when the payment has been finished
      *
      * @return $this
      */

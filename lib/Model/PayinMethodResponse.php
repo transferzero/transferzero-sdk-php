@@ -1,6 +1,6 @@
 <?php
 /**
- * PayinMethodDetailsMobile
+ * PayinMethodResponse
  *
  * PHP version 5
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayinMethodDetailsMobile Class Doc Comment
+ * PayinMethodResponse Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;phone_number\&quot;: \&quot;+2569999999\&quot;, } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
+class PayinMethodResponse implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayinMethodDetailsMobile';
+    protected static $openAPIModelName = 'PayinMethodResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,8 +57,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
+        'object' => '\TransferZero\Model\PayinMethod'
     ];
 
     /**
@@ -68,8 +66,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'phone_number' => null,
-        'mobile_provider' => null
+        'object' => null
     ];
 
     /**
@@ -99,8 +96,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone_number' => 'phone_number',
-        'mobile_provider' => 'mobile_provider'
+        'object' => 'object'
     ];
 
     /**
@@ -109,8 +105,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'phone_number' => 'setPhoneNumber',
-        'mobile_provider' => 'setMobileProvider'
+        'object' => 'setObject'
     ];
 
     /**
@@ -119,8 +114,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'phone_number' => 'getPhoneNumber',
-        'mobile_provider' => 'getMobileProvider'
+        'object' => 'getObject'
     ];
 
     /**
@@ -183,8 +177,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
     }
 
     /**
@@ -212,49 +205,25 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets phone_number
+     * Gets object
      *
-     * @return string|null
+     * @return \TransferZero\Model\PayinMethod|null
      */
-    public function getPhoneNumber()
+    public function getObject()
     {
-        return $this->container['phone_number'];
+        return $this->container['object'];
     }
 
     /**
-     * Sets phone_number
+     * Sets object
      *
-     * @param string|null $phone_number The phone number where the funds should be collected from
+     * @param \TransferZero\Model\PayinMethod|null $object object
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setObject($object)
     {
-        $this->container['phone_number'] = $phone_number;
-
-        return $this;
-    }
-
-    /**
-     * Gets mobile_provider
-     *
-     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
-     */
-    public function getMobileProvider()
-    {
-        return $this->container['mobile_provider'];
-    }
-
-    /**
-     * Sets mobile_provider
-     *
-     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
-     *
-     * @return $this
-     */
-    public function setMobileProvider($mobile_provider)
-    {
-        $this->container['mobile_provider'] = $mobile_provider;
+        $this->container['object'] = $object;
 
         return $this;
     }

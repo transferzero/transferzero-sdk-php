@@ -1,6 +1,6 @@
 <?php
 /**
- * PayinMethodDetails
+ * StateReasonDetails
  *
  * PHP version 5
  *
@@ -33,15 +33,14 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayinMethodDetails Class Doc Comment
+ * StateReasonDetails Class Doc Comment
  *
  * @category Class
- * @description Fields needed by the payment processor. Depends on the chose payin type.  See the appropriate model details for more info:  - &#x60;NGN::Bank&#x60;: see [&#x60;PayinMethodDetailsNGNBank&#x60;](#model-PayinMethodDetailsNGNBank) - &#x60;GHS::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile) - &#x60;UGX::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile) - &#x60;TZS::Mobile&#x60;: see [&#x60;PayinMethodDetailsMobile&#x60;](#model-PayinMethodDetailsMobile)  Note that some payin processors don&#39;t require additional input, these include &#x60;paga&#x60; through &#x60;NGN::Mobile&#x60;, &#x60;lhv&#x60; through &#x60;EUR::Bank&#x60; and &#x60;GBP::Bank&#x60;. Some providers like &#x60;providus&#x60; also have all of their fields set as optional, so you might not want to set any values. To use these providers please set this value to &#x60;{}&#x60; (an empty hash)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayinMethodDetails implements ModelInterface, ArrayAccess
+class StateReasonDetails implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +49,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayinMethodDetails';
+    protected static $openAPIModelName = 'StateReasonDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -58,11 +57,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_method' => 'string',
-        'redirect_url' => 'string',
-        'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
-        'refund_address' => 'string'
+        'code' => 'string',
+        'category' => 'string',
+        'messages' => 'string[]',
+        'description' => 'string'
     ];
 
     /**
@@ -71,11 +69,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'payment_method' => null,
-        'redirect_url' => null,
-        'phone_number' => null,
-        'mobile_provider' => null,
-        'refund_address' => null
+        'code' => null,
+        'category' => null,
+        'messages' => null,
+        'description' => null
     ];
 
     /**
@@ -105,11 +102,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_method' => 'payment_method',
-        'redirect_url' => 'redirect_url',
-        'phone_number' => 'phone_number',
-        'mobile_provider' => 'mobile_provider',
-        'refund_address' => 'refund_address'
+        'code' => 'code',
+        'category' => 'category',
+        'messages' => 'messages',
+        'description' => 'description'
     ];
 
     /**
@@ -118,11 +114,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payment_method' => 'setPaymentMethod',
-        'redirect_url' => 'setRedirectUrl',
-        'phone_number' => 'setPhoneNumber',
-        'mobile_provider' => 'setMobileProvider',
-        'refund_address' => 'setRefundAddress'
+        'code' => 'setCode',
+        'category' => 'setCategory',
+        'messages' => 'setMessages',
+        'description' => 'setDescription'
     ];
 
     /**
@@ -131,11 +126,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payment_method' => 'getPaymentMethod',
-        'redirect_url' => 'getRedirectUrl',
-        'phone_number' => 'getPhoneNumber',
-        'mobile_provider' => 'getMobileProvider',
-        'refund_address' => 'getRefundAddress'
+        'code' => 'getCode',
+        'category' => 'getCategory',
+        'messages' => 'getMessages',
+        'description' => 'getDescription'
     ];
 
     /**
@@ -198,11 +192,10 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
-        $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
-        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
-        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
-        $this->container['refund_address'] = isset($data['refund_address']) ? $data['refund_address'] : null;
+        $this->container['code'] = isset($data['code']) ? $data['code'] : null;
+        $this->container['category'] = isset($data['category']) ? $data['category'] : null;
+        $this->container['messages'] = isset($data['messages']) ? $data['messages'] : null;
+        $this->container['description'] = isset($data['description']) ? $data['description'] : null;
     }
 
     /**
@@ -230,121 +223,97 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets payment_method
+     * Gets code
      *
      * @return string|null
      */
-    public function getPaymentMethod()
+    public function getCode()
     {
-        return $this->container['payment_method'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets payment_method
+     * Sets code
      *
-     * @param string|null $payment_method The payment method which the sender will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
+     * @param string|null $code Status code of transaction
      *
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
+    public function setCode($code)
     {
-        $this->container['payment_method'] = $payment_method;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets redirect_url
+     * Gets category
      *
      * @return string|null
      */
-    public function getRedirectUrl()
+    public function getCategory()
     {
-        return $this->container['redirect_url'];
+        return $this->container['category'];
     }
 
     /**
-     * Sets redirect_url
+     * Sets category
      *
-     * @param string|null $redirect_url This is where the sender should be redirected back when the payment has been finished
+     * @param string|null $category Main category of status code, it could be paid, unknown, pickupable, temporary_error, recipient_error, sender_error, sender_action_required
      *
      * @return $this
      */
-    public function setRedirectUrl($redirect_url)
+    public function setCategory($category)
     {
-        $this->container['redirect_url'] = $redirect_url;
+        $this->container['category'] = $category;
 
         return $this;
     }
 
     /**
-     * Gets phone_number
+     * Gets messages
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getPhoneNumber()
+    public function getMessages()
     {
-        return $this->container['phone_number'];
+        return $this->container['messages'];
     }
 
     /**
-     * Sets phone_number
+     * Sets messages
      *
-     * @param string|null $phone_number The phone number where the funds should be collected from
+     * @param string[]|null $messages Tiered messages
      *
      * @return $this
      */
-    public function setPhoneNumber($phone_number)
+    public function setMessages($messages)
     {
-        $this->container['phone_number'] = $phone_number;
+        $this->container['messages'] = $messages;
 
         return $this;
     }
 
     /**
-     * Gets mobile_provider
-     *
-     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
-     */
-    public function getMobileProvider()
-    {
-        return $this->container['mobile_provider'];
-    }
-
-    /**
-     * Sets mobile_provider
-     *
-     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
-     *
-     * @return $this
-     */
-    public function setMobileProvider($mobile_provider)
-    {
-        $this->container['mobile_provider'] = $mobile_provider;
-
-        return $this;
-    }
-
-    /**
-     * Gets refund_address
+     * Gets description
      *
      * @return string|null
      */
-    public function getRefundAddress()
+    public function getDescription()
     {
-        return $this->container['refund_address'];
+        return $this->container['description'];
     }
 
     /**
-     * Sets refund_address
+     * Sets description
      *
-     * @param string|null $refund_address Please make sure the refund_address is a valid BTC address belonging to the sender, as that is going to be used in case the transaction has to be refunded.
+     * @param string|null $description Public, human readable, detailed error message
      *
      * @return $this
      */
-    public function setRefundAddress($refund_address)
+    public function setDescription($description)
     {
-        $this->container['refund_address'] = $refund_address;
+        $this->container['description'] = $description;
 
         return $this;
     }
