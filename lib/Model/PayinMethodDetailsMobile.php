@@ -59,7 +59,8 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum'
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'otp' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'phone_number' => null,
-        'mobile_provider' => null
+        'mobile_provider' => null,
+        'otp' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'phone_number' => 'phone_number',
-        'mobile_provider' => 'mobile_provider'
+        'mobile_provider' => 'mobile_provider',
+        'otp' => 'otp'
     ];
 
     /**
@@ -110,7 +113,8 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'phone_number' => 'setPhoneNumber',
-        'mobile_provider' => 'setMobileProvider'
+        'mobile_provider' => 'setMobileProvider',
+        'otp' => 'setOtp'
     ];
 
     /**
@@ -120,7 +124,8 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'phone_number' => 'getPhoneNumber',
-        'mobile_provider' => 'getMobileProvider'
+        'mobile_provider' => 'getMobileProvider',
+        'otp' => 'getOtp'
     ];
 
     /**
@@ -185,6 +190,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     {
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['otp'] = isset($data['otp']) ? $data['otp'] : null;
     }
 
     /**
@@ -255,6 +261,30 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets otp
+     *
+     * @return string|null
+     */
+    public function getOtp()
+    {
+        return $this->container['otp'];
+    }
+
+    /**
+     * Sets otp
+     *
+     * @param string|null $otp The OTP that the sender received in otp verified ussd popup ux flow.
+     *
+     * @return $this
+     */
+    public function setOtp($otp)
+    {
+        $this->container['otp'] = $otp;
 
         return $this;
     }

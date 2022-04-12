@@ -62,6 +62,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'string',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'otp' => 'string',
         'refund_address' => 'string'
     ];
 
@@ -75,6 +76,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => null,
         'phone_number' => null,
         'mobile_provider' => null,
+        'otp' => null,
         'refund_address' => null
     ];
 
@@ -109,6 +111,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'redirect_url',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
+        'otp' => 'otp',
         'refund_address' => 'refund_address'
     ];
 
@@ -122,6 +125,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'setRedirectUrl',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
+        'otp' => 'setOtp',
         'refund_address' => 'setRefundAddress'
     ];
 
@@ -135,6 +139,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'getRedirectUrl',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
+        'otp' => 'getOtp',
         'refund_address' => 'getRefundAddress'
     ];
 
@@ -202,6 +207,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['otp'] = isset($data['otp']) ? $data['otp'] : null;
         $this->container['refund_address'] = isset($data['refund_address']) ? $data['refund_address'] : null;
     }
 
@@ -321,6 +327,30 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets otp
+     *
+     * @return string|null
+     */
+    public function getOtp()
+    {
+        return $this->container['otp'];
+    }
+
+    /**
+     * Sets otp
+     *
+     * @param string|null $otp The OTP that the sender received in otp verified ussd popup ux flow.
+     *
+     * @return $this
+     */
+    public function setOtp($otp)
+    {
+        $this->container['otp'] = $otp;
 
         return $this;
     }

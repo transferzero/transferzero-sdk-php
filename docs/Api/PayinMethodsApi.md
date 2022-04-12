@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **retryPayinMethod**
-> retryPayinMethod($payin_method_id)
+> \TransferZero\Model\PayinMethodResponse retryPayinMethod($payin_method_id)
 
 Retries PayinMethod
 
@@ -218,7 +218,8 @@ $apiInstance = new TransferZero\Api\PayinMethodsApi();
 $payin_method_id = 'payin_method_id_example'; // string | ID of the payin method whose collection process should be retried  Example: `/v1/payin_methods/9d4d7b73-a94c-4979-ab57-09074fd55d33/retry`
 
 try {
-    $apiInstance->retryPayinMethod($payin_method_id);
+    $result = $apiInstance->retryPayinMethod($payin_method_id);
+    print_r($result);
 } catch (Exception $e) {
     if ($e->isValidationError()) {
         $response = $e->getResponseObject();
@@ -240,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**\TransferZero\Model\PayinMethodResponse**](../Model/PayinMethodResponse.md)
 
 ### Authorization
 
@@ -249,7 +250,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
