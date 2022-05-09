@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 Updating a sender
 
-Updates the sender specified in the URL path.
+Updates a single sender by the Sender ID
 
 ### Example
 ```php
