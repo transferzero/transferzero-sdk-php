@@ -206,7 +206,7 @@ class PayoutMethodCountryEnum
     const NU = 'NU';
     const NF = 'NF';
     const MP = 'MP';
-    const FALSE = 'false';
+    const NO = 'NO';
     const OM = 'OM';
     const PK = 'PK';
     const PW = 'PW';
@@ -454,7 +454,7 @@ class PayoutMethodCountryEnum
             self::NU,
             self::NF,
             self::MP,
-            self::FALSE,
+            self::NO,
             self::OM,
             self::PK,
             self::PW,
