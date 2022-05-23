@@ -266,7 +266,7 @@ class PayinMethod implements ModelInterface, ArrayAccess
     /**
      * Sets type
      *
-     * @param string|null $type Describes how the payment should be requested from the sender.  Possible values: - `GHS::Mobile`: GHS mobile collections - `UGX::Mobile`: UGX mobile collections - `EUR::Bank`: EUR IBAN collections - `GBP::Bank`: GBP IBAN collections
+     * @param string|null $type Describes how the payment should be requested from the sender.  Possible values: - `GHS::Mobile`: GHS mobile collections - `UGX::Mobile`: UGX mobile collections - `XOF::Mobile`: XOF mobile collections - `EUR::Bank`: EUR IBAN collections - `GBP::Bank`: GBP IBAN collections
      *
      * @return $this
      */

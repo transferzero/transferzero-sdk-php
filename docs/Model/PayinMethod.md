@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **string** | Describes how the payment should be requested from the sender.  Possible values: - &#x60;GHS::Mobile&#x60;: GHS mobile collections - &#x60;UGX::Mobile&#x60;: UGX mobile collections - &#x60;EUR::Bank&#x60;: EUR IBAN collections - &#x60;GBP::Bank&#x60;: GBP IBAN collections | [optional] 
+**type** | **string** | Describes how the payment should be requested from the sender.  Possible values: - &#x60;GHS::Mobile&#x60;: GHS mobile collections - &#x60;UGX::Mobile&#x60;: UGX mobile collections - &#x60;XOF::Mobile&#x60;: XOF mobile collections - &#x60;EUR::Bank&#x60;: EUR IBAN collections - &#x60;GBP::Bank&#x60;: GBP IBAN collections | [optional] 
 **ux_flow** | [**\TransferZero\Model\PayinMethodUxFlow**](PayinMethodUxFlow.md) |  | [optional] 
 **in_details** | [**\TransferZero\Model\PayinMethodDetails**](PayinMethodDetails.md) |  | [optional] 
 **id** | **string** |  | [optional] 
