@@ -79,16 +79,16 @@ class DocumentTest extends TestCase
     }
 
     /**
-     * Test attribute "sender_id"
+     * Test attribute "upload"
      */
-    public function testPropertySenderId()
+    public function testPropertyUpload()
     {
     }
 
     /**
-     * Test attribute "upload"
+     * Test attribute "url"
      */
-    public function testPropertyUpload()
+    public function testPropertyUrl()
     {
     }
 
@@ -152,6 +152,27 @@ class DocumentTest extends TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "document_id"
+     */
+    public function testPropertyDocumentId()
+    {
+    }
+
+    /**
+     * Test attribute "expiry_date"
+     */
+    public function testPropertyExpiryDate()
+    {
+    }
+
+    /**
+     * Test attribute "source"
+     */
+    public function testPropertySource()
     {
     }
 

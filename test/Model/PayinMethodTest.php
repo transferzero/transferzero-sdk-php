@@ -86,9 +86,37 @@ class PayinMethodTest extends TestCase
     }
 
     /**
+     * Test attribute "ux_flow"
+     */
+    public function testPropertyUxFlow()
+    {
+    }
+
+    /**
      * Test attribute "in_details"
      */
     public function testPropertyInDetails()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
+     * Test attribute "state_reason_details"
+     */
+    public function testPropertyStateReasonDetails()
     {
     }
 
@@ -107,9 +135,9 @@ class PayinMethodTest extends TestCase
     }
 
     /**
-     * Test attribute "provider"
+     * Test attribute "errors"
      */
-    public function testPropertyProvider()
+    public function testPropertyErrors()
     {
     }
 }

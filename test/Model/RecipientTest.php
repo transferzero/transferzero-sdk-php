@@ -149,6 +149,13 @@ class RecipientTest extends TestCase
     }
 
     /**
+     * Test attribute "state_reason_details"
+     */
+    public function testPropertyStateReasonDetails()
+    {
+    }
+
+    /**
      * Test attribute "state"
      */
     public function testPropertyState()
@@ -159,6 +166,13 @@ class RecipientTest extends TestCase
      * Test attribute "transaction_id"
      */
     public function testPropertyTransactionId()
+    {
+    }
+
+    /**
+     * Test attribute "transaction_external_id"
+     */
+    public function testPropertyTransactionExternalId()
     {
     }
 
@@ -215,6 +229,13 @@ class RecipientTest extends TestCase
      * Test attribute "id"
      */
     public function testPropertyId()
+    {
+    }
+
+    /**
+     * Test attribute "type"
+     */
+    public function testPropertyType()
     {
     }
 

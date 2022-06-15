@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * SenderTest Class Doc Comment
  *
  * @category    Class
- * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;first_name\&quot;: \&quot;Johnny\&quot;,   \&quot;last_name\&quot;: \&quot;English\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;birth_date\&quot;: \&quot;1900-12-31\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;country\&quot;: \&quot;UG\&quot;,   \&quot;phone_country\&quot;: \&quot;UG\&quot;,   \&quot;phone_number\&quot;: \&quot;752403639\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,   \&quot;name\&quot;: \&quot;MyCompany\&quot;,   \&quot;city\&quot;: \&quot;Kampala\&quot;,   \&quot;street\&quot;: \&quot;Unknown 17-3\&quot;,   \&quot;postal_code\&quot;: \&quot;798983\&quot;,   \&quot;address_description\&quot;: \&quot;Description of address\&quot;,   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;identification_number\&quot;: \&quot;AB123456\&quot;,   \&quot;identification_type\&quot;: \&quot;ID\&quot;,   \&quot;external_id\&quot;: \&quot;806ec63a-a5a7-43cc-9d75-1ee74fbcc026\&quot;,   \&quot;metadata\&quot;: { } } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
+ * @description This contains the details of the sender. The first time a specific sender is used the full details should be provided. Once a sender is created and is used, the next time you MUST only send the ID of the sender. This is so we can match the same sender across multiple transactions for KYC and audit purposes.  Personal Sender Example: &#x60;&#x60;&#x60;json {   // name   \&quot;first_name\&quot;: \&quot;Jane\&quot;,   \&quot;last_name\&quot;: \&quot;Doe\&quot;,    // address   \&quot;country\&quot;: \&quot;US\&quot;,   \&quot;city\&quot;: \&quot;New York\&quot;,   \&quot;street\&quot;: \&quot;20 W 34th St\&quot;,   \&quot;postal_code\&quot;: \&quot;10001\&quot;,   \&quot;address_description\&quot;: \&quot;\&quot;,    // DOB   \&quot;birth_date\&quot;: \&quot;1974-12-24\&quot;,    // Contact Details; You can usually use your company&#39;s contact details here   \&quot;phone_country\&quot;: \&quot;US\&quot;,   \&quot;phone_number\&quot;: \&quot;5555551234\&quot;,   \&quot;email\&quot;: \&quot;info@transferzero.com\&quot;,    // ID of the sender in your system   \&quot;external_id\&quot;: \&quot;Sender:US:234523\&quot;,    // these fields are mandatory, but you can usually leave them with the following default values:   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: {} } &#x60;&#x60;&#x60;  Business Sender Example:  &#x60;&#x60;&#x60;json {   \&quot;type\&quot;: \&quot;business\&quot;,   \&quot;name\&quot;: \&quot;Company name\&quot;,    // Country of Incorporation   \&quot;country\&quot;: \&quot;US\&quot;,    // Trading address of the company   \&quot;trading_country\&quot;: \&quot;US\&quot;,   \&quot;city\&quot;: \&quot;New York\&quot;,   \&quot;street\&quot;: \&quot;20 W 34th St\&quot;,   \&quot;postal_code\&quot;: \&quot;10001\&quot;,   \&quot;address_description\&quot;: \&quot;\&quot;,    // Company Details   \&quot;legal_entity_type\&quot;: \&quot;privately_owned_company\&quot;,   \&quot;registration_date\&quot;: \&quot;2012-01-25\&quot;,   \&quot;registration_number\&quot;: \&quot;VAT1234567\&quot;,   \&quot;nature_of_business\&quot;: \&quot;retail_trade\&quot;,    // Contact Details   \&quot;phone_country\&quot;: \&quot;US\&quot;,   \&quot;phone_number\&quot;: \&quot;5555551234\&quot;,   \&quot;email\&quot;: \&quot;example@home.org\&quot;,    // ID of the sender in your system   \&quot;external_id\&quot;: \&quot;Sender:Business:US:234523\&quot;,    // these fields are mandatory, but you can usually leave them with the following default values:   \&quot;documents\&quot;: [ ],   \&quot;ip\&quot;: \&quot;127.0.0.1\&quot;,   \&quot;metadata\&quot;: {} } &#x60;&#x60;&#x60;  [Sender in the API documentation](https://docs.transferzero.com/docs/transaction-flow/#sender)
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -79,6 +79,13 @@ class SenderTest extends TestCase
     }
 
     /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
+    {
+    }
+
+    /**
      * Test attribute "type"
      */
     public function testPropertyType()
@@ -86,9 +93,37 @@ class SenderTest extends TestCase
     }
 
     /**
+     * Test attribute "state"
+     */
+    public function testPropertyState()
+    {
+    }
+
+    /**
      * Test attribute "country"
      */
     public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "street"
+     */
+    public function testPropertyStreet()
+    {
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
     {
     }
 
@@ -114,6 +149,48 @@ class SenderTest extends TestCase
     }
 
     /**
+     * Test attribute "ip"
+     */
+    public function testPropertyIp()
+    {
+    }
+
+    /**
+     * Test attribute "address_description"
+     */
+    public function testPropertyAddressDescription()
+    {
+    }
+
+    /**
+     * Test attribute "identification_number"
+     */
+    public function testPropertyIdentificationNumber()
+    {
+    }
+
+    /**
+     * Test attribute "identification_type"
+     */
+    public function testPropertyIdentificationType()
+    {
+    }
+
+    /**
+     * Test attribute "lang"
+     */
+    public function testPropertyLang()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
      * Test attribute "first_name"
      */
     public function testPropertyFirstName()
@@ -135,6 +212,13 @@ class SenderTest extends TestCase
     }
 
     /**
+     * Test attribute "birth_date"
+     */
+    public function testPropertyBirthDate()
+    {
+    }
+
+    /**
      * Test attribute "occupation"
      */
     public function testPropertyOccupation()
@@ -149,86 +233,128 @@ class SenderTest extends TestCase
     }
 
     /**
-     * Test attribute "onboarding_status"
+     * Test attribute "legal_entity_type"
      */
-    public function testPropertyOnboardingStatus()
+    public function testPropertyLegalEntityType()
     {
     }
 
     /**
-     * Test attribute "address"
+     * Test attribute "registration_date"
      */
-    public function testPropertyAddress()
+    public function testPropertyRegistrationDate()
     {
     }
 
     /**
-     * Test attribute "description"
+     * Test attribute "registration_number"
      */
-    public function testPropertyDescription()
+    public function testPropertyRegistrationNumber()
     {
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "nature_of_business"
      */
-    public function testPropertyName()
+    public function testPropertyNatureOfBusiness()
     {
     }
 
     /**
-     * Test attribute "city"
+     * Test attribute "source_of_funds"
      */
-    public function testPropertyCity()
+    public function testPropertySourceOfFunds()
     {
     }
 
     /**
-     * Test attribute "street"
+     * Test attribute "custom_source_of_funds"
      */
-    public function testPropertyStreet()
+    public function testPropertyCustomSourceOfFunds()
     {
     }
 
     /**
-     * Test attribute "address_description"
+     * Test attribute "core_business_activity"
      */
-    public function testPropertyAddressDescription()
+    public function testPropertyCoreBusinessActivity()
     {
     }
 
     /**
-     * Test attribute "postal_code"
+     * Test attribute "purpose_of_opening_account"
      */
-    public function testPropertyPostalCode()
+    public function testPropertyPurposeOfOpeningAccount()
     {
     }
 
     /**
-     * Test attribute "birth_date"
+     * Test attribute "office_phone"
      */
-    public function testPropertyBirthDate()
+    public function testPropertyOfficePhone()
     {
     }
 
     /**
-     * Test attribute "ip"
+     * Test attribute "vat_registration_number"
      */
-    public function testPropertyIp()
+    public function testPropertyVatRegistrationNumber()
     {
     }
 
     /**
-     * Test attribute "identification_number"
+     * Test attribute "financial_regulator"
      */
-    public function testPropertyIdentificationNumber()
+    public function testPropertyFinancialRegulator()
     {
     }
 
     /**
-     * Test attribute "identification_type"
+     * Test attribute "regulatory_licence_number"
      */
-    public function testPropertyIdentificationType()
+    public function testPropertyRegulatoryLicenceNumber()
+    {
+    }
+
+    /**
+     * Test attribute "contact_person_email"
+     */
+    public function testPropertyContactPersonEmail()
+    {
+    }
+
+    /**
+     * Test attribute "trading_country"
+     */
+    public function testPropertyTradingCountry()
+    {
+    }
+
+    /**
+     * Test attribute "trading_address"
+     */
+    public function testPropertyTradingAddress()
+    {
+    }
+
+    /**
+     * Test attribute "trading_name"
+     */
+    public function testPropertyTradingName()
+    {
+    }
+
+    /**
+     * Test attribute "number_monthly_transactions"
+     */
+    public function testPropertyNumberMonthlyTransactions()
+    {
+    }
+
+    /**
+     * Test attribute "amount_monthly_transactions"
+     */
+    public function testPropertyAmountMonthlyTransactions()
     {
     }
 
@@ -240,13 +366,6 @@ class SenderTest extends TestCase
     }
 
     /**
-     * Test attribute "politically_exposed_people"
-     */
-    public function testPropertyPoliticallyExposedPeople()
-    {
-    }
-
-    /**
      * Test attribute "metadata"
      */
     public function testPropertyMetadata()
@@ -254,16 +373,23 @@ class SenderTest extends TestCase
     }
 
     /**
-     * Test attribute "state"
+     * Test attribute "errors"
      */
-    public function testPropertyState()
+    public function testPropertyErrors()
     {
     }
 
     /**
-     * Test attribute "id"
+     * Test attribute "onboarding_status"
      */
-    public function testPropertyId()
+    public function testPropertyOnboardingStatus()
+    {
+    }
+
+    /**
+     * Test attribute "politically_exposed_people"
+     */
+    public function testPropertyPoliticallyExposedPeople()
     {
     }
 
@@ -275,9 +401,37 @@ class SenderTest extends TestCase
     }
 
     /**
-     * Test attribute "errors"
+     * Test attribute "city_of_birth"
      */
-    public function testPropertyErrors()
+    public function testPropertyCityOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "country_of_birth"
+     */
+    public function testPropertyCountryOfBirth()
+    {
+    }
+
+    /**
+     * Test attribute "gender"
+     */
+    public function testPropertyGender()
+    {
+    }
+
+    /**
+     * Test attribute "sales_lead_id"
+     */
+    public function testPropertySalesLeadId()
+    {
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
     {
     }
 }

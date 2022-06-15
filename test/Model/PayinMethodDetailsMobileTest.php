@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PayinMethodDetailsMobileTest Class Doc Comment
  *
  * @category    Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;phone_number\&quot;: \&quot;+2569999999\&quot;,   \&quot;send_instructions\&quot;: true } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;phone_number\&quot;: \&quot;+2569999999\&quot;, } &#x60;&#x60;&#x60;
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -86,9 +86,16 @@ class PayinMethodDetailsMobileTest extends TestCase
     }
 
     /**
-     * Test attribute "send_instructions"
+     * Test attribute "mobile_provider"
      */
-    public function testPropertySendInstructions()
+    public function testPropertyMobileProvider()
+    {
+    }
+
+    /**
+     * Test attribute "otp"
+     */
+    public function testPropertyOtp()
     {
     }
 }

@@ -101,4 +101,14 @@ class RecipientsApiTest extends TestCase
     public function testPatchRecipient()
     {
     }
+
+    /**
+     * Test case for proofOfPayments
+     *
+     * Returns list of proof of payments.
+     *
+     */
+    public function testProofOfPayments()
+    {
+    }
 }

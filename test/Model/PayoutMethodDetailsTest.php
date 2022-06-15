@@ -128,6 +128,20 @@ class PayoutMethodDetailsTest extends TestCase
     }
 
     /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "transfer_reason"
+     */
+    public function testPropertyTransferReason()
+    {
+    }
+
+    /**
      * Test attribute "iban"
      */
     public function testPropertyIban()
@@ -145,6 +159,20 @@ class PayoutMethodDetailsTest extends TestCase
      * Test attribute "bank_country"
      */
     public function testPropertyBankCountry()
+    {
+    }
+
+    /**
+     * Test attribute "cash_provider"
+     */
+    public function testPropertyCashProvider()
+    {
+    }
+
+    /**
+     * Test attribute "sort_code"
+     */
+    public function testPropertySortCode()
     {
     }
 
@@ -215,6 +243,104 @@ class PayoutMethodDetailsTest extends TestCase
      * Test attribute "reference"
      */
     public function testPropertyReference()
+    {
+    }
+
+    /**
+     * Test attribute "name"
+     */
+    public function testPropertyName()
+    {
+    }
+
+    /**
+     * Test attribute "address"
+     */
+    public function testPropertyAddress()
+    {
+    }
+
+    /**
+     * Test attribute "street"
+     */
+    public function testPropertyStreet()
+    {
+    }
+
+    /**
+     * Test attribute "postal_code"
+     */
+    public function testPropertyPostalCode()
+    {
+    }
+
+    /**
+     * Test attribute "city"
+     */
+    public function testPropertyCity()
+    {
+    }
+
+    /**
+     * Test attribute "email"
+     */
+    public function testPropertyEmail()
+    {
+    }
+
+    /**
+     * Test attribute "transfer_reason_code"
+     */
+    public function testPropertyTransferReasonCode()
+    {
+    }
+
+    /**
+     * Test attribute "contact_first_name"
+     */
+    public function testPropertyContactFirstName()
+    {
+    }
+
+    /**
+     * Test attribute "contact_last_name"
+     */
+    public function testPropertyContactLastName()
+    {
+    }
+
+    /**
+     * Test attribute "registration_number"
+     */
+    public function testPropertyRegistrationNumber()
+    {
+    }
+
+    /**
+     * Test attribute "nature_of_business"
+     */
+    public function testPropertyNatureOfBusiness()
+    {
+    }
+
+    /**
+     * Test attribute "legal_entity_type"
+     */
+    public function testPropertyLegalEntityType()
+    {
+    }
+
+    /**
+     * Test attribute "branch_code"
+     */
+    public function testPropertyBranchCode()
+    {
+    }
+
+    /**
+     * Test attribute "swift_code"
+     */
+    public function testPropertySwiftCode()
     {
     }
 }

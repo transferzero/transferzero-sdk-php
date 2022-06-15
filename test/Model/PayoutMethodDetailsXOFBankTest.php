@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PayoutMethodDetailsXOFBankTest Class Doc Comment
  *
  * @category    Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;SN08SN0000000000000000000000\&quot;,   \&quot;bank_name\&quot;: \&quot;BRM\&quot;,   \&quot;bank_country\&quot;: \&quot;SN\&quot; # ISO country code for Senegal } &#x60;&#x60;&#x60; *** Currently in Beta phase ***
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code and transfer_reason lists
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -110,6 +110,20 @@ class PayoutMethodDetailsXOFBankTest extends TestCase
      * Test attribute "bank_country"
      */
     public function testPropertyBankCountry()
+    {
+    }
+
+    /**
+     * Test attribute "bank_code"
+     */
+    public function testPropertyBankCode()
+    {
+    }
+
+    /**
+     * Test attribute "transfer_reason"
+     */
+    public function testPropertyTransferReason()
     {
     }
 }

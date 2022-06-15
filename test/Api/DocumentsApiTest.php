@@ -73,16 +73,6 @@ class DocumentsApiTest extends TestCase
     }
 
     /**
-     * Test case for deleteDocument
-     *
-     * Deleting a document.
-     *
-     */
-    public function testDeleteDocument()
-    {
-    }
-
-    /**
      * Test case for getDocument
      *
      * Fetching a document.

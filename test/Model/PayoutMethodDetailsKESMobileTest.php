@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PayoutMethodDetailsKESMobileTest Class Doc Comment
  *
  * @category    Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;phone_number\&quot;: \&quot;+254997853134\&quot;,     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;transfer_reason_code\&quot;: \&quot;185\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason_code lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;phone_number\&quot;: \&quot;+254997853134\&quot;,     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;, // New transfer reason field     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason lists
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -117,6 +117,13 @@ class PayoutMethodDetailsKESMobileTest extends TestCase
      * Test attribute "transfer_reason_code"
      */
     public function testPropertyTransferReasonCode()
+    {
+    }
+
+    /**
+     * Test attribute "transfer_reason"
+     */
+    public function testPropertyTransferReason()
     {
     }
 

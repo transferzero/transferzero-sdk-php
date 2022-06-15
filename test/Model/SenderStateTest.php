@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * SenderStateTest Class Doc Comment
  *
  * @category    Class
- * @description The state of the sender. Can be one of the following:  - &#x60;initial&#x60;: When a sender is created and has not been through any KYC checking (cannot transact) - &#x60;verified&#x60;: A sender has passed sanction list checks (cannot transact) - &#x60;approved&#x60;: The sender has passed both KYC and sanction checks (can transact) - &#x60;banned&#x60;: An admin has banned the sender (cannot transact) - &#x60;rejected&#x60;: The sender has failed sanction list checks (cannot transact) - &#x60;disabled&#x60;: A sender is put into this state as a result of a delete request via the API (cannot transact)
+ * @description The state of the sender. Can be one of the following:  - &#x60;incomplete&#x60;: When a sender has not submitted required details or documents (cannot transact) - &#x60;initial&#x60;: When a sender is created and has not been through any KYC checking (cannot transact) - &#x60;verified&#x60;: A sender has passed sanction list checks (cannot transact) - &#x60;approved&#x60;: The sender has passed both KYC and sanction checks (can transact) - &#x60;banned&#x60;: An admin has banned the sender (cannot transact) - &#x60;rejected&#x60;: The sender has failed sanction list checks (cannot transact) - &#x60;disabled&#x60;: A sender is put into this state as a result of a delete request via the API (cannot transact)
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

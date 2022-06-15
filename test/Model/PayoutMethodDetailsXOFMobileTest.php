@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PayoutMethodDetailsXOFMobileTest Class Doc Comment
  *
  * @category    Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;     # local or international Senegalese format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, # \&quot;orange\&quot; or \&quot;tigo\&quot; }
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;774044436\&quot;, // local or international Senegalese or Ivory Coast format   \&quot;mobile_provider\&quot;: \&quot;orange\&quot;, // \&quot;orange\&quot;, \&quot;tigo\&quot;, \&quot;emoney\&quot;, \&quot;free\&quot; or \&quot;wave\&quot; for Senegal; \&quot;orange\&quot;, \&quot;mtn\&quot; or \&quot;moov\&quot; for Ivory Coast; \&quot;orange\&quot; or \&quot;mobicash\&quot; for Burkina Faso and Mali   \&quot;country\&quot; // Optional; Values: \&quot;SN\&quot; for Senegal; \&quot;CI\&quot; for Ivory Coast; \&quot;ML\&quot; for Mali; \&quot;BF\&quot; for Burkina Faso; Default value is \&quot;SN\&quot;   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; // mandatory for Mali payouts, optional otherwise } &#x60;&#x60;&#x60;
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
@@ -103,6 +103,20 @@ class PayoutMethodDetailsXOFMobileTest extends TestCase
      * Test attribute "mobile_provider"
      */
     public function testPropertyMobileProvider()
+    {
+    }
+
+    /**
+     * Test attribute "country"
+     */
+    public function testPropertyCountry()
+    {
+    }
+
+    /**
+     * Test attribute "transfer_reason"
+     */
+    public function testPropertyTransferReason()
     {
     }
 }

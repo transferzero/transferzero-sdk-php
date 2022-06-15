@@ -35,7 +35,7 @@ use PHPUnit\Framework\TestCase;
  * PayoutMethodCashProviderEnumTest Class Doc Comment
  *
  * @category    Class
- * @description The cash provider for the pickup:  For XOF valid options are: - &#x60;wari&#x60;: Wari - &#x60;wizall&#x60;: Wizall
+ * @description The cash provider for the pickup: For XOF valid options are: - &#x60;wizall&#x60;: Wizall
  * @package     TransferZero
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech

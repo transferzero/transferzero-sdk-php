@@ -135,13 +135,6 @@ class CurrencyTest extends TestCase
     }
 
     /**
-     * Test attribute "margin"
-     */
-    public function testPropertyMargin()
-    {
-    }
-
-    /**
      * Test attribute "usd_equivalent"
      */
     public function testPropertyUsdEquivalent()

@@ -135,13 +135,6 @@ class CurrencyOppositeTest extends TestCase
     }
 
     /**
-     * Test attribute "margin"
-     */
-    public function testPropertyMargin()
-    {
-    }
-
-    /**
      * Test attribute "usd_equivalent"
      */
     public function testPropertyUsdEquivalent()
@@ -159,6 +152,13 @@ class CurrencyOppositeTest extends TestCase
      * Test attribute "mtm_rate"
      */
     public function testPropertyMtmRate()
+    {
+    }
+
+    /**
+     * Test attribute "margin"
+     */
+    public function testPropertyMargin()
     {
     }
 }

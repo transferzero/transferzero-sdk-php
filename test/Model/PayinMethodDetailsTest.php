@@ -100,9 +100,23 @@ class PayinMethodDetailsTest extends TestCase
     }
 
     /**
-     * Test attribute "send_instructions"
+     * Test attribute "mobile_provider"
      */
-    public function testPropertySendInstructions()
+    public function testPropertyMobileProvider()
+    {
+    }
+
+    /**
+     * Test attribute "otp"
+     */
+    public function testPropertyOtp()
+    {
+    }
+
+    /**
+     * Test attribute "refund_address"
+     */
+    public function testPropertyRefundAddress()
     {
     }
 }

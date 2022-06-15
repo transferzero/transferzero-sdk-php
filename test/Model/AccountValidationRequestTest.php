@@ -93,9 +93,23 @@ class AccountValidationRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "iban"
+     */
+    public function testPropertyIban()
+    {
+    }
+
+    /**
      * Test attribute "phone_number"
      */
     public function testPropertyPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "mobile_provider"
+     */
+    public function testPropertyMobileProvider()
     {
     }
 

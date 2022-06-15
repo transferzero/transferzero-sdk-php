@@ -1,5 +1,0 @@
-{
-    "require": {
-        "transferzero/transferzero-php-sdk": "^1.5.1"
-    }
-}
