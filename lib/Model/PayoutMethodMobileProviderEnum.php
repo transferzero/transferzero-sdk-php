@@ -54,6 +54,8 @@ class PayoutMethodMobileProviderEnum
     const AFRICELL = 'africell';
     const TELECOM = 'telecom';
     const MOBICASH = 'mobicash';
+    const EMONEY = 'emoney';
+    const FREE = 'free';
     const WAVE = 'wave';
     
     /**
@@ -73,6 +75,8 @@ class PayoutMethodMobileProviderEnum
             self::AFRICELL,
             self::TELECOM,
             self::MOBICASH,
+            self::EMONEY,
+            self::FREE,
             self::WAVE,
         ];
     }
