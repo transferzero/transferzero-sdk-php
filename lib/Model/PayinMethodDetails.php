@@ -62,6 +62,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'string',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'otp' => 'string',
         'refund_address' => 'string'
     ];
@@ -76,6 +77,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => null,
         'phone_number' => null,
         'mobile_provider' => null,
+        'country' => null,
         'otp' => null,
         'refund_address' => null
     ];
@@ -111,6 +113,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'redirect_url',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
+        'country' => 'country',
         'otp' => 'otp',
         'refund_address' => 'refund_address'
     ];
@@ -125,6 +128,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'setRedirectUrl',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
+        'country' => 'setCountry',
         'otp' => 'setOtp',
         'refund_address' => 'setRefundAddress'
     ];
@@ -139,6 +143,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         'redirect_url' => 'getRedirectUrl',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
+        'country' => 'getCountry',
         'otp' => 'getOtp',
         'refund_address' => 'getRefundAddress'
     ];
@@ -207,6 +212,7 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['otp'] = isset($data['otp']) ? $data['otp'] : null;
         $this->container['refund_address'] = isset($data['refund_address']) ? $data['refund_address'] : null;
     }
@@ -327,6 +333,30 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }

@@ -60,6 +60,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'otp' => 'string'
     ];
 
@@ -71,6 +72,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'phone_number' => null,
         'mobile_provider' => null,
+        'country' => null,
         'otp' => null
     ];
 
@@ -103,6 +105,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
+        'country' => 'country',
         'otp' => 'otp'
     ];
 
@@ -114,6 +117,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $setters = [
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
+        'country' => 'setCountry',
         'otp' => 'setOtp'
     ];
 
@@ -125,6 +129,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     protected static $getters = [
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
+        'country' => 'getCountry',
         'otp' => 'getOtp'
     ];
 
@@ -190,6 +195,7 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     {
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
+        $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['otp'] = isset($data['otp']) ? $data['otp'] : null;
     }
 
@@ -261,6 +267,30 @@ class PayinMethodDetailsMobile implements ModelInterface, ArrayAccess
     public function setMobileProvider($mobile_provider)
     {
         $this->container['mobile_provider'] = $mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets country
+     *
+     * @return \TransferZero\Model\PayoutMethodCountryEnum|null
+     */
+    public function getCountry()
+    {
+        return $this->container['country'];
+    }
+
+    /**
+     * Sets country
+     *
+     * @param \TransferZero\Model\PayoutMethodCountryEnum|null $country country
+     *
+     * @return $this
+     */
+    public function setCountry($country)
+    {
+        $this->container['country'] = $country;
 
         return $this;
     }
