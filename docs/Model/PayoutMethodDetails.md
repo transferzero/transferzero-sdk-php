@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | 
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
-**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | [optional] 
+**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
-**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
+**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | 
 **iban** | **string** |  | 
 **bank_name** | **string** |  | 
 **bank_country** | **string** |  | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
-**branch_code** | **string** |  | [optional] 
+**branch_code** | **string** |  | 
 **swift_code** | **string** |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)

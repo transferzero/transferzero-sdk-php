@@ -423,6 +423,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
+        if ($this->container['bank_account_type'] === null) {
+            $invalidProperties[] = "'bank_account_type' can't be null";
+        }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
@@ -431,6 +434,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['country'] === null) {
             $invalidProperties[] = "'country' can't be null";
+        }
+        if ($this->container['transfer_reason'] === null) {
+            $invalidProperties[] = "'transfer_reason' can't be null";
         }
         if ($this->container['iban'] === null) {
             $invalidProperties[] = "'iban' can't be null";
@@ -467,6 +473,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['branch_code'] === null) {
+            $invalidProperties[] = "'branch_code' can't be null";
         }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
@@ -585,7 +594,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
      */
     public function getBankAccountType()
     {
@@ -595,7 +604,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
      *
      * @return $this
      */
@@ -681,7 +690,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason
      *
-     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -691,7 +700,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */
@@ -1353,7 +1362,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets branch_code
      *
-     * @return string|null
+     * @return string
      */
     public function getBranchCode()
     {
@@ -1363,7 +1372,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets branch_code
      *
-     * @param string|null $branch_code branch_code
+     * @param string $branch_code branch_code
      *
      * @return $this
      */
