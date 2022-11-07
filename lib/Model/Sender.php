@@ -426,6 +426,7 @@ class Sender implements ModelInterface, ArrayAccess
     const LEGAL_ENTITY_TYPE_GO = 'go';
     const LEGAL_ENTITY_TYPE_OTHER = 'other';
     const LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION = 'financial_institution';
+    const LEGAL_ENTITY_TYPE_MTO = 'mto';
     const NATURE_OF_BUSINESS_PERSONAL = 'personal';
     const NATURE_OF_BUSINESS_AGRICULTURE_AND_HUNTING = 'agriculture_and_hunting';
     const NATURE_OF_BUSINESS_FORESTRY = 'forestry';
@@ -515,6 +516,7 @@ class Sender implements ModelInterface, ArrayAccess
             self::LEGAL_ENTITY_TYPE_GO,
             self::LEGAL_ENTITY_TYPE_OTHER,
             self::LEGAL_ENTITY_TYPE_FINANCIAL_INSTITUTION,
+            self::LEGAL_ENTITY_TYPE_MTO,
         ];
     }
     
@@ -1295,7 +1297,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets legal_entity_type
      *
-     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.
+     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution   - mto: Money Transfer Operator (MTO) / Other Licensed Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.
      *
      * @return $this
      */
