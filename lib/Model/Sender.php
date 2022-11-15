@@ -108,7 +108,18 @@ class Sender implements ModelInterface, ArrayAccess
         'country_of_birth' => 'string',
         'gender' => 'string',
         'sales_lead_id' => 'string',
-        'created_at' => 'string'
+        'created_at' => 'string',
+        'company_office_number' => 'string',
+        'company_office_number_country' => 'string',
+        'aml_officer_email' => 'string',
+        'aml_officer_phone' => 'string',
+        'aml_officer_phone_country' => 'string',
+        'company_website_url' => 'string',
+        'tax_identification_no' => 'string',
+        'number_of_employees_in_company' => 'string',
+        'list_of_countries_of_operation' => 'string[]',
+        'estimated_annual_revenue_turnover' => 'string',
+        'declaration' => 'string'
     ];
 
     /**
@@ -167,7 +178,18 @@ class Sender implements ModelInterface, ArrayAccess
         'country_of_birth' => null,
         'gender' => null,
         'sales_lead_id' => null,
-        'created_at' => null
+        'created_at' => null,
+        'company_office_number' => null,
+        'company_office_number_country' => null,
+        'aml_officer_email' => null,
+        'aml_officer_phone' => null,
+        'aml_officer_phone_country' => null,
+        'company_website_url' => null,
+        'tax_identification_no' => null,
+        'number_of_employees_in_company' => null,
+        'list_of_countries_of_operation' => null,
+        'estimated_annual_revenue_turnover' => null,
+        'declaration' => null
     ];
 
     /**
@@ -247,7 +269,18 @@ class Sender implements ModelInterface, ArrayAccess
         'country_of_birth' => 'country_of_birth',
         'gender' => 'gender',
         'sales_lead_id' => 'sales_lead_id',
-        'created_at' => 'created_at'
+        'created_at' => 'created_at',
+        'company_office_number' => 'company_office_number',
+        'company_office_number_country' => 'company_office_number_country',
+        'aml_officer_email' => 'aml_officer_email',
+        'aml_officer_phone' => 'aml_officer_phone',
+        'aml_officer_phone_country' => 'aml_officer_phone_country',
+        'company_website_url' => 'company_website_url',
+        'tax_identification_no' => 'tax_identification_no',
+        'number_of_employees_in_company' => 'number_of_employees_in_company',
+        'list_of_countries_of_operation' => 'list_of_countries_of_operation',
+        'estimated_annual_revenue_turnover' => 'estimated_annual_revenue_turnover',
+        'declaration' => 'declaration'
     ];
 
     /**
@@ -306,7 +339,18 @@ class Sender implements ModelInterface, ArrayAccess
         'country_of_birth' => 'setCountryOfBirth',
         'gender' => 'setGender',
         'sales_lead_id' => 'setSalesLeadId',
-        'created_at' => 'setCreatedAt'
+        'created_at' => 'setCreatedAt',
+        'company_office_number' => 'setCompanyOfficeNumber',
+        'company_office_number_country' => 'setCompanyOfficeNumberCountry',
+        'aml_officer_email' => 'setAmlOfficerEmail',
+        'aml_officer_phone' => 'setAmlOfficerPhone',
+        'aml_officer_phone_country' => 'setAmlOfficerPhoneCountry',
+        'company_website_url' => 'setCompanyWebsiteUrl',
+        'tax_identification_no' => 'setTaxIdentificationNo',
+        'number_of_employees_in_company' => 'setNumberOfEmployeesInCompany',
+        'list_of_countries_of_operation' => 'setListOfCountriesOfOperation',
+        'estimated_annual_revenue_turnover' => 'setEstimatedAnnualRevenueTurnover',
+        'declaration' => 'setDeclaration'
     ];
 
     /**
@@ -365,7 +409,18 @@ class Sender implements ModelInterface, ArrayAccess
         'country_of_birth' => 'getCountryOfBirth',
         'gender' => 'getGender',
         'sales_lead_id' => 'getSalesLeadId',
-        'created_at' => 'getCreatedAt'
+        'created_at' => 'getCreatedAt',
+        'company_office_number' => 'getCompanyOfficeNumber',
+        'company_office_number_country' => 'getCompanyOfficeNumberCountry',
+        'aml_officer_email' => 'getAmlOfficerEmail',
+        'aml_officer_phone' => 'getAmlOfficerPhone',
+        'aml_officer_phone_country' => 'getAmlOfficerPhoneCountry',
+        'company_website_url' => 'getCompanyWebsiteUrl',
+        'tax_identification_no' => 'getTaxIdentificationNo',
+        'number_of_employees_in_company' => 'getNumberOfEmployeesInCompany',
+        'list_of_countries_of_operation' => 'getListOfCountriesOfOperation',
+        'estimated_annual_revenue_turnover' => 'getEstimatedAnnualRevenueTurnover',
+        'declaration' => 'getDeclaration'
     ];
 
     /**
@@ -648,6 +703,17 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['gender'] = isset($data['gender']) ? $data['gender'] : null;
         $this->container['sales_lead_id'] = isset($data['sales_lead_id']) ? $data['sales_lead_id'] : null;
         $this->container['created_at'] = isset($data['created_at']) ? $data['created_at'] : null;
+        $this->container['company_office_number'] = isset($data['company_office_number']) ? $data['company_office_number'] : null;
+        $this->container['company_office_number_country'] = isset($data['company_office_number_country']) ? $data['company_office_number_country'] : null;
+        $this->container['aml_officer_email'] = isset($data['aml_officer_email']) ? $data['aml_officer_email'] : null;
+        $this->container['aml_officer_phone'] = isset($data['aml_officer_phone']) ? $data['aml_officer_phone'] : null;
+        $this->container['aml_officer_phone_country'] = isset($data['aml_officer_phone_country']) ? $data['aml_officer_phone_country'] : null;
+        $this->container['company_website_url'] = isset($data['company_website_url']) ? $data['company_website_url'] : null;
+        $this->container['tax_identification_no'] = isset($data['tax_identification_no']) ? $data['tax_identification_no'] : null;
+        $this->container['number_of_employees_in_company'] = isset($data['number_of_employees_in_company']) ? $data['number_of_employees_in_company'] : null;
+        $this->container['list_of_countries_of_operation'] = isset($data['list_of_countries_of_operation']) ? $data['list_of_countries_of_operation'] : null;
+        $this->container['estimated_annual_revenue_turnover'] = isset($data['estimated_annual_revenue_turnover']) ? $data['estimated_annual_revenue_turnover'] : null;
+        $this->container['declaration'] = isset($data['declaration']) ? $data['declaration'] : null;
     }
 
     /**
@@ -1297,7 +1363,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets legal_entity_type
      *
-     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution   - mto: Money Transfer Operator (MTO) / Other Licensed Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.
+     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution   - mto: Money Transfer Operator (MTO) / Other Licensed Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.  Note that if you select `mto` then following fields will be mandatory as well: `regulatory_licence_number`, `company_office_number`, `company_office_number_country`, `aml_officer_email`, `aml_officer_phone`, `aml_officer_phone_country`, `company_website_url`, `tax_identification_no`, `number_of_employees_in_company`, `list_of_countries_of_operation`, `estimated_annual_revenue_turnover`, `declaration`.
      *
      * @return $this
      */
@@ -2003,6 +2069,270 @@ class Sender implements ModelInterface, ArrayAccess
     public function setCreatedAt($created_at)
     {
         $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_office_number
+     *
+     * @return string|null
+     */
+    public function getCompanyOfficeNumber()
+    {
+        return $this->container['company_office_number'];
+    }
+
+    /**
+     * Sets company_office_number
+     *
+     * @param string|null $company_office_number Phone number of company office (without country callcode, used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setCompanyOfficeNumber($company_office_number)
+    {
+        $this->container['company_office_number'] = $company_office_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_office_number_country
+     *
+     * @return string|null
+     */
+    public function getCompanyOfficeNumberCountry()
+    {
+        return $this->container['company_office_number_country'];
+    }
+
+    /**
+     * Sets company_office_number_country
+     *
+     * @param string|null $company_office_number_country Phone number country of company office in 2-character alpha ISO 3166-2 country format (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setCompanyOfficeNumberCountry($company_office_number_country)
+    {
+        $this->container['company_office_number_country'] = $company_office_number_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets aml_officer_email
+     *
+     * @return string|null
+     */
+    public function getAmlOfficerEmail()
+    {
+        return $this->container['aml_officer_email'];
+    }
+
+    /**
+     * Sets aml_officer_email
+     *
+     * @param string|null $aml_officer_email Email address of AML Officer (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setAmlOfficerEmail($aml_officer_email)
+    {
+        $this->container['aml_officer_email'] = $aml_officer_email;
+
+        return $this;
+    }
+
+    /**
+     * Gets aml_officer_phone
+     *
+     * @return string|null
+     */
+    public function getAmlOfficerPhone()
+    {
+        return $this->container['aml_officer_phone'];
+    }
+
+    /**
+     * Sets aml_officer_phone
+     *
+     * @param string|null $aml_officer_phone Phone number of AML Officer (without country callcode, used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setAmlOfficerPhone($aml_officer_phone)
+    {
+        $this->container['aml_officer_phone'] = $aml_officer_phone;
+
+        return $this;
+    }
+
+    /**
+     * Gets aml_officer_phone_country
+     *
+     * @return string|null
+     */
+    public function getAmlOfficerPhoneCountry()
+    {
+        return $this->container['aml_officer_phone_country'];
+    }
+
+    /**
+     * Sets aml_officer_phone_country
+     *
+     * @param string|null $aml_officer_phone_country Phone number country of AML Officer in 2-character alpha ISO 3166-2 country format (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setAmlOfficerPhoneCountry($aml_officer_phone_country)
+    {
+        $this->container['aml_officer_phone_country'] = $aml_officer_phone_country;
+
+        return $this;
+    }
+
+    /**
+     * Gets company_website_url
+     *
+     * @return string|null
+     */
+    public function getCompanyWebsiteUrl()
+    {
+        return $this->container['company_website_url'];
+    }
+
+    /**
+     * Sets company_website_url
+     *
+     * @param string|null $company_website_url Company website URL (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setCompanyWebsiteUrl($company_website_url)
+    {
+        $this->container['company_website_url'] = $company_website_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_identification_no
+     *
+     * @return string|null
+     */
+    public function getTaxIdentificationNo()
+    {
+        return $this->container['tax_identification_no'];
+    }
+
+    /**
+     * Sets tax_identification_no
+     *
+     * @param string|null $tax_identification_no Tax Identification Number (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setTaxIdentificationNo($tax_identification_no)
+    {
+        $this->container['tax_identification_no'] = $tax_identification_no;
+
+        return $this;
+    }
+
+    /**
+     * Gets number_of_employees_in_company
+     *
+     * @return string|null
+     */
+    public function getNumberOfEmployeesInCompany()
+    {
+        return $this->container['number_of_employees_in_company'];
+    }
+
+    /**
+     * Sets number_of_employees_in_company
+     *
+     * @param string|null $number_of_employees_in_company Number of employees in company (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setNumberOfEmployeesInCompany($number_of_employees_in_company)
+    {
+        $this->container['number_of_employees_in_company'] = $number_of_employees_in_company;
+
+        return $this;
+    }
+
+    /**
+     * Gets list_of_countries_of_operation
+     *
+     * @return string[]|null
+     */
+    public function getListOfCountriesOfOperation()
+    {
+        return $this->container['list_of_countries_of_operation'];
+    }
+
+    /**
+     * Sets list_of_countries_of_operation
+     *
+     * @param string[]|null $list_of_countries_of_operation List of countries of operation (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setListOfCountriesOfOperation($list_of_countries_of_operation)
+    {
+        $this->container['list_of_countries_of_operation'] = $list_of_countries_of_operation;
+
+        return $this;
+    }
+
+    /**
+     * Gets estimated_annual_revenue_turnover
+     *
+     * @return string|null
+     */
+    public function getEstimatedAnnualRevenueTurnover()
+    {
+        return $this->container['estimated_annual_revenue_turnover'];
+    }
+
+    /**
+     * Sets estimated_annual_revenue_turnover
+     *
+     * @param string|null $estimated_annual_revenue_turnover Estimated annual turnover (in USD or equivalent, used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setEstimatedAnnualRevenueTurnover($estimated_annual_revenue_turnover)
+    {
+        $this->container['estimated_annual_revenue_turnover'] = $estimated_annual_revenue_turnover;
+
+        return $this;
+    }
+
+    /**
+     * Gets declaration
+     *
+     * @return string|null
+     */
+    public function getDeclaration()
+    {
+        return $this->container['declaration'];
+    }
+
+    /**
+     * Sets declaration
+     *
+     * @param string|null $declaration Declaration that the signatory is authorised (used only with a Business sender)
+     *
+     * @return $this
+     */
+    public function setDeclaration($declaration)
+    {
+        $this->container['declaration'] = $declaration;
 
         return $this;
     }
