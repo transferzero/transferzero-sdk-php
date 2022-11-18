@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsBRLBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;,     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,6 +60,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
+        'phone_number' => 'string',
         'bank_code' => 'string',
         'branch_code' => 'string',
         'bank_account' => 'string',
@@ -77,6 +78,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
+        'phone_number' => null,
         'bank_code' => null,
         'branch_code' => null,
         'bank_account' => null,
@@ -115,6 +117,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
+        'phone_number' => 'phone_number',
         'bank_code' => 'bank_code',
         'branch_code' => 'branch_code',
         'bank_account' => 'bank_account',
@@ -132,6 +135,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
+        'phone_number' => 'setPhoneNumber',
         'bank_code' => 'setBankCode',
         'branch_code' => 'setBranchCode',
         'bank_account' => 'setBankAccount',
@@ -149,6 +153,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
+        'phone_number' => 'getPhoneNumber',
         'bank_code' => 'getBankCode',
         'branch_code' => 'getBranchCode',
         'bank_account' => 'getBankAccount',
@@ -220,6 +225,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
@@ -324,6 +330,30 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     public function setLastName($last_name)
     {
         $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets phone_number
+     *
+     * @return string|null
+     */
+    public function getPhoneNumber()
+    {
+        return $this->container['phone_number'];
+    }
+
+    /**
+     * Sets phone_number
+     *
+     * @param string|null $phone_number phone_number
+     *
+     * @return $this
+     */
+    public function setPhoneNumber($phone_number)
+    {
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **string** |  | 
 **last_name** | **string** |  | 
+**phone_number** | **string** |  | [optional] 
 **bank_code** | **string** |  | 
 **branch_code** | **string** |  | 
 **bank_account** | **string** |  | 
