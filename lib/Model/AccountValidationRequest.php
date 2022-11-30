@@ -415,7 +415,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     /**
      * Sets phone_number
      *
-     * @param string|null $phone_number Phone number to query
+     * @param string|null $phone_number Phone number to query in E.164 format
      *
      * @return $this
      */
