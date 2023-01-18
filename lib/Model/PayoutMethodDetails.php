@@ -94,7 +94,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
         'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
         'branch_code' => 'string',
-        'swift_code' => 'string'
+        'swift_code' => 'string',
+        'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
+        'pix_key_value' => 'string'
     ];
 
     /**
@@ -140,7 +142,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'nature_of_business' => null,
         'legal_entity_type' => null,
         'branch_code' => null,
-        'swift_code' => null
+        'swift_code' => null,
+        'pix_key_type' => null,
+        'pix_key_value' => null
     ];
 
     /**
@@ -207,7 +211,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'nature_of_business' => 'nature_of_business',
         'legal_entity_type' => 'legal_entity_type',
         'branch_code' => 'branch_code',
-        'swift_code' => 'swift_code'
+        'swift_code' => 'swift_code',
+        'pix_key_type' => 'pix_key_type',
+        'pix_key_value' => 'pix_key_value'
     ];
 
     /**
@@ -253,7 +259,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'nature_of_business' => 'setNatureOfBusiness',
         'legal_entity_type' => 'setLegalEntityType',
         'branch_code' => 'setBranchCode',
-        'swift_code' => 'setSwiftCode'
+        'swift_code' => 'setSwiftCode',
+        'pix_key_type' => 'setPixKeyType',
+        'pix_key_value' => 'setPixKeyValue'
     ];
 
     /**
@@ -299,7 +307,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'nature_of_business' => 'getNatureOfBusiness',
         'legal_entity_type' => 'getLegalEntityType',
         'branch_code' => 'getBranchCode',
-        'swift_code' => 'getSwiftCode'
+        'swift_code' => 'getSwiftCode',
+        'pix_key_type' => 'getPixKeyType',
+        'pix_key_value' => 'getPixKeyValue'
     ];
 
     /**
@@ -400,6 +410,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
+        $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
+        $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
     }
 
     /**
@@ -422,9 +434,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
-        }
-        if ($this->container['bank_account_type'] === null) {
-            $invalidProperties[] = "'bank_account_type' can't be null";
         }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
@@ -473,9 +482,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
-        }
-        if ($this->container['branch_code'] === null) {
-            $invalidProperties[] = "'branch_code' can't be null";
         }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
@@ -594,7 +600,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
      */
     public function getBankAccountType()
     {
@@ -604,7 +610,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
      *
      * @return $this
      */
@@ -1362,7 +1368,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets branch_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBranchCode()
     {
@@ -1372,7 +1378,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets branch_code
      *
-     * @param string $branch_code branch_code
+     * @param string|null $branch_code branch_code
      *
      * @return $this
      */
@@ -1403,6 +1409,54 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setSwiftCode($swift_code)
     {
         $this->container['swift_code'] = $swift_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets pix_key_type
+     *
+     * @return \TransferZero\Model\PayoutMethodPixKeyTypeEnum|null
+     */
+    public function getPixKeyType()
+    {
+        return $this->container['pix_key_type'];
+    }
+
+    /**
+     * Sets pix_key_type
+     *
+     * @param \TransferZero\Model\PayoutMethodPixKeyTypeEnum|null $pix_key_type pix_key_type
+     *
+     * @return $this
+     */
+    public function setPixKeyType($pix_key_type)
+    {
+        $this->container['pix_key_type'] = $pix_key_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets pix_key_value
+     *
+     * @return string|null
+     */
+    public function getPixKeyValue()
+    {
+        return $this->container['pix_key_value'];
+    }
+
+    /**
+     * Sets pix_key_value
+     *
+     * @param string|null $pix_key_value pix_key_value
+     *
+     * @return $this
+     */
+    public function setPixKeyValue($pix_key_value)
+    {
+        $this->container['pix_key_value'] = $pix_key_value;
 
         return $this;
     }

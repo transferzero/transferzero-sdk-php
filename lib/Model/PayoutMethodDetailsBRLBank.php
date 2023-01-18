@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsBRLBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
+ * @description PIX Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;pix_key_type\&quot;: \&quot;email\&quot;,     \&quot;pix_key_value\&quot;: \&quot;person@example.com\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  TED Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -65,6 +65,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'branch_code' => 'string',
         'bank_account' => 'string',
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
+        'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
+        'pix_key_value' => 'string',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
@@ -83,6 +85,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'branch_code' => null,
         'bank_account' => null,
         'bank_account_type' => null,
+        'pix_key_type' => null,
+        'pix_key_value' => null,
         'identity_card_type' => null,
         'identity_card_id' => null,
         'transfer_reason' => null
@@ -122,6 +126,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'branch_code' => 'branch_code',
         'bank_account' => 'bank_account',
         'bank_account_type' => 'bank_account_type',
+        'pix_key_type' => 'pix_key_type',
+        'pix_key_value' => 'pix_key_value',
         'identity_card_type' => 'identity_card_type',
         'identity_card_id' => 'identity_card_id',
         'transfer_reason' => 'transfer_reason'
@@ -140,6 +146,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'branch_code' => 'setBranchCode',
         'bank_account' => 'setBankAccount',
         'bank_account_type' => 'setBankAccountType',
+        'pix_key_type' => 'setPixKeyType',
+        'pix_key_value' => 'setPixKeyValue',
         'identity_card_type' => 'setIdentityCardType',
         'identity_card_id' => 'setIdentityCardId',
         'transfer_reason' => 'setTransferReason'
@@ -158,6 +166,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'branch_code' => 'getBranchCode',
         'bank_account' => 'getBankAccount',
         'bank_account_type' => 'getBankAccountType',
+        'pix_key_type' => 'getPixKeyType',
+        'pix_key_value' => 'getPixKeyValue',
         'identity_card_type' => 'getIdentityCardType',
         'identity_card_id' => 'getIdentityCardId',
         'transfer_reason' => 'getTransferReason'
@@ -230,6 +240,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
+        $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
+        $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
@@ -249,18 +261,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
-        }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
-        }
-        if ($this->container['branch_code'] === null) {
-            $invalidProperties[] = "'branch_code' can't be null";
-        }
-        if ($this->container['bank_account'] === null) {
-            $invalidProperties[] = "'bank_account' can't be null";
-        }
-        if ($this->container['bank_account_type'] === null) {
-            $invalidProperties[] = "'bank_account_type' can't be null";
         }
         if ($this->container['identity_card_type'] === null) {
             $invalidProperties[] = "'identity_card_type' can't be null";
@@ -361,7 +361,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBankCode()
     {
@@ -371,7 +371,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_code
      *
-     * @param string $bank_code bank_code
+     * @param string|null $bank_code bank_code
      *
      * @return $this
      */
@@ -385,7 +385,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Gets branch_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBranchCode()
     {
@@ -395,7 +395,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Sets branch_code
      *
-     * @param string $branch_code branch_code
+     * @param string|null $branch_code branch_code
      *
      * @return $this
      */
@@ -409,7 +409,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account
      *
-     * @return string
+     * @return string|null
      */
     public function getBankAccount()
     {
@@ -419,7 +419,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account
      *
-     * @param string $bank_account bank_account
+     * @param string|null $bank_account bank_account
      *
      * @return $this
      */
@@ -433,7 +433,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
      */
     public function getBankAccountType()
     {
@@ -443,13 +443,61 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
      *
      * @return $this
      */
     public function setBankAccountType($bank_account_type)
     {
         $this->container['bank_account_type'] = $bank_account_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets pix_key_type
+     *
+     * @return \TransferZero\Model\PayoutMethodPixKeyTypeEnum|null
+     */
+    public function getPixKeyType()
+    {
+        return $this->container['pix_key_type'];
+    }
+
+    /**
+     * Sets pix_key_type
+     *
+     * @param \TransferZero\Model\PayoutMethodPixKeyTypeEnum|null $pix_key_type pix_key_type
+     *
+     * @return $this
+     */
+    public function setPixKeyType($pix_key_type)
+    {
+        $this->container['pix_key_type'] = $pix_key_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets pix_key_value
+     *
+     * @return string|null
+     */
+    public function getPixKeyValue()
+    {
+        return $this->container['pix_key_value'];
+    }
+
+    /**
+     * Sets pix_key_value
+     *
+     * @param string|null $pix_key_value pix_key_value
+     *
+     * @return $this
+     */
+    public function setPixKeyValue($pix_key_value)
+    {
+        $this->container['pix_key_value'] = $pix_key_value;
 
         return $this;
     }

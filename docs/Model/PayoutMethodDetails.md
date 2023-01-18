@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | 
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
-**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
+**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | [optional] 
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
@@ -40,8 +40,10 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
-**branch_code** | **string** |  | 
+**branch_code** | **string** |  | [optional] 
 **swift_code** | **string** |  | 
+**pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
+**pix_key_value** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
