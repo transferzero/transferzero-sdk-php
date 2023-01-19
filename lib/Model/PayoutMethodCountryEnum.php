@@ -56,6 +56,7 @@ class PayoutMethodCountryEnum
     const AR = 'AR';
     const AM = 'AM';
     const AW = 'AW';
+    const AX = 'AX';
     const AU = 'AU';
     const AT = 'AT';
     const AZ = 'AZ';
@@ -304,6 +305,7 @@ class PayoutMethodCountryEnum
             self::AR,
             self::AM,
             self::AW,
+            self::AX,
             self::AU,
             self::AT,
             self::AZ,
