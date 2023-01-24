@@ -115,7 +115,6 @@ class Sender implements ModelInterface, ArrayAccess
         'aml_officer_phone' => 'string',
         'aml_officer_phone_country' => 'string',
         'company_website_url' => 'string',
-        'tax_identification_no' => 'string',
         'number_of_employees_in_company' => 'string',
         'list_of_countries_of_operation' => 'string[]',
         'estimated_annual_revenue_turnover' => 'string',
@@ -185,7 +184,6 @@ class Sender implements ModelInterface, ArrayAccess
         'aml_officer_phone' => null,
         'aml_officer_phone_country' => null,
         'company_website_url' => null,
-        'tax_identification_no' => null,
         'number_of_employees_in_company' => null,
         'list_of_countries_of_operation' => null,
         'estimated_annual_revenue_turnover' => null,
@@ -276,7 +274,6 @@ class Sender implements ModelInterface, ArrayAccess
         'aml_officer_phone' => 'aml_officer_phone',
         'aml_officer_phone_country' => 'aml_officer_phone_country',
         'company_website_url' => 'company_website_url',
-        'tax_identification_no' => 'tax_identification_no',
         'number_of_employees_in_company' => 'number_of_employees_in_company',
         'list_of_countries_of_operation' => 'list_of_countries_of_operation',
         'estimated_annual_revenue_turnover' => 'estimated_annual_revenue_turnover',
@@ -346,7 +343,6 @@ class Sender implements ModelInterface, ArrayAccess
         'aml_officer_phone' => 'setAmlOfficerPhone',
         'aml_officer_phone_country' => 'setAmlOfficerPhoneCountry',
         'company_website_url' => 'setCompanyWebsiteUrl',
-        'tax_identification_no' => 'setTaxIdentificationNo',
         'number_of_employees_in_company' => 'setNumberOfEmployeesInCompany',
         'list_of_countries_of_operation' => 'setListOfCountriesOfOperation',
         'estimated_annual_revenue_turnover' => 'setEstimatedAnnualRevenueTurnover',
@@ -416,7 +412,6 @@ class Sender implements ModelInterface, ArrayAccess
         'aml_officer_phone' => 'getAmlOfficerPhone',
         'aml_officer_phone_country' => 'getAmlOfficerPhoneCountry',
         'company_website_url' => 'getCompanyWebsiteUrl',
-        'tax_identification_no' => 'getTaxIdentificationNo',
         'number_of_employees_in_company' => 'getNumberOfEmployeesInCompany',
         'list_of_countries_of_operation' => 'getListOfCountriesOfOperation',
         'estimated_annual_revenue_turnover' => 'getEstimatedAnnualRevenueTurnover',
@@ -709,7 +704,6 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['aml_officer_phone'] = isset($data['aml_officer_phone']) ? $data['aml_officer_phone'] : null;
         $this->container['aml_officer_phone_country'] = isset($data['aml_officer_phone_country']) ? $data['aml_officer_phone_country'] : null;
         $this->container['company_website_url'] = isset($data['company_website_url']) ? $data['company_website_url'] : null;
-        $this->container['tax_identification_no'] = isset($data['tax_identification_no']) ? $data['tax_identification_no'] : null;
         $this->container['number_of_employees_in_company'] = isset($data['number_of_employees_in_company']) ? $data['number_of_employees_in_company'] : null;
         $this->container['list_of_countries_of_operation'] = isset($data['list_of_countries_of_operation']) ? $data['list_of_countries_of_operation'] : null;
         $this->container['estimated_annual_revenue_turnover'] = isset($data['estimated_annual_revenue_turnover']) ? $data['estimated_annual_revenue_turnover'] : null;
@@ -1360,7 +1354,7 @@ class Sender implements ModelInterface, ArrayAccess
     /**
      * Sets legal_entity_type
      *
-     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution   - mto: Money Transfer Operator (MTO) / Other Licensed Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.  Note that if you select `mto` then following fields will be mandatory as well: `regulatory_licence_number`, `company_office_number`, `company_office_number_country`, `aml_officer_email`, `aml_officer_phone`, `aml_officer_phone_country`, `company_website_url`, `tax_identification_no`, `number_of_employees_in_company`, `list_of_countries_of_operation`, `estimated_annual_revenue_turnover`, `declaration`.
+     * @param string|null $legal_entity_type Legal entity type (used only with a Business sender)  Available values:   - sole_proprietorship: Sole Proprietorship   - partnership: Partnership   - privately_owned_company: Privately Owned Company (Limited Company)   - publicly_owned_company: Publicly Listed Company (PLC)   - government_owned_entity: Government Owned Entity Trusts   - trust: Foundations & Similar Entities   - ngo: Non-Government Organisations / Charities inc Religious bodies and place of worship   - club_and_society: Clubs and Societies   - go: GO (Majority Owned Subsidiary of State-Owned Company)   - financial_institution: Financial Institution   - mto: Money Transfer Operator (MTO) / Other Licensed Financial Institution  Please note not all values are acceptable for some our corridors. Please reach out to our sales teams for more information.  Note that if you select `financial_institution` then the fields `vat_registration_number`, `financial_regulator` and `regulatory_licence_number` will be mandatory as well.  Note that if you select `mto` then following fields will be mandatory as well: `vat_registration_number`, `financial_regulator`, `regulatory_licence_number`, `company_office_number`, `company_office_number_country`, `aml_officer_email`, `aml_officer_phone`, `aml_officer_phone_country`, `company_website_url`, `number_of_employees_in_company`, `list_of_countries_of_operation`, `estimated_annual_revenue_turnover`, `declaration`.
      *
      * @return $this
      */
@@ -2210,30 +2204,6 @@ class Sender implements ModelInterface, ArrayAccess
     public function setCompanyWebsiteUrl($company_website_url)
     {
         $this->container['company_website_url'] = $company_website_url;
-
-        return $this;
-    }
-
-    /**
-     * Gets tax_identification_no
-     *
-     * @return string|null
-     */
-    public function getTaxIdentificationNo()
-    {
-        return $this->container['tax_identification_no'];
-    }
-
-    /**
-     * Sets tax_identification_no
-     *
-     * @param string|null $tax_identification_no Tax Identification Number (used only with a Business sender)
-     *
-     * @return $this
-     */
-    public function setTaxIdentificationNo($tax_identification_no)
-    {
-        $this->container['tax_identification_no'] = $tax_identification_no;
 
         return $this;
     }
