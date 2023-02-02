@@ -1,6 +1,6 @@
 {
     "name": "transferzero/transferzero-sdk-php",
-    "version": "1.23.7",
+    "version": "1.24.0",
     "description": "TransferZero Client Library for PHP",
     "homepage": "http://api.transferzero.com/documentation",
     "license": "MIT",
