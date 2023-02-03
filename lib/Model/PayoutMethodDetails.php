@@ -96,7 +96,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'branch_code' => 'string',
         'swift_code' => 'string',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
-        'pix_key_value' => 'string'
+        'pix_key_value' => 'string',
+        'ifsc_code' => 'string'
     ];
 
     /**
@@ -144,7 +145,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'branch_code' => null,
         'swift_code' => null,
         'pix_key_type' => null,
-        'pix_key_value' => null
+        'pix_key_value' => null,
+        'ifsc_code' => null
     ];
 
     /**
@@ -213,7 +215,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'branch_code' => 'branch_code',
         'swift_code' => 'swift_code',
         'pix_key_type' => 'pix_key_type',
-        'pix_key_value' => 'pix_key_value'
+        'pix_key_value' => 'pix_key_value',
+        'ifsc_code' => 'ifsc_code'
     ];
 
     /**
@@ -261,7 +264,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'branch_code' => 'setBranchCode',
         'swift_code' => 'setSwiftCode',
         'pix_key_type' => 'setPixKeyType',
-        'pix_key_value' => 'setPixKeyValue'
+        'pix_key_value' => 'setPixKeyValue',
+        'ifsc_code' => 'setIfscCode'
     ];
 
     /**
@@ -309,7 +313,8 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'branch_code' => 'getBranchCode',
         'swift_code' => 'getSwiftCode',
         'pix_key_type' => 'getPixKeyType',
-        'pix_key_value' => 'getPixKeyValue'
+        'pix_key_value' => 'getPixKeyValue',
+        'ifsc_code' => 'getIfscCode'
     ];
 
     /**
@@ -412,6 +417,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
+        $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
     }
 
     /**
@@ -485,6 +491,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
+        }
+        if ($this->container['ifsc_code'] === null) {
+            $invalidProperties[] = "'ifsc_code' can't be null";
         }
         return $invalidProperties;
     }
@@ -1457,6 +1466,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setPixKeyValue($pix_key_value)
     {
         $this->container['pix_key_value'] = $pix_key_value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ifsc_code
+     *
+     * @return string
+     */
+    public function getIfscCode()
+    {
+        return $this->container['ifsc_code'];
+    }
+
+    /**
+     * Sets ifsc_code
+     *
+     * @param string $ifsc_code ifsc_code
+     *
+     * @return $this
+     */
+    public function setIfscCode($ifsc_code)
+    {
+        $this->container['ifsc_code'] = $ifsc_code;
 
         return $this;
     }

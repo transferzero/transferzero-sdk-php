@@ -242,6 +242,7 @@ Class | Method | HTTP request | Description
  - [PayoutMethodDetailsGHSCash](docs/Model/PayoutMethodDetailsGHSCash.md)
  - [PayoutMethodDetailsGNFMobile](docs/Model/PayoutMethodDetailsGNFMobile.md)
  - [PayoutMethodDetailsIBAN](docs/Model/PayoutMethodDetailsIBAN.md)
+ - [PayoutMethodDetailsINRBank](docs/Model/PayoutMethodDetailsINRBank.md)
  - [PayoutMethodDetailsKESBank](docs/Model/PayoutMethodDetailsKESBank.md)
  - [PayoutMethodDetailsKESMobile](docs/Model/PayoutMethodDetailsKESMobile.md)
  - [PayoutMethodDetailsMADCash](docs/Model/PayoutMethodDetailsMADCash.md)
