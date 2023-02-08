@@ -1,15 +1,76 @@
 # TransferZero\SendersApi
 
-All URIs are relative to *https://api-sandbox.transferzero.com/v1*
+All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**confirmSenderVerification**](SendersApi.md#confirmSenderVerification) | **POST** /senders/{Sender ID}/confirm_verification | Change sender onboarding state to &#39;profile_completed&#39;
 [**deleteSender**](SendersApi.md#deleteSender) | **DELETE** /senders/{Sender ID} | Deleting a sender
 [**getSender**](SendersApi.md#getSender) | **GET** /senders/{Sender ID} | Fetching a sender
 [**getSenders**](SendersApi.md#getSenders) | **GET** /senders | Listing senders
 [**patchSender**](SendersApi.md#patchSender) | **PATCH** /senders/{Sender ID} | Updating a sender
 [**postSenders**](SendersApi.md#postSenders) | **POST** /senders | Creating a sender
 
+
+# **confirmSenderVerification**
+> \TransferZero\Model\SenderResponse confirmSenderVerification($sender_id)
+
+Change sender onboarding state to 'profile_completed'
+
+Transition sender to the 'profile_completed' onboarding state. This will only work if the sender has all the required documents uploaded and profile information present.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+```
+
+Set the API Key and Secret on the Configuration object for authentication:
+```php
+TransferZero\Configuration::getDefaultConfiguration()
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
+  ->setApiKey("<key>")
+  ->setApiSecret("<secret>");
+
+$apiInstance = new TransferZero\Api\SendersApi();
+$sender_id = 'sender_id_example'; // string | ID of the sender to get.  Example: `/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670/confirm_verification`
+
+try {
+    $result = $apiInstance->confirmSenderVerification($sender_id);
+    print_r($result);
+} catch (Exception $e) {
+    if ($e->isValidationError()) {
+        $response = $e->getResponseObject();
+        echo "Validation error(s) occurred when calling the endpoint";
+        print_r($response);
+    } else {
+        echo "An exception occurred when calling SendersApi#confirmSenderVerification";
+        echo $e->getMessage();
+    }
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sender_id** | [**string**](../Model/.md)| ID of the sender to get.  Example: &#x60;/v1/senders/bf9ff782-e182-45ac-abea-5bce83ad6670/confirm_verification&#x60; |
+
+### Return type
+
+[**\TransferZero\Model\SenderResponse**](../Model/SenderResponse.md)
+
+### Authorization
+
+[AuthorizationKey](../../README.md#AuthorizationKey), [AuthorizationNonce](../../README.md#AuthorizationNonce), [AuthorizationSecret](../../README.md#AuthorizationSecret), [AuthorizationSignature](../../README.md#AuthorizationSignature)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **deleteSender**
 > \TransferZero\Model\SenderResponse deleteSender($sender_id)
@@ -27,7 +88,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -87,7 +148,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -149,7 +210,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -219,7 +280,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -281,7 +342,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 

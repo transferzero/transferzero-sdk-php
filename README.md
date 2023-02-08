@@ -55,7 +55,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 ```
@@ -127,7 +127,7 @@ if (strpos($webhook->getEvent(), 'transaction') === 0) {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api-sandbox.transferzero.com/v1*
+All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -139,14 +139,23 @@ Class | Method | HTTP request | Description
 *AccountValidationApi* | [**postAccountValidations**](docs/Api/AccountValidationApi.md#postaccountvalidations) | **POST** /account_validations | Validates the existence of a bank account or a mobile phone number
 *AccountsApi* | [**getAccount**](docs/Api/AccountsApi.md#getaccount) | **GET** /accounts/{Currency} | Fetches account balance for specified currrency
 *AccountsApi* | [**getAccounts**](docs/Api/AccountsApi.md#getaccounts) | **GET** /accounts | Fetches account balances for all currencies
+*BankAccountDetailsApi* | [**getBankAccountDetails**](docs/Api/BankAccountDetailsApi.md#getbankaccountdetails) | **GET** /bank_account_details/{Currency} | Fetching bank account details
 *CurrencyInfoApi* | [**infoCurrencies**](docs/Api/CurrencyInfoApi.md#infocurrencies) | **GET** /info/currencies | Getting a list of possible requested currencies
 *CurrencyInfoApi* | [**infoCurrenciesIn**](docs/Api/CurrencyInfoApi.md#infocurrenciesin) | **GET** /info/currencies/in | Getting a list of possible input currencies
 *CurrencyInfoApi* | [**infoCurrenciesOut**](docs/Api/CurrencyInfoApi.md#infocurrenciesout) | **GET** /info/currencies/out | Getting a list of possible output currencies
 *DocumentsApi* | [**getDocument**](docs/Api/DocumentsApi.md#getdocument) | **GET** /documents/{Document ID} | Fetching a document
 *DocumentsApi* | [**getDocuments**](docs/Api/DocumentsApi.md#getdocuments) | **GET** /documents | Getting a list of documents
 *DocumentsApi* | [**postDocuments**](docs/Api/DocumentsApi.md#postdocuments) | **POST** /documents | Creating a document
+*EntitiesApi* | [**getEntities**](docs/Api/EntitiesApi.md#getentities) | **GET** /risk_assessment/entities/{Entity Type}/summary | Listing entities
+*EntitiesApi* | [**getEntitiesByParams**](docs/Api/EntitiesApi.md#getentitiesbyparams) | **GET** /risk_assessment/entities/{Entity Type}/search | Listing entities by params (rating and/or state)
+*EntitiesApi* | [**getEntity**](docs/Api/EntitiesApi.md#getentity) | **GET** /risk_assessment/entities/{Entity Type}/{Entity ID} | Fetching a entity
+*EntitiesApi* | [**patchEntity**](docs/Api/EntitiesApi.md#patchentity) | **PATCH** /risk_assessment/entities/{Entity Type}/{Entity ID} | Updating an entity
+*EntitiesApi* | [**postEntity**](docs/Api/EntitiesApi.md#postentity) | **POST** /risk_assessment/entities/{Entity Type}/{Entity ID} | Creating an entity
 *LogsApi* | [**getWebhookLog**](docs/Api/LogsApi.md#getwebhooklog) | **GET** /logs/{Webhook Log ID} | Fetch an individual webhook log
 *LogsApi* | [**getWebhookLogs**](docs/Api/LogsApi.md#getwebhooklogs) | **GET** /logs/webhooks | Fetch a list of webhook logs
+*OpenCorporatesCompanySearchApi* | [**searchCompany**](docs/Api/OpenCorporatesCompanySearchApi.md#searchcompany) | **POST** /open_corporates/search | Search for a company on Open Corporates
+*OpenCorporatesSenderUpdateApi* | [**updateSender**](docs/Api/OpenCorporatesSenderUpdateApi.md#updatesender) | **POST** /open_corporates/update_sender | Update Sender with data retrieved from Open Corporates
+*OpenCorporatesSupportedCountriesApi* | [**getOpenCorporatesSupportedCountries**](docs/Api/OpenCorporatesSupportedCountriesApi.md#getopencorporatessupportedcountries) | **GET** /open_corporates/countries | Get List of Supported Countries from OpenCorporates
 *PayinMethodsApi* | [**deletePayinMethod**](docs/Api/PayinMethodsApi.md#deletepayinmethod) | **DELETE** /payin_methods/{PayinMethod ID} | Deleting a payin method
 *PayinMethodsApi* | [**getPayinMethod**](docs/Api/PayinMethodsApi.md#getpayinmethod) | **GET** /payin_methods/{PayinMethod ID} | Fetching a payin method
 *PayinMethodsApi* | [**patchPayinMethod**](docs/Api/PayinMethodsApi.md#patchpayinmethod) | **PATCH** /payin_methods/{PayinMethod ID} | Updating a payin method
@@ -158,15 +167,35 @@ Class | Method | HTTP request | Description
 *PayoutMethodsApi* | [**getPayoutMethods**](docs/Api/PayoutMethodsApi.md#getpayoutmethods) | **GET** /payout_methods | Listing payout methods
 *PayoutMethodsApi* | [**patchPayoutMethod**](docs/Api/PayoutMethodsApi.md#patchpayoutmethod) | **PATCH** /payout_methods/{Payout Method ID} | Updating a payout method
 *PayoutMethodsApi* | [**postPayoutMethods**](docs/Api/PayoutMethodsApi.md#postpayoutmethods) | **POST** /payout_methods | Creating a payout method
+*PoliticallyExposedPeopleApi* | [**deletePoliticallyExposedPerson**](docs/Api/PoliticallyExposedPeopleApi.md#deletepoliticallyexposedperson) | **DELETE** /politically_exposed_people/{PoliticallyExposedPerson ID} | Deleting a politically exposed person
+*PoliticallyExposedPeopleApi* | [**getPoliticallyExposedPeople**](docs/Api/PoliticallyExposedPeopleApi.md#getpoliticallyexposedpeople) | **GET** /politically_exposed_people | Listing Politically Exposed People
+*PoliticallyExposedPeopleApi* | [**getPoliticallyExposedPerson**](docs/Api/PoliticallyExposedPeopleApi.md#getpoliticallyexposedperson) | **GET** /politically_exposed_people/{PoliticallyExposedPerson ID} | Fetching a politically exposed person
+*PoliticallyExposedPeopleApi* | [**patchPoliticallyExposedPerson**](docs/Api/PoliticallyExposedPeopleApi.md#patchpoliticallyexposedperson) | **PATCH** /politically_exposed_people/{PoliticallyExposedPerson ID} | Updating a politically exposed person
+*PoliticallyExposedPeopleApi* | [**postPoliticallyExposedPeople**](docs/Api/PoliticallyExposedPeopleApi.md#postpoliticallyexposedpeople) | **POST** /politically_exposed_people | Creating a politically exposed person
 *RecipientsApi* | [**deleteRecipient**](docs/Api/RecipientsApi.md#deleterecipient) | **DELETE** /recipients/{Recipient ID} | Cancelling a recipient
 *RecipientsApi* | [**getRecipients**](docs/Api/RecipientsApi.md#getrecipients) | **GET** /recipients | Getting a list of recipients with filtering
 *RecipientsApi* | [**patchRecipient**](docs/Api/RecipientsApi.md#patchrecipient) | **PATCH** /recipients/{Recipient ID} | Updating a recipient
 *RecipientsApi* | [**proofOfPayments**](docs/Api/RecipientsApi.md#proofofpayments) | **GET** /recipients/{Recipient ID}/proof_of_payments | Returns list of proof of payments
+*SanctionedCountriesApi* | [**getSanctionedCountries**](docs/Api/SanctionedCountriesApi.md#getsanctionedcountries) | **GET** /sanctioned_countries | Get List of Sanctioned Countries
+*SenderDocumentsApi* | [**addDocumentSender**](docs/Api/SenderDocumentsApi.md#adddocumentsender) | **POST** /senders/{Sender ID}/documents/{Document ID}/add | Adding a document to a sender
+*SenderDocumentsApi* | [**getSenderDocument**](docs/Api/SenderDocumentsApi.md#getsenderdocument) | **GET** /senders/{Sender ID}/documents/{Document ID} | Fetching a document belonging to a sender
+*SenderDocumentsApi* | [**getSenderDocuments**](docs/Api/SenderDocumentsApi.md#getsenderdocuments) | **GET** /senders/{Sender ID}/documents | Getting a list of documents belonging to a sender
+*SenderDocumentsApi* | [**removeDocumentSender**](docs/Api/SenderDocumentsApi.md#removedocumentsender) | **POST** /senders/{Sender ID}/documents/{Document ID}/remove | Removing a document from a sender
+*SendersApi* | [**confirmSenderVerification**](docs/Api/SendersApi.md#confirmsenderverification) | **POST** /senders/{Sender ID}/confirm_verification | Change sender onboarding state to &#39;profile_completed&#39;
 *SendersApi* | [**deleteSender**](docs/Api/SendersApi.md#deletesender) | **DELETE** /senders/{Sender ID} | Deleting a sender
 *SendersApi* | [**getSender**](docs/Api/SendersApi.md#getsender) | **GET** /senders/{Sender ID} | Fetching a sender
 *SendersApi* | [**getSenders**](docs/Api/SendersApi.md#getsenders) | **GET** /senders | Listing senders
 *SendersApi* | [**patchSender**](docs/Api/SendersApi.md#patchsender) | **PATCH** /senders/{Sender ID} | Updating a sender
 *SendersApi* | [**postSenders**](docs/Api/SendersApi.md#postsenders) | **POST** /senders | Creating a sender
+*TransactionRequestsApi* | [**addDocumentTransactionRequest**](docs/Api/TransactionRequestsApi.md#adddocumenttransactionrequest) | **POST** /transaction_requests/{Transaction Request ID}/add_document | Adding a document to a transaction request (deprecated)
+*TransactionRequestsApi* | [**cancelTransactionRequest**](docs/Api/TransactionRequestsApi.md#canceltransactionrequest) | **POST** /transaction_requests/{Transaction Request ID}/cancel | Cancelling a transaction request
+*TransactionRequestsApi* | [**confirmTransactionRequest**](docs/Api/TransactionRequestsApi.md#confirmtransactionrequest) | **POST** /transaction_requests/{Transaction Request ID}/confirm | Confirming a transaction request
+*TransactionRequestsApi* | [**getTransactionRequest**](docs/Api/TransactionRequestsApi.md#gettransactionrequest) | **GET** /transaction_requests/{Transaction Request ID} | Fetching a transaction request
+*TransactionRequestsApi* | [**getTransactionRequests**](docs/Api/TransactionRequestsApi.md#gettransactionrequests) | **GET** /transaction_requests | Listing transaction requests
+*TransactionRequestsApi* | [**postTransactionRequest**](docs/Api/TransactionRequestsApi.md#posttransactionrequest) | **POST** /transaction_requests | Creating a transaction request
+*TransactionRequestsApi* | [**restfulAddDocumentTransactionRequest**](docs/Api/TransactionRequestsApi.md#restfuladddocumenttransactionrequest) | **POST** /transaction_requests/{Transaction Request ID}/documents/{Document ID}/add | Adding a document to a transaction request
+*TransactionRequestsApi* | [**transactionRequestLimits**](docs/Api/TransactionRequestsApi.md#transactionrequestlimits) | **GET** /transaction_requests/limits | Specifies the limits for transaction requests
+*TransactionRequestsApi* | [**validateTransactionRequests**](docs/Api/TransactionRequestsApi.md#validatetransactionrequests) | **POST** /transaction_requests/validate | Validates a transaction request payload
 *TransactionsApi* | [**calculateTransactions**](docs/Api/TransactionsApi.md#calculatetransactions) | **POST** /transactions/calculate | Calculates transaction amounts for a transaction payload
 *TransactionsApi* | [**createAndFundTransaction**](docs/Api/TransactionsApi.md#createandfundtransaction) | **POST** /transactions/create_and_fund | Creates a new transaction and funds it from account balance
 *TransactionsApi* | [**getTransaction**](docs/Api/TransactionsApi.md#gettransaction) | **GET** /transactions/{Transaction ID} | Fetch a single transaction
@@ -195,6 +224,8 @@ Class | Method | HTTP request | Description
  - [ApiLog](docs/Model/ApiLog.md)
  - [ApiLogListResponse](docs/Model/ApiLogListResponse.md)
  - [ApiLogResponse](docs/Model/ApiLogResponse.md)
+ - [BankAccountDetails](docs/Model/BankAccountDetails.md)
+ - [BankAccountDetailsResponse](docs/Model/BankAccountDetailsResponse.md)
  - [Currency](docs/Model/Currency.md)
  - [CurrencyExchange](docs/Model/CurrencyExchange.md)
  - [CurrencyExchangeListResponse](docs/Model/CurrencyExchangeListResponse.md)
@@ -211,10 +242,27 @@ Class | Method | HTTP request | Description
  - [DocumentRequest](docs/Model/DocumentRequest.md)
  - [DocumentResponse](docs/Model/DocumentResponse.md)
  - [DocumentWebhook](docs/Model/DocumentWebhook.md)
+ - [Entity](docs/Model/Entity.md)
+ - [EntityCreateRequest](docs/Model/EntityCreateRequest.md)
+ - [EntityCreateResponse](docs/Model/EntityCreateResponse.md)
+ - [EntityListResponse](docs/Model/EntityListResponse.md)
+ - [EntityRating](docs/Model/EntityRating.md)
+ - [EntityState](docs/Model/EntityState.md)
+ - [EntityUpdateRequest](docs/Model/EntityUpdateRequest.md)
+ - [EntityUpdateResponse](docs/Model/EntityUpdateResponse.md)
  - [ErrorStatus](docs/Model/ErrorStatus.md)
  - [FieldDescription](docs/Model/FieldDescription.md)
  - [FieldSelectValidation](docs/Model/FieldSelectValidation.md)
  - [FieldValidation](docs/Model/FieldValidation.md)
+ - [OpenCorporatesSearch](docs/Model/OpenCorporatesSearch.md)
+ - [OpenCorporatesSearchRequest](docs/Model/OpenCorporatesSearchRequest.md)
+ - [OpenCorporatesSearchResponse](docs/Model/OpenCorporatesSearchResponse.md)
+ - [OpenCorporatesSenderUpdate](docs/Model/OpenCorporatesSenderUpdate.md)
+ - [OpenCorporatesSenderUpdateRequest](docs/Model/OpenCorporatesSenderUpdateRequest.md)
+ - [OpenCorporatesSenderUpdateResponse](docs/Model/OpenCorporatesSenderUpdateResponse.md)
+ - [OpenCorporatesSenderUpdateResult](docs/Model/OpenCorporatesSenderUpdateResult.md)
+ - [OpenCorporatesSupportedCountries](docs/Model/OpenCorporatesSupportedCountries.md)
+ - [OpenCorporatesSupportedCountriesListResponse](docs/Model/OpenCorporatesSupportedCountriesListResponse.md)
  - [Pagination](docs/Model/Pagination.md)
  - [PaginationMeta](docs/Model/PaginationMeta.md)
  - [PayinMethod](docs/Model/PayinMethod.md)
@@ -269,6 +317,8 @@ Class | Method | HTTP request | Description
  - [PayoutMethodTransferReasonEnum](docs/Model/PayoutMethodTransferReasonEnum.md)
  - [PayoutMethodWebhook](docs/Model/PayoutMethodWebhook.md)
  - [PoliticallyExposedPerson](docs/Model/PoliticallyExposedPerson.md)
+ - [PoliticallyExposedPersonListResponse](docs/Model/PoliticallyExposedPersonListResponse.md)
+ - [PoliticallyExposedPersonResponse](docs/Model/PoliticallyExposedPersonResponse.md)
  - [ProofOfPayment](docs/Model/ProofOfPayment.md)
  - [ProofOfPaymentListResponse](docs/Model/ProofOfPaymentListResponse.md)
  - [Recipient](docs/Model/Recipient.md)
@@ -278,6 +328,8 @@ Class | Method | HTTP request | Description
  - [RecipientState](docs/Model/RecipientState.md)
  - [RecipientStateReasonDetails](docs/Model/RecipientStateReasonDetails.md)
  - [RecipientWebhook](docs/Model/RecipientWebhook.md)
+ - [SanctionedCountry](docs/Model/SanctionedCountry.md)
+ - [SanctionedCountryListResponse](docs/Model/SanctionedCountryListResponse.md)
  - [Sender](docs/Model/Sender.md)
  - [SenderListResponse](docs/Model/SenderListResponse.md)
  - [SenderRequest](docs/Model/SenderRequest.md)
@@ -289,6 +341,12 @@ Class | Method | HTTP request | Description
  - [StateReasonDetails](docs/Model/StateReasonDetails.md)
  - [Transaction](docs/Model/Transaction.md)
  - [TransactionListResponse](docs/Model/TransactionListResponse.md)
+ - [TransactionReq](docs/Model/TransactionReq.md)
+ - [TransactionReqLimitsResponse](docs/Model/TransactionReqLimitsResponse.md)
+ - [TransactionReqLimitsResponseObject](docs/Model/TransactionReqLimitsResponseObject.md)
+ - [TransactionReqListResponse](docs/Model/TransactionReqListResponse.md)
+ - [TransactionReqRequest](docs/Model/TransactionReqRequest.md)
+ - [TransactionReqResponse](docs/Model/TransactionReqResponse.md)
  - [TransactionRequest](docs/Model/TransactionRequest.md)
  - [TransactionResponse](docs/Model/TransactionResponse.md)
  - [TransactionResponseExisting](docs/Model/TransactionResponseExisting.md)
