@@ -1,6 +1,6 @@
 # TransferZero\TransactionsApi
 
-All URIs are relative to *https://api-sandbox.transferzero.com/v1*
+All URIs are relative to *https://api-sandbox.bitpesa.co/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -90,7 +90,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -150,7 +150,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -212,7 +212,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -282,7 +282,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -344,7 +344,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -404,7 +404,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
@@ -464,7 +464,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 Set the API Key and Secret on the Configuration object for authentication:
 ```php
 TransferZero\Configuration::getDefaultConfiguration()
-  ->setHost("https://api-sandbox.transferzero.com/v1")
+  ->setHost("https://api-sandbox.bitpesa.co/v1")
   ->setApiKey("<key>")
   ->setApiSecret("<secret>");
 
