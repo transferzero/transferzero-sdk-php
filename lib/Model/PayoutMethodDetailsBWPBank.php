@@ -1,6 +1,6 @@
 <?php
 /**
- * WebhookDefinitionListResponse
+ * PayoutMethodDetailsBWPBank
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * WebhookDefinitionListResponse Class Doc Comment
+ * PayoutMethodDetailsBWPBank Class Doc Comment
  *
  * @category Class
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_name\&quot;: \&quot;Banc ABC\&quot;,   \&quot;bank_account\&quot;: \&quot;12345678912345678\&quot;,   \&quot;branch_code\&quot;: \&quot;550067\&quot;, } &#x60;&#x60;&#x60; See [BWP Bank](https://docs.transferzero.com/docs/payout-details/#bwpbank) documentation for the bank_name &amp; branch_code list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'WebhookDefinitionListResponse';
+    protected static $openAPIModelName = 'PayoutMethodDetailsBWPBank';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +58,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'object' => '\TransferZero\Model\WebhookDefinition[]',
-        'meta' => '\TransferZero\Model\PaginationMeta'
+        'first_name' => 'string',
+        'last_name' => 'string',
+        'bank_name' => 'string',
+        'bank_account' => 'string',
+        'branch_code' => 'string'
     ];
 
     /**
@@ -67,8 +71,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'object' => null,
-        'meta' => null
+        'first_name' => null,
+        'last_name' => null,
+        'bank_name' => null,
+        'bank_account' => null,
+        'branch_code' => null
     ];
 
     /**
@@ -98,8 +105,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'object' => 'object',
-        'meta' => 'meta'
+        'first_name' => 'first_name',
+        'last_name' => 'last_name',
+        'bank_name' => 'bank_name',
+        'bank_account' => 'bank_account',
+        'branch_code' => 'branch_code'
     ];
 
     /**
@@ -108,8 +118,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'object' => 'setObject',
-        'meta' => 'setMeta'
+        'first_name' => 'setFirstName',
+        'last_name' => 'setLastName',
+        'bank_name' => 'setBankName',
+        'bank_account' => 'setBankAccount',
+        'branch_code' => 'setBranchCode'
     ];
 
     /**
@@ -118,8 +131,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'object' => 'getObject',
-        'meta' => 'getMeta'
+        'first_name' => 'getFirstName',
+        'last_name' => 'getLastName',
+        'bank_name' => 'getBankName',
+        'bank_account' => 'getBankAccount',
+        'branch_code' => 'getBranchCode'
     ];
 
     /**
@@ -182,8 +198,11 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['object'] = isset($data['object']) ? $data['object'] : null;
-        $this->container['meta'] = isset($data['meta']) ? $data['meta'] : null;
+        $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
+        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
     }
 
     /**
@@ -195,6 +214,21 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        if ($this->container['first_name'] === null) {
+            $invalidProperties[] = "'first_name' can't be null";
+        }
+        if ($this->container['last_name'] === null) {
+            $invalidProperties[] = "'last_name' can't be null";
+        }
+        if ($this->container['bank_name'] === null) {
+            $invalidProperties[] = "'bank_name' can't be null";
+        }
+        if ($this->container['bank_account'] === null) {
+            $invalidProperties[] = "'bank_account' can't be null";
+        }
+        if ($this->container['branch_code'] === null) {
+            $invalidProperties[] = "'branch_code' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -211,49 +245,121 @@ class WebhookDefinitionListResponse implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets object
+     * Gets first_name
      *
-     * @return \TransferZero\Model\WebhookDefinition[]|null
+     * @return string
      */
-    public function getObject()
+    public function getFirstName()
     {
-        return $this->container['object'];
+        return $this->container['first_name'];
     }
 
     /**
-     * Sets object
+     * Sets first_name
      *
-     * @param \TransferZero\Model\WebhookDefinition[]|null $object object
+     * @param string $first_name first_name
      *
      * @return $this
      */
-    public function setObject($object)
+    public function setFirstName($first_name)
     {
-        $this->container['object'] = $object;
+        $this->container['first_name'] = $first_name;
 
         return $this;
     }
 
     /**
-     * Gets meta
+     * Gets last_name
      *
-     * @return \TransferZero\Model\PaginationMeta|null
+     * @return string
      */
-    public function getMeta()
+    public function getLastName()
     {
-        return $this->container['meta'];
+        return $this->container['last_name'];
     }
 
     /**
-     * Sets meta
+     * Sets last_name
      *
-     * @param \TransferZero\Model\PaginationMeta|null $meta meta
+     * @param string $last_name last_name
      *
      * @return $this
      */
-    public function setMeta($meta)
+    public function setLastName($last_name)
     {
-        $this->container['meta'] = $meta;
+        $this->container['last_name'] = $last_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_name
+     *
+     * @return string
+     */
+    public function getBankName()
+    {
+        return $this->container['bank_name'];
+    }
+
+    /**
+     * Sets bank_name
+     *
+     * @param string $bank_name bank_name
+     *
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        $this->container['bank_name'] = $bank_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_account
+     *
+     * @return string
+     */
+    public function getBankAccount()
+    {
+        return $this->container['bank_account'];
+    }
+
+    /**
+     * Sets bank_account
+     *
+     * @param string $bank_account bank_account
+     *
+     * @return $this
+     */
+    public function setBankAccount($bank_account)
+    {
+        $this->container['bank_account'] = $bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets branch_code
+     *
+     * @return string
+     */
+    public function getBranchCode()
+    {
+        return $this->container['branch_code'];
+    }
+
+    /**
+     * Sets branch_code
+     *
+     * @param string $branch_code branch_code
+     *
+     * @return $this
+     */
+    public function setBranchCode($branch_code)
+    {
+        $this->container['branch_code'] = $branch_code;
 
         return $this;
     }

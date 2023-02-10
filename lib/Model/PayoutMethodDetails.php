@@ -11,9 +11,9 @@
  */
 
 /**
- * BitPesa Private API
+ * TransferZero API
  *
- * API specification used for internal BitPesa endpoints
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -488,6 +488,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
+        }
+        if ($this->container['branch_code'] === null) {
+            $invalidProperties[] = "'branch_code' can't be null";
         }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
@@ -1377,7 +1380,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets branch_code
      *
-     * @return string|null
+     * @return string
      */
     public function getBranchCode()
     {
@@ -1387,7 +1390,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets branch_code
      *
-     * @param string|null $branch_code branch_code
+     * @param string $branch_code branch_code
      *
      * @return $this
      */
