@@ -10,9 +10,9 @@
  */
 
 /**
- * BitPesa Private API
+ * TransferZero API
  *
- * API specification used for internal BitPesa endpoints
+ * Reference documentation for the TransferZero API V1
  *
  * OpenAPI spec version: 1.0
  * 
@@ -60,7 +60,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api-sandbox.bitpesa.co/v1';
+    protected $host = 'https://api-sandbox.transferzero.com/v1';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -316,11 +316,11 @@ class Configuration
     {
         return array(
           array(
-            "url" => "https://api-sandbox.bitpesa.co/v1",
+            "url" => "https://api-sandbox.transferzero.com/v1",
             "description" => "No description provided",
           ),
           array(
-            "url" => "https://api.bitpesa.co/v1",
+            "url" => "https://api.transferzero.com/v1",
             "description" => "No description provided",
           )
         );
