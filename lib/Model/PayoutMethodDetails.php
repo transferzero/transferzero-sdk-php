@@ -489,9 +489,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
-        if ($this->container['branch_code'] === null) {
-            $invalidProperties[] = "'branch_code' can't be null";
-        }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
         }
@@ -1380,7 +1377,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets branch_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBranchCode()
     {
@@ -1390,7 +1387,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets branch_code
      *
-     * @param string $branch_code branch_code
+     * @param string|null $branch_code branch_code
      *
      * @return $this
      */
