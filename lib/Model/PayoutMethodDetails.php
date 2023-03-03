@@ -93,8 +93,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'string',
         'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
         'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
-        'branch_code' => 'string',
+        'routing_number' => 'string',
         'swift_code' => 'string',
+        'branch_code' => 'string',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
         'ifsc_code' => 'string'
@@ -142,8 +143,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => null,
         'nature_of_business' => null,
         'legal_entity_type' => null,
-        'branch_code' => null,
+        'routing_number' => null,
         'swift_code' => null,
+        'branch_code' => null,
         'pix_key_type' => null,
         'pix_key_value' => null,
         'ifsc_code' => null
@@ -212,8 +214,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
         'legal_entity_type' => 'legal_entity_type',
-        'branch_code' => 'branch_code',
+        'routing_number' => 'routing_number',
         'swift_code' => 'swift_code',
+        'branch_code' => 'branch_code',
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
         'ifsc_code' => 'ifsc_code'
@@ -261,8 +264,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
         'legal_entity_type' => 'setLegalEntityType',
-        'branch_code' => 'setBranchCode',
+        'routing_number' => 'setRoutingNumber',
         'swift_code' => 'setSwiftCode',
+        'branch_code' => 'setBranchCode',
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
         'ifsc_code' => 'setIfscCode'
@@ -310,8 +314,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
         'legal_entity_type' => 'getLegalEntityType',
-        'branch_code' => 'getBranchCode',
+        'routing_number' => 'getRoutingNumber',
         'swift_code' => 'getSwiftCode',
+        'branch_code' => 'getBranchCode',
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
         'ifsc_code' => 'getIfscCode'
@@ -413,8 +418,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
-        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
+        $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
+        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
@@ -489,11 +495,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
-        if ($this->container['branch_code'] === null) {
-            $invalidProperties[] = "'branch_code' can't be null";
-        }
         if ($this->container['swift_code'] === null) {
             $invalidProperties[] = "'swift_code' can't be null";
+        }
+        if ($this->container['branch_code'] === null) {
+            $invalidProperties[] = "'branch_code' can't be null";
         }
         if ($this->container['ifsc_code'] === null) {
             $invalidProperties[] = "'ifsc_code' can't be null";
@@ -1378,25 +1384,25 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets branch_code
+     * Gets routing_number
      *
-     * @return string
+     * @return string|null
      */
-    public function getBranchCode()
+    public function getRoutingNumber()
     {
-        return $this->container['branch_code'];
+        return $this->container['routing_number'];
     }
 
     /**
-     * Sets branch_code
+     * Sets routing_number
      *
-     * @param string $branch_code branch_code
+     * @param string|null $routing_number routing_number
      *
      * @return $this
      */
-    public function setBranchCode($branch_code)
+    public function setRoutingNumber($routing_number)
     {
-        $this->container['branch_code'] = $branch_code;
+        $this->container['routing_number'] = $routing_number;
 
         return $this;
     }
@@ -1421,6 +1427,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setSwiftCode($swift_code)
     {
         $this->container['swift_code'] = $swift_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets branch_code
+     *
+     * @return string
+     */
+    public function getBranchCode()
+    {
+        return $this->container['branch_code'];
+    }
+
+    /**
+     * Sets branch_code
+     *
+     * @param string $branch_code branch_code
+     *
+     * @return $this
+     */
+    public function setBranchCode($branch_code)
+    {
+        $this->container['branch_code'] = $branch_code;
 
         return $this;
     }

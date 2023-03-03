@@ -40,8 +40,9 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
-**branch_code** | **string** |  | 
+**routing_number** | **string** |  | [optional] 
 **swift_code** | **string** |  | 
+**branch_code** | **string** |  | 
 **pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
 **pix_key_value** | **string** |  | [optional] 
 **ifsc_code** | **string** |  | 

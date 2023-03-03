@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsUSDBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;phone_number\&quot;: \&quot;+2341234567\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;057\&quot;,     \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,     \&quot;country\&quot;: \&quot;NG\&quot;   } &#x60;&#x60;&#x60; See [USD Bank](https://docs.transferzero.com/docs/payout-details/#usdbank) documentation for the bank_code and country lists
+ * @description Nigeria: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;phone_number\&quot;: \&quot;+2341234567\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;057\&quot;,     \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,     \&quot;country\&quot;: \&quot;NG\&quot;   } &#x60;&#x60;&#x60; See [USD Bank](https://docs.transferzero.com/docs/payout-details/#usdbank) documentation for the bank_code and country lists  United States: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;Jane\&quot;,     \&quot;last_name\&quot;: \&quot;Doe\&quot;,     \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,     \&quot;bank_account_type\&quot;: \&quot;20\&quot;, // 10 for Savings, 20 for Checking     \&quot;bank_name\&quot;: \&quot;US Bank\&quot;,     \&quot;routing_number\&quot;: \&quot;091000022\&quot;,     \&quot;swift_code\&quot;: \&quot;USBKUS44IMT\&quot;,     \&quot;country\&quot;: \&quot;US\&quot;   } See [USD Bank](https://docs.transferzero.com/docs/payout-details/#usdbank-1) documentation
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,6 +63,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'bank_code' => 'string',
         'bank_account' => 'string',
+        'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
+        'bank_name' => 'string',
+        'routing_number' => 'string',
+        'swift_code' => 'string',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
     ];
 
@@ -77,6 +81,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'bank_code' => null,
         'bank_account' => null,
+        'bank_account_type' => null,
+        'bank_name' => null,
+        'routing_number' => null,
+        'swift_code' => null,
         'country' => null
     ];
 
@@ -112,6 +120,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
+        'bank_account_type' => 'bank_account_type',
+        'bank_name' => 'bank_name',
+        'routing_number' => 'routing_number',
+        'swift_code' => 'swift_code',
         'country' => 'country'
     ];
 
@@ -126,6 +138,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
+        'bank_account_type' => 'setBankAccountType',
+        'bank_name' => 'setBankName',
+        'routing_number' => 'setRoutingNumber',
+        'swift_code' => 'setSwiftCode',
         'country' => 'setCountry'
     ];
 
@@ -140,6 +156,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
+        'bank_account_type' => 'getBankAccountType',
+        'bank_name' => 'getBankName',
+        'routing_number' => 'getRoutingNumber',
+        'swift_code' => 'getSwiftCode',
         'country' => 'getCountry'
     ];
 
@@ -208,6 +228,10 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
+        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
+        $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
     }
 
@@ -225,12 +249,6 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
-        }
-        if ($this->container['phone_number'] === null) {
-            $invalidProperties[] = "'phone_number' can't be null";
-        }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
         }
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
@@ -304,7 +322,7 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     /**
      * Gets phone_number
      *
-     * @return string
+     * @return string|null
      */
     public function getPhoneNumber()
     {
@@ -314,7 +332,7 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     /**
      * Sets phone_number
      *
-     * @param string $phone_number phone_number
+     * @param string|null $phone_number phone_number
      *
      * @return $this
      */
@@ -328,7 +346,7 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     /**
      * Gets bank_code
      *
-     * @return string
+     * @return string|null
      */
     public function getBankCode()
     {
@@ -338,7 +356,7 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     /**
      * Sets bank_code
      *
-     * @param string $bank_code bank_code
+     * @param string|null $bank_code bank_code
      *
      * @return $this
      */
@@ -369,6 +387,102 @@ class PayoutMethodDetailsUSDBank implements ModelInterface, ArrayAccess
     public function setBankAccount($bank_account)
     {
         $this->container['bank_account'] = $bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_account_type
+     *
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
+     */
+    public function getBankAccountType()
+    {
+        return $this->container['bank_account_type'];
+    }
+
+    /**
+     * Sets bank_account_type
+     *
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
+     *
+     * @return $this
+     */
+    public function setBankAccountType($bank_account_type)
+    {
+        $this->container['bank_account_type'] = $bank_account_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_name
+     *
+     * @return string|null
+     */
+    public function getBankName()
+    {
+        return $this->container['bank_name'];
+    }
+
+    /**
+     * Sets bank_name
+     *
+     * @param string|null $bank_name bank_name
+     *
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        $this->container['bank_name'] = $bank_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets routing_number
+     *
+     * @return string|null
+     */
+    public function getRoutingNumber()
+    {
+        return $this->container['routing_number'];
+    }
+
+    /**
+     * Sets routing_number
+     *
+     * @param string|null $routing_number routing_number
+     *
+     * @return $this
+     */
+    public function setRoutingNumber($routing_number)
+    {
+        $this->container['routing_number'] = $routing_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets swift_code
+     *
+     * @return string|null
+     */
+    public function getSwiftCode()
+    {
+        return $this->container['swift_code'];
+    }
+
+    /**
+     * Sets swift_code
+     *
+     * @param string|null $swift_code swift_code
+     *
+     * @return $this
+     */
+    public function setSwiftCode($swift_code)
+    {
+        $this->container['swift_code'] = $swift_code;
 
         return $this;
     }
