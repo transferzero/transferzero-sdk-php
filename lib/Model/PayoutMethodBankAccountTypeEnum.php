@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodBankAccountTypeEnum Class Doc Comment
  *
  * @category Class
- * @description The type of the bank account:  - &#x60;10&#x60;: Savings account - &#x60;20&#x60;: Current account
+ * @description The type of the bank account:  - &#x60;10&#x60;: Savings account - &#x60;20&#x60;: Current account - &#x60;30&#x60;: Payment account - &#x60;40&#x60;: Salary account
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -46,6 +46,8 @@ class PayoutMethodBankAccountTypeEnum
      */
     const _10 = '10';
     const _20 = '20';
+    const _30 = '30';
+    const _40 = '40';
     
     /**
      * Gets allowable values of the enum
@@ -56,6 +58,8 @@ class PayoutMethodBankAccountTypeEnum
         return [
             self::_10,
             self::_20,
+            self::_30,
+            self::_40,
         ];
     }
 }
