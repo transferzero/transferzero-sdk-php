@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodCountryEnum Class Doc Comment
  *
  * @category Class
- * @description The country for the pickup or mobile payout.  For USD cash pickup in Nigeria, valid options are: - &#x60;NG&#x60;: Nigeria  For XOF cash pickup, valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;ML&#x60;: Mali - &#x60;SN&#x60;: Senegal  For XOF mobile payout, valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;SN&#x60;: Senegal - &#x60;BF&#x60;: Burkina Faso - &#x60;ML&#x60;: Mali  For XAF mobile payout, valid options are: - &#x60;CM&#x60;: Cameroon
+ * @description The country for the pickup or mobile payout.  For USD cash pickup in Nigeria, valid options are: - &#x60;NG&#x60;: Nigeria  For XOF cash pickup, valid options are: - &#x60;CI&#x60;: Ivory Coast - &#x60;ML&#x60;: Mali - &#x60;SN&#x60;: Senegal  For XOF mobile payout, valid options are: - &#x60;BJ&#x60;: Benin - &#x60;BF&#x60;: Burkina Faso - &#x60;CI&#x60;: Ivory Coast - &#x60;ML&#x60;: Mali - &#x60;SN&#x60;: Senegal - &#x60;TG&#x60;: Togo  For XAF mobile payout, valid options are: - &#x60;CM&#x60;: Cameroon
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
