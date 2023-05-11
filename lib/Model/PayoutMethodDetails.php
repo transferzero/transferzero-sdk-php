@@ -87,6 +87,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'string',
         'city' => 'string',
         'email' => 'string',
+        'branch_code' => 'string',
         'transfer_reason_code' => 'string',
         'contact_first_name' => 'string',
         'contact_last_name' => 'string',
@@ -95,7 +96,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
         'routing_number' => 'string',
         'swift_code' => 'string',
-        'branch_code' => 'string',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
         'ifsc_code' => 'string'
@@ -137,6 +137,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => null,
         'city' => null,
         'email' => null,
+        'branch_code' => null,
         'transfer_reason_code' => null,
         'contact_first_name' => null,
         'contact_last_name' => null,
@@ -145,7 +146,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => null,
         'routing_number' => null,
         'swift_code' => null,
-        'branch_code' => null,
         'pix_key_type' => null,
         'pix_key_value' => null,
         'ifsc_code' => null
@@ -208,6 +208,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'postal_code',
         'city' => 'city',
         'email' => 'email',
+        'branch_code' => 'branch_code',
         'transfer_reason_code' => 'transfer_reason_code',
         'contact_first_name' => 'contact_first_name',
         'contact_last_name' => 'contact_last_name',
@@ -216,7 +217,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'legal_entity_type',
         'routing_number' => 'routing_number',
         'swift_code' => 'swift_code',
-        'branch_code' => 'branch_code',
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
         'ifsc_code' => 'ifsc_code'
@@ -258,6 +258,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'setPostalCode',
         'city' => 'setCity',
         'email' => 'setEmail',
+        'branch_code' => 'setBranchCode',
         'transfer_reason_code' => 'setTransferReasonCode',
         'contact_first_name' => 'setContactFirstName',
         'contact_last_name' => 'setContactLastName',
@@ -266,7 +267,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'setLegalEntityType',
         'routing_number' => 'setRoutingNumber',
         'swift_code' => 'setSwiftCode',
-        'branch_code' => 'setBranchCode',
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
         'ifsc_code' => 'setIfscCode'
@@ -308,6 +308,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'postal_code' => 'getPostalCode',
         'city' => 'getCity',
         'email' => 'getEmail',
+        'branch_code' => 'getBranchCode',
         'transfer_reason_code' => 'getTransferReasonCode',
         'contact_first_name' => 'getContactFirstName',
         'contact_last_name' => 'getContactLastName',
@@ -316,7 +317,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'getLegalEntityType',
         'routing_number' => 'getRoutingNumber',
         'swift_code' => 'getSwiftCode',
-        'branch_code' => 'getBranchCode',
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
         'ifsc_code' => 'getIfscCode'
@@ -412,6 +412,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
         $this->container['contact_first_name'] = isset($data['contact_first_name']) ? $data['contact_first_name'] : null;
         $this->container['contact_last_name'] = isset($data['contact_last_name']) ? $data['contact_last_name'] : null;
@@ -420,7 +421,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
         $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
-        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
@@ -495,11 +495,11 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
         }
-        if ($this->container['swift_code'] === null) {
-            $invalidProperties[] = "'swift_code' can't be null";
-        }
         if ($this->container['branch_code'] === null) {
             $invalidProperties[] = "'branch_code' can't be null";
+        }
+        if ($this->container['swift_code'] === null) {
+            $invalidProperties[] = "'swift_code' can't be null";
         }
         if ($this->container['ifsc_code'] === null) {
             $invalidProperties[] = "'ifsc_code' can't be null";
@@ -1240,6 +1240,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets branch_code
+     *
+     * @return string
+     */
+    public function getBranchCode()
+    {
+        return $this->container['branch_code'];
+    }
+
+    /**
+     * Sets branch_code
+     *
+     * @param string $branch_code branch_code
+     *
+     * @return $this
+     */
+    public function setBranchCode($branch_code)
+    {
+        $this->container['branch_code'] = $branch_code;
+
+        return $this;
+    }
+
+    /**
      * Gets transfer_reason_code
      *
      * @return string|null
@@ -1427,30 +1451,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setSwiftCode($swift_code)
     {
         $this->container['swift_code'] = $swift_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets branch_code
-     *
-     * @return string
-     */
-    public function getBranchCode()
-    {
-        return $this->container['branch_code'];
-    }
-
-    /**
-     * Sets branch_code
-     *
-     * @param string $branch_code branch_code
-     *
-     * @return $this
-     */
-    public function setBranchCode($branch_code)
-    {
-        $this->container['branch_code'] = $branch_code;
 
         return $this;
     }

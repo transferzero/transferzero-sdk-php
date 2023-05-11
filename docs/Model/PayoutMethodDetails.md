@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **postal_code** | **string** |  | 
 **city** | **string** |  | 
 **email** | **string** |  | [optional] 
+**branch_code** | **string** |  | 
 **transfer_reason_code** | **string** |  | [optional] 
 **contact_first_name** | **string** |  | [optional] 
 **contact_last_name** | **string** |  | [optional] 
@@ -42,7 +43,6 @@ Name | Type | Description | Notes
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
 **routing_number** | **string** |  | [optional] 
 **swift_code** | **string** |  | 
-**branch_code** | **string** |  | 
 **pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
 **pix_key_value** | **string** |  | [optional] 
 **ifsc_code** | **string** |  | 

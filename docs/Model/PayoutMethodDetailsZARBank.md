@@ -6,11 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **string** |  | 
 **last_name** | **string** |  | 
-**street** | **string** |  | 
-**postal_code** | **string** |  | 
-**city** | **string** |  | 
+**street** | **string** |  | [optional] 
+**postal_code** | **string** |  | [optional] 
+**city** | **string** |  | [optional] 
 **email** | **string** |  | [optional] 
-**bank_code** | **string** |  | 
+**bank_code** | **string** |  | [optional] 
+**branch_code** | **string** |  | [optional] 
 **bank_account** | **string** |  | 
 **phone_number** | **string** |  | 
 **transfer_reason_code** | **string** |  | [optional] 
