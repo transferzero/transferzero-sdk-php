@@ -1,0 +1,17 @@
+name: Create Tag
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'The name of the tag to be created.'
+        required: true
+        type: string
+
+jobs:
+  create-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a tag
+        run: |
+          git tag ${{ inputs.tag_name }} 
+          git push --tags 
