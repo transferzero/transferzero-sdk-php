@@ -1,0 +1,26 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      tag_name:
+        description: 'The name of the tag to be created.'
+        required: true
+        type: string
+      instant_update:
+        description: 'Do you want to instant update the compoaser package?'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  transferzero-sdk-php:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create a tag
+        run: |
+          git tag ${{ inputs.tag_name }} 
+          git push --tags 
+      
+      - name: Instant Composer Update
+        if: "${{ inputs.instant_update == 'true' }}"
+        run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=${secrets.PACKAGIST_USERNAME}&apiToken=${secrets.PACKAGIST_API_TOKEN}' -d'{"repository":{"url":"bitpesa/bitpesa-php-sdk"}}'
