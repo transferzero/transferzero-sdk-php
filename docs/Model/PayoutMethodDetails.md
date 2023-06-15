@@ -42,7 +42,8 @@ Name | Type | Description | Notes
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
 **routing_number** | **string** |  | [optional] 
-**swift_code** | **string** |  | 
+**swift_code** | **string** |  | [optional] 
+**relationship_to_sender** | **string** |  | [optional] 
 **pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
 **pix_key_value** | **string** |  | [optional] 
 **ifsc_code** | **string** |  | 

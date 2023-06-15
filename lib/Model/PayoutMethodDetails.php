@@ -96,6 +96,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
         'routing_number' => 'string',
         'swift_code' => 'string',
+        'relationship_to_sender' => 'string',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
         'ifsc_code' => 'string'
@@ -146,6 +147,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => null,
         'routing_number' => null,
         'swift_code' => null,
+        'relationship_to_sender' => null,
         'pix_key_type' => null,
         'pix_key_value' => null,
         'ifsc_code' => null
@@ -217,6 +219,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'legal_entity_type',
         'routing_number' => 'routing_number',
         'swift_code' => 'swift_code',
+        'relationship_to_sender' => 'relationship_to_sender',
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
         'ifsc_code' => 'ifsc_code'
@@ -267,6 +270,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'setLegalEntityType',
         'routing_number' => 'setRoutingNumber',
         'swift_code' => 'setSwiftCode',
+        'relationship_to_sender' => 'setRelationshipToSender',
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
         'ifsc_code' => 'setIfscCode'
@@ -317,6 +321,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'legal_entity_type' => 'getLegalEntityType',
         'routing_number' => 'getRoutingNumber',
         'swift_code' => 'getSwiftCode',
+        'relationship_to_sender' => 'getRelationshipToSender',
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
         'ifsc_code' => 'getIfscCode'
@@ -421,6 +426,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
         $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
+        $this->container['relationship_to_sender'] = isset($data['relationship_to_sender']) ? $data['relationship_to_sender'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
@@ -497,9 +503,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['branch_code'] === null) {
             $invalidProperties[] = "'branch_code' can't be null";
-        }
-        if ($this->container['swift_code'] === null) {
-            $invalidProperties[] = "'swift_code' can't be null";
         }
         if ($this->container['ifsc_code'] === null) {
             $invalidProperties[] = "'ifsc_code' can't be null";
@@ -1434,7 +1437,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets swift_code
      *
-     * @return string
+     * @return string|null
      */
     public function getSwiftCode()
     {
@@ -1444,13 +1447,37 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets swift_code
      *
-     * @param string $swift_code swift_code
+     * @param string|null $swift_code swift_code
      *
      * @return $this
      */
     public function setSwiftCode($swift_code)
     {
         $this->container['swift_code'] = $swift_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationship_to_sender
+     *
+     * @return string|null
+     */
+    public function getRelationshipToSender()
+    {
+        return $this->container['relationship_to_sender'];
+    }
+
+    /**
+     * Sets relationship_to_sender
+     *
+     * @param string|null $relationship_to_sender relationship_to_sender
+     *
+     * @return $this
+     */
+    public function setRelationshipToSender($relationship_to_sender)
+    {
+        $this->container['relationship_to_sender'] = $relationship_to_sender;
 
         return $this;
     }

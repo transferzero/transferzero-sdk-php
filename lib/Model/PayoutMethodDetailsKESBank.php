@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsKESBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;bank_code\&quot;: \&quot;68\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;bank_name\&quot;: \&quot;Equity Bank Ltd\&quot;,     \&quot;branch_code\&quot;: \&quot;404\&quot;,     \&quot;swift_code\&quot; \&quot;ABCLKENA\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;, // New transfer reason field     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  The valid bank_code values are:  - Habib Bank Limited: 08 - Trans-National Bank Limited: 26 - Housing Finance Co. Kenya: 61 - UBA Kenya Bank Ltd: 76 - Kenya Commercial Bank: 01000 - Standard Chartered Bank: 02000 - Barclays Bank of Kenya: 03000 - Bank of India: 05000 - Bank of Boroda: 06000 - NCBA Bank: 07000 - Prime Bank: 10000 - Co-operative Bank of Kenya: 11000 - National Bank of Kenya: 12000 - M-Oriental Commercial Bank Limited: 14000 - Citibank: 16000 - Habib Bank A.G. Zurich: 17000 - Middle East Bank: 18000 - Bank of Africa Kenya: 19000 - Consolidated Bank of Kenya: 23000 - Credit Bank Ltd: 25000 - Chase Bank: 30000 - Stanbic Bank Kenya: 31000 - African Banking Corporation: 35000 - Giro Bank Limited: 42000 - ECO Bank Kenya: 43000 - Spire Bank Limited: 49000 - Paramount Universal Bank Limited: 50000 - Jamii Bora Bank: 51000 - Guaranty Trust Bank Kenya: 53000 - Victoria Bank Limited: 54000 - Guardian Bank: 55000 - Investments and Mortgages Bank Limited: 57000 - Development Bank of Kenya: 59000 - Fidelity Commercial Bank: 46000 - Diamond Trust Bank: 63000 - Sidian Bank: 66000 - Equity Bank Limited: 68000 - Family Bank: 70000 - Gulf African Bank: 72000 - First Community Bank: 74000 - KWFT Bank: 78000  See [KES Bank](https://docs.transferzero.com/docs/payout-details/#kesbank) documentation for the transfer_reason list
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;city\&quot;: \&quot;Nairobi\&quot;     \&quot;bank_code\&quot;: \&quot;68\&quot;,     \&quot;bank_account\&quot;: \&quot;12345678\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;, // New transfer reason field     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;,     \&quot;relationship_to_sender\&quot;: \&quot;Relative\&quot;   } &#x60;&#x60;&#x60;  The valid bank_code values are:  - Absa Bank: 03 - African Banking Corporation: 35 - Bank of Africa Kenya: 19 - Citibank: 16 - Co-operative Bank of Kenya: 11 - Consolidated Bank of Kenya: 23 - Credit Bank Ltd: 25 - Diamond Trust Bank: 63 - DIB Bank: 75 - ECO Bank Kenya: 43 - Equity Bank Limited: 68 - Family Bank: 70 - First Community Bank: 74 - Guaranty Trust Bank Kenya: 53 - Guardian Bank: 55 - Gulf African Bank : 72 - Housing Finance Co. Kenya: 61 - I&amp;M Bank: 57 - Kingdom Bank: 51 - Kenya Commercial Bank: 01 - KWFT Bank: 78 - Mayfair Bank: 65 - M-Oriental Commercial Bank Limited: 14 - Middle East Bank: 18 - National Bank of Kenya: 12 - NCBA Bank: 07 - Paramount Universal Bank Limited: 50 - Prime Bank: 10 - Sidian Bank: 66 - Stanbic Bank Kenya: 31 - Standard Chartered Bank: 02 - UBA Kenya Bank Ltd: 76 - Victoria Bank Limited: 54   See [KES Bank](https://docs.transferzero.com/docs/payout-details/#kesbank) documentation for the transfer_reason list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,16 +60,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'bank_code' => 'string',
         'street' => 'string',
+        'city' => 'string',
+        'bank_code' => 'string',
         'bank_account' => 'string',
-        'bank_name' => 'string',
-        'branch_code' => 'string',
-        'swift_code' => 'string',
-        'transfer_reason_code' => 'string',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
-        'identity_card_id' => 'string'
+        'identity_card_id' => 'string',
+        'relationship_to_sender' => 'string'
     ];
 
     /**
@@ -80,16 +78,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'bank_code' => null,
         'street' => null,
+        'city' => null,
+        'bank_code' => null,
         'bank_account' => null,
-        'bank_name' => null,
-        'branch_code' => null,
-        'swift_code' => null,
-        'transfer_reason_code' => null,
         'transfer_reason' => null,
         'identity_card_type' => null,
-        'identity_card_id' => null
+        'identity_card_id' => null,
+        'relationship_to_sender' => null
     ];
 
     /**
@@ -121,16 +117,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'bank_code' => 'bank_code',
         'street' => 'street',
+        'city' => 'city',
+        'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
-        'bank_name' => 'bank_name',
-        'branch_code' => 'branch_code',
-        'swift_code' => 'swift_code',
-        'transfer_reason_code' => 'transfer_reason_code',
         'transfer_reason' => 'transfer_reason',
         'identity_card_type' => 'identity_card_type',
-        'identity_card_id' => 'identity_card_id'
+        'identity_card_id' => 'identity_card_id',
+        'relationship_to_sender' => 'relationship_to_sender'
     ];
 
     /**
@@ -141,16 +135,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'bank_code' => 'setBankCode',
         'street' => 'setStreet',
+        'city' => 'setCity',
+        'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
-        'bank_name' => 'setBankName',
-        'branch_code' => 'setBranchCode',
-        'swift_code' => 'setSwiftCode',
-        'transfer_reason_code' => 'setTransferReasonCode',
         'transfer_reason' => 'setTransferReason',
         'identity_card_type' => 'setIdentityCardType',
-        'identity_card_id' => 'setIdentityCardId'
+        'identity_card_id' => 'setIdentityCardId',
+        'relationship_to_sender' => 'setRelationshipToSender'
     ];
 
     /**
@@ -161,16 +153,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'bank_code' => 'getBankCode',
         'street' => 'getStreet',
+        'city' => 'getCity',
+        'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
-        'bank_name' => 'getBankName',
-        'branch_code' => 'getBranchCode',
-        'swift_code' => 'getSwiftCode',
-        'transfer_reason_code' => 'getTransferReasonCode',
         'transfer_reason' => 'getTransferReason',
         'identity_card_type' => 'getIdentityCardType',
-        'identity_card_id' => 'getIdentityCardId'
+        'identity_card_id' => 'getIdentityCardId',
+        'relationship_to_sender' => 'getRelationshipToSender'
     ];
 
     /**
@@ -235,16 +225,14 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
+        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
-        $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
-        $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
-        $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
+        $this->container['relationship_to_sender'] = isset($data['relationship_to_sender']) ? $data['relationship_to_sender'] : null;
     }
 
     /**
@@ -262,20 +250,17 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
-        }
         if ($this->container['street'] === null) {
             $invalidProperties[] = "'street' can't be null";
+        }
+        if ($this->container['bank_code'] === null) {
+            $invalidProperties[] = "'bank_code' can't be null";
         }
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
-        if ($this->container['bank_name'] === null) {
-            $invalidProperties[] = "'bank_name' can't be null";
-        }
-        if ($this->container['swift_code'] === null) {
-            $invalidProperties[] = "'swift_code' can't be null";
+        if ($this->container['transfer_reason'] === null) {
+            $invalidProperties[] = "'transfer_reason' can't be null";
         }
         if ($this->container['identity_card_type'] === null) {
             $invalidProperties[] = "'identity_card_type' can't be null";
@@ -347,30 +332,6 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_code
-     *
-     * @return string
-     */
-    public function getBankCode()
-    {
-        return $this->container['bank_code'];
-    }
-
-    /**
-     * Sets bank_code
-     *
-     * @param string $bank_code bank_code
-     *
-     * @return $this
-     */
-    public function setBankCode($bank_code)
-    {
-        $this->container['bank_code'] = $bank_code;
-
-        return $this;
-    }
-
-    /**
      * Gets street
      *
      * @return string
@@ -390,6 +351,54 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     public function setStreet($street)
     {
         $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_code
+     *
+     * @return string
+     */
+    public function getBankCode()
+    {
+        return $this->container['bank_code'];
+    }
+
+    /**
+     * Sets bank_code
+     *
+     * @param string $bank_code bank_code
+     *
+     * @return $this
+     */
+    public function setBankCode($bank_code)
+    {
+        $this->container['bank_code'] = $bank_code;
 
         return $this;
     }
@@ -419,105 +428,9 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_name
-     *
-     * @return string
-     */
-    public function getBankName()
-    {
-        return $this->container['bank_name'];
-    }
-
-    /**
-     * Sets bank_name
-     *
-     * @param string $bank_name bank_name
-     *
-     * @return $this
-     */
-    public function setBankName($bank_name)
-    {
-        $this->container['bank_name'] = $bank_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets branch_code
-     *
-     * @return string|null
-     */
-    public function getBranchCode()
-    {
-        return $this->container['branch_code'];
-    }
-
-    /**
-     * Sets branch_code
-     *
-     * @param string|null $branch_code branch_code
-     *
-     * @return $this
-     */
-    public function setBranchCode($branch_code)
-    {
-        $this->container['branch_code'] = $branch_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets swift_code
-     *
-     * @return string
-     */
-    public function getSwiftCode()
-    {
-        return $this->container['swift_code'];
-    }
-
-    /**
-     * Sets swift_code
-     *
-     * @param string $swift_code swift_code
-     *
-     * @return $this
-     */
-    public function setSwiftCode($swift_code)
-    {
-        $this->container['swift_code'] = $swift_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets transfer_reason_code
-     *
-     * @return string|null
-     */
-    public function getTransferReasonCode()
-    {
-        return $this->container['transfer_reason_code'];
-    }
-
-    /**
-     * Sets transfer_reason_code
-     *
-     * @param string|null $transfer_reason_code transfer_reason_code
-     *
-     * @return $this
-     */
-    public function setTransferReasonCode($transfer_reason_code)
-    {
-        $this->container['transfer_reason_code'] = $transfer_reason_code;
-
-        return $this;
-    }
-
-    /**
      * Gets transfer_reason
      *
-     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -527,7 +440,7 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */
@@ -582,6 +495,30 @@ class PayoutMethodDetailsKESBank implements ModelInterface, ArrayAccess
     public function setIdentityCardId($identity_card_id)
     {
         $this->container['identity_card_id'] = $identity_card_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationship_to_sender
+     *
+     * @return string|null
+     */
+    public function getRelationshipToSender()
+    {
+        return $this->container['relationship_to_sender'];
+    }
+
+    /**
+     * Sets relationship_to_sender
+     *
+     * @param string|null $relationship_to_sender relationship_to_sender
+     *
+     * @return $this
+     */
+    public function setRelationshipToSender($relationship_to_sender)
+    {
+        $this->container['relationship_to_sender'] = $relationship_to_sender;
 
         return $this;
     }
