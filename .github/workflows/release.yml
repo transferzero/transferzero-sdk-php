@@ -25,4 +25,4 @@ jobs:
       
       - name: Instant Composer Update
         if: "${{ inputs.instant_update }}"
-        run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}' -d'{"repository":{"url":"bitpesa/bitpesa-php-sdk"}}'
+        run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_API_TOKEN }}' -d'{"repository":{"url":"https://packagist.org/packages/transferzero/transferzero-php-sdk"}}'
