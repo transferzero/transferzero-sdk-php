@@ -21,8 +21,8 @@ jobs:
       - name: Create a tag
         run: |
           git tag ${{ inputs.tag_name }} 
-          git push --tags 
+          git push --tags
       
       - name: Instant Composer Update
-        if: "${{ inputs.instant_update == 'true' }}"
+        if: "${{ inputs.instant_update }}"
         run: curl -XPOST -H'content-type:application/json' 'https://packagist.org/api/update-package?username=${secrets.PACKAGIST_USERNAME}&apiToken=${secrets.PACKAGIST_API_TOKEN}' -d'{"repository":{"url":"bitpesa/bitpesa-php-sdk"}}'
