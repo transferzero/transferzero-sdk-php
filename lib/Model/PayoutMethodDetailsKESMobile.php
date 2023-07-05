@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsKESMobile Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;Main Street\&quot;,     \&quot;phone_number\&quot;: \&quot;+254997853134\&quot;, // E.164 international format     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;, // New transfer reason field     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;AB12345678\&quot;   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;1 Linford Street\&quot;,     \&quot;phone_number\&quot;: \&quot;+254123456789\&quot;, // E.164 international format     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;, // refers to the recipient&#39;s ID details; Values: \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID or \&quot;O\&quot;: Other     \&quot;identity_card_id\&quot;: &#39;AB12345678&#39;, // refers to the recipient&#39;s ID details     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;,     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;relationship_to_sender\&quot;: \&quot;Aunt\&quot; // Optional   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -66,7 +66,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason_code' => 'string',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
-        'identity_card_id' => 'string'
+        'identity_card_id' => 'string',
+        'relationship_to_sender' => 'string'
     ];
 
     /**
@@ -83,7 +84,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason_code' => null,
         'transfer_reason' => null,
         'identity_card_type' => null,
-        'identity_card_id' => null
+        'identity_card_id' => null,
+        'relationship_to_sender' => null
     ];
 
     /**
@@ -121,7 +123,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason_code' => 'transfer_reason_code',
         'transfer_reason' => 'transfer_reason',
         'identity_card_type' => 'identity_card_type',
-        'identity_card_id' => 'identity_card_id'
+        'identity_card_id' => 'identity_card_id',
+        'relationship_to_sender' => 'relationship_to_sender'
     ];
 
     /**
@@ -138,7 +141,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason_code' => 'setTransferReasonCode',
         'transfer_reason' => 'setTransferReason',
         'identity_card_type' => 'setIdentityCardType',
-        'identity_card_id' => 'setIdentityCardId'
+        'identity_card_id' => 'setIdentityCardId',
+        'relationship_to_sender' => 'setRelationshipToSender'
     ];
 
     /**
@@ -155,7 +159,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason_code' => 'getTransferReasonCode',
         'transfer_reason' => 'getTransferReason',
         'identity_card_type' => 'getIdentityCardType',
-        'identity_card_id' => 'getIdentityCardId'
+        'identity_card_id' => 'getIdentityCardId',
+        'relationship_to_sender' => 'getRelationshipToSender'
     ];
 
     /**
@@ -227,6 +232,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
+        $this->container['relationship_to_sender'] = isset($data['relationship_to_sender']) ? $data['relationship_to_sender'] : null;
     }
 
     /**
@@ -252,6 +258,9 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         }
         if ($this->container['mobile_provider'] === null) {
             $invalidProperties[] = "'mobile_provider' can't be null";
+        }
+        if ($this->container['transfer_reason'] === null) {
+            $invalidProperties[] = "'transfer_reason' can't be null";
         }
         if ($this->container['identity_card_type'] === null) {
             $invalidProperties[] = "'identity_card_type' can't be null";
@@ -421,7 +430,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason
      *
-     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum|null
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -431,7 +440,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum|null $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */
@@ -486,6 +495,30 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
     public function setIdentityCardId($identity_card_id)
     {
         $this->container['identity_card_id'] = $identity_card_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationship_to_sender
+     *
+     * @return string|null
+     */
+    public function getRelationshipToSender()
+    {
+        return $this->container['relationship_to_sender'];
+    }
+
+    /**
+     * Sets relationship_to_sender
+     *
+     * @param string|null $relationship_to_sender relationship_to_sender
+     *
+     * @return $this
+     */
+    public function setRelationshipToSender($relationship_to_sender)
+    {
+        $this->container['relationship_to_sender'] = $relationship_to_sender;
 
         return $this;
     }
