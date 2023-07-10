@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **first_name** | **string** |  | 
 **last_name** | **string** |  | 
 **street** | **string** |  | 
+**city** | **string** |  | [optional] 
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **transfer_reason_code** | **string** |  | [optional] 

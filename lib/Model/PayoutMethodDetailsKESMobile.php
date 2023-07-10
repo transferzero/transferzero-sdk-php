@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsKESMobile Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;1 Linford Street\&quot;,     \&quot;phone_number\&quot;: \&quot;+254123456789\&quot;, // E.164 international format     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;, // refers to the recipient&#39;s ID details; Values: \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID or \&quot;O\&quot;: Other     \&quot;identity_card_id\&quot;: &#39;AB12345678&#39;, // refers to the recipient&#39;s ID details     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;,     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;relationship_to_sender\&quot;: \&quot;Aunt\&quot; // Optional   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason lists
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;street\&quot;: \&quot;1 Linford Street\&quot;,     \&quot;city\&quot;: \&quot;Nairobi\&quot;,     \&quot;phone_number\&quot;: \&quot;+254123456789\&quot;, // E.164 international format     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;, // refers to the recipient&#39;s ID details; Values: \&quot;PP\&quot;: Passport, \&quot;ID\&quot;: National ID or \&quot;O\&quot;: Other     \&quot;identity_card_id\&quot;: &#39;AB12345678&#39;, // refers to the recipient&#39;s ID details     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;,     \&quot;mobile_provider\&quot;: \&quot;mpesa\&quot;,     \&quot;relationship_to_sender\&quot;: \&quot;Aunt\&quot; // Optional   } &#x60;&#x60;&#x60;  See [KES Mobile](https://docs.transferzero.com/docs/payout-details/#kesmobile) documentation for transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -61,6 +61,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'street' => 'string',
+        'city' => 'string',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'transfer_reason_code' => 'string',
@@ -79,6 +80,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'street' => null,
+        'city' => null,
         'phone_number' => null,
         'mobile_provider' => null,
         'transfer_reason_code' => null,
@@ -118,6 +120,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'street' => 'street',
+        'city' => 'city',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'transfer_reason_code' => 'transfer_reason_code',
@@ -136,6 +139,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'street' => 'setStreet',
+        'city' => 'setCity',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'transfer_reason_code' => 'setTransferReasonCode',
@@ -154,6 +158,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'street' => 'getStreet',
+        'city' => 'getCity',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'transfer_reason_code' => 'getTransferReasonCode',
@@ -226,6 +231,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
+        $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['transfer_reason_code'] = isset($data['transfer_reason_code']) ? $data['transfer_reason_code'] : null;
@@ -351,6 +357,30 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
     public function setStreet($street)
     {
         $this->container['street'] = $street;
+
+        return $this;
+    }
+
+    /**
+     * Gets city
+     *
+     * @return string|null
+     */
+    public function getCity()
+    {
+        return $this->container['city'];
+    }
+
+    /**
+     * Sets city
+     *
+     * @param string|null $city city
+     *
+     * @return $this
+     */
+    public function setCity($city)
+    {
+        $this->container['city'] = $city;
 
         return $this;
     }
