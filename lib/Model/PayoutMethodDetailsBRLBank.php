@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsBRLBank Class Doc Comment
  *
  * @category Class
- * @description PIX Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;city\&quot;: \&quot;Brasilia\&quot;,     \&quot;postal_code\&quot;: \&quot;70070\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;pix_key_type\&quot;: \&quot;email\&quot;,     \&quot;pix_key_value\&quot;: \&quot;person@example.com\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  TED Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;city\&quot;: \&quot;Brasilia\&quot;,     \&quot;postal_code\&quot;: \&quot;70070\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_type\&quot;: \&quot;ID\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;,     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
+ * @description PIX Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;city\&quot;: \&quot;Brasilia\&quot;,     \&quot;postal_code\&quot;: \&quot;70070\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;pix_key_type\&quot;: \&quot;email\&quot;,     \&quot;pix_key_value\&quot;: \&quot;person@example.com\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;, // CPF or CNPJ     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  TED Payment: &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;city\&quot;: \&quot;Brasilia\&quot;,     \&quot;postal_code\&quot;: \&quot;70070\&quot;,     \&quot;phone_number\&quot;: \&quot;+552112345678\&quot;, // E.164 international format     \&quot;bank_code\&quot;: \&quot;104\&quot;,     \&quot;branch_code\&quot;: \&quot;00001\&quot;,     \&quot;bank_account\&quot;: \&quot;0009795493\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;,     \&quot;identity_card_id\&quot;: \&quot;01234567890\&quot;, // CPF or CNPJ     \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;   } &#x60;&#x60;&#x60;  See [BRL Bank](https://docs.transferzero.com/docs/payout-details/#brlbank) documentation for the bank_code and transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -69,7 +69,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
-        'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
     ];
@@ -91,7 +90,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'bank_account_type' => null,
         'pix_key_type' => null,
         'pix_key_value' => null,
-        'identity_card_type' => null,
         'identity_card_id' => null,
         'transfer_reason' => null
     ];
@@ -134,7 +132,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'bank_account_type' => 'bank_account_type',
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
-        'identity_card_type' => 'identity_card_type',
         'identity_card_id' => 'identity_card_id',
         'transfer_reason' => 'transfer_reason'
     ];
@@ -156,7 +153,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'bank_account_type' => 'setBankAccountType',
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
-        'identity_card_type' => 'setIdentityCardType',
         'identity_card_id' => 'setIdentityCardId',
         'transfer_reason' => 'setTransferReason'
     ];
@@ -178,7 +174,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'bank_account_type' => 'getBankAccountType',
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
-        'identity_card_type' => 'getIdentityCardType',
         'identity_card_id' => 'getIdentityCardId',
         'transfer_reason' => 'getTransferReason'
     ];
@@ -254,7 +249,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
-        $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
     }
@@ -279,9 +273,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         }
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
-        }
-        if ($this->container['identity_card_type'] === null) {
-            $invalidProperties[] = "'identity_card_type' can't be null";
         }
         if ($this->container['identity_card_id'] === null) {
             $invalidProperties[] = "'identity_card_id' can't be null";
@@ -564,30 +555,6 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     public function setPixKeyValue($pix_key_value)
     {
         $this->container['pix_key_value'] = $pix_key_value;
-
-        return $this;
-    }
-
-    /**
-     * Gets identity_card_type
-     *
-     * @return \TransferZero\Model\PayoutMethodIdentityCardTypeEnum
-     */
-    public function getIdentityCardType()
-    {
-        return $this->container['identity_card_type'];
-    }
-
-    /**
-     * Sets identity_card_type
-     *
-     * @param \TransferZero\Model\PayoutMethodIdentityCardTypeEnum $identity_card_type identity_card_type
-     *
-     * @return $this
-     */
-    public function setIdentityCardType($identity_card_type)
-    {
-        $this->container['identity_card_type'] = $identity_card_type;
 
         return $this;
     }
