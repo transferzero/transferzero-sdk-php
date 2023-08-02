@@ -58,7 +58,8 @@ class Account implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'amount' => 'float',
-        'currency' => 'string'
+        'currency' => 'string',
+        'amount_after_pending' => 'float'
     ];
 
     /**
@@ -68,7 +69,8 @@ class Account implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'amount' => null,
-        'currency' => null
+        'currency' => null,
+        'amount_after_pending' => null
     ];
 
     /**
@@ -99,7 +101,8 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'amount' => 'amount',
-        'currency' => 'currency'
+        'currency' => 'currency',
+        'amount_after_pending' => 'amount_after_pending'
     ];
 
     /**
@@ -109,7 +112,8 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'amount' => 'setAmount',
-        'currency' => 'setCurrency'
+        'currency' => 'setCurrency',
+        'amount_after_pending' => 'setAmountAfterPending'
     ];
 
     /**
@@ -119,7 +123,8 @@ class Account implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'amount' => 'getAmount',
-        'currency' => 'getCurrency'
+        'currency' => 'getCurrency',
+        'amount_after_pending' => 'getAmountAfterPending'
     ];
 
     /**
@@ -184,6 +189,7 @@ class Account implements ModelInterface, ArrayAccess
     {
         $this->container['amount'] = isset($data['amount']) ? $data['amount'] : null;
         $this->container['currency'] = isset($data['currency']) ? $data['currency'] : null;
+        $this->container['amount_after_pending'] = isset($data['amount_after_pending']) ? $data['amount_after_pending'] : null;
     }
 
     /**
@@ -254,6 +260,30 @@ class Account implements ModelInterface, ArrayAccess
     public function setCurrency($currency)
     {
         $this->container['currency'] = $currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets amount_after_pending
+     *
+     * @return float|null
+     */
+    public function getAmountAfterPending()
+    {
+        return $this->container['amount_after_pending'];
+    }
+
+    /**
+     * Sets amount_after_pending
+     *
+     * @param float|null $amount_after_pending Represents the account balance after deducting pending transactions from the last 7 days. It provides a more accurate depiction of available funds.
+     *
+     * @return $this
+     */
+    public function setAmountAfterPending($amount_after_pending)
+    {
+        $this->container['amount_after_pending'] = $amount_after_pending;
 
         return $this;
     }
