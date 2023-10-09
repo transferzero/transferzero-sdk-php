@@ -69,6 +69,7 @@ class Sender implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'email' => 'string',
         'ip' => 'string',
+        'fingerprint' => 'string',
         'address_description' => 'string',
         'identification_number' => 'string',
         'identification_type' => 'string',
@@ -138,6 +139,7 @@ class Sender implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'email' => 'email',
         'ip' => 'ipv4',
+        'fingerprint' => null,
         'address_description' => null,
         'identification_number' => null,
         'identification_type' => null,
@@ -228,6 +230,7 @@ class Sender implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'email' => 'email',
         'ip' => 'ip',
+        'fingerprint' => 'fingerprint',
         'address_description' => 'address_description',
         'identification_number' => 'identification_number',
         'identification_type' => 'identification_type',
@@ -297,6 +300,7 @@ class Sender implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'email' => 'setEmail',
         'ip' => 'setIp',
+        'fingerprint' => 'setFingerprint',
         'address_description' => 'setAddressDescription',
         'identification_number' => 'setIdentificationNumber',
         'identification_type' => 'setIdentificationType',
@@ -366,6 +370,7 @@ class Sender implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'email' => 'getEmail',
         'ip' => 'getIp',
+        'fingerprint' => 'getFingerprint',
         'address_description' => 'getAddressDescription',
         'identification_number' => 'getIdentificationNumber',
         'identification_type' => 'getIdentificationType',
@@ -658,6 +663,7 @@ class Sender implements ModelInterface, ArrayAccess
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
         $this->container['ip'] = isset($data['ip']) ? $data['ip'] : null;
+        $this->container['fingerprint'] = isset($data['fingerprint']) ? $data['fingerprint'] : null;
         $this->container['address_description'] = isset($data['address_description']) ? $data['address_description'] : null;
         $this->container['identification_number'] = isset($data['identification_number']) ? $data['identification_number'] : null;
         $this->container['identification_type'] = isset($data['identification_type']) ? $data['identification_type'] : null;
@@ -1064,6 +1070,30 @@ class Sender implements ModelInterface, ArrayAccess
     public function setIp($ip)
     {
         $this->container['ip'] = $ip;
+
+        return $this;
+    }
+
+    /**
+     * Gets fingerprint
+     *
+     * @return string|null
+     */
+    public function getFingerprint()
+    {
+        return $this->container['fingerprint'];
+    }
+
+    /**
+     * Sets fingerprint
+     *
+     * @param string|null $fingerprint Fingerprint of sender
+     *
+     * @return $this
+     */
+    public function setFingerprint($fingerprint)
+    {
+        $this->container['fingerprint'] = $fingerprint;
 
         return $this;
     }
