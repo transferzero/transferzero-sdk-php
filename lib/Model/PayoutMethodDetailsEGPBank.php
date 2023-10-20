@@ -64,7 +64,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'bank_account' => 'string',
         'bank_code' => 'string',
-        'transfer_reason' => 'string'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
     ];
 
     /**
@@ -409,7 +409,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason
      *
-     * @return string
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -419,7 +419,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param string $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */

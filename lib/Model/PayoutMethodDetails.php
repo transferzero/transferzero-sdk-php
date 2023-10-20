@@ -65,7 +65,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
-        'transfer_reason' => 'string',
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'iban' => 'string',
         'bank_name' => 'string',
         'bank_country' => 'string',
@@ -717,7 +717,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason
      *
-     * @return string
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -727,7 +727,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param string $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */

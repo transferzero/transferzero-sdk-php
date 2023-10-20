@@ -66,7 +66,7 @@ class PayoutMethodDetailsUGXBank implements ModelInterface, ArrayAccess
         'identity_card_id' => 'string',
         'bank_account' => 'string',
         'branch_code' => 'string',
-        'transfer_reason' => 'string'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
     ];
 
     /**
@@ -475,7 +475,7 @@ class PayoutMethodDetailsUGXBank implements ModelInterface, ArrayAccess
     /**
      * Gets transfer_reason
      *
-     * @return string
+     * @return \TransferZero\Model\PayoutMethodTransferReasonEnum
      */
     public function getTransferReason()
     {
@@ -485,7 +485,7 @@ class PayoutMethodDetailsUGXBank implements ModelInterface, ArrayAccess
     /**
      * Sets transfer_reason
      *
-     * @param string $transfer_reason transfer_reason
+     * @param \TransferZero\Model\PayoutMethodTransferReasonEnum $transfer_reason transfer_reason
      *
      * @return $this
      */

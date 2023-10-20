@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **identity_card_id** | **string** |  | 
 **bank_account** | **string** |  | 
 **branch_code** | **string** |  | 
-**transfer_reason** | **string** |  | 
+**transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
