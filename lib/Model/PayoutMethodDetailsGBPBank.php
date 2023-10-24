@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsGBPBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_name\&quot;: \&quot;Deutsche Bank\&quot;,   \&quot;bank_account\&quot;: \&quot;12345678\&quot;, // Required if IBAN is not present   \&quot;sort_code\&quot;: \&quot;123456\&quot;, // Required if bank_account is present   \&quot;iban\&quot;: \&quot;DE89370400440532013000\&quot;, // Required if no bank_account &amp; sort_code   \&quot;bic\&quot;: \&quot;DEUTDEBBXXX\&quot; // Optional } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;GB45LOYD60161331926819\&quot;, // Required if no &#x60;bank_account&#x60; and &#x60;sort_code&#x60;   \&quot;bank_account\&quot;: \&quot;12345678\&quot;, // Required if &#x60;iban&#x60; is not present   \&quot;sort_code\&quot;: \&quot;123456\&quot;, // Required if &#x60;bank_account&#x60; is present   \&quot;bic\&quot;: \&quot;CHASUS33XXX\&quot; // Optional   \&quot;bank_name\&quot;: \&quot;JPMorgan Chase Bank\&quot;, // Optional   \&quot;narration\&quot;: \&quot;Birthday Gift\&quot; // Optional } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,11 +60,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'bank_name' => 'string',
+        'iban' => 'string',
         'bank_account' => 'string',
         'sort_code' => 'string',
-        'iban' => 'string',
-        'bic' => 'string'
+        'bic' => 'string',
+        'bank_name' => 'string',
+        'narration' => 'string'
     ];
 
     /**
@@ -75,11 +76,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'bank_name' => null,
+        'iban' => null,
         'bank_account' => null,
         'sort_code' => null,
-        'iban' => null,
-        'bic' => null
+        'bic' => null,
+        'bank_name' => null,
+        'narration' => null
     ];
 
     /**
@@ -111,11 +113,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'bank_name' => 'bank_name',
+        'iban' => 'iban',
         'bank_account' => 'bank_account',
         'sort_code' => 'sort_code',
-        'iban' => 'iban',
-        'bic' => 'bic'
+        'bic' => 'bic',
+        'bank_name' => 'bank_name',
+        'narration' => 'narration'
     ];
 
     /**
@@ -126,11 +129,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'bank_name' => 'setBankName',
+        'iban' => 'setIban',
         'bank_account' => 'setBankAccount',
         'sort_code' => 'setSortCode',
-        'iban' => 'setIban',
-        'bic' => 'setBic'
+        'bic' => 'setBic',
+        'bank_name' => 'setBankName',
+        'narration' => 'setNarration'
     ];
 
     /**
@@ -141,11 +145,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'bank_name' => 'getBankName',
+        'iban' => 'getIban',
         'bank_account' => 'getBankAccount',
         'sort_code' => 'getSortCode',
-        'iban' => 'getIban',
-        'bic' => 'getBic'
+        'bic' => 'getBic',
+        'bank_name' => 'getBankName',
+        'narration' => 'getNarration'
     ];
 
     /**
@@ -210,11 +215,12 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
-        $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
+        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['narration'] = isset($data['narration']) ? $data['narration'] : null;
     }
 
     /**
@@ -296,25 +302,25 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_name
+     * Gets iban
      *
      * @return string|null
      */
-    public function getBankName()
+    public function getIban()
     {
-        return $this->container['bank_name'];
+        return $this->container['iban'];
     }
 
     /**
-     * Sets bank_name
+     * Sets iban
      *
-     * @param string|null $bank_name bank_name
+     * @param string|null $iban iban
      *
      * @return $this
      */
-    public function setBankName($bank_name)
+    public function setIban($iban)
     {
-        $this->container['bank_name'] = $bank_name;
+        $this->container['iban'] = $iban;
 
         return $this;
     }
@@ -368,30 +374,6 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets iban
-     *
-     * @return string|null
-     */
-    public function getIban()
-    {
-        return $this->container['iban'];
-    }
-
-    /**
-     * Sets iban
-     *
-     * @param string|null $iban iban
-     *
-     * @return $this
-     */
-    public function setIban($iban)
-    {
-        $this->container['iban'] = $iban;
-
-        return $this;
-    }
-
-    /**
      * Gets bic
      *
      * @return string|null
@@ -411,6 +393,54 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     public function setBic($bic)
     {
         $this->container['bic'] = $bic;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_name
+     *
+     * @return string|null
+     */
+    public function getBankName()
+    {
+        return $this->container['bank_name'];
+    }
+
+    /**
+     * Sets bank_name
+     *
+     * @param string|null $bank_name bank_name
+     *
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        $this->container['bank_name'] = $bank_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets narration
+     *
+     * @return string|null
+     */
+    public function getNarration()
+    {
+        return $this->container['narration'];
+    }
+
+    /**
+     * Sets narration
+     *
+     * @param string|null $narration narration
+     *
+     * @return $this
+     */
+    public function setNarration($narration)
+    {
+        $this->container['narration'] = $narration;
 
         return $this;
     }

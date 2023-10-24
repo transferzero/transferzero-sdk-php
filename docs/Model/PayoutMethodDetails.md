@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **cash_provider** | [**\TransferZero\Model\PayoutMethodCashProviderEnum**](PayoutMethodCashProviderEnum.md) |  | 
 **sort_code** | **string** |  | [optional] 
 **bic** | **string** |  | [optional] 
+**narration** | **string** |  | [optional] 
 **sender_identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | 
 **sender_identity_card_id** | **string** |  | 
 **sender_city_of_birth** | **string** |  | [optional] 

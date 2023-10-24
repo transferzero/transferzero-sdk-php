@@ -72,6 +72,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
         'sort_code' => 'string',
         'bic' => 'string',
+        'narration' => 'string',
         'sender_identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'sender_identity_card_id' => 'string',
         'sender_city_of_birth' => 'string',
@@ -123,6 +124,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'cash_provider' => null,
         'sort_code' => null,
         'bic' => null,
+        'narration' => null,
         'sender_identity_card_type' => null,
         'sender_identity_card_id' => null,
         'sender_city_of_birth' => null,
@@ -195,6 +197,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'cash_provider' => 'cash_provider',
         'sort_code' => 'sort_code',
         'bic' => 'bic',
+        'narration' => 'narration',
         'sender_identity_card_type' => 'sender_identity_card_type',
         'sender_identity_card_id' => 'sender_identity_card_id',
         'sender_city_of_birth' => 'sender_city_of_birth',
@@ -246,6 +249,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'cash_provider' => 'setCashProvider',
         'sort_code' => 'setSortCode',
         'bic' => 'setBic',
+        'narration' => 'setNarration',
         'sender_identity_card_type' => 'setSenderIdentityCardType',
         'sender_identity_card_id' => 'setSenderIdentityCardId',
         'sender_city_of_birth' => 'setSenderCityOfBirth',
@@ -297,6 +301,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'cash_provider' => 'getCashProvider',
         'sort_code' => 'getSortCode',
         'bic' => 'getBic',
+        'narration' => 'getNarration',
         'sender_identity_card_type' => 'getSenderIdentityCardType',
         'sender_identity_card_id' => 'getSenderIdentityCardId',
         'sender_city_of_birth' => 'getSenderCityOfBirth',
@@ -402,6 +407,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
         $this->container['sort_code'] = isset($data['sort_code']) ? $data['sort_code'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
+        $this->container['narration'] = isset($data['narration']) ? $data['narration'] : null;
         $this->container['sender_identity_card_type'] = isset($data['sender_identity_card_type']) ? $data['sender_identity_card_type'] : null;
         $this->container['sender_identity_card_id'] = isset($data['sender_identity_card_id']) ? $data['sender_identity_card_id'] : null;
         $this->container['sender_city_of_birth'] = isset($data['sender_city_of_birth']) ? $data['sender_city_of_birth'] : null;
@@ -878,6 +884,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setBic($bic)
     {
         $this->container['bic'] = $bic;
+
+        return $this;
+    }
+
+    /**
+     * Gets narration
+     *
+     * @return string|null
+     */
+    public function getNarration()
+    {
+        return $this->container['narration'];
+    }
+
+    /**
+     * Sets narration
+     *
+     * @param string|null $narration narration
+     *
+     * @return $this
+     */
+    public function setNarration($narration)
+    {
+        $this->container['narration'] = $narration;
 
         return $this;
     }

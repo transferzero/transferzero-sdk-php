@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsIBAN Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_name\&quot;: \&quot;Deutsche Bank\&quot;,   \&quot;iban\&quot;: \&quot;DE89370400440532013000\&quot;,   \&quot;bic\&quot;: \&quot;DEUTDEBBXXX\&quot; // Optional } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;DE89370400440532013000\&quot;,   \&quot;bic\&quot;: \&quot;DEUTDEBBXXX\&quot;, // Optional   \&quot;bank_name\&quot;: \&quot;Deutsche Bank\&quot;, // Optional   \&quot;narration\&quot;: \&quot;Birthday Gift\&quot; // Optional } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -60,9 +60,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'bank_name' => 'string',
         'iban' => 'string',
-        'bic' => 'string'
+        'bic' => 'string',
+        'bank_name' => 'string',
+        'narration' => 'string'
     ];
 
     /**
@@ -73,9 +74,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'bank_name' => null,
         'iban' => null,
-        'bic' => null
+        'bic' => null,
+        'bank_name' => null,
+        'narration' => null
     ];
 
     /**
@@ -107,9 +109,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'bank_name' => 'bank_name',
         'iban' => 'iban',
-        'bic' => 'bic'
+        'bic' => 'bic',
+        'bank_name' => 'bank_name',
+        'narration' => 'narration'
     ];
 
     /**
@@ -120,9 +123,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'bank_name' => 'setBankName',
         'iban' => 'setIban',
-        'bic' => 'setBic'
+        'bic' => 'setBic',
+        'bank_name' => 'setBankName',
+        'narration' => 'setNarration'
     ];
 
     /**
@@ -133,9 +137,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'bank_name' => 'getBankName',
         'iban' => 'getIban',
-        'bic' => 'getBic'
+        'bic' => 'getBic',
+        'bank_name' => 'getBankName',
+        'narration' => 'getNarration'
     ];
 
     /**
@@ -200,9 +205,10 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['iban'] = isset($data['iban']) ? $data['iban'] : null;
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
+        $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
+        $this->container['narration'] = isset($data['narration']) ? $data['narration'] : null;
     }
 
     /**
@@ -287,30 +293,6 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_name
-     *
-     * @return string|null
-     */
-    public function getBankName()
-    {
-        return $this->container['bank_name'];
-    }
-
-    /**
-     * Sets bank_name
-     *
-     * @param string|null $bank_name bank_name
-     *
-     * @return $this
-     */
-    public function setBankName($bank_name)
-    {
-        $this->container['bank_name'] = $bank_name;
-
-        return $this;
-    }
-
-    /**
      * Gets iban
      *
      * @return string
@@ -354,6 +336,54 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     public function setBic($bic)
     {
         $this->container['bic'] = $bic;
+
+        return $this;
+    }
+
+    /**
+     * Gets bank_name
+     *
+     * @return string|null
+     */
+    public function getBankName()
+    {
+        return $this->container['bank_name'];
+    }
+
+    /**
+     * Sets bank_name
+     *
+     * @param string|null $bank_name bank_name
+     *
+     * @return $this
+     */
+    public function setBankName($bank_name)
+    {
+        $this->container['bank_name'] = $bank_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets narration
+     *
+     * @return string|null
+     */
+    public function getNarration()
+    {
+        return $this->container['narration'];
+    }
+
+    /**
+     * Sets narration
+     *
+     * @param string|null $narration narration
+     *
+     * @return $this
+     */
+    public function setNarration($narration)
+    {
+        $this->container['narration'] = $narration;
 
         return $this;
     }
