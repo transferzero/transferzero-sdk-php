@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsEGPBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;street\&quot;: \&quot;1 Main Street\&quot;,   \&quot;phone_number\&quot;: \&quot;+201023456789\&quot;,   \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,   \&quot;bank_code\&quot;: \&quot;0030\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; } &#x60;&#x60;&#x60; See [EGP Bank](https://docs.transferzero.com/docs/payout-details/#egpbank) documentation for the bank_code list
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;middle_name\&quot;: \&quot;Middle\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;street\&quot;: \&quot;1 Main Street\&quot;,   \&quot;phone_number\&quot;: \&quot;+201023456789\&quot;,   \&quot;bank_account\&quot;: \&quot;1234567890\&quot;,   \&quot;bank_code\&quot;: \&quot;0030\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; } &#x60;&#x60;&#x60; See [EGP Bank](https://docs.transferzero.com/docs/payout-details/#egpbank) documentation for the bank_code list
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -59,6 +59,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'first_name' => 'string',
+        'middle_name' => 'string',
         'last_name' => 'string',
         'street' => 'string',
         'phone_number' => 'string',
@@ -74,6 +75,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'first_name' => null,
+        'middle_name' => null,
         'last_name' => null,
         'street' => null,
         'phone_number' => null,
@@ -110,6 +112,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'first_name' => 'first_name',
+        'middle_name' => 'middle_name',
         'last_name' => 'last_name',
         'street' => 'street',
         'phone_number' => 'phone_number',
@@ -125,6 +128,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'first_name' => 'setFirstName',
+        'middle_name' => 'setMiddleName',
         'last_name' => 'setLastName',
         'street' => 'setStreet',
         'phone_number' => 'setPhoneNumber',
@@ -140,6 +144,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'first_name' => 'getFirstName',
+        'middle_name' => 'getMiddleName',
         'last_name' => 'getLastName',
         'street' => 'getStreet',
         'phone_number' => 'getPhoneNumber',
@@ -209,6 +214,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
+        $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
@@ -282,6 +288,30 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     public function setFirstName($first_name)
     {
         $this->container['first_name'] = $first_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets middle_name
+     *
+     * @return string|null
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middle_name'];
+    }
+
+    /**
+     * Sets middle_name
+     *
+     * @param string|null $middle_name middle_name
+     *
+     * @return $this
+     */
+    public function setMiddleName($middle_name)
+    {
+        $this->container['middle_name'] = $middle_name;
 
         return $this;
     }

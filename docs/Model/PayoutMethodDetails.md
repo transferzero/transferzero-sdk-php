@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
 **pix_key_value** | **string** |  | [optional] 
 **ifsc_code** | **string** |  | 
+**middle_name** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
