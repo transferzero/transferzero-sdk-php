@@ -31,6 +31,7 @@ namespace TransferZero\Api;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
@@ -163,6 +164,13 @@ class PayoutMethodsApi
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -377,11 +385,11 @@ class PayoutMethodsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         $httpMethod = 'DELETE';
         $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
@@ -464,6 +472,13 @@ class PayoutMethodsApi
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -679,11 +694,11 @@ class PayoutMethodsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         $httpMethod = 'GET';
         $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
@@ -778,6 +793,13 @@ class PayoutMethodsApi
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -1037,11 +1059,11 @@ class PayoutMethodsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         $httpMethod = 'GET';
         $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
@@ -1122,6 +1144,13 @@ class PayoutMethodsApi
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -1348,11 +1377,11 @@ class PayoutMethodsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         $httpMethod = 'PATCH';
         $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
@@ -1431,6 +1460,13 @@ class PayoutMethodsApi
                     $e->getCode(),
                     $e->getResponse() ? $e->getResponse()->getHeaders() : null,
                     $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
                 );
             }
 
@@ -1640,11 +1676,11 @@ class PayoutMethodsApi
 
             } else {
                 // for HTTP post (form)
-                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+                $httpBody = \GuzzleHttp\Psr7\Query::build($formParams);
             }
         }
 
-        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        $query = \GuzzleHttp\Psr7\Query::build($queryParams);
 
         $httpMethod = 'POST';
         $urlWithParams = $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : '');
