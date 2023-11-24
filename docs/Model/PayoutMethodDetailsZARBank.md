@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **phone_number** | **string** |  | 
 **transfer_reason_code** | **string** |  | [optional] 
 **transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | [optional] 
+**narration** | **string** |  | [optional] 
 **name** | **string** |  | [optional] 
 **contact_first_name** | **string** |  | [optional] 
 **contact_last_name** | **string** |  | [optional] 
