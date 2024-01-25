@@ -95,13 +95,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'string',
         'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
         'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
+        'middle_name' => 'string',
         'routing_number' => 'string',
         'swift_code' => 'string',
         'relationship_to_sender' => 'string',
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
-        'ifsc_code' => 'string',
-        'middle_name' => 'string'
+        'ifsc_code' => 'string'
     ];
 
     /**
@@ -148,13 +148,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => null,
         'nature_of_business' => null,
         'legal_entity_type' => null,
+        'middle_name' => null,
         'routing_number' => null,
         'swift_code' => null,
         'relationship_to_sender' => null,
         'pix_key_type' => null,
         'pix_key_value' => null,
-        'ifsc_code' => null,
-        'middle_name' => null
+        'ifsc_code' => null
     ];
 
     /**
@@ -222,13 +222,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
         'legal_entity_type' => 'legal_entity_type',
+        'middle_name' => 'middle_name',
         'routing_number' => 'routing_number',
         'swift_code' => 'swift_code',
         'relationship_to_sender' => 'relationship_to_sender',
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
-        'ifsc_code' => 'ifsc_code',
-        'middle_name' => 'middle_name'
+        'ifsc_code' => 'ifsc_code'
     ];
 
     /**
@@ -275,13 +275,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
         'legal_entity_type' => 'setLegalEntityType',
+        'middle_name' => 'setMiddleName',
         'routing_number' => 'setRoutingNumber',
         'swift_code' => 'setSwiftCode',
         'relationship_to_sender' => 'setRelationshipToSender',
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
-        'ifsc_code' => 'setIfscCode',
-        'middle_name' => 'setMiddleName'
+        'ifsc_code' => 'setIfscCode'
     ];
 
     /**
@@ -328,13 +328,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
         'legal_entity_type' => 'getLegalEntityType',
+        'middle_name' => 'getMiddleName',
         'routing_number' => 'getRoutingNumber',
         'swift_code' => 'getSwiftCode',
         'relationship_to_sender' => 'getRelationshipToSender',
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
-        'ifsc_code' => 'getIfscCode',
-        'middle_name' => 'getMiddleName'
+        'ifsc_code' => 'getIfscCode'
     ];
 
     /**
@@ -435,13 +435,13 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
+        $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
         $this->container['routing_number'] = isset($data['routing_number']) ? $data['routing_number'] : null;
         $this->container['swift_code'] = isset($data['swift_code']) ? $data['swift_code'] : null;
         $this->container['relationship_to_sender'] = isset($data['relationship_to_sender']) ? $data['relationship_to_sender'] : null;
         $this->container['pix_key_type'] = isset($data['pix_key_type']) ? $data['pix_key_type'] : null;
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
-        $this->container['middle_name'] = isset($data['middle_name']) ? $data['middle_name'] : null;
     }
 
     /**
@@ -1447,6 +1447,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     }
 
     /**
+     * Gets middle_name
+     *
+     * @return string|null
+     */
+    public function getMiddleName()
+    {
+        return $this->container['middle_name'];
+    }
+
+    /**
+     * Sets middle_name
+     *
+     * @param string|null $middle_name middle_name
+     *
+     * @return $this
+     */
+    public function setMiddleName($middle_name)
+    {
+        $this->container['middle_name'] = $middle_name;
+
+        return $this;
+    }
+
+    /**
      * Gets routing_number
      *
      * @return string|null
@@ -1586,30 +1610,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setIfscCode($ifsc_code)
     {
         $this->container['ifsc_code'] = $ifsc_code;
-
-        return $this;
-    }
-
-    /**
-     * Gets middle_name
-     *
-     * @return string|null
-     */
-    public function getMiddleName()
-    {
-        return $this->container['middle_name'];
-    }
-
-    /**
-     * Sets middle_name
-     *
-     * @param string|null $middle_name middle_name
-     *
-     * @return $this
-     */
-    public function setMiddleName($middle_name)
-    {
-        $this->container['middle_name'] = $middle_name;
 
         return $this;
     }

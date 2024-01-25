@@ -42,13 +42,13 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
+**middle_name** | **string** |  | [optional] 
 **routing_number** | **string** |  | [optional] 
 **swift_code** | **string** |  | [optional] 
 **relationship_to_sender** | **string** |  | [optional] 
 **pix_key_type** | [**\TransferZero\Model\PayoutMethodPixKeyTypeEnum**](PayoutMethodPixKeyTypeEnum.md) |  | [optional] 
 **pix_key_value** | **string** |  | [optional] 
 **ifsc_code** | **string** |  | 
-**middle_name** | **string** |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
