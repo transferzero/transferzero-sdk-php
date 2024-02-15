@@ -58,7 +58,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account_name' => 'string'
+        'account_name' => 'string',
+        'mapped_mobile_provider' => 'string'
     ];
 
     /**
@@ -67,7 +68,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'account_name' => null
+        'account_name' => null,
+        'mapped_mobile_provider' => null
     ];
 
     /**
@@ -97,7 +99,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'account_name' => 'account_name'
+        'account_name' => 'account_name',
+        'mapped_mobile_provider' => 'mapped_mobile_provider'
     ];
 
     /**
@@ -106,7 +109,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'account_name' => 'setAccountName'
+        'account_name' => 'setAccountName',
+        'mapped_mobile_provider' => 'setMappedMobileProvider'
     ];
 
     /**
@@ -115,7 +119,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'account_name' => 'getAccountName'
+        'account_name' => 'getAccountName',
+        'mapped_mobile_provider' => 'getMappedMobileProvider'
     ];
 
     /**
@@ -179,6 +184,7 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
+        $this->container['mapped_mobile_provider'] = isset($data['mapped_mobile_provider']) ? $data['mapped_mobile_provider'] : null;
     }
 
     /**
@@ -225,6 +231,30 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
     public function setAccountName($account_name)
     {
         $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets mapped_mobile_provider
+     *
+     * @return string|null
+     */
+    public function getMappedMobileProvider()
+    {
+        return $this->container['mapped_mobile_provider'];
+    }
+
+    /**
+     * Sets mapped_mobile_provider
+     *
+     * @param string|null $mapped_mobile_provider mapped_mobile_provider
+     *
+     * @return $this
+     */
+    public function setMappedMobileProvider($mapped_mobile_provider)
+    {
+        $this->container['mapped_mobile_provider'] = $mapped_mobile_provider;
 
         return $this;
     }

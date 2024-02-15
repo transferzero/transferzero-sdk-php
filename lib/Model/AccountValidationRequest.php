@@ -193,15 +193,20 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
+    const COUNTRY_BJ = 'BJ';
+    const COUNTRY_BF = 'BF';
     const COUNTRY_NG = 'NG';
     const COUNTRY_GH = 'GH';
     const COUNTRY_SN = 'SN';
     const COUNTRY_CI = 'CI';
+    const COUNTRY_CM = 'CM';
     const COUNTRY_UG = 'UG';
+    const COUNTRY_TG = 'TG';
     const CURRENCY_NGN = 'NGN';
     const CURRENCY_GHS = 'GHS';
     const CURRENCY_XOF = 'XOF';
     const CURRENCY_UGX = 'UGX';
+    const CURRENCY_XAF = 'XAF';
     const METHOD_BANK = 'bank';
     const METHOD_MOBILE = 'mobile';
     
@@ -215,11 +220,15 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     public function getCountryAllowableValues()
     {
         return [
+            self::COUNTRY_BJ,
+            self::COUNTRY_BF,
             self::COUNTRY_NG,
             self::COUNTRY_GH,
             self::COUNTRY_SN,
             self::COUNTRY_CI,
+            self::COUNTRY_CM,
             self::COUNTRY_UG,
+            self::COUNTRY_TG,
         ];
     }
     
@@ -235,6 +244,7 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
             self::CURRENCY_GHS,
             self::CURRENCY_XOF,
             self::CURRENCY_UGX,
+            self::CURRENCY_XAF,
         ];
     }
     
