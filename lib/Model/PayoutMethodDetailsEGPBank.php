@@ -241,9 +241,6 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         if ($this->container['street'] === null) {
             $invalidProperties[] = "'street' can't be null";
         }
-        if ($this->container['phone_number'] === null) {
-            $invalidProperties[] = "'phone_number' can't be null";
-        }
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
@@ -367,7 +364,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     /**
      * Gets phone_number
      *
-     * @return string
+     * @return string|null
      */
     public function getPhoneNumber()
     {
@@ -377,7 +374,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     /**
      * Sets phone_number
      *
-     * @param string $phone_number phone_number
+     * @param string|null $phone_number phone_number
      *
      * @return $this
      */

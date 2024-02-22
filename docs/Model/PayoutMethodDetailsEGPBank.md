@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **middle_name** | **string** |  | [optional] 
 **last_name** | **string** |  | 
 **street** | **string** |  | 
-**phone_number** | **string** |  | 
+**phone_number** | **string** |  | [optional] 
 **bank_account** | **string** |  | 
 **bank_code** | **string** |  | 
 **transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | 
