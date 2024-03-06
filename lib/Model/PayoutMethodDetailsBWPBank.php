@@ -62,7 +62,8 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'bank_name' => 'string',
         'bank_account' => 'string',
-        'branch_code' => 'string'
+        'branch_code' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -75,7 +76,8 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         'last_name' => null,
         'bank_name' => null,
         'bank_account' => null,
-        'branch_code' => null
+        'branch_code' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -109,7 +111,8 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         'last_name' => 'last_name',
         'bank_name' => 'bank_name',
         'bank_account' => 'bank_account',
-        'branch_code' => 'branch_code'
+        'branch_code' => 'branch_code',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -122,7 +125,8 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'bank_name' => 'setBankName',
         'bank_account' => 'setBankAccount',
-        'branch_code' => 'setBranchCode'
+        'branch_code' => 'setBranchCode',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -135,7 +139,8 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'bank_name' => 'getBankName',
         'bank_account' => 'getBankAccount',
-        'branch_code' => 'getBranchCode'
+        'branch_code' => 'getBranchCode',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -203,6 +208,7 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -360,6 +366,30 @@ class PayoutMethodDetailsBWPBank implements ModelInterface, ArrayAccess
     public function setBranchCode($branch_code)
     {
         $this->container['branch_code'] = $branch_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

@@ -60,7 +60,8 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'phone_number' => 'string'
+        'phone_number' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -71,7 +72,8 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'phone_number' => null
+        'phone_number' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -103,7 +105,8 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'phone_number' => 'phone_number'
+        'phone_number' => 'phone_number',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -114,7 +117,8 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -125,7 +129,8 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -191,6 +196,7 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -294,6 +300,30 @@ class PayoutMethodDetailsGHSCash implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

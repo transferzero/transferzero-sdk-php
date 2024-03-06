@@ -63,7 +63,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'iban' => 'string',
         'bic' => 'string',
         'bank_name' => 'string',
-        'narration' => 'string'
+        'narration' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'iban' => null,
         'bic' => null,
         'bank_name' => null,
-        'narration' => null
+        'narration' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -112,7 +114,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'iban' => 'iban',
         'bic' => 'bic',
         'bank_name' => 'bank_name',
-        'narration' => 'narration'
+        'narration' => 'narration',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -126,7 +129,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'iban' => 'setIban',
         'bic' => 'setBic',
         'bank_name' => 'setBankName',
-        'narration' => 'setNarration'
+        'narration' => 'setNarration',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -140,7 +144,8 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         'iban' => 'getIban',
         'bic' => 'getBic',
         'bank_name' => 'getBankName',
-        'narration' => 'getNarration'
+        'narration' => 'getNarration',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -209,6 +214,7 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['narration'] = isset($data['narration']) ? $data['narration'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -384,6 +390,30 @@ class PayoutMethodDetailsIBAN implements ModelInterface, ArrayAccess
     public function setNarration($narration)
     {
         $this->container['narration'] = $narration;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

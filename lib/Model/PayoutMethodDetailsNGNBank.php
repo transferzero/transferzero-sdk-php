@@ -62,7 +62,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'bank_code' => 'string',
         'bank_account' => 'string',
-        'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum'
+        'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -75,7 +76,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => null,
         'bank_code' => null,
         'bank_account' => null,
-        'bank_account_type' => null
+        'bank_account_type' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -109,7 +111,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => 'last_name',
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
-        'bank_account_type' => 'bank_account_type'
+        'bank_account_type' => 'bank_account_type',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -122,7 +125,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
-        'bank_account_type' => 'setBankAccountType'
+        'bank_account_type' => 'setBankAccountType',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -135,7 +139,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
-        'bank_account_type' => 'getBankAccountType'
+        'bank_account_type' => 'getBankAccountType',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -203,6 +208,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -357,6 +363,30 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     public function setBankAccountType($bank_account_type)
     {
         $this->container['bank_account_type'] = $bank_account_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

@@ -70,7 +70,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'pix_key_type' => '\TransferZero\Model\PayoutMethodPixKeyTypeEnum',
         'pix_key_value' => 'string',
         'identity_card_id' => 'string',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -91,7 +92,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'pix_key_type' => null,
         'pix_key_value' => null,
         'identity_card_id' => null,
-        'transfer_reason' => null
+        'transfer_reason' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -133,7 +135,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'pix_key_type' => 'pix_key_type',
         'pix_key_value' => 'pix_key_value',
         'identity_card_id' => 'identity_card_id',
-        'transfer_reason' => 'transfer_reason'
+        'transfer_reason' => 'transfer_reason',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -154,7 +157,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'pix_key_type' => 'setPixKeyType',
         'pix_key_value' => 'setPixKeyValue',
         'identity_card_id' => 'setIdentityCardId',
-        'transfer_reason' => 'setTransferReason'
+        'transfer_reason' => 'setTransferReason',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -175,7 +179,8 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         'pix_key_type' => 'getPixKeyType',
         'pix_key_value' => 'getPixKeyValue',
         'identity_card_id' => 'getIdentityCardId',
-        'transfer_reason' => 'getTransferReason'
+        'transfer_reason' => 'getTransferReason',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -251,6 +256,7 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
         $this->container['pix_key_value'] = isset($data['pix_key_value']) ? $data['pix_key_value'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -603,6 +609,30 @@ class PayoutMethodDetailsBRLBank implements ModelInterface, ArrayAccess
     public function setTransferReason($transfer_reason)
     {
         $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

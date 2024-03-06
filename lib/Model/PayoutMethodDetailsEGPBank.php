@@ -65,7 +65,8 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'bank_account' => 'string',
         'bank_code' => 'string',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -81,7 +82,8 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'bank_account' => null,
         'bank_code' => null,
-        'transfer_reason' => null
+        'transfer_reason' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -118,7 +120,8 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'bank_account' => 'bank_account',
         'bank_code' => 'bank_code',
-        'transfer_reason' => 'transfer_reason'
+        'transfer_reason' => 'transfer_reason',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -134,7 +137,8 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'bank_account' => 'setBankAccount',
         'bank_code' => 'setBankCode',
-        'transfer_reason' => 'setTransferReason'
+        'transfer_reason' => 'setTransferReason',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -150,7 +154,8 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'bank_account' => 'getBankAccount',
         'bank_code' => 'getBankCode',
-        'transfer_reason' => 'getTransferReason'
+        'transfer_reason' => 'getTransferReason',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -221,6 +226,7 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -453,6 +459,30 @@ class PayoutMethodDetailsEGPBank implements ModelInterface, ArrayAccess
     public function setTransferReason($transfer_reason)
     {
         $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

@@ -62,7 +62,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'phone_number' => 'string',
         'cash_provider' => '\TransferZero\Model\PayoutMethodCashProviderEnum',
-        'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -75,7 +76,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'last_name' => null,
         'phone_number' => null,
         'cash_provider' => null,
-        'country' => null
+        'country' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -109,7 +111,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
         'cash_provider' => 'cash_provider',
-        'country' => 'country'
+        'country' => 'country',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -122,7 +125,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
         'cash_provider' => 'setCashProvider',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -135,7 +139,8 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
         'cash_provider' => 'getCashProvider',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -203,6 +208,7 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['cash_provider'] = isset($data['cash_provider']) ? $data['cash_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -357,6 +363,30 @@ class PayoutMethodDetailsXOFCash implements ModelInterface, ArrayAccess
     public function setCountry($country)
     {
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

@@ -66,7 +66,8 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'bank_name' => 'string',
         'bank_account' => 'string',
-        'ifsc_code' => 'string'
+        'ifsc_code' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -83,7 +84,8 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'bank_name' => null,
         'bank_account' => null,
-        'ifsc_code' => null
+        'ifsc_code' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -121,7 +123,8 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'bank_name' => 'bank_name',
         'bank_account' => 'bank_account',
-        'ifsc_code' => 'ifsc_code'
+        'ifsc_code' => 'ifsc_code',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -138,7 +141,8 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'bank_name' => 'setBankName',
         'bank_account' => 'setBankAccount',
-        'ifsc_code' => 'setIfscCode'
+        'ifsc_code' => 'setIfscCode',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -155,7 +159,8 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'bank_name' => 'getBankName',
         'bank_account' => 'getBankAccount',
-        'ifsc_code' => 'getIfscCode'
+        'ifsc_code' => 'getIfscCode',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -227,6 +232,7 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['ifsc_code'] = isset($data['ifsc_code']) ? $data['ifsc_code'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -492,6 +498,30 @@ class PayoutMethodDetailsINRBank implements ModelInterface, ArrayAccess
     public function setIfscCode($ifsc_code)
     {
         $this->container['ifsc_code'] = $ifsc_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

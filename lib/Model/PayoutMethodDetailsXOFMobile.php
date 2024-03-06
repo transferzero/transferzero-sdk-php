@@ -63,7 +63,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'phone_number' => null,
         'mobile_provider' => null,
         'country' => null,
-        'transfer_reason' => null
+        'transfer_reason' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -112,7 +114,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
-        'transfer_reason' => 'transfer_reason'
+        'transfer_reason' => 'transfer_reason',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -126,7 +129,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
-        'transfer_reason' => 'setTransferReason'
+        'transfer_reason' => 'setTransferReason',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -140,7 +144,8 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
-        'transfer_reason' => 'getTransferReason'
+        'transfer_reason' => 'getTransferReason',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -209,6 +214,7 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -387,6 +393,30 @@ class PayoutMethodDetailsXOFMobile implements ModelInterface, ArrayAccess
     public function setTransferReason($transfer_reason)
     {
         $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

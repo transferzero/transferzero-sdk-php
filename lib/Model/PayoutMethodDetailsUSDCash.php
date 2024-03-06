@@ -61,7 +61,8 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'phone_number' => 'string',
-        'country' => '\TransferZero\Model\PayoutMethodCountryEnum'
+        'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'phone_number' => null,
-        'country' => null
+        'country' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
-        'country' => 'country'
+        'country' => 'country',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
-        'country' => 'setCountry'
+        'country' => 'setCountry',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
-        'country' => 'getCountry'
+        'country' => 'getCountry',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -327,6 +333,30 @@ class PayoutMethodDetailsUSDCash implements ModelInterface, ArrayAccess
     public function setCountry($country)
     {
         $this->container['country'] = $country;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

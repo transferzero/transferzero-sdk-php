@@ -62,6 +62,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_code' => 'string',
         'bank_account' => 'string',
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
+        'birth_date' => '\DateTime',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
@@ -115,6 +116,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_code' => null,
         'bank_account' => null,
         'bank_account_type' => null,
+        'birth_date' => 'date',
         'phone_number' => null,
         'mobile_provider' => null,
         'country' => null,
@@ -189,6 +191,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
         'bank_account_type' => 'bank_account_type',
+        'birth_date' => 'birth_date',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
@@ -242,6 +245,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
         'bank_account_type' => 'setBankAccountType',
+        'birth_date' => 'setBirthDate',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
@@ -295,6 +299,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
         'bank_account_type' => 'getBankAccountType',
+        'birth_date' => 'getBirthDate',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
@@ -402,6 +407,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -650,6 +656,30 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setBankAccountType($bank_account_type)
     {
         $this->container['bank_account_type'] = $bank_account_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

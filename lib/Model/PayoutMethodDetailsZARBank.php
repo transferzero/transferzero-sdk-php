@@ -76,7 +76,8 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'contact_last_name' => 'string',
         'registration_number' => 'string',
         'nature_of_business' => '\TransferZero\Model\PayoutMethodNatureOfBusinessEnum',
-        'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum'
+        'legal_entity_type' => '\TransferZero\Model\PayoutMethodLegalEntityTypeEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -103,7 +104,8 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'contact_last_name' => null,
         'registration_number' => null,
         'nature_of_business' => null,
-        'legal_entity_type' => null
+        'legal_entity_type' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -151,7 +153,8 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'contact_last_name' => 'contact_last_name',
         'registration_number' => 'registration_number',
         'nature_of_business' => 'nature_of_business',
-        'legal_entity_type' => 'legal_entity_type'
+        'legal_entity_type' => 'legal_entity_type',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -178,7 +181,8 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'contact_last_name' => 'setContactLastName',
         'registration_number' => 'setRegistrationNumber',
         'nature_of_business' => 'setNatureOfBusiness',
-        'legal_entity_type' => 'setLegalEntityType'
+        'legal_entity_type' => 'setLegalEntityType',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -205,7 +209,8 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         'contact_last_name' => 'getContactLastName',
         'registration_number' => 'getRegistrationNumber',
         'nature_of_business' => 'getNatureOfBusiness',
-        'legal_entity_type' => 'getLegalEntityType'
+        'legal_entity_type' => 'getLegalEntityType',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -287,6 +292,7 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
         $this->container['registration_number'] = isset($data['registration_number']) ? $data['registration_number'] : null;
         $this->container['nature_of_business'] = isset($data['nature_of_business']) ? $data['nature_of_business'] : null;
         $this->container['legal_entity_type'] = isset($data['legal_entity_type']) ? $data['legal_entity_type'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -777,6 +783,30 @@ class PayoutMethodDetailsZARBank implements ModelInterface, ArrayAccess
     public function setLegalEntityType($legal_entity_type)
     {
         $this->container['legal_entity_type'] = $legal_entity_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

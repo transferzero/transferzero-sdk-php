@@ -61,7 +61,8 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'name' => 'string',
-        'address' => 'string'
+        'address' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'name' => null,
-        'address' => null
+        'address' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'name' => 'name',
-        'address' => 'address'
+        'address' => 'address',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'name' => 'setName',
-        'address' => 'setAddress'
+        'address' => 'setAddress',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'name' => 'getName',
-        'address' => 'getAddress'
+        'address' => 'getAddress',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -327,6 +333,30 @@ class PayoutMethodDetailsBTC implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }
