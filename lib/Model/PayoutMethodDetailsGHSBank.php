@@ -61,7 +61,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'bank_code' => 'string',
-        'bank_account' => 'string'
+        'bank_account' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'bank_code' => null,
-        'bank_account' => null
+        'bank_account' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'bank_code' => 'bank_code',
-        'bank_account' => 'bank_account'
+        'bank_account' => 'bank_account',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'bank_code' => 'setBankCode',
-        'bank_account' => 'setBankAccount'
+        'bank_account' => 'setBankAccount',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'bank_code' => 'getBankCode',
-        'bank_account' => 'getBankAccount'
+        'bank_account' => 'getBankAccount',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -327,6 +333,30 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     public function setBankAccount($bank_account)
     {
         $this->container['bank_account'] = $bank_account;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

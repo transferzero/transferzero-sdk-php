@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **bank_name** | **string** |  | 
 **bank_account** | **string** |  | 
 **ifsc_code** | **string** |  | 
+**birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

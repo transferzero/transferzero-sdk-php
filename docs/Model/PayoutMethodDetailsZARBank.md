@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
+**birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

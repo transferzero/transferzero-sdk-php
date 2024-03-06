@@ -61,7 +61,8 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         'first_name' => 'string',
         'last_name' => 'string',
         'bank_account' => 'string',
-        'branch_code' => 'string'
+        'branch_code' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -73,7 +74,8 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         'first_name' => null,
         'last_name' => null,
         'bank_account' => null,
-        'branch_code' => null
+        'branch_code' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -106,7 +108,8 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         'first_name' => 'first_name',
         'last_name' => 'last_name',
         'bank_account' => 'bank_account',
-        'branch_code' => 'branch_code'
+        'branch_code' => 'branch_code',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -118,7 +121,8 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
         'bank_account' => 'setBankAccount',
-        'branch_code' => 'setBranchCode'
+        'branch_code' => 'setBranchCode',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -130,7 +134,8 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
         'bank_account' => 'getBankAccount',
-        'branch_code' => 'getBranchCode'
+        'branch_code' => 'getBranchCode',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -197,6 +202,7 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['branch_code'] = isset($data['branch_code']) ? $data['branch_code'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -327,6 +333,30 @@ class PayoutMethodDetailsZMWBank implements ModelInterface, ArrayAccess
     public function setBranchCode($branch_code)
     {
         $this->container['branch_code'] = $branch_code;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

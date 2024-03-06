@@ -64,7 +64,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'bank_name' => 'string',
         'bank_country' => 'string',
         'bank_code' => 'string',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -79,7 +80,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'bank_name' => null,
         'bank_country' => null,
         'bank_code' => null,
-        'transfer_reason' => null
+        'transfer_reason' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -115,7 +117,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'bank_name' => 'bank_name',
         'bank_country' => 'bank_country',
         'bank_code' => 'bank_code',
-        'transfer_reason' => 'transfer_reason'
+        'transfer_reason' => 'transfer_reason',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -130,7 +133,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'bank_name' => 'setBankName',
         'bank_country' => 'setBankCountry',
         'bank_code' => 'setBankCode',
-        'transfer_reason' => 'setTransferReason'
+        'transfer_reason' => 'setTransferReason',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -145,7 +149,8 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         'bank_name' => 'getBankName',
         'bank_country' => 'getBankCountry',
         'bank_code' => 'getBankCode',
-        'transfer_reason' => 'getTransferReason'
+        'transfer_reason' => 'getTransferReason',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -215,6 +220,7 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
         $this->container['bank_country'] = isset($data['bank_country']) ? $data['bank_country'] : null;
         $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -414,6 +420,30 @@ class PayoutMethodDetailsXOFBank implements ModelInterface, ArrayAccess
     public function setTransferReason($transfer_reason)
     {
         $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

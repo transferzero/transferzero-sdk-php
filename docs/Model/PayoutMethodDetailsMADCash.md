@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **reason** | **string** |  | [optional] 
 **identity_card_type** | [**\TransferZero\Model\PayoutMethodIdentityCardTypeEnum**](PayoutMethodIdentityCardTypeEnum.md) |  | [optional] 
 **identity_card_id** | **string** |  | [optional] 
+**birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

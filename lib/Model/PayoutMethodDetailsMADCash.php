@@ -68,7 +68,8 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'sender_gender' => '\TransferZero\Model\PayoutMethodGenderEnum',
         'reason' => 'string',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
-        'identity_card_id' => 'string'
+        'identity_card_id' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -87,7 +88,8 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'sender_gender' => null,
         'reason' => null,
         'identity_card_type' => null,
-        'identity_card_id' => null
+        'identity_card_id' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -127,7 +129,8 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'sender_gender' => 'sender_gender',
         'reason' => 'reason',
         'identity_card_type' => 'identity_card_type',
-        'identity_card_id' => 'identity_card_id'
+        'identity_card_id' => 'identity_card_id',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -146,7 +149,8 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'sender_gender' => 'setSenderGender',
         'reason' => 'setReason',
         'identity_card_type' => 'setIdentityCardType',
-        'identity_card_id' => 'setIdentityCardId'
+        'identity_card_id' => 'setIdentityCardId',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -165,7 +169,8 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         'sender_gender' => 'getSenderGender',
         'reason' => 'getReason',
         'identity_card_type' => 'getIdentityCardType',
-        'identity_card_id' => 'getIdentityCardId'
+        'identity_card_id' => 'getIdentityCardId',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -239,6 +244,7 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
         $this->container['reason'] = isset($data['reason']) ? $data['reason'] : null;
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -540,6 +546,30 @@ class PayoutMethodDetailsMADCash implements ModelInterface, ArrayAccess
     public function setIdentityCardId($identity_card_id)
     {
         $this->container['identity_card_id'] = $identity_card_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

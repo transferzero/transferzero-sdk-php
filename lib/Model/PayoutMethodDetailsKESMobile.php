@@ -68,7 +68,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'identity_card_type' => '\TransferZero\Model\PayoutMethodIdentityCardTypeEnum',
         'identity_card_id' => 'string',
-        'relationship_to_sender' => 'string'
+        'relationship_to_sender' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -87,7 +88,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason' => null,
         'identity_card_type' => null,
         'identity_card_id' => null,
-        'relationship_to_sender' => null
+        'relationship_to_sender' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -127,7 +129,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason' => 'transfer_reason',
         'identity_card_type' => 'identity_card_type',
         'identity_card_id' => 'identity_card_id',
-        'relationship_to_sender' => 'relationship_to_sender'
+        'relationship_to_sender' => 'relationship_to_sender',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -146,7 +149,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason' => 'setTransferReason',
         'identity_card_type' => 'setIdentityCardType',
         'identity_card_id' => 'setIdentityCardId',
-        'relationship_to_sender' => 'setRelationshipToSender'
+        'relationship_to_sender' => 'setRelationshipToSender',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -165,7 +169,8 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         'transfer_reason' => 'getTransferReason',
         'identity_card_type' => 'getIdentityCardType',
         'identity_card_id' => 'getIdentityCardId',
-        'relationship_to_sender' => 'getRelationshipToSender'
+        'relationship_to_sender' => 'getRelationshipToSender',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -239,6 +244,7 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
         $this->container['identity_card_type'] = isset($data['identity_card_type']) ? $data['identity_card_type'] : null;
         $this->container['identity_card_id'] = isset($data['identity_card_id']) ? $data['identity_card_id'] : null;
         $this->container['relationship_to_sender'] = isset($data['relationship_to_sender']) ? $data['relationship_to_sender'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -549,6 +555,30 @@ class PayoutMethodDetailsKESMobile implements ModelInterface, ArrayAccess
     public function setRelationshipToSender($relationship_to_sender)
     {
         $this->container['relationship_to_sender'] = $relationship_to_sender;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

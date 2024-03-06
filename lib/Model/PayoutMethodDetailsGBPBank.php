@@ -65,7 +65,8 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         'sort_code' => 'string',
         'bic' => 'string',
         'bank_name' => 'string',
-        'narration' => 'string'
+        'narration' => 'string',
+        'birth_date' => '\DateTime'
     ];
 
     /**
@@ -81,7 +82,8 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         'sort_code' => null,
         'bic' => null,
         'bank_name' => null,
-        'narration' => null
+        'narration' => null,
+        'birth_date' => 'date'
     ];
 
     /**
@@ -118,7 +120,8 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         'sort_code' => 'sort_code',
         'bic' => 'bic',
         'bank_name' => 'bank_name',
-        'narration' => 'narration'
+        'narration' => 'narration',
+        'birth_date' => 'birth_date'
     ];
 
     /**
@@ -134,7 +137,8 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         'sort_code' => 'setSortCode',
         'bic' => 'setBic',
         'bank_name' => 'setBankName',
-        'narration' => 'setNarration'
+        'narration' => 'setNarration',
+        'birth_date' => 'setBirthDate'
     ];
 
     /**
@@ -150,7 +154,8 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         'sort_code' => 'getSortCode',
         'bic' => 'getBic',
         'bank_name' => 'getBankName',
-        'narration' => 'getNarration'
+        'narration' => 'getNarration',
+        'birth_date' => 'getBirthDate'
     ];
 
     /**
@@ -221,6 +226,7 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
         $this->container['bic'] = isset($data['bic']) ? $data['bic'] : null;
         $this->container['bank_name'] = isset($data['bank_name']) ? $data['bank_name'] : null;
         $this->container['narration'] = isset($data['narration']) ? $data['narration'] : null;
+        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
     }
 
     /**
@@ -441,6 +447,30 @@ class PayoutMethodDetailsGBPBank implements ModelInterface, ArrayAccess
     public function setNarration($narration)
     {
         $this->container['narration'] = $narration;
+
+        return $this;
+    }
+
+    /**
+     * Gets birth_date
+     *
+     * @return \DateTime|null
+     */
+    public function getBirthDate()
+    {
+        return $this->container['birth_date'];
+    }
+
+    /**
+     * Sets birth_date
+     *
+     * @param \DateTime|null $birth_date Date of birth of recipient
+     *
+     * @return $this
+     */
+    public function setBirthDate($birth_date)
+    {
+        $this->container['birth_date'] = $birth_date;
 
         return $this;
     }

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
 **bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | [optional] 
+**birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
