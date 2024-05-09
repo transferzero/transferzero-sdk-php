@@ -193,15 +193,19 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const COUNTRY_BJ = 'BJ';
     const COUNTRY_BF = 'BF';
-    const COUNTRY_NG = 'NG';
-    const COUNTRY_GH = 'GH';
-    const COUNTRY_SN = 'SN';
+    const COUNTRY_BJ = 'BJ';
+    const COUNTRY_CF = 'CF';
+    const COUNTRY_CG = 'CG';
     const COUNTRY_CI = 'CI';
     const COUNTRY_CM = 'CM';
-    const COUNTRY_UG = 'UG';
+    const COUNTRY_GA = 'GA';
+    const COUNTRY_GH = 'GH';
+    const COUNTRY_NG = 'NG';
+    const COUNTRY_SN = 'SN';
+    const COUNTRY_TD = 'TD';
     const COUNTRY_TG = 'TG';
+    const COUNTRY_UG = 'UG';
     const CURRENCY_NGN = 'NGN';
     const CURRENCY_GHS = 'GHS';
     const CURRENCY_XOF = 'XOF';
@@ -220,15 +224,19 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
     public function getCountryAllowableValues()
     {
         return [
-            self::COUNTRY_BJ,
             self::COUNTRY_BF,
-            self::COUNTRY_NG,
-            self::COUNTRY_GH,
-            self::COUNTRY_SN,
+            self::COUNTRY_BJ,
+            self::COUNTRY_CF,
+            self::COUNTRY_CG,
             self::COUNTRY_CI,
             self::COUNTRY_CM,
-            self::COUNTRY_UG,
+            self::COUNTRY_GA,
+            self::COUNTRY_GH,
+            self::COUNTRY_NG,
+            self::COUNTRY_SN,
+            self::COUNTRY_TD,
             self::COUNTRY_TG,
+            self::COUNTRY_UG,
         ];
     }
     

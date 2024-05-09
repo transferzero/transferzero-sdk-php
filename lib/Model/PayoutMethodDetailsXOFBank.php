@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsXOFBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code and transfer_reason lists
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;iban\&quot;: \&quot;BJ0610100100144390000769\&quot;, # BBAN format   \&quot;bank_name\&quot;: \&quot;Bank Of Africa Bénin\&quot;,   \&quot;bank_country\&quot;: \&quot;BJ\&quot;, # ISO country code for Benin   \&quot;bank_code\&quot;: \&quot;BJ061\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;,   \&quot;narration\&quot;: \&quot;Birthday Gift\&quot; // Optional } &#x60;&#x60;&#x60;  See [XOF Bank](https://docs.transferzero.com/docs/payout-details/#xofbank) documentation for the bank_code and transfer_reason lists
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
