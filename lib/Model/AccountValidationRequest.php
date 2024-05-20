@@ -195,7 +195,6 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
 
     const COUNTRY_BF = 'BF';
     const COUNTRY_BJ = 'BJ';
-    const COUNTRY_CF = 'CF';
     const COUNTRY_CG = 'CG';
     const COUNTRY_CI = 'CI';
     const COUNTRY_CM = 'CM';
@@ -226,7 +225,6 @@ class AccountValidationRequest implements ModelInterface, ArrayAccess
         return [
             self::COUNTRY_BF,
             self::COUNTRY_BJ,
-            self::COUNTRY_CF,
             self::COUNTRY_CG,
             self::COUNTRY_CI,
             self::COUNTRY_CM,
