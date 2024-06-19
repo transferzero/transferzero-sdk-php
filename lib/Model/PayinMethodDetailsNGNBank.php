@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayinMethodDetailsNGNBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;redirect_url\&quot;: \&quot;http://redirect.back.to\&quot;   } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;phone_number\&quot;: \&quot;+2347087661211\&quot;   } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,8 +58,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_method' => 'string',
-        'redirect_url' => 'string'
+        'phone_number' => 'string'
     ];
 
     /**
@@ -68,8 +67,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'payment_method' => null,
-        'redirect_url' => null
+        'phone_number' => null
     ];
 
     /**
@@ -99,8 +97,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_method' => 'payment_method',
-        'redirect_url' => 'redirect_url'
+        'phone_number' => 'phone_number'
     ];
 
     /**
@@ -109,8 +106,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payment_method' => 'setPaymentMethod',
-        'redirect_url' => 'setRedirectUrl'
+        'phone_number' => 'setPhoneNumber'
     ];
 
     /**
@@ -119,8 +115,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payment_method' => 'getPaymentMethod',
-        'redirect_url' => 'getRedirectUrl'
+        'phone_number' => 'getPhoneNumber'
     ];
 
     /**
@@ -183,8 +178,7 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
-        $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
     }
 
     /**
@@ -212,49 +206,25 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets payment_method
+     * Gets phone_number
      *
      * @return string|null
      */
-    public function getPaymentMethod()
+    public function getPhoneNumber()
     {
-        return $this->container['payment_method'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets payment_method
+     * Sets phone_number
      *
-     * @param string|null $payment_method The payment method which the sender will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
+     * @param string|null $phone_number Sender's phone number
      *
      * @return $this
      */
-    public function setPaymentMethod($payment_method)
+    public function setPhoneNumber($phone_number)
     {
-        $this->container['payment_method'] = $payment_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect_url
-     *
-     * @return string|null
-     */
-    public function getRedirectUrl()
-    {
-        return $this->container['redirect_url'];
-    }
-
-    /**
-     * Sets redirect_url
-     *
-     * @param string|null $redirect_url This is where the sender should be redirected back when the payment has been finished
-     *
-     * @return $this
-     */
-    public function setRedirectUrl($redirect_url)
-    {
-        $this->container['redirect_url'] = $redirect_url;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }

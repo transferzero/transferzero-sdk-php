@@ -58,8 +58,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'payment_method' => 'string',
-        'redirect_url' => 'string',
         'phone_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
@@ -73,8 +71,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'payment_method' => null,
-        'redirect_url' => null,
         'phone_number' => null,
         'mobile_provider' => null,
         'country' => null,
@@ -109,8 +105,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'payment_method' => 'payment_method',
-        'redirect_url' => 'redirect_url',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
@@ -124,8 +118,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'payment_method' => 'setPaymentMethod',
-        'redirect_url' => 'setRedirectUrl',
         'phone_number' => 'setPhoneNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
@@ -139,8 +131,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'payment_method' => 'getPaymentMethod',
-        'redirect_url' => 'getRedirectUrl',
         'phone_number' => 'getPhoneNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
@@ -208,8 +198,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['payment_method'] = isset($data['payment_method']) ? $data['payment_method'] : null;
-        $this->container['redirect_url'] = isset($data['redirect_url']) ? $data['redirect_url'] : null;
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
@@ -240,54 +228,6 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets payment_method
-     *
-     * @return string|null
-     */
-    public function getPaymentMethod()
-    {
-        return $this->container['payment_method'];
-    }
-
-    /**
-     * Sets payment_method
-     *
-     * @param string|null $payment_method The payment method which the sender will use to make the payments. Options are `bank`, `card` or you can leave empty to support both.
-     *
-     * @return $this
-     */
-    public function setPaymentMethod($payment_method)
-    {
-        $this->container['payment_method'] = $payment_method;
-
-        return $this;
-    }
-
-    /**
-     * Gets redirect_url
-     *
-     * @return string|null
-     */
-    public function getRedirectUrl()
-    {
-        return $this->container['redirect_url'];
-    }
-
-    /**
-     * Sets redirect_url
-     *
-     * @param string|null $redirect_url This is where the sender should be redirected back when the payment has been finished
-     *
-     * @return $this
-     */
-    public function setRedirectUrl($redirect_url)
-    {
-        $this->container['redirect_url'] = $redirect_url;
-
-        return $this;
-    }
 
     /**
      * Gets phone_number
