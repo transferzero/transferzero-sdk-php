@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsEGPCash Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;middle_name\&quot;: \&quot;Middle\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;+201023456789\&quot;,   \&quot;street\&quot;: \&quot;1 Main Street\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot; }
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;middle_name\&quot;: \&quot;Middle\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;+201023456789\&quot;,   \&quot;street\&quot;: \&quot;1 Main Street\&quot;,   \&quot;transfer_reason\&quot;: \&quot;personal_account\&quot;,   \&quot;email\&quot;: \&quot;recipient@email.com\&quot;, // Optional   \&quot;reference\&quot;: \&quot;3414006608\&quot; // Optional reference that&#39;ll appear on the recipient pickup notification (if provided must be unique and exactly 10 digits long) }
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         'last_name' => 'string',
         'phone_number' => 'string',
         'street' => 'string',
-        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
+        'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
+        'email' => 'string',
+        'reference' => 'string'
     ];
 
     /**
@@ -77,7 +79,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         'last_name' => null,
         'phone_number' => null,
         'street' => null,
-        'transfer_reason' => null
+        'transfer_reason' => null,
+        'email' => null,
+        'reference' => null
     ];
 
     /**
@@ -112,7 +116,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         'last_name' => 'last_name',
         'phone_number' => 'phone_number',
         'street' => 'street',
-        'transfer_reason' => 'transfer_reason'
+        'transfer_reason' => 'transfer_reason',
+        'email' => 'email',
+        'reference' => 'reference'
     ];
 
     /**
@@ -126,7 +132,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         'last_name' => 'setLastName',
         'phone_number' => 'setPhoneNumber',
         'street' => 'setStreet',
-        'transfer_reason' => 'setTransferReason'
+        'transfer_reason' => 'setTransferReason',
+        'email' => 'setEmail',
+        'reference' => 'setReference'
     ];
 
     /**
@@ -140,7 +148,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         'last_name' => 'getLastName',
         'phone_number' => 'getPhoneNumber',
         'street' => 'getStreet',
-        'transfer_reason' => 'getTransferReason'
+        'transfer_reason' => 'getTransferReason',
+        'email' => 'getEmail',
+        'reference' => 'getReference'
     ];
 
     /**
@@ -209,6 +219,8 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
         $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
+        $this->container['email'] = isset($data['email']) ? $data['email'] : null;
+        $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
     }
 
     /**
@@ -390,6 +402,54 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
     public function setTransferReason($transfer_reason)
     {
         $this->container['transfer_reason'] = $transfer_reason;
+
+        return $this;
+    }
+
+    /**
+     * Gets email
+     *
+     * @return string|null
+     */
+    public function getEmail()
+    {
+        return $this->container['email'];
+    }
+
+    /**
+     * Sets email
+     *
+     * @param string|null $email email
+     *
+     * @return $this
+     */
+    public function setEmail($email)
+    {
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets reference
+     *
+     * @return string|null
+     */
+    public function getReference()
+    {
+        return $this->container['reference'];
+    }
+
+    /**
+     * Sets reference
+     *
+     * @param string|null $reference reference
+     *
+     * @return $this
+     */
+    public function setReference($reference)
+    {
+        $this->container['reference'] = $reference;
 
         return $this;
     }
