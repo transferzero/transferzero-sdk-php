@@ -522,6 +522,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['branch_code'] === null) {
             $invalidProperties[] = "'branch_code' can't be null";
         }
+        if ($this->container['middle_name'] === null) {
+            $invalidProperties[] = "'middle_name' can't be null";
+        }
         if ($this->container['ifsc_code'] === null) {
             $invalidProperties[] = "'ifsc_code' can't be null";
         }
@@ -1479,7 +1482,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets middle_name
      *
-     * @return string|null
+     * @return string
      */
     public function getMiddleName()
     {
@@ -1489,7 +1492,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets middle_name
      *
-     * @param string|null $middle_name middle_name
+     * @param string $middle_name middle_name
      *
      * @return $this
      */

@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **registration_number** | **string** |  | [optional] 
 **nature_of_business** | [**\TransferZero\Model\PayoutMethodNatureOfBusinessEnum**](PayoutMethodNatureOfBusinessEnum.md) |  | [optional] 
 **legal_entity_type** | [**\TransferZero\Model\PayoutMethodLegalEntityTypeEnum**](PayoutMethodLegalEntityTypeEnum.md) |  | [optional] 
-**middle_name** | **string** |  | [optional] 
+**middle_name** | **string** |  | 
 **routing_number** | **string** |  | [optional] 
 **swift_code** | **string** |  | [optional] 
 **relationship_to_sender** | **string** |  | [optional] 

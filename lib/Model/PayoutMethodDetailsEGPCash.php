@@ -235,6 +235,9 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
         if ($this->container['first_name'] === null) {
             $invalidProperties[] = "'first_name' can't be null";
         }
+        if ($this->container['middle_name'] === null) {
+            $invalidProperties[] = "'middle_name' can't be null";
+        }
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
@@ -289,7 +292,7 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
     /**
      * Gets middle_name
      *
-     * @return string|null
+     * @return string
      */
     public function getMiddleName()
     {
@@ -299,7 +302,7 @@ class PayoutMethodDetailsEGPCash implements ModelInterface, ArrayAccess
     /**
      * Sets middle_name
      *
-     * @param string|null $middle_name middle_name
+     * @param string $middle_name middle_name
      *
      * @return $this
      */
