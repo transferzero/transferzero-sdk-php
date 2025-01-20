@@ -1,6 +1,6 @@
 <?php
 /**
- * PayoutMethodDetailsGHSBank
+ * PayoutMethodDetailsGHSMobile
  *
  * PHP version 5
  *
@@ -33,15 +33,15 @@ use \ArrayAccess;
 use \TransferZero\ObjectSerializer;
 
 /**
- * PayoutMethodDetailsGHSBank Class Doc Comment
+ * PayoutMethodDetailsGHSMobile Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;bank_code\&quot;: \&quot;030100\&quot;,   \&quot;bank_account\&quot;: \&quot;123456789\&quot;,   \&quot;transfer_reason\&quot;: \&quot;third_party_person_account\&quot; } &#x60;&#x60;&#x60;  The current banks supported and their bank_codes values are:  - Access Bank: 280100 - Barclays Bank: 030100 - GCB Bank: 040100 - Ecobank: 130100 - First National Bank: 330100 - Heritage Bank: 370100 - Prudential Bank: 180100 - Stanbic Bank: 190100 - Standard Chartered Bank: 020100 - United Bank for Africa: 060100 - Zenith Bank: 120100
+ * @description &#x60;&#x60;&#x60;JSON \&quot;details\&quot;: {   \&quot;first_name\&quot;: \&quot;First\&quot;,   \&quot;last_name\&quot;: \&quot;Last\&quot;,   \&quot;phone_number\&quot;: \&quot;+233302123456\&quot;, // E.164 international format   \&quot;mobile_provider\&quot;: \&quot;vodafone\&quot;,   \&quot;transfer_reason\&quot;: \&quot;third_party_person_account\&quot; } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
+class PayoutMethodDetailsGHSMobile implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -50,7 +50,7 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $openAPIModelName = 'PayoutMethodDetailsGHSBank';
+    protected static $openAPIModelName = 'PayoutMethodDetailsGHSMobile';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -60,9 +60,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     protected static $openAPITypes = [
         'first_name' => 'string',
         'last_name' => 'string',
-        'bank_code' => 'string',
-        'bank_account' => 'string',
-        'birth_date' => '\DateTime',
+        'phone_number' => 'string',
+        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum'
     ];
 
@@ -74,9 +73,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     protected static $openAPIFormats = [
         'first_name' => null,
         'last_name' => null,
-        'bank_code' => null,
-        'bank_account' => null,
-        'birth_date' => 'date',
+        'phone_number' => null,
+        'mobile_provider' => null,
         'transfer_reason' => null
     ];
 
@@ -109,9 +107,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     protected static $attributeMap = [
         'first_name' => 'first_name',
         'last_name' => 'last_name',
-        'bank_code' => 'bank_code',
-        'bank_account' => 'bank_account',
-        'birth_date' => 'birth_date',
+        'phone_number' => 'phone_number',
+        'mobile_provider' => 'mobile_provider',
         'transfer_reason' => 'transfer_reason'
     ];
 
@@ -123,9 +120,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     protected static $setters = [
         'first_name' => 'setFirstName',
         'last_name' => 'setLastName',
-        'bank_code' => 'setBankCode',
-        'bank_account' => 'setBankAccount',
-        'birth_date' => 'setBirthDate',
+        'phone_number' => 'setPhoneNumber',
+        'mobile_provider' => 'setMobileProvider',
         'transfer_reason' => 'setTransferReason'
     ];
 
@@ -137,9 +133,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     protected static $getters = [
         'first_name' => 'getFirstName',
         'last_name' => 'getLastName',
-        'bank_code' => 'getBankCode',
-        'bank_account' => 'getBankAccount',
-        'birth_date' => 'getBirthDate',
+        'phone_number' => 'getPhoneNumber',
+        'mobile_provider' => 'getMobileProvider',
         'transfer_reason' => 'getTransferReason'
     ];
 
@@ -205,9 +200,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     {
         $this->container['first_name'] = isset($data['first_name']) ? $data['first_name'] : null;
         $this->container['last_name'] = isset($data['last_name']) ? $data['last_name'] : null;
-        $this->container['bank_code'] = isset($data['bank_code']) ? $data['bank_code'] : null;
-        $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
-        $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
+        $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['transfer_reason'] = isset($data['transfer_reason']) ? $data['transfer_reason'] : null;
     }
 
@@ -226,11 +220,8 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
         if ($this->container['last_name'] === null) {
             $invalidProperties[] = "'last_name' can't be null";
         }
-        if ($this->container['bank_code'] === null) {
-            $invalidProperties[] = "'bank_code' can't be null";
-        }
-        if ($this->container['bank_account'] === null) {
-            $invalidProperties[] = "'bank_account' can't be null";
+        if ($this->container['phone_number'] === null) {
+            $invalidProperties[] = "'phone_number' can't be null";
         }
         return $invalidProperties;
     }
@@ -296,73 +287,49 @@ class PayoutMethodDetailsGHSBank implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets bank_code
+     * Gets phone_number
      *
      * @return string
      */
-    public function getBankCode()
+    public function getPhoneNumber()
     {
-        return $this->container['bank_code'];
+        return $this->container['phone_number'];
     }
 
     /**
-     * Sets bank_code
+     * Sets phone_number
      *
-     * @param string $bank_code bank_code
+     * @param string $phone_number phone_number
      *
      * @return $this
      */
-    public function setBankCode($bank_code)
+    public function setPhoneNumber($phone_number)
     {
-        $this->container['bank_code'] = $bank_code;
+        $this->container['phone_number'] = $phone_number;
 
         return $this;
     }
 
     /**
-     * Gets bank_account
+     * Gets mobile_provider
      *
-     * @return string
+     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum|null
      */
-    public function getBankAccount()
+    public function getMobileProvider()
     {
-        return $this->container['bank_account'];
+        return $this->container['mobile_provider'];
     }
 
     /**
-     * Sets bank_account
+     * Sets mobile_provider
      *
-     * @param string $bank_account bank_account
+     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum|null $mobile_provider mobile_provider
      *
      * @return $this
      */
-    public function setBankAccount($bank_account)
+    public function setMobileProvider($mobile_provider)
     {
-        $this->container['bank_account'] = $bank_account;
-
-        return $this;
-    }
-
-    /**
-     * Gets birth_date
-     *
-     * @return \DateTime|null
-     */
-    public function getBirthDate()
-    {
-        return $this->container['birth_date'];
-    }
-
-    /**
-     * Sets birth_date
-     *
-     * @param \DateTime|null $birth_date Date of birth of recipient
-     *
-     * @return $this
-     */
-    public function setBirthDate($birth_date)
-    {
-        $this->container['birth_date'] = $birth_date;
+        $this->container['mobile_provider'] = $mobile_provider;
 
         return $this;
     }
