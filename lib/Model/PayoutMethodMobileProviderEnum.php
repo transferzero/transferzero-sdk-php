@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodMobileProviderEnum Class Doc Comment
  *
  * @category Class
- * @description The Mobile Wallet provider of the recipient:  For XOF (Senegal) valid options are: - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo - &#x60;emoney&#x60;: Emoney - &#x60;free&#x60;: Free - &#x60;expresso&#x60; : Expresso  For XOF (Ivory Coast) valid options are: - &#x60;orange&#x60;: Orange - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: MTN  For XOF (Burkina Faso) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash - &#x60;moov&#x60; : Moov  For XOF (Togo) valid options are: - &#x60;moov&#x60;: Moov - &#x60;tmoney&#x60;: Tmoney  For XOF (Benin) valid options are: - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: Mtn  For XOF (Mali) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash - &#x60;tigo&#x60; : Tigo  For GHS valid options are: - &#x60;airteltigo&#x60;: AirtelTigo - &#x60;mtn&#x60;: MTN - &#x60;vodafone&#x60;: Vodafone  For KES valid options are: - &#x60;mpesa&#x60;: MPESA  For UGX valid options are: - &#x60;africell&#x60;: Africell - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN - &#x60;telecom&#x60;: Telecom  For XAF (Chad) valid options are: - &#x60;moov&#x60;: Moov  For XAF (Cameroon) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mtn&#x60;: MTN  For XAF (Congo) valid options are: - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN  For XAF (Gabon) valid options are: - &#x60;airtel&#x60;: Airtel - &#x60;moov&#x60;: Moov  For GNF (Guinea) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mtn&#x60;: MTN
+ * @description The Mobile Wallet provider of the recipient:  For XOF (Senegal) valid options are: - &#x60;orange&#x60;: Orange - &#x60;tigo&#x60;: Tigo - &#x60;emoney&#x60;: Emoney - &#x60;free&#x60;: Free - &#x60;expresso&#x60; : Expresso - &#x60;wave&#x60;: Wave  For XOF (Ivory Coast) valid options are: - &#x60;orange&#x60;: Orange - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: MTN - &#x60;wave&#x60;: Wave  For XOF (Burkina Faso) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash - &#x60;moov&#x60; : Moov  For XOF (Togo) valid options are: - &#x60;moov&#x60;: Moov - &#x60;tmoney&#x60;: Tmoney  For XOF (Benin) valid options are: - &#x60;moov&#x60;: Moov - &#x60;mtn&#x60;: Mtn  For XOF (Mali) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mobicash&#x60;: Mobicash - &#x60;tigo&#x60; : Tigo  For GHS valid options are: - &#x60;airteltigo&#x60;: AirtelTigo - &#x60;mtn&#x60;: MTN - &#x60;vodafone&#x60;: Vodafone  For KES valid options are: - &#x60;mpesa&#x60;: MPESA  For UGX valid options are: - &#x60;africell&#x60;: Africell - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN - &#x60;telecom&#x60;: Telecom  For XAF (Chad) valid options are: - &#x60;moov&#x60;: Moov  For XAF (Cameroon) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mtn&#x60;: MTN  For XAF (Congo) valid options are: - &#x60;airtel&#x60;: Airtel - &#x60;mtn&#x60;: MTN  For XAF (Gabon) valid options are: - &#x60;airtel&#x60;: Airtel - &#x60;moov&#x60;: Moov  For GNF (Guinea) valid options are: - &#x60;orange&#x60;: Orange - &#x60;mtn&#x60;: MTN
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -44,21 +44,22 @@ class PayoutMethodMobileProviderEnum
     /**
      * Possible values of this enum
      */
-    const ORANGE = 'orange';
-    const TIGO = 'tigo';
-    const MOOV = 'moov';
-    const MTN = 'mtn';
+    const AFRICELL = 'africell';
     const AIRTEL = 'airtel';
     const AIRTELTIGO = 'airteltigo';
-    const VODAFONE = 'vodafone';
-    const MPESA = 'mpesa';
-    const AFRICELL = 'africell';
-    const TELECOM = 'telecom';
-    const MOBICASH = 'mobicash';
     const EMONEY = 'emoney';
-    const FREE = 'free';
     const EXPRESSO = 'expresso';
+    const FREE = 'free';
+    const MOBICASH = 'mobicash';
+    const MOOV = 'moov';
+    const MPESA = 'mpesa';
+    const MTN = 'mtn';
+    const ORANGE = 'orange';
+    const TELECOM = 'telecom';
+    const TIGO = 'tigo';
     const TMONEY = 'tmoney';
+    const VODAFONE = 'vodafone';
+    const WAVE = 'wave';
     
     /**
      * Gets allowable values of the enum
@@ -67,21 +68,22 @@ class PayoutMethodMobileProviderEnum
     public static function getAllowableEnumValues()
     {
         return [
-            self::ORANGE,
-            self::TIGO,
-            self::MOOV,
-            self::MTN,
+            self::AFRICELL,
             self::AIRTEL,
             self::AIRTELTIGO,
-            self::VODAFONE,
-            self::MPESA,
-            self::AFRICELL,
-            self::TELECOM,
-            self::MOBICASH,
             self::EMONEY,
-            self::FREE,
             self::EXPRESSO,
+            self::FREE,
+            self::MOBICASH,
+            self::MOOV,
+            self::MPESA,
+            self::MTN,
+            self::ORANGE,
+            self::TELECOM,
+            self::TIGO,
             self::TMONEY,
+            self::VODAFONE,
+            self::WAVE,
         ];
     }
 }
