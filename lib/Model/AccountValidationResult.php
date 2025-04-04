@@ -59,7 +59,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'account_name' => 'string',
-        'mapped_mobile_provider' => 'string'
+        'mapped_mobile_provider' => 'string',
+        'account_status' => 'string'
     ];
 
     /**
@@ -69,7 +70,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'account_name' => null,
-        'mapped_mobile_provider' => null
+        'mapped_mobile_provider' => null,
+        'account_status' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'account_name' => 'account_name',
-        'mapped_mobile_provider' => 'mapped_mobile_provider'
+        'mapped_mobile_provider' => 'mapped_mobile_provider',
+        'account_status' => 'account_status'
     ];
 
     /**
@@ -110,7 +113,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'account_name' => 'setAccountName',
-        'mapped_mobile_provider' => 'setMappedMobileProvider'
+        'mapped_mobile_provider' => 'setMappedMobileProvider',
+        'account_status' => 'setAccountStatus'
     ];
 
     /**
@@ -120,7 +124,8 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'account_name' => 'getAccountName',
-        'mapped_mobile_provider' => 'getMappedMobileProvider'
+        'mapped_mobile_provider' => 'getMappedMobileProvider',
+        'account_status' => 'getAccountStatus'
     ];
 
     /**
@@ -185,6 +190,7 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
     {
         $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
         $this->container['mapped_mobile_provider'] = isset($data['mapped_mobile_provider']) ? $data['mapped_mobile_provider'] : null;
+        $this->container['account_status'] = isset($data['account_status']) ? $data['account_status'] : null;
     }
 
     /**
@@ -255,6 +261,30 @@ class AccountValidationResult implements ModelInterface, ArrayAccess
     public function setMappedMobileProvider($mapped_mobile_provider)
     {
         $this->container['mapped_mobile_provider'] = $mapped_mobile_provider;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_status
+     *
+     * @return string|null
+     */
+    public function getAccountStatus()
+    {
+        return $this->container['account_status'];
+    }
+
+    /**
+     * Sets account_status
+     *
+     * @param string|null $account_status account_status
+     *
+     * @return $this
+     */
+    public function setAccountStatus($account_status)
+    {
+        $this->container['account_status'] = $account_status;
 
         return $this;
     }
