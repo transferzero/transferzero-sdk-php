@@ -115,7 +115,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_account' => 'bank_account',
         'bank_account_type' => 'bank_account_type',
         'birth_date' => 'birth_date',
-        'street' => 'street&quot;'
+        'street' => 'street'
     ];
 
     /**

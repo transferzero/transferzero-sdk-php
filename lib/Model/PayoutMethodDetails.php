@@ -86,7 +86,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reference' => 'string',
         'name' => 'string',
         'address' => 'string',
-        'street' => 'string',
         'postal_code' => 'string',
         'city' => 'string',
         'email' => 'string',
@@ -141,7 +140,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reference' => null,
         'name' => null,
         'address' => null,
-        'street' => null,
         'postal_code' => null,
         'city' => null,
         'email' => null,
@@ -194,7 +192,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'bank_account' => 'bank_account',
         'bank_account_type' => 'bank_account_type',
         'birth_date' => 'birth_date',
-        'street' => 'street&quot;',
+        'street' => 'street',
         'phone_number' => 'phone_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
@@ -217,7 +215,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reference' => 'reference',
         'name' => 'name',
         'address' => 'address',
-        'street' => 'street',
         'postal_code' => 'postal_code',
         'city' => 'city',
         'email' => 'email',
@@ -272,7 +269,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reference' => 'setReference',
         'name' => 'setName',
         'address' => 'setAddress',
-        'street' => 'setStreet',
         'postal_code' => 'setPostalCode',
         'city' => 'setCity',
         'email' => 'setEmail',
@@ -327,7 +323,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'reference' => 'getReference',
         'name' => 'getName',
         'address' => 'getAddress',
-        'street' => 'getStreet',
         'postal_code' => 'getPostalCode',
         'city' => 'getCity',
         'email' => 'getEmail',
@@ -436,7 +431,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['address'] = isset($data['address']) ? $data['address'] : null;
-        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
         $this->container['postal_code'] = isset($data['postal_code']) ? $data['postal_code'] : null;
         $this->container['city'] = isset($data['city']) ? $data['city'] : null;
         $this->container['email'] = isset($data['email']) ? $data['email'] : null;
@@ -477,6 +471,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
+        if ($this->container['street'] === null) {
+            $invalidProperties[] = "'street' can't be null";
+        }
         if ($this->container['phone_number'] === null) {
             $invalidProperties[] = "'phone_number' can't be null";
         }
@@ -515,9 +512,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         }
         if ($this->container['address'] === null) {
             $invalidProperties[] = "'address' can't be null";
-        }
-        if ($this->container['street'] === null) {
-            $invalidProperties[] = "'street' can't be null";
         }
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
@@ -696,7 +690,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets street
      *
-     * @return string|null
+     * @return string
      */
     public function getStreet()
     {
@@ -706,7 +700,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets street
      *
-     * @param string|null $street street
+     * @param string $street street
      *
      * @return $this
      */
@@ -1241,30 +1235,6 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     public function setAddress($address)
     {
         $this->container['address'] = $address;
-
-        return $this;
-    }
-
-    /**
-     * Gets street
-     *
-     * @return string
-     */
-    public function getStreet()
-    {
-        return $this->container['street'];
-    }
-
-    /**
-     * Sets street
-     *
-     * @param string $street street
-     *
-     * @return $this
-     */
-    public function setStreet($street)
-    {
-        $this->container['street'] = $street;
 
         return $this;
     }

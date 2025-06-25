@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **bank_account** | **string** |  | 
 **bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | [optional] 
 **birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
-**street** | **string** |  | [optional] 
+**street** | **string** |  | 
 **phone_number** | **string** |  | 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
@@ -33,7 +33,6 @@ Name | Type | Description | Notes
 **reference** | **string** |  | [optional] 
 **name** | **string** |  | 
 **address** | **string** |  | 
-**street** | **string** |  | 
 **postal_code** | **string** |  | 
 **city** | **string** |  | 
 **email** | **string** |  | [optional] 
