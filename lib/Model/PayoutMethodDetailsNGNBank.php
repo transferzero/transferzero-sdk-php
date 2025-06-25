@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodDetailsNGNBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;bank_code\&quot;: \&quot;058\&quot;,     \&quot;bank_account\&quot;: \&quot;123456789\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;       # 10 for saving       # 20 for current accounts   } &#x60;&#x60;&#x60;  See [NGN Bank](https://docs.azafinance.com/docs/individual-payments/#ngnbank) documentation for the bank_code
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;first_name\&quot;: \&quot;First\&quot;,     \&quot;last_name\&quot;: \&quot;Last\&quot;,     \&quot;bank_code\&quot;: \&quot;058\&quot;,     \&quot;bank_account\&quot;: \&quot;123456789\&quot;,     \&quot;bank_account_type\&quot;: \&quot;10\&quot;, # 10 for saving, 20 for current accounts     \&quot;street\&quot;: \&quot;1 Main Street\&quot;   } &#x60;&#x60;&#x60;  See [NGN Bank](https://docs.azafinance.com/docs/individual-payments/#ngnbank) documentation for the bank_code
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -63,7 +63,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_code' => 'string',
         'bank_account' => 'string',
         'bank_account_type' => '\TransferZero\Model\PayoutMethodBankAccountTypeEnum',
-        'birth_date' => '\DateTime'
+        'birth_date' => '\DateTime',
+        'street' => 'string'
     ];
 
     /**
@@ -77,7 +78,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_code' => null,
         'bank_account' => null,
         'bank_account_type' => null,
-        'birth_date' => 'date'
+        'birth_date' => 'date',
+        'street' => null
     ];
 
     /**
@@ -112,7 +114,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_code' => 'bank_code',
         'bank_account' => 'bank_account',
         'bank_account_type' => 'bank_account_type',
-        'birth_date' => 'birth_date'
+        'birth_date' => 'birth_date',
+        'street' => 'street&quot;'
     ];
 
     /**
@@ -126,7 +129,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_code' => 'setBankCode',
         'bank_account' => 'setBankAccount',
         'bank_account_type' => 'setBankAccountType',
-        'birth_date' => 'setBirthDate'
+        'birth_date' => 'setBirthDate',
+        'street' => 'setStreet'
     ];
 
     /**
@@ -140,7 +144,8 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         'bank_code' => 'getBankCode',
         'bank_account' => 'getBankAccount',
         'bank_account_type' => 'getBankAccountType',
-        'birth_date' => 'getBirthDate'
+        'birth_date' => 'getBirthDate',
+        'street' => 'getStreet'
     ];
 
     /**
@@ -209,6 +214,7 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
         $this->container['bank_account'] = isset($data['bank_account']) ? $data['bank_account'] : null;
         $this->container['bank_account_type'] = isset($data['bank_account_type']) ? $data['bank_account_type'] : null;
         $this->container['birth_date'] = isset($data['birth_date']) ? $data['birth_date'] : null;
+        $this->container['street'] = isset($data['street']) ? $data['street'] : null;
     }
 
     /**
@@ -387,6 +393,30 @@ class PayoutMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     public function setBirthDate($birth_date)
     {
         $this->container['birth_date'] = $birth_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets street
+     *
+     * @return string|null
+     */
+    public function getStreet()
+    {
+        return $this->container['street'];
+    }
+
+    /**
+     * Sets street
+     *
+     * @param string|null $street street
+     *
+     * @return $this
+     */
+    public function setStreet($street)
+    {
+        $this->container['street'] = $street;
 
         return $this;
     }
