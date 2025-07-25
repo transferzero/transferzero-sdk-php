@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **phone_number** | **string** | The phone number where the funds should be collected from | [optional] 
+**account_name** | **string** | Merchant&#39;s virtual account name | [optional] 
+**account_number** | **string** | Merchant&#39;s virtual account number | [optional] 
 **mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | [optional] 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | [optional] 
 **otp** | **string** | The OTP that the sender received in otp verified ussd popup ux flow. | [optional] 

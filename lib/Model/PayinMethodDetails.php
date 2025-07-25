@@ -59,6 +59,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'phone_number' => 'string',
+        'account_name' => 'string',
+        'account_number' => 'string',
         'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'otp' => 'string',
@@ -72,6 +74,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'phone_number' => null,
+        'account_name' => null,
+        'account_number' => null,
         'mobile_provider' => null,
         'country' => null,
         'otp' => null,
@@ -106,6 +110,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'phone_number' => 'phone_number',
+        'account_name' => 'account_name',
+        'account_number' => 'account_number',
         'mobile_provider' => 'mobile_provider',
         'country' => 'country',
         'otp' => 'otp',
@@ -119,6 +125,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'phone_number' => 'setPhoneNumber',
+        'account_name' => 'setAccountName',
+        'account_number' => 'setAccountNumber',
         'mobile_provider' => 'setMobileProvider',
         'country' => 'setCountry',
         'otp' => 'setOtp',
@@ -132,6 +140,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'phone_number' => 'getPhoneNumber',
+        'account_name' => 'getAccountName',
+        'account_number' => 'getAccountNumber',
         'mobile_provider' => 'getMobileProvider',
         'country' => 'getCountry',
         'otp' => 'getOtp',
@@ -199,6 +209,8 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
+        $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
         $this->container['mobile_provider'] = isset($data['mobile_provider']) ? $data['mobile_provider'] : null;
         $this->container['country'] = isset($data['country']) ? $data['country'] : null;
         $this->container['otp'] = isset($data['otp']) ? $data['otp'] : null;
@@ -249,6 +261,54 @@ class PayinMethodDetails implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_name
+     *
+     * @return string|null
+     */
+    public function getAccountName()
+    {
+        return $this->container['account_name'];
+    }
+
+    /**
+     * Sets account_name
+     *
+     * @param string|null $account_name Merchant's virtual account name
+     *
+     * @return $this
+     */
+    public function setAccountName($account_name)
+    {
+        $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_number
+     *
+     * @return string|null
+     */
+    public function getAccountNumber()
+    {
+        return $this->container['account_number'];
+    }
+
+    /**
+     * Sets account_number
+     *
+     * @param string|null $account_number Merchant's virtual account number
+     *
+     * @return $this
+     */
+    public function setAccountNumber($account_number)
+    {
+        $this->container['account_number'] = $account_number;
 
         return $this;
     }

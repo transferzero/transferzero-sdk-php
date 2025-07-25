@@ -36,7 +36,7 @@ use \TransferZero\ObjectSerializer;
  * PayinMethodDetailsNGNBank Class Doc Comment
  *
  * @category Class
- * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;phone_number\&quot;: \&quot;+2347087661211\&quot;   } &#x60;&#x60;&#x60;
+ * @description &#x60;&#x60;&#x60;JSON   \&quot;details\&quot;: {     \&quot;phone_number\&quot;: \&quot;+2348187221236\&quot;,     \&quot;account_name\&quot;: \&quot;Test Merchant\&quot;,     \&quot;account_number\&quot;: \&quot;1234567890\&quot;   } &#x60;&#x60;&#x60;
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -58,7 +58,9 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPITypes = [
-        'phone_number' => 'string'
+        'phone_number' => 'string',
+        'account_name' => 'string',
+        'account_number' => 'string'
     ];
 
     /**
@@ -67,7 +69,9 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $openAPIFormats = [
-        'phone_number' => null
+        'phone_number' => null,
+        'account_name' => null,
+        'account_number' => null
     ];
 
     /**
@@ -97,7 +101,9 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'phone_number' => 'phone_number'
+        'phone_number' => 'phone_number',
+        'account_name' => 'account_name',
+        'account_number' => 'account_number'
     ];
 
     /**
@@ -106,7 +112,9 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'phone_number' => 'setPhoneNumber'
+        'phone_number' => 'setPhoneNumber',
+        'account_name' => 'setAccountName',
+        'account_number' => 'setAccountNumber'
     ];
 
     /**
@@ -115,7 +123,9 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'phone_number' => 'getPhoneNumber'
+        'phone_number' => 'getPhoneNumber',
+        'account_name' => 'getAccountName',
+        'account_number' => 'getAccountNumber'
     ];
 
     /**
@@ -179,6 +189,8 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     public function __construct(array $data = null)
     {
         $this->container['phone_number'] = isset($data['phone_number']) ? $data['phone_number'] : null;
+        $this->container['account_name'] = isset($data['account_name']) ? $data['account_name'] : null;
+        $this->container['account_number'] = isset($data['account_number']) ? $data['account_number'] : null;
     }
 
     /**
@@ -225,6 +237,54 @@ class PayinMethodDetailsNGNBank implements ModelInterface, ArrayAccess
     public function setPhoneNumber($phone_number)
     {
         $this->container['phone_number'] = $phone_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_name
+     *
+     * @return string|null
+     */
+    public function getAccountName()
+    {
+        return $this->container['account_name'];
+    }
+
+    /**
+     * Sets account_name
+     *
+     * @param string|null $account_name Merchant's virtual account name
+     *
+     * @return $this
+     */
+    public function setAccountName($account_name)
+    {
+        $this->container['account_name'] = $account_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets account_number
+     *
+     * @return string|null
+     */
+    public function getAccountNumber()
+    {
+        return $this->container['account_number'];
+    }
+
+    /**
+     * Sets account_number
+     *
+     * @param string|null $account_number Merchant's virtual account number
+     *
+     * @return $this
+     */
+    public function setAccountNumber($account_number)
+    {
+        $this->container['account_number'] = $account_number;
 
         return $this;
     }
