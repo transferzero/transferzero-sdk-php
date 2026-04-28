@@ -81,7 +81,8 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_currency' => 'string',
         'id' => 'string',
         'type' => 'string',
-        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]'
+        'errors' => 'map[string,\TransferZero\Model\ValidationErrorDescription[]]',
+        'mandate_id' => 'string'
     ];
 
     /**
@@ -113,7 +114,8 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_currency' => null,
         'id' => 'uuid',
         'type' => null,
-        'errors' => null
+        'errors' => null,
+        'mandate_id' => 'uuid'
     ];
 
     /**
@@ -166,7 +168,8 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_currency' => 'output_currency',
         'id' => 'id',
         'type' => 'type',
-        'errors' => 'errors'
+        'errors' => 'errors',
+        'mandate_id' => 'mandate_id'
     ];
 
     /**
@@ -198,7 +201,8 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_currency' => 'setOutputCurrency',
         'id' => 'setId',
         'type' => 'setType',
-        'errors' => 'setErrors'
+        'errors' => 'setErrors',
+        'mandate_id' => 'setMandateId'
     ];
 
     /**
@@ -230,7 +234,8 @@ class Recipient implements ModelInterface, ArrayAccess
         'output_currency' => 'getOutputCurrency',
         'id' => 'getId',
         'type' => 'getType',
-        'errors' => 'getErrors'
+        'errors' => 'getErrors',
+        'mandate_id' => 'getMandateId'
     ];
 
     /**
@@ -332,6 +337,7 @@ class Recipient implements ModelInterface, ArrayAccess
         $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['type'] = isset($data['type']) ? $data['type'] : null;
         $this->container['errors'] = isset($data['errors']) ? $data['errors'] : null;
+        $this->container['mandate_id'] = isset($data['mandate_id']) ? $data['mandate_id'] : null;
     }
 
     /**
@@ -956,6 +962,30 @@ class Recipient implements ModelInterface, ArrayAccess
     public function setErrors($errors)
     {
         $this->container['errors'] = $errors;
+
+        return $this;
+    }
+
+    /**
+     * Gets mandate_id
+     *
+     * @return string|null
+     */
+    public function getMandateId()
+    {
+        return $this->container['mandate_id'];
+    }
+
+    /**
+     * Sets mandate_id
+     *
+     * @param string|null $mandate_id The ID of the mandate that is related to this recipient. This field is present when a ZAR bank mandate signing is required or has been completed.
+     *
+     * @return $this
+     */
+    public function setMandateId($mandate_id)
+    {
+        $this->container['mandate_id'] = $mandate_id;
 
         return $this;
     }
