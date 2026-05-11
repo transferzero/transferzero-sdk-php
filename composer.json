@@ -1,5 +1,5 @@
 {
-    "name": "/",
+    "name": "transferzero/transferzero-php-sdk",
     "version": "1.37.6",
     "description": "TransferZero Client Library for PHP",
     "homepage": "http://api.transferzero.com/documentation",
