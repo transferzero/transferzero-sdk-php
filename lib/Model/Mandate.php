@@ -59,7 +59,7 @@ class Mandate implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'id' => 'string',
-        'status' => 'string',
+        'status' => '\TransferZero\Model\MandateStatus',
         'type_id' => 'int',
         'reference' => 'string',
         'signed_at' => '\DateTime',
@@ -189,29 +189,8 @@ class Mandate implements ModelInterface, ArrayAccess
         return self::$openAPIModelName;
     }
 
-    const STATUS_PENDING = 'pending';
-    const STATUS_NOTIFIED = 'notified';
-    const STATUS_SIGNED = 'signed';
-    const STATUS_FAILED = 'failed';
-    const STATUS_BYPASSED = 'bypassed';
     
 
-    
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues()
-    {
-        return [
-            self::STATUS_PENDING,
-            self::STATUS_NOTIFIED,
-            self::STATUS_SIGNED,
-            self::STATUS_FAILED,
-            self::STATUS_BYPASSED,
-        ];
-    }
     
 
     /**
@@ -246,14 +225,6 @@ class Mandate implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = parent::listInvalidProperties();
-
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($this->container['status']) && !in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value for 'status', must be one of '%s'",
-                implode("', '", $allowedValues)
-            );
-        }
 
         return $invalidProperties;
     }
@@ -297,7 +268,7 @@ class Mandate implements ModelInterface, ArrayAccess
     /**
      * Gets status
      *
-     * @return string|null
+     * @return \TransferZero\Model\MandateStatus|null
      */
     public function getStatus()
     {
@@ -307,21 +278,12 @@ class Mandate implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string|null $status Current state of the mandate.  - `pending` — created, awaiting signing flow - `notified` — recipient has been notified to sign - `signed` — recipient signed; mandate is active - `failed` — signing flow failed (e.g. AVS/CDV rejection) - `bypassed` — administratively bypassed for an inward AZA payment
+     * @param \TransferZero\Model\MandateStatus|null $status status
      *
      * @return $this
      */
     public function setStatus($status)
     {
-        $allowedValues = $this->getStatusAllowableValues();
-        if (!is_null($status) && !in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
