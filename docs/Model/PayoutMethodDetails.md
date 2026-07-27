@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | 
 **bank_code** | **string** |  | 
 **bank_account** | **string** |  | 
-**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | [optional] 
+**bank_account_type** | [**\TransferZero\Model\PayoutMethodBankAccountTypeEnum**](PayoutMethodBankAccountTypeEnum.md) |  | 
 **birth_date** | [**\DateTime**](\DateTime.md) | Date of birth of recipient | [optional] 
 **street** | **string** |  | 
 **phone_number** | **string** |  | 
-**mobile_provider** | [**\TransferZero\Model\PayoutMethodMobileProviderEnum**](PayoutMethodMobileProviderEnum.md) |  | 
+**mobile_provider** | **string** |  | 
 **country** | [**\TransferZero\Model\PayoutMethodCountryEnum**](PayoutMethodCountryEnum.md) |  | 
 **transfer_reason** | [**\TransferZero\Model\PayoutMethodTransferReasonEnum**](PayoutMethodTransferReasonEnum.md) |  | 
 **iban** | **string** |  | 

@@ -34,7 +34,7 @@ use \TransferZero\ObjectSerializer;
  * PayoutMethodIdentityCardTypeEnum Class Doc Comment
  *
  * @category Class
- * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;ID&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card - &#x60;DL&#x60;: Driving License - &#x60;OT&#x60;: Other type of identity card
+ * @description The type of the identity card used by the sender or recipient:  - &#x60;PP&#x60;: Passport - &#x60;ID&#x60;: National Identity Card - &#x60;O&#x60;: Other type of identity card - &#x60;DL&#x60;: Driving License - &#x60;OT&#x60;: Other type of identity card - &#x60;DNI&#x60;: Documento Nacional de Identidad (Peru) - &#x60;RUC&#x60;: Registro Único de Contribuyentes (Peru, business) - &#x60;CE&#x60;: Carnet de Extranjería (Peru, foreign national) - &#x60;PASS&#x60;: Passport (Peru) - &#x60;CI&#x60;: Cédula de Identidad (Costa Rica, individual) - &#x60;CJ&#x60;: Cédula Jurídica (Costa Rica, business) - &#x60;CR&#x60;: Cédula de Residencia (Costa Rica, resident)
  * @package  TransferZero
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
@@ -49,6 +49,13 @@ class PayoutMethodIdentityCardTypeEnum
     const ID = 'ID';
     const DL = 'DL';
     const OT = 'OT';
+    const DNI = 'DNI';
+    const RUC = 'RUC';
+    const CE = 'CE';
+    const PASS = 'PASS';
+    const CI = 'CI';
+    const CJ = 'CJ';
+    const CR = 'CR';
     
     /**
      * Gets allowable values of the enum
@@ -62,6 +69,13 @@ class PayoutMethodIdentityCardTypeEnum
             self::ID,
             self::DL,
             self::OT,
+            self::DNI,
+            self::RUC,
+            self::CE,
+            self::PASS,
+            self::CI,
+            self::CJ,
+            self::CR,
         ];
     }
 }

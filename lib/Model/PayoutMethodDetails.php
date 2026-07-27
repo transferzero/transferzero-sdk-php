@@ -65,7 +65,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         'birth_date' => '\DateTime',
         'street' => 'string',
         'phone_number' => 'string',
-        'mobile_provider' => '\TransferZero\Model\PayoutMethodMobileProviderEnum',
+        'mobile_provider' => 'string',
         'country' => '\TransferZero\Model\PayoutMethodCountryEnum',
         'transfer_reason' => '\TransferZero\Model\PayoutMethodTransferReasonEnum',
         'iban' => 'string',
@@ -465,6 +465,9 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
         if ($this->container['bank_account'] === null) {
             $invalidProperties[] = "'bank_account' can't be null";
         }
+        if ($this->container['bank_account_type'] === null) {
+            $invalidProperties[] = "'bank_account_type' can't be null";
+        }
         if ($this->container['street'] === null) {
             $invalidProperties[] = "'street' can't be null";
         }
@@ -633,7 +636,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets bank_account_type
      *
-     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null
+     * @return \TransferZero\Model\PayoutMethodBankAccountTypeEnum
      */
     public function getBankAccountType()
     {
@@ -643,7 +646,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets bank_account_type
      *
-     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum|null $bank_account_type bank_account_type
+     * @param \TransferZero\Model\PayoutMethodBankAccountTypeEnum $bank_account_type bank_account_type
      *
      * @return $this
      */
@@ -729,7 +732,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Gets mobile_provider
      *
-     * @return \TransferZero\Model\PayoutMethodMobileProviderEnum
+     * @return string
      */
     public function getMobileProvider()
     {
@@ -739,7 +742,7 @@ class PayoutMethodDetails implements ModelInterface, ArrayAccess
     /**
      * Sets mobile_provider
      *
-     * @param \TransferZero\Model\PayoutMethodMobileProviderEnum $mobile_provider mobile_provider
+     * @param string $mobile_provider mobile_provider
      *
      * @return $this
      */
